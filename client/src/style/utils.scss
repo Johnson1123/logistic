@@ -1,0 +1,46 @@
+@import './variable.scss';
+// flex
+
+// container
+.app__container{
+    flex: 1;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+}
+.app__wrapper{
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.flex{
+    display: flex;
+}
+.center{
+    justify-content: center;
+    align-items: center;
+}
+.start{
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.p-text{
+    font-size: $font-24;
+    font-family: $primaryFont;
+    line-height: 28.13px;
+    font-weight: 400;
+}
+.small-text{
+    font-size: $font-10;
+    font-family: $primaryFont;
+    font-weight: 400;
+}
+.btn-text{
+    font-size: $font-40;
+    color: $whiteColor;
+    text-align: center;
+    font-weight: 700;
+}

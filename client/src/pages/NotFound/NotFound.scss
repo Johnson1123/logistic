@@ -1,0 +1,10 @@
+@import '../../style/variable.scss';
+
+.app__wrapper{
+    height: 100vh;
+    flex-direction: column;
+    .lg-text{
+        font-size: 60px;
+        line-height: 70px;
+    }
+}
