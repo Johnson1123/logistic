@@ -11,7 +11,7 @@ import {
   Home,InterP, LocalP, OTP,
   Loginuser, Login, NotFound,
   PassengerDB, Profile, UserSignup,
-  ForgetPwd, Newpwd, Experiencedriver
+  ForgetPwd, Newpwd, Experiencedriver, WatToGo
 } from './pages';
 import Signupbanner from './pages/Signupbanner/Signupbanner';
 import Background from './component/Background/Background';
@@ -74,6 +74,10 @@ const router = createBrowserRouter([
   {
     path: "/experience",
     element: <Experiencedriver />,
+  },
+  {
+    path: "/wattogo",
+    element: <WatToGo />,
   },
   {
     path: "*",
