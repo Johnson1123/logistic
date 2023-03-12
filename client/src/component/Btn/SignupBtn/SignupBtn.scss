@@ -1,0 +1,19 @@
+@import '../../../style/variable.scss';
+.sign-btn{
+    width: 95%;
+    text-align: center;
+    color: $whiteColor;
+    font-size: $font-20;
+    background-color: $secondaryColor;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .7rem .5rem;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    @media screen and (min-width: 768px) {
+       font-size: $font-16;
+    }
+}

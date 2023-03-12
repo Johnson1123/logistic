@@ -1,16 +1,17 @@
 @import './variable.scss';
 // flex
-
+.flex{
+    display: flex;
+}
 // container
 .app__container{
-    flex: 1;
     position: relative;
+    top: 0;
+    bottom: 0;
     width: 100%;
-    min-height: 100vh;
 }
 .app__wrapper{
     flex: 1;
-    height: 100%;
     display: flex;
     flex-direction: row;
 }
@@ -28,10 +29,15 @@
 }
 
 .p-text{
-    font-size: $font-24;
+    font-size: $font-16;
     font-family: $primaryFont;
-    line-height: 28.13px;
+    line-height: 1.3;
     font-weight: 400;
+    color: $primaryColor ;
+    text-decoration: none;
+    @media screen and (min-width: 768px) {
+        font-size: $font-14;
+    }
 }
 .small-text{
     font-size: $font-10;
@@ -43,4 +49,41 @@
     color: $whiteColor;
     text-align: center;
     font-weight: 700;
+    @media screen and (min-width: 768px) {
+        font-size: $font-20;
+    }
 }
+.title{
+    font-size: $font-30;
+    color: $primaryColor;
+    line-height: 3;
+    font-weight: 700;
+}
+
+.bold-text{
+    font-weight: 700;
+    font-size: $font-16;
+    line-height: 2;
+}
+.form-title{
+    font-size: 24px;
+    color: $secondaryColor;
+    font-weight: 900;
+}
+.form-bold{
+    font-size: $font-16;
+    color: $primaryColor;
+    font-weight: 700;
+    margin-top: 5px;
+    line-height: 3;
+}
+.form-text{
+    font-size: $font-14;
+    color: $primaryColor;
+    font-weight: 500;
+    line-height: 1.4;
+}
+.mt-5{
+    margin-top: 5px;
+}
+

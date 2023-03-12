@@ -1,0 +1,40 @@
+@import '../../style/variable.scss';
+.DownloadSection__container{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 90%;
+    margin-top: 50px;
+    @media screen and (min-width: 768px) {
+        width: 70%;
+        margin-top: 4rem;
+    }
+    .Download__content{
+        width: 45%;
+        text-align: center;
+        .p-text.title{
+            font-weight: 700;
+            font-size: $font-20;
+        }
+        .p-text{
+            font-size: $font-12;
+        }
+    }
+    img{
+        width: 50%;
+        @media screen and (min-width: 768px) {
+            width: 20%;
+        }
+    }
+    .overlay-img{
+        position: absolute;
+        width: 45%;
+        right: 40px;
+        @media screen and (min-width: 768px) {
+            width: 20%;
+            top: -20px;
+            right: 350px;
+        }
+    }
+
+}

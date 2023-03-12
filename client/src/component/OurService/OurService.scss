@@ -1,0 +1,84 @@
+@import '../../style/variable.scss';
+.ourservice__container{
+    width: 90%;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    @media screen and (min-width: 768px) {
+        width: 80%;
+    }
+    h3{
+        text-align: center;
+        @media screen and (min-width: 768px) {
+            margin-top: 4rem;
+        }
+        span{
+            color: $secondaryColor;
+            margin-right: 10px;
+        }
+    }
+    .ourservice__inner-container{
+        flex-direction: column;
+        row-gap: 20px;
+        margin-top: 20px;
+        @media screen and (min-width: 768px) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .ourservice__box{
+            justify-content: center;
+            align-items: center;
+            @media screen and (min-width: 768px) {
+                align-items: center;
+            }
+
+            .service__img-ellis{
+                width: 45%;
+                height: 170px;
+                border-radius: 70%;
+                background-color: $secondaryColor;
+                @media screen and (min-width: 768px) {
+                    width: 30%;
+                    height: 160px;
+                }
+                
+                img{
+                    width: 100%;
+                    height: 160px;
+                    @media screen and (min-width: 768px) {
+                        height: 150px;
+                    }
+                }
+            }
+
+            .service__content{
+                width: 48%;
+                margin-left: 5px;
+                @media screen and (min-width: 768px) {
+                    margin-left: 10px;
+                }
+                h4{
+                    font-weight: 700;
+                }
+                p{
+                    margin-top: 5px;
+                    font-size: $font-12;
+                    text-align: left;
+                    line-height: 1.4;
+                    @media screen and (min-width: 768px) {
+                        font-size: $font-14;
+                        font-weight: 300;
+                    }
+                }
+                button{
+                    font-weight: 700;
+                    margin-left: 5px;
+                    @media screen and (min-width: 768px) {
+                       margin-left: 5px;
+                    }
+                }
+            }
+        }
+    }
+
+}

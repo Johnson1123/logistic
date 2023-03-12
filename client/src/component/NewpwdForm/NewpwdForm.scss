@@ -1,0 +1,14 @@
+.Newpwdform{
+    margin-top: 2rem;
+    .input_group{
+        flex-direction: column;
+        @media screen {
+            .input__con{
+                width: 100%;
+            }
+        }
+    }
+    .Newpwdform__btn{
+        margin-top: 2rem;
+    }
+}

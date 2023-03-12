@@ -1,0 +1,38 @@
+.SuccessNewpwd{
+    position: absolute;
+    top: 10rem;
+    left: 0;
+    width: 100%;
+    z-index: 25;
+    .SuccessNewpwd__inner{
+        flex-direction: column;
+        background-color: #fff;
+        padding: 3rem 1rem;
+        border-radius: 10px;
+        width: 80%;
+        box-shadow: 2px 4px 5px 1px #111;
+        -webkit-box-shadow: 2px 4px 5px 1px #111;
+        -moz-box-shadow: 2px 4px 5px 1px #111;
+        @media screen and (min-width: 768px) {
+            width: 30%;
+            padding: 3rem 0;
+        }
+        img{
+            width: 40%;
+            @media screen and (min-width: 768px) {
+                width: 20%;
+            }
+        }
+        .form-text{
+            margin-top: 1rem;
+        }
+        button{
+            width: 90%;
+            margin-top: 2rem;
+            @media screen and (min-width: 768px) {
+                width: 60%;
+            }
+        }
+    }
+    
+}

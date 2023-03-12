@@ -7,7 +7,14 @@ import {
 } from "react-router-dom";
 import Navbar from './component/Navbar/Navbar'
 import Footer from './component/Footer/Footer'
-import { Home,InterP, LocalP, Login, NotFound, PassengerDB, Profile } from './pages';
+import { 
+  Home,InterP, LocalP, OTP,
+  Loginuser, Login, NotFound,
+  PassengerDB, Profile, UserSignup,
+  ForgetPwd, Newpwd
+} from './pages';
+import Signupbanner from './pages/Signupbanner/Signupbanner';
+import Background from './component/Background/Background';
 
 const Layout = () => {
   return <>
@@ -31,15 +38,48 @@ const router = createBrowserRouter([
         element: <InterP />,
       },
       {
+        path: "/tosignUp",
+        element: <Signupbanner />,
+      },
+      {
+        path: "/home",
+        element: <Home />
+      },
+      {
         path: "/",
         element: <Home />
       },
     ]
   },
   {
+    path: "/signupuser",
+    element: <UserSignup />,
+  },
+  {
+    path: "/loginuser",
+    element: <Loginuser />,
+  },
+  {
+    path: "/otp",
+    element: <OTP />,
+  },
+  {
+    path: "/forgetpwd",
+    element: <ForgetPwd />,
+  },
+  {
+    path: "/newpwd",
+    element: <Newpwd />,
+  },
+  {
+    path: "/bg",
+    element: <Background />,
+  },
+  {
     path: "*",
     element: <NotFound />,
   },
+  
   {
     path: "/login",
     element: <Login />

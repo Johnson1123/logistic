@@ -1,0 +1,17 @@
+@import '../../style/variable.scss';
+.combine__con{
+    flex-direction: column;
+    .combineinput__form {
+        width: 100%;
+        justify-content: space-between;
+        .combineinput{
+            width: 23%;
+            border: 1px solid $lightAshe;
+            height: 44px;
+            border-radius: 10px;
+            &:focus{
+                outline: none;
+            }
+        }
+    }
+}

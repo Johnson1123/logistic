@@ -1,0 +1,30 @@
+.otpuser__con{
+    position: absolute;
+    width: 70%;
+    height: auto;
+    top: 10rem;
+    left: 0;
+    z-index: 20;
+    margin-left: 2rem;
+    flex-direction: column;
+    @media screen and (min-width: 768px) {
+        width: 40%;
+    }
+    .form-text{
+        line-height: 1.4;
+        text-align: center;
+    }
+    .input-container{
+        margin-top: 20px;
+        width: 70%;
+        @media screen and (min-width: 768px) {
+            width: 40%;
+        }
+        button{
+            margin-top: 20px;
+            @media screen and (min-width: 768px) {
+                width: 60%;
+            }
+        }
+    }
+}
