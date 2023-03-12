@@ -13,9 +13,11 @@ function SignUp() {
         <Background />
         <CreateAccout />
         {
-                true && <SuccessSignUp />
+                false && <SuccessSignUp />
         }
-        <Overlay />
+        {
+                false && <Overlay />
+        }
     </div>
   )
 }
