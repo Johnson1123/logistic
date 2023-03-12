@@ -3,7 +3,7 @@ import { TfiAngleRight } from 'react-icons/tfi'
 
 export default function NavLink(props) {
   return (
-    <div className="menu__item flex center">
+    <div className="menu__item flex-center">
         <li className='link normal-text'>{props.label}</li>
         <TfiAngleRight />
     </div>
