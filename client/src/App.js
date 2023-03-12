@@ -11,7 +11,7 @@ import {
   Home,InterP, LocalP, OTP,
   Loginuser, Login, NotFound,
   PassengerDB, Profile, UserSignup,
-  ForgetPwd, Newpwd
+  ForgetPwd, Newpwd, Experiencedriver
 } from './pages';
 import Signupbanner from './pages/Signupbanner/Signupbanner';
 import Background from './component/Background/Background';
@@ -72,8 +72,8 @@ const router = createBrowserRouter([
     element: <Newpwd />,
   },
   {
-    path: "/bg",
-    element: <Background />,
+    path: "/experience",
+    element: <Experiencedriver />,
   },
   {
     path: "*",
