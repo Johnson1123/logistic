@@ -37,7 +37,10 @@ function Navbar() {
       <div className='app__navbar-wrapper-sm flex flex-center'>
         <div className="navbar__logo flex">
           <Link to='/'><img src={images.logo} alt="logistic logo" /></Link>
-          <AiOutlineMenu onClick={() => Dispatch(toggleMenu())} />
+          <div onClick={() => Dispatch(toggleMenu())} >
+            <AiOutlineMenu />
+          </div>
+          
         </div>
 
         <div className="nav__list flex">
