@@ -6,7 +6,7 @@ function Footer() {
   return (
     <div className='footer__container flex'>
       <div className='foo_box'>
-        <Link to='/'><img src={images.logo} alt=''/></Link>
+        footer
       </div>
       <div className='foo_box'>
         <ul>
@@ -14,10 +14,8 @@ function Footer() {
         </ul>
       </div>
       <div className='foo_box'>
-        <Link to='/'><img src={images.logo} alt=''/></Link>
       </div>
       <div className='foo_box'>
-        <Link to='/'><img src={images.logo} alt=''/></Link>
       </div>
       
     </div>

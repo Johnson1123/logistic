@@ -40,19 +40,19 @@
                 overflow: hidden;
                 @media screen and (min-width: 768px) {
                     height: 150px;
-                    width: 65%;
+                    width: 60%;
                 }
                 .test__ell{
                     position: absolute;
                     top: 0;
                     left: 0;
-                    width: 100%;
+                    width: 90%;
                     height: 100%;
                     background-color: $secondaryColor;
                     border-radius: 50%;
                 }
                 img{
-                    width: 93%;
+                    width: 90%;
                     height: 98%;
                     position: absolute;
                     bottom: 0;
@@ -67,6 +67,7 @@
            }
            p{
             font-size: $font-12;
+            text-align: center;
            }
         }
     }
