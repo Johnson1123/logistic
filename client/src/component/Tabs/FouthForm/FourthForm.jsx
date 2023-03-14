@@ -1,22 +1,32 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import SignupBtn from '../../Btn/SignupBtn/SignupBtn'
+import TabInput from '../TabInput/TabInput'
+import './FourthForm.scss'
 
 function FourthForm() {
   return (
-    <form className='fisrtForm'>
+    <form className='fouthForm'>
     <div className="input__group">
-        <TabInput label='Billing type' type='text' placeholder='Company' name='fname'/>
-        <TabInput label='Company Name' type='text' placeholder='Technovix Ride' name='Lname'/>
+        <p className='form-text'>Billing type</p>
+        <div className="select">
+            <select>
+              <option value="1">Cash</option>
+              <option value="2">Transfer</option>
+              <option value="3">Card</option>
+            </select>
+        </div>
+       <TabInput label='Company Name' type='text' placeholder='Technovix Ride' name='Lname'/>
     </div>
     <div className="input__group">
         <div className='singleInput'>
             <TabInput label='Address' type='text' placeholder='' name='5 place des pyramides 92800, Paris La defense'/>
             <p className="p-text">If someone referred you, enter their code.</p>
         </div>
-        <div className='Mfleet'>
+        <div className='vat'>
             <p className="form-bold">Registration code?</p>
-            <p className="p-text"><Link to='signLocalP'> Sign up as a fleet owner </Link> to become Local Partner</p>
-            <div><input type='checkbox' name='Mfleet' />I have a vehicle that i will drive.</div>
+            <TabInput type='text' placeholder='' name='5 place des pyramides 92800, Paris La defense'/>
+            <div className='vat__checkbox'><input type='checkbox' name='vat' />VAT liability</div>
         </div>
     </div>
     <div className="input__group">

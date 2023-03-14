@@ -1,0 +1,61 @@
+@import '../../../style/variable.scss';
+.fouthForm{
+    width: 100%;
+    padding: .5rem;
+    margin-top: 1.5rem;
+    @media screen and (min-width: 768px) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 2rem;
+    }
+    .select {
+      position: relative;
+      display: flex;
+      width: 100%;
+      height: 3em;
+      overflow: hidden;
+      background-color: #f3f3f3;
+      select {
+          width: 30%;
+          appearance: none;
+          outline: 0;
+          border: 0;
+          box-shadow: none;
+          flex: 1;
+          padding: 0 1em;
+          overflow: hidden !important;
+          color: $secondaryColor;
+          background-color: #f3f3f3;
+          cursor: pointer;
+          .select::after {
+              content: '\25BC';
+              position: absolute;
+              top: 0;
+              color: red;
+              right: 0;
+              padding: 1em;
+              background-color: #34495e;
+              transition: .25s all ease;
+              pointer-events: none;
+            }
+        }
+    }
+    .vat {
+        .form-bold{
+        line-height: 1.6;
+        }
+        .input__container{
+            margin-top: 0;
+        }
+        .vat__checkbox{
+            margin-top: 0.3rem;
+            input{
+                margin-right: 10px;
+            }
+        }
+    }
+    button{
+      margin-top: 2rem;
+    }
+}

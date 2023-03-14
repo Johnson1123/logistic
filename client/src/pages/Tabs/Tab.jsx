@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Bgnav from '../../component/BgNav/Bgnav'
 import FirstTab from '../../component/Tabs/FirstTab/FirstTab'
+import FouthTab from '../../component/Tabs/FouthTab/FouthTab'
 import SecondTab from '../../component/Tabs/SecondTab/SecondTab'
 import ThirdTab from '../../component/Tabs/ThirdTab/ThirdTab'
 import './Tab.scss'
@@ -21,6 +22,7 @@ function Tab() {
             <FirstTab />
             <SecondTab />
             <ThirdTab />
+            <FouthTab />
             <Link to='/helps' className='form-helps'/>
         </div>
         

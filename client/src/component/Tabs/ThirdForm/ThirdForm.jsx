@@ -33,9 +33,8 @@ function ThirdForm() {
                 </p>
                 <ol className='third__ul' type='1'>
                     <li>Policy number and insurance company name </li>
-                    <li>Start and expiry dates. Confirm the policy has been </li>
+                    <li>Start and expiry dates. Confirm the policy has been updated on askniid.org</li>
                 </ol>
-                <p className="p-text">updated on askniid.org</p>
             </div>
             <input type="file" required/>
             <div className="p-text req-text">Required *</div>
@@ -46,7 +45,9 @@ function ThirdForm() {
             <input type="file" required/>
             <div className="p-text req-text">Required *</div>
         </div>
-        <SignupBtn label='PROCEED' />
+        <div className="btn__wrapper">
+            <SignupBtn label='PROCEED' />
+        </div>
     </div>
   )
 }
