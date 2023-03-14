@@ -7,13 +7,13 @@ function ThirdForm() {
         <div className='input__file-group'>
             <p className="form-text">Driver’s license</p>
             <input type="file" required/>
-            <div className="p-text">Required *</div>
+            <div className="p-text req-text">Required *</div>
         </div>
         <div className='input__file-group'>
             <p className="form-text">Interior picture of your Car</p>
             <p className="p-text">Provide a clear interior picture of your car.</p>
             <input type="file" required/>
-            <div className="p-text">Required *</div>
+            <div className="p-text req-text">Required *</div>
         </div>
         <div className='input__file-group'>
             <p className="form-text">Driver’s profile picture</p>
@@ -22,7 +22,7 @@ function ThirdForm() {
                 body picture) of yourself. It should show your full
                 face, front veiw with eyes open.</p>
             <input type="file" required/>
-            <div className="p-text">Required *</div>
+            <div className="p-text req-text">Required *</div>
         </div>
         <div className='input__file-group'>
                 <p className="form-text">Valid Insurance Policy Documents</p>
@@ -38,13 +38,13 @@ function ThirdForm() {
                 <p className="p-text">updated on askniid.org</p>
             </div>
             <input type="file" required/>
-            <div className="p-text">Required *</div>
+            <div className="p-text req-text">Required *</div>
         </div>
         <div className='input__file-group'>
             <p className="form-text">Exterior picture of your Car</p>
             <p className="p-text">Provide a clear exterior picture of your car.</p>
             <input type="file" required/>
-            <div className="p-text">Required *</div>
+            <div className="p-text req-text">Required *</div>
         </div>
         <SignupBtn label='PROCEED' />
     </div>
