@@ -88,7 +88,7 @@ function Navbar() {
       { toggle && 
          <div className={`app__menu `}>
             <motion.div 
-            whileInView={{x: [-300, 0] }} transition={{duration: 0.55, ease: 'easeIn'}}
+            // whileInView={{x: [-300, 0] }} transition={{duration: 0.55, ease: 'easeIn'}}
             className="app__menu-wrapper wrapper"
             >
                 <AiOutlineClose className='menu__close'onClick={() => Dispatch(toggleMenu())}/>

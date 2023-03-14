@@ -70,6 +70,7 @@ const router = createBrowserRouter([
   {
     path: "/newpwd",
     element: <Newpwd />,
+    
   },
   {
     path: "/experience",
