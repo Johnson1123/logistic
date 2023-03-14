@@ -113,26 +113,26 @@
                 margin: 0 15px;
             }
         }
-        .cart__container{
-            align-items: flex-start;
-            svg{
-                margin: 0 0px;
-            }
-            span{
-                font-size: 10px;
-                height: 15px;
-                width: 15px;
-                border-radius: 50%;
-                color: $primaryColor;
-                background-color: $primaryColor;
-                padding: 5px;
-                @media screen and (min-width: 767px) {
-                    font-size: 14px;
-                    height: 20px;
-                    width: 20px;
-                }
-            }
-        }
+        // .cart__container{
+        //     align-items: flex-start;
+        //     svg{
+        //         margin: 0 0px;
+        //     }
+        //     span{
+        //         font-size: 10px;
+        //         height: 15px;
+        //         width: 15px;
+        //         border-radius: 50%;
+        //         color: $primaryColor;
+        //         background-color: $primaryColor;
+        //         padding: 5px;
+        //         @media screen and (min-width: 767px) {
+        //             font-size: 14px;
+        //             height: 20px;
+        //             width: 20px;
+        //         }
+        //     }
+        // }
     }
     .app__navbar-wrapper-lg{
         display: none;
@@ -164,6 +164,7 @@
                 }
                 .link{
                     list-style: none;
+                    color: $secondaryColor;
                 }
                 &:hover + ul{
                     display: flex;
@@ -176,10 +177,13 @@
                 margin-top: 50px;
                 border-radius: 5px;
                 display: none;
+                box-shadow: 2px 4px 5px 1px #111;
+                -webkit-box-shadow: 2px 4px 5px 1px #111;
+                -moz-box-shadow: 2px 4px 5px 1px #111;
                 flex-direction: column;
                 width: 99%;
                 min-height: 30vh;
-                background-color: $primaryColor;
+                background-color: $whiteColor;
                 z-index: 100;
                 padding: .5rem .2rem 3rem;
                 .dropDown{

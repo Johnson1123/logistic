@@ -52,7 +52,7 @@ export const Home = () => {
             <div className='btn__container flex'>
 
               <div className="btn-box">
-                <SignupBtn label='Partnership' />
+                <SignupBtn label='Partnership' handler={() => navigate('/signupuser')}/>
               </div>
 
               <div className="btn-box">
