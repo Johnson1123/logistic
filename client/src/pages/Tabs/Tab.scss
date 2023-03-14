@@ -1,0 +1,34 @@
+@import '../../style/variable.scss';
+.tab{
+    width: 100%;
+    min-height: 100vh;
+    justify-content: center;
+    .tab__wrapper{
+        width: 95%;
+        margin-top: 8rem;
+        align-items: center;
+        flex-direction: column;
+        @media screen and (min-width: 768px) {
+            width: 60%;
+        }
+        .tab-title{
+            color: $primaryColor;
+            span{
+                color: $secondaryColor;
+            }
+        }
+        .tab__controllers{
+            margin-top: 1rem;
+            width: 50%;
+            justify-content: space-between;
+            @media screen and (min-width: 768px) {
+                width: 30%;
+            }
+            .tab-controller{
+                height: 2px;
+                width: 23%;
+                background-color: $secondaryColor;
+            }
+        }
+    }
+}

@@ -3,5 +3,8 @@
     top: 0;
     left: 0;
     z-index: 20;
-    padding: 2rem 3rem;
+    padding: 2rem 1rem;
+    @media screen and (min-width: 768px) {
+        padding: 2rem 3rem;
+    }
 }

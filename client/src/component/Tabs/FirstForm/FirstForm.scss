@@ -1,0 +1,61 @@
+.fisrtForm{
+    margin-top: 1rem;
+    width: 95%;
+    padding: 1rem 0 2rem; 
+    @media screen and (min-width: 768px) {
+        width: 90%;
+    }
+    .input__group{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top: 1rem;
+        @media screen and (min-width: 768px) {
+            flex-direction: row;
+        }
+        .singleInput{
+            width: 100%;
+            width: 100%;
+            @media screen and (min-width: 768px) {
+                width: 45%;
+            }
+            .form-text{
+                color: #bdbdbd;
+                width: 100%;
+                text-align: left;
+            }
+            .input__container{
+                width: 100%;
+            }
+        }
+        .Mfleet{
+            width: 100%;
+            margin-top: 0.5rem;
+            .form-bold{
+                text-align: left;
+                width: 100%;
+            }
+            .p-text{
+                @media screen and (min-width: 768px) {
+                    line-height: 2;
+                }
+            }
+            input{
+                margin-right: 5px;
+            }
+            @media screen and (min-width: 768px) {
+                width: 45%;
+            }
+        }
+    }
+    button{
+        width: 50%;
+        margin: 0 auto;
+        margin-top: 2rem;
+        @media screen and (min-width: 768px) {
+            width: 40%;
+            margin-top: 3rem;
+        }
+    }
+}

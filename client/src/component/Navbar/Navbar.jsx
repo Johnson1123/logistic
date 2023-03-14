@@ -45,6 +45,7 @@ function Navbar() {
 
         <div className="nav__list flex">
           <ul className="nav__items flex">
+          {/* okataraphael3@gmail.com */}
               <div className='nav__items-con'>
                 <Link to='/'>Home</Link>
               </div>

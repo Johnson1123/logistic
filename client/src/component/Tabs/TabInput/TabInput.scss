@@ -1,0 +1,22 @@
+.input__container{
+    width: 100%;
+    margin-top: 15px;
+    align-items: flex-start;
+    flex-direction: column;
+    @media screen and (min-width: 767px) {
+        width: 45%;
+    }
+    p{
+        margin-right: 5px;
+        margin-bottom: 10px;
+    }
+    input{
+        border: none;
+        height: 45px;
+        width: 100%;
+        background-color: #f3f3f3;
+        &:focus{
+            outline: none;
+        }
+    }
+}
