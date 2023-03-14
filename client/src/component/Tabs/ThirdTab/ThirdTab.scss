@@ -1,0 +1,16 @@
+.thirdTab{
+    width: 95%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+    padding: 1rem 0 2rem;
+    .form-bold{
+        text-align: center;
+        font-size: 20pxs;
+    }
+    .p-text{
+        width: 90%;
+        text-align: center;
+    }
+}

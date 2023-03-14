@@ -1,0 +1,30 @@
+.Thirdform{
+    width: 100%;
+    margin-top: 2rem;
+    padding: .5rem;
+    .input__file-group{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-top: 1rem;
+        .p-text{
+            text-align: left;
+            margin-top: 5px;
+        }
+        input{
+            margin-top: .5rem;
+        }
+    }
+    .third__ul{
+        margin-top: 0.2rem;
+        padding-left: 5%;
+        li{
+            width: 100%;
+        }
+    }
+    button{
+        margin-top: 2rem;
+    }
+}
