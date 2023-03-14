@@ -11,11 +11,11 @@ function Newpwd() {
         <Background />
         <Newpwduser />
         {
-            true && 
+            false && 
             <Overlay />
         }
         {
-            true && 
+            false && 
             <SuccessNewpwd />
         }
     </div>

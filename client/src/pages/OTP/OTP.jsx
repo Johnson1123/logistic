@@ -11,11 +11,11 @@ function OTP() {
         <Background />
         <OTPuser />
         {
-          true &&
+          false &&
           <Overlay />
         }
         {
-          true &&
+          false &&
           <SuccessOTP />
         }
     </div>

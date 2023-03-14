@@ -1,10 +1,18 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { images } from '../../asset'
 import Bgnav from '../../component/BgNav/Bgnav'
 import SignupBtn from '../../component/Btn/SignupBtn/SignupBtn'
 import './Experiencedriver.scss'
 
+
 function Experiencedriver() {
+    const navigate = useNavigate();
+  const handleNavigate = () => {
+    return (
+      navigate('/experience')
+    )
+  }
   return (
     <div className='Exper__driver'>
         <Bgnav />
@@ -17,7 +25,7 @@ function Experiencedriver() {
                     However, we need you to verify your account by providing 
                     some documents as required. 
                 </p>
-                <SignupBtn label='PROCEED' />
+                <SignupBtn label='PROCEED' handler={handleNavigate}/>
             </div>
             <div className="exper__right">
                 <img src={images.experience} alt="" />

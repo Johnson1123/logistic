@@ -8,8 +8,15 @@ import { images } from '../../asset'
 
 import './Form_Sign.scss'
 import SignupBtn from '../Btn/SignupBtn/SignupBtn'
+import { useNavigate } from 'react-router-dom'
 
 function FORM_SIGN() {
+  const navigate = useNavigate();
+  const handleNavigate = () => {
+    return (
+      navigate('/loginuser')
+    )
+  }
   return (
     <form className='form_sign'>
         <div className='flex input_group'>
@@ -22,7 +29,7 @@ function FORM_SIGN() {
           <Input type='password' name='pwd' image={<AiFillLock />} placeholder='Password'/>
         </div>
         <div>
-          <SignupBtn label='Sign Up'/>
+          <SignupBtn label='Sign Up' handler={handleNavigate}/>
         </div>                         
     </form>
   )
