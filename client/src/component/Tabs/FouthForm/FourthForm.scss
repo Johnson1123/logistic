@@ -6,8 +6,31 @@
     @media screen and (min-width: 768px) {
         display: flex;
         flex-wrap: wrap;
+        flex-direction: row;
         justify-content: space-between;
         margin-top: 2rem;
+    }
+    .input__group{
+        @media screen and (min-width: 768px) {
+            width: 100%;
+            flex-direction: row;
+            justify-content: space-between;
+            display: flex;
+            .singleInput{
+                width: 45%;
+                .input__container{
+                    width: 100%;
+                }
+            }
+
+        }
+        .form__select{
+            width: 45%;
+            margin-top: 15px;
+            .select{
+                width: 100%;
+            }
+        }
     }
     .select {
       position: relative;
@@ -32,7 +55,6 @@
               content: '\25BC';
               position: absolute;
               top: 0;
-              color: red;
               right: 0;
               padding: 1em;
               background-color: #34495e;
@@ -54,8 +76,19 @@
                 margin-right: 10px;
             }
         }
+        @media screen and (min-width: 768px) {
+            width: 45%;
+            .input__container{
+               width: 100%;
+            }
+        }
     }
     button{
       margin-top: 2rem;
+      @media screen and (min-width: 768px) {
+        width: 45%;
+        margin: 0 auto;
+        margin-top: 2rem;
+      }
     }
 }

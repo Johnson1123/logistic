@@ -6,15 +6,17 @@ import './FourthForm.scss'
 
 function FourthForm() {
   return (
-    <form className='fouthForm'>
+<form className='fouthForm'>
     <div className="input__group">
-        <p className='form-text'>Billing type</p>
-        <div className="select">
-            <select>
-              <option value="1">Cash</option>
-              <option value="2">Transfer</option>
-              <option value="3">Card</option>
-            </select>
+        <div className='form__select'>
+            <p className='form-text bill-text'>Billing type</p>
+            <div className="select">
+                <select>
+                  <option value="1">Cash</option>
+                  <option value="2">Transfer</option>
+                  <option value="3">Card</option>
+                </select>
+            </div>
         </div>
        <TabInput label='Company Name' type='text' placeholder='Technovix Ride' name='Lname'/>
     </div>
