@@ -27,6 +27,9 @@
             .tab-controller{
                 height: 2px;
                 width: 23%;
+                background-color: #f3f3f3;
+            }
+            .active{
                 background-color: $secondaryColor;
             }
         }

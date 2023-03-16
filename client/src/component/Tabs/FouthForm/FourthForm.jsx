@@ -1,10 +1,16 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import SignupBtn from '../../Btn/SignupBtn/SignupBtn'
 import TabInput from '../TabInput/TabInput'
 import './FourthForm.scss'
 
 function FourthForm() {
+    const navigate = useNavigate();
+    const handleNavigate = () => {
+      return (
+        navigate('/wattogo')
+      )
+    }
   return (
 <form className='fouthForm'>
     <div className="input__group">
@@ -39,7 +45,7 @@ function FourthForm() {
         <TabInput label='Technovix Innovations' type='number' placeholder='3874646099383335' name=''/>
         <TabInput label='Bank name or BIC/SWIFT' type='text' placeholder='TRANS BANK' name='Vcolor'/>
     </div>
-    <SignupBtn label='PROCEED' />
+    <SignupBtn label='PROCEED' handler={handleNavigate}/>
 </form>
   )
 }

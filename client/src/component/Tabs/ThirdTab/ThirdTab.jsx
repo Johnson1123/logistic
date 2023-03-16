@@ -4,7 +4,7 @@ import './ThirdTab.scss'
 
 function ThirdTab() {
   return (
-    <div className='thirdTab flex d-none'>
+    <div className='thirdTab flex'>
         <p className="form-bold ">Documents</p>
         <p className="p-text thirdTab-text">
             We are legally requred to ask you for some documents

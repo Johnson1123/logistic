@@ -4,7 +4,7 @@ import './FirstTab.scss'
 
 function FirstTab() {
   return (
-    <div className='firstTab flex d-none'>
+    <div className='firstTab flex'>
       <p className="form-bold p-text">Personal information and vehicle details</p>
       <p className="form-text p-text">
         Only your first name and vehicle details are 

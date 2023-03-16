@@ -5,12 +5,12 @@ import './SecondTab.scss'
 
 function SecondTab() {
   return (
-    <div className='secondTab flex d-none'>
+    <div className='secondTab flex'>
         <p className="form-bold">Private and licensing details</p>
-        <p className="form-text">Your national ID and license details will be kept private</p>
+        <p className="small-title p-text">Your national ID and license details will be kept private</p>
         <TabInput label='Driver license' placeholder='AB235235' type='text'/>
         <p className="form-text license-text">License Number on your driver’s documents</p>
-        <SignupBtn label='PROCEED' handler='' />
+        <SignupBtn label='PROCEED' />
     </div>
   )
 }

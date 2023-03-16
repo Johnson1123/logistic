@@ -10,7 +10,7 @@ function Experiencedriver() {
     const navigate = useNavigate();
   const handleNavigate = () => {
     return (
-      navigate('/experience')
+      navigate('/tab')
     )
   }
   return (
