@@ -9,7 +9,7 @@ function DBNav() {
     <div className='DBNav flex'>
         <div className="DBNav__box  DBNav__logo">
             <Link to='/'>
-                <img src={images.logo} alt='Technovixdriver' />
+                <img src={images.Elia} alt='Technovixdriver' />
             </Link>
         </div>
         <div className="DBNav__box user-icon">
