@@ -1,0 +1,36 @@
+@import '../../../style/variable.scss';
+.Tabcontrollers{
+    background-color: $secondaryColor;
+    padding: 1rem 0rem 0;
+    width: 38%;
+    height: 677px;
+    @media screen and (min-width: 768px) {
+        margin-top: 3.7rem;
+        width: 20%;
+        padding: 1rem 0rem 0;
+        height: 792px;
+    }
+    .getApp{
+        background-color: $whiteColor;
+        width: 100%;
+        border-radius: 0 20px 0 0;
+        padding: 1rem .5rem;
+        margin-top: 1rem;
+        .iphones{
+            width: 40%;
+        }
+        .getApp__content{
+            width: 60%;
+            .small-title{
+                font-size: 11px;
+            }
+            .img__con{
+                margin-top: 0.5rem;
+                justify-content: space-between;
+                img{
+                    width: 30%;
+                }
+            }
+        }
+    }
+}

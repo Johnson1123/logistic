@@ -1,0 +1,40 @@
+.chart__con{
+    width: 100%;
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    padding: 1rem 0;
+    .chart__box{
+        padding: 0.5rem 0.3rem;
+        .col-1{
+            position: relative;
+            width: 20%;
+            img{
+                width: 80%;
+            }
+            .dot{
+                position: absolute;
+                right: 7px;
+                top: 0px;
+                height: 7px;
+                width: 7px;
+                border-radius: 50%;
+                background-color: #3AB54A;
+                ;
+            }
+        }
+        .col-2{
+            flex: 1;
+            text-align: left;
+            font-size: 12px;
+            .small-title{
+                font-size: 12px;
+            }
+        }
+        .col-3{
+            font-size: 12px;
+        }
+    }
+    .title{
+        line-height: 1.5;
+    }
+}

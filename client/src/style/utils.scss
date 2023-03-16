@@ -54,7 +54,7 @@
     }
 }
 .title{
-    font-size: $font-30;
+    font-size: $font-20;
     color: $primaryColor;
     line-height: 3;
     font-weight: 700;
@@ -100,4 +100,9 @@
     box-shadow: 7px 7px 5px 0px $boxShadow;
     -webkit-box-shadow: 7px 7px 5px 0px $boxShadow;
     -moz-box-shadow: 7px 7px 5px 0px $boxShadow;
+}
+.box-shadow{
+    box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.41);
+    -webkit-box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.41);
+    -moz-box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.41);
 }

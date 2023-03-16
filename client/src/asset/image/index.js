@@ -19,5 +19,8 @@ import bgPath from './bg__parth.png'
 import checked from './checked.png'
 import experience from './experience.png'
 import womanlearn from './technovixwoman.png'
+import appLogo from './apple-logo.png'
+import playStore from './play-store-logo.png'
+import iphones from './Iphones.png'
 
-export default {bgSvg, womanlearn, experience, checked, bgPath, handShake, opendoor, iphone13, iphone14, ChargesBadge, handheldPhone, operate, driver, logo, location, suvColorAches,map, suvColorCream, Elia, James, passenger }
+export default {bgSvg, womanlearn,iphones, appLogo,playStore,  experience, checked, bgPath, handShake, opendoor, iphone13, iphone14, ChargesBadge, handheldPhone, operate, driver, logo, location, suvColorAches,map, suvColorCream, Elia, James, passenger }

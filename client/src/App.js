@@ -11,7 +11,8 @@ import {
   Home,InterP, LocalP, OTP,
   Loginuser, Login, NotFound,
   PassengerDB, Profile, UserSignup, Whattolearn,
-  ForgetPwd, Newpwd, mylearnnig, Experiencedriver, WatToGo, StartTraining, Techdrive, FormTab, Tab, Mylearnnig
+  ForgetPwd, Newpwd, mylearnnig, Experiencedriver, WatToGo, 
+  StartTraining, Techdrive, FormTab, Tab, Mylearnnig, DriverDB
 } from './pages';
 import Signupbanner from './pages/Signupbanner/Signupbanner';
 import Background from './component/Background/Background';
@@ -105,6 +106,10 @@ const router = createBrowserRouter([
   {
     path: "/lesson",
     element: <LessonVideo />,
+  },
+  {
+    path: "/driverDb",
+    element: <DriverDB />,
   },
   {
     path: "/mylearning",
