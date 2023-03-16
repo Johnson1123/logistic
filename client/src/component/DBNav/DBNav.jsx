@@ -9,7 +9,7 @@ function DBNav() {
     <div className='DBNav flex'>
         <div className="DBNav__box  DBNav__logo">
             <Link to='/'>
-                <img src={images.Elia} alt='Technovixdriver' />
+                <img src={images.logo} alt='Technovixdriver' />
             </Link>
         </div>
         <div className="DBNav__box user-icon">
@@ -18,7 +18,7 @@ function DBNav() {
         </div>
         <div className="DBNav__box user__img-details flex">
             <div className="user__img flex center">
-                <img src={images.suvColorAches} alt="Technovix driver" />
+                <img src={images.Elia} alt="Technovix driver" />
             </div>
             <div className="user__details">
                 <h2 className="username-text p-text">Christiana James</h2>
