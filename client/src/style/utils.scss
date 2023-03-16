@@ -34,6 +34,7 @@
     font-weight: 300;
     color: $primaryColor ;
     text-decoration: none;
+    text-decoration: none;
     @media screen and (min-width: 768px) {
         font-size: $font-14;
     }
@@ -87,5 +88,16 @@
 }
 .d-none{
     display: none !important;
+    
 }
 
+.small-title{
+    font-size: 16px;
+    color: $primaryColor;
+    font-weight: 500;
+}
+.shadow{
+    box-shadow: 7px 7px 5px 0px $boxShadow;
+    -webkit-box-shadow: 7px 7px 5px 0px $boxShadow;
+    -moz-box-shadow: 7px 7px 5px 0px $boxShadow;
+}

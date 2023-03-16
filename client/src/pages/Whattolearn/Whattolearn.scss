@@ -1,0 +1,67 @@
+@import '../../style/variable.scss';
+.Whattolearn{
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    padding-bottom: 3rem;
+    .Whattolearn__wrapper{
+        padding: 1rem 0;
+        width: 90%;
+        margin-top: 8rem;
+        flex-direction: column;
+        align-items: center;
+        @media screen and (min-width: 768px) {
+            width: 40%;
+        }
+        .form-title{
+            text-align: left;
+            color: $primaryColor;
+        }
+        .clock{
+            width: 100%;
+            margin-top: 15px;
+            align-items: center;
+            svg{
+                margin-right: 10px;
+            }
+        }
+        .img__con{
+            width: 100%;
+            margin-top: 1rem;
+            img{
+                width: 100%;
+            }
+        }
+        .whatto__content{
+            padding: 1rem .5rem;
+            @media screen and (min-width: 768px) {
+                padding: 0 .5rem;
+                .form-bold{
+                    line-height: 1.2;
+                }
+            }
+        }
+        button{
+            margin-top: 1.5rem;
+            border-radius: 20px;
+            @media screen and (min-width: 768px) {
+                width: 45%;
+                margin-top: 3rem;
+            }
+        }
+        .whattogain{
+            width: 100%;
+            margin-top: 2rem;
+            .whattogain__con{
+                margin-top: 1rem;
+                .whattogain-box{
+                    width: 100%;
+                    background-color: #f3f3f3;
+                    margin: .7rem 0;
+                    padding: 1.2rem;
+                }
+            }
+            
+        }
+    }
+}

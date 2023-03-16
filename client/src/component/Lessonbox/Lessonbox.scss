@@ -1,0 +1,27 @@
+.Lessonbox{
+    padding: 1rem .5rem;
+    width: 100%;
+    flex-direction: column;
+    border-radius: 10px;
+    margin-top: 2rem;
+
+    .time__con{
+        justify-content: space-between;
+        .time-span{
+            display: flex;
+            align-items: center;
+            line-height: 0;
+            svg{
+                margin-right: 7px;
+                margin-top: -2px;
+            }
+        }
+    }
+    .small-title{
+        margin-top: 1.5rem;
+    }
+    button{
+        width: 50%;
+        margin-top: 1.4rem;
+    }
+}

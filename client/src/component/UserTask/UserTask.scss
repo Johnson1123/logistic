@@ -13,9 +13,9 @@
 
     row-gap: 20px;
     flex-wrap: wrap;
-    box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.36);
-    -webkit-box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.36);
-    -moz-box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.36);
+    box-shadow: 7px 7px 5px 0px $boxShadow;
+    -webkit-box-shadow: 7px 7px 5px 0px $boxShadow;
+    -moz-box-shadow: 7px 7px 5px 0px $boxShadow;
     @media screen and (min-width: 768px) {
         width: 80%;
         justify-content: space-around;

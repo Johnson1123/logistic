@@ -10,11 +10,13 @@ import Footer from './component/Footer/Footer'
 import { 
   Home,InterP, LocalP, OTP,
   Loginuser, Login, NotFound,
-  PassengerDB, Profile, UserSignup,
-  ForgetPwd, Newpwd, Experiencedriver, WatToGo, StartTraining, Techdrive, FormTab, Tab
+  PassengerDB, Profile, UserSignup, Whattolearn,
+  ForgetPwd, Newpwd, mylearnnig, Experiencedriver, WatToGo, StartTraining, Techdrive, FormTab, Tab, Mylearnnig
 } from './pages';
 import Signupbanner from './pages/Signupbanner/Signupbanner';
 import Background from './component/Background/Background';
+import AccessInfo from './pages/AccessInfo/AccessInfo';
+import LessonVideo from './pages/LessonVideo/LessonVideo';
 
 const Layout = () => {
   return <>
@@ -95,6 +97,22 @@ const router = createBrowserRouter([
   {
     path: "/techdrive",
     element: <Techdrive />,
+  },
+  {
+    path: "/whattolearn",
+    element: <Whattolearn />,
+  },
+  {
+    path: "/lesson",
+    element: <LessonVideo />,
+  },
+  {
+    path: "/mylearning",
+    element: <Mylearnnig />,
+  },
+  {
+    path: "/info",
+    element: <AccessInfo />,
   },
   {
     path: "*",

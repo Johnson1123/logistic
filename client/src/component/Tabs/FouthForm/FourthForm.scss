@@ -25,8 +25,11 @@
 
         }
         .form__select{
-            width: 45%;
+            width: 100%;
             margin-top: 15px;
+            @media screen and (min-width: 768px) {
+                width: 45%;
+            }
             .select{
                 width: 100%;
             }
@@ -88,7 +91,7 @@
       @media screen and (min-width: 768px) {
         width: 45%;
         margin: 0 auto;
-        margin-top: 2rem;
+        margin-top: 4rem;
       }
     }
 }

@@ -28,7 +28,7 @@ function FourthForm() {
         <div className='vat'>
             <p className="form-bold">Registration code?</p>
             <TabInput type='text' placeholder='' name='5 place des pyramides 92800, Paris La defense'/>
-            <div className='vat__checkbox'><input type='checkbox' name='vat' />VAT liability</div>
+            <div className='vat__checkbox p-text'><input type='checkbox' name='vat' />VAT liability</div>
         </div>
     </div>
     <div className="input__group">
