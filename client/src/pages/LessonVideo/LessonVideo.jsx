@@ -30,6 +30,7 @@ function LessonVideo() {
             </div>
             <div className='Lessonbox__con'>
                     <div className="small-title">YOU HAVE 4 ACTIVITIES TO DO</div>
+                    
                     <Lessonbox />
             </div>
         </div>

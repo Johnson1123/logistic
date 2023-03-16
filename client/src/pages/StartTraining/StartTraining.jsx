@@ -27,6 +27,7 @@ function StartTraining() {
         
         
     </div>
+    
   )
 }
 

@@ -23,6 +23,8 @@ function Techdrive() {
             </div>
             <div className="techdrive__right">
                 <img src={images.experience} alt="" />
+                
+
             </div>
 
         </div>

@@ -1,10 +1,16 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Bgnav from '../../component/BgNav/Bgnav'
 import SignupBtn from '../../component/Btn/SignupBtn/SignupBtn'
 import './AccessInfo.scss'
 
 function AccessInfo() {
+    const navigate = useNavigate();
+  const handleNavigate = () => {
+    return (
+      navigate('/whattolern')
+    )
+  }
   return (
     <div className='info-access flex center'>
         <Bgnav />
@@ -31,8 +37,9 @@ function AccessInfo() {
             </div>
             <div className="btn__con flex">
                 <SignupBtn label='no, thank'/>
-                <SignupBtn label='Allow'/>
+                <SignupBtn label='Allow' handeler={handleNavigate}/>
             </div>
+
         </div>
 
     </div>
