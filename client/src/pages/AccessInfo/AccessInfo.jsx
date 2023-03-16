@@ -8,7 +8,7 @@ function AccessInfo() {
     const navigate = useNavigate();
   const handleNavigate = () => {
     return (
-      navigate('/whattolern')
+      navigate('/whattolearn')
     )
   }
   return (
@@ -37,7 +37,7 @@ function AccessInfo() {
             </div>
             <div className="btn__con flex">
                 <SignupBtn label='no, thank'/>
-                <SignupBtn label='Allow' handeler={handleNavigate}/>
+                <SignupBtn label='Allow' handler={handleNavigate}/>
             </div>
 
         </div>

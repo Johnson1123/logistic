@@ -6,6 +6,12 @@ import SignupBtn from '../../component/Btn/SignupBtn/SignupBtn'
 import './Techdrive.scss'
 
 function Techdrive() {
+    const navigate = useNavigate();
+    const handleNavigate = () => {
+      return (
+        navigate('/info')
+      )
+    }
   return (
     <div className='techdrive'>
         <Bgnav />
@@ -19,11 +25,10 @@ function Techdrive() {
                     Welcome to the awesome learning resource that's just for YOU, our TechnovixDriver Driver-Partner! 
                     Get tips and tricks to keep those 5 star ratings rolling in
                 </p>
-                <SignupBtn label='Continue with your TechnovixDriver account' />
+                <SignupBtn label='Continue with your account' handler={handleNavigate}/>
             </div>
             <div className="techdrive__right">
                 <img src={images.experience} alt="" />
-                
 
             </div>
 
