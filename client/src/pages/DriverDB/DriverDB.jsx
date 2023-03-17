@@ -3,6 +3,8 @@ import './DriverDB.scss'
 import DBNav from '../../component/DBNav/DBNav'
 import Tabcontrollers from '../../component/DriverDB/Tabcontrollers/Tabcontrollers'
 import FirstTab from '../../component/DriverDB/Tabs/FirstTab/FirstTab'
+import SecondTab from '../../component/DriverDB/Tabs/SecondTab/SecondTab'
+import Myride from '../../component/DriverDB/Tabs/Myride/Myride'
 
 function DriverDB() {
   return (
@@ -11,7 +13,9 @@ function DriverDB() {
             <DBNav />
             <div className="DriverDB__content">
              <Tabcontrollers />
-             <FirstTab />
+             {/* <FirstTab /> */}
+             {/* <SecondTab /> */}
+             <Myride />
             </div>
         </div>
     </div>

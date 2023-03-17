@@ -1,0 +1,55 @@
+.SecondTab{
+    width: 60%;
+    @media screen and (min-width: 768px) {
+        padding-left: 4rem;
+    }
+    .title{
+        font-weight: 900;
+        line-height: 2;
+    }
+    .small-title{
+        font-size: 14px;
+        @media screen and (min-width: 768px) {
+            font-size: 16px;
+        }
+    }
+    .profile__content{
+        margin-top: 1rem;
+        @media screen and (min-width: 768px) {
+            margin-top: 1.5rem;
+        }
+        img{
+            width: 100px;
+            @media screen and (min-width: 768px) {
+                width: 120px;
+            }
+        }
+        .small-title{
+            line-height: 2;
+        }
+        .name{
+            font-weight: 700;
+        }
+        .profile__box{
+            flex-direction: column;
+            &:first-of-type{
+                margin-top: 1rem;
+                @media screen and (min-width: 768px) {
+                    margin-top: .5rem;
+                }
+            }
+            @media screen and (min-width: 768px) {
+                width: 40%;
+                justify-content: space-between;
+                flex-direction: row;
+                align-items: center;
+                .p-text{
+                    width: 40%;
+                }
+                .small-title{
+                    width: 60%;
+                }
+            }
+        }
+    }
+}

@@ -9,6 +9,7 @@ export class Tabcontrollers extends Component {
   render() {
     return (
       <div className='Tabcontrollers'>
+        <div>
         {
           DBcontroller.map((item, index) => {
             return(
@@ -27,6 +28,7 @@ export class Tabcontrollers extends Component {
           <img src={images.iphones} alt=""  className='iphones'/>
         </div>
       </div>
+    </div>
     )
   }
 }
