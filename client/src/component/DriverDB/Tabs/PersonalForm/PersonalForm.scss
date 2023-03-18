@@ -1,0 +1,110 @@
+@import '../../../../style/variable.scss';
+.PersonalForm{
+    width: 95%;
+    margin: 0 auto;
+    background-color: $asheColor;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-top: 1rem;
+    flex-direction: column;
+    align-items: center;
+    min-height: 200px;
+    
+    .img__control{
+        width: 50%;
+        height:160px;
+        border-radius: 50%;
+        position: relative;
+        top: 0;
+        @media screen and (min-width: 768px) {
+            width: 30%;
+        }
+        img__con{
+            width: 100%;
+            height:160px;
+            overflow: hidden;
+            @media screen and (min-width: 768px) {
+                height: 200px;
+            }
+        }
+        img{
+            width: 100%;
+            height:160px;
+            border-radius: 50%;
+            object-fit: cover;
+            @media screen and (min-width: 768px) {
+                height: 190px;
+            }
+        }
+        input[type="file"] {
+            display: none;
+        }
+        .custom-upload{
+            position: absolute;
+            top: 60%;
+            right: 5px;
+            z-index: 1;
+            color: $whiteColor;
+            border-radius: 10px;
+            padding: .4rem .2rem;
+            background-color: $secondaryColor;
+            @media screen and (min-width: 768px) {
+                padding: .4rem .5rem;
+                right: 5px;
+                top: auto;
+                bottom: 0;
+            }
+            svg{
+                font-size: 14px;
+                font-weight: 900;
+                color: $whiteColor;
+            }
+        }
+    }
+    .personal__form{
+        width: 90%;
+        @media screen and (min-width: 768px) {
+            margin-top: 5rem;
+        }
+        .input__group{
+            @media screen and (min-width: 768px) {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+        .group__detail{
+            .bold-text{
+                font-weight: 500;
+                font-size: 12px;
+                margin-top: 2px;
+                line-height: 1.3;
+            }
+            @media screen and (min-width: 768px) {
+                display: block;
+                margin: 2rem 0 5px;
+                .bold-text{
+                    font-size: 14px;
+                }
+            }
+            
+        }
+        .input__container {
+            margin-bottom: 5px;
+            input{
+                background-color: $whiteColor;
+                border-radius: 10px;
+                padding: 5px 10px;
+            }
+        }
+        
+        button{
+            margin: 0 auto;
+            margin-top: 1.5rem;
+            color: $whiteColor;
+            @media screen and (min-width: 768px) {
+                margin-top: 2rem;
+                width: 30%;
+            }
+        }
+    }
+}

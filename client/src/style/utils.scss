@@ -36,7 +36,7 @@
     text-decoration: none;
     text-decoration: none;
     @media screen and (min-width: 768px) {
-        font-size: $font-14;
+        font-size: $font-18;
     }
 }
 .small-text{
@@ -45,7 +45,7 @@
     font-weight: 300;
 }
 .btn-text{
-    font-size: $font-40;
+    font-size: $font-30;
     color: $whiteColor;
     text-align: center;
     font-weight: 700;
@@ -56,7 +56,7 @@
 .title{
     font-size: $font-20;
     color: $primaryColor;
-    line-height: 3;
+    line-height: 1.5;
     font-weight: 700;
 }
 
@@ -121,4 +121,7 @@
 }
 .fw-900{
     font-weight: 900;
+}
+.t-center{
+    text-align: center;
 }

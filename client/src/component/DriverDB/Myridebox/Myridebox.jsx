@@ -17,9 +17,9 @@ function Myridebox() {
                                     <p className="p-text fw-500">Payment:</p>
                                     <p className="p-text">{ride.payment}</p>
                                 </div>
-                                <div className="p-text">
+                                <div className="p-text t-center">
                                     <p className="p-text fw-500">Distance:</p>
-                                    <p className="p-text">{ride.distance}</p>
+                                    <p className="p-text distance">{ride.distance}</p>
                                 </div>
                             </div>
                         </div>

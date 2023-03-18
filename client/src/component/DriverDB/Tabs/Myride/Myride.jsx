@@ -5,7 +5,9 @@ import './Myride.scss'
 function Myride() {
   return (
     <div className='Myride dbTab'>
+        <div className="myride__wrapper">
         <Myridebox />
+        </div>
     </div>
   )
 }

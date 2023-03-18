@@ -1,0 +1,39 @@
+@import '../../../../style/variable.scss';
+.PaymentInfo{
+    width: 95%;
+    margin: 0 auto;
+    background-color: $whiteColor;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-top: 1rem;
+    flex-direction: column;
+    align-items: center;
+    .form__con{
+        margin-top: 2rem;
+        .input__group{
+            @media screen and (min-width: 768px) {
+                display: flex;
+                justify-content: space-between;
+            }
+            .input__container {
+                margin-bottom: 5px;
+                input{
+                    background-color: $whiteColor;
+                    border-radius: 10px;
+                    padding: 5px 10px;
+                    border: 1px solid #cecece;
+                }
+            }
+        }
+        button{
+            margin: 0 auto;
+            margin-top: 1.5rem;
+            color: $whiteColor;
+            @media screen and (min-width: 768px) {
+                margin: 0;
+                margin-top: 2rem;
+                width: 30%;
+            }
+        }
+    }
+}

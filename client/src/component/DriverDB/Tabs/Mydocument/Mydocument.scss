@@ -1,0 +1,88 @@
+@import '../../../../style/variable.scss';
+
+.Mydocument{
+    .title{
+        line-height: 2;
+    }
+    .fw-300{
+        width: 70%;
+    }
+    .documents{
+        width: 95%;
+        display: flex;
+        margin-top: 0.5rem;
+
+        flex-direction: column;
+        @media screen and (min-width: 768px) {
+            width: 70%;
+        }
+        .doc__box{
+            margin: 15px 0;
+            background-color: #f3f3f3;
+            border-radius: 10px;
+            padding: 1rem;
+            .title{
+                line-height: 1.5;
+            @media screen and (min-width: 768px) {
+                font-size: $font-24;
+            }
+            }
+            .left__con{
+                width: 69%;
+                @media screen and (min-width: 768px) {
+                    width: 70%;
+                }
+            }
+            .doc__content{
+                width: 100%;
+                margin-top: 1.5rem;
+                justify-content: space-between;
+                @media screen and (min-width: 768px) {
+                    width: 100%;
+                }
+                .p-text{
+                    line-height: 1.5;
+                font-size: 12px;
+                    @media screen and (min-width: 768px) {
+                        font-size: $font-14;
+                    }
+                }
+                .doc__icon{
+                    align-items: center;
+                    margin-top: .5rem;
+                    svg{
+                        width: 10%;
+                        margin-right: 3px;
+                        font-size: 20px;
+                        @media screen and (min-width: 768px) {
+                            font-size: $font-14;
+                            width: 5%;
+                        }
+                    }
+                }
+            }
+            .right__con{
+                width: 31%;
+                align-items: flex-end;
+                justify-content: flex-end;
+                @media screen and (min-width: 768px) {
+                    width: auto;
+                }
+                input[type="file"] {
+                    display: none;
+                }
+                .custom-upload{
+                    background-color: $secondaryColor;
+                    padding: 0.5rem;
+                    color: $whiteColor;
+                    border-radius: 10px;
+                    svg{
+                        margin-right: 5px;
+                        font-size: 16px;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+    }
+}

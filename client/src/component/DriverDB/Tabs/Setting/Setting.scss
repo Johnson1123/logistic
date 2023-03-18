@@ -1,0 +1,19 @@
+@import '../../../../style/variable.scss';
+.Setting{
+    width: 95%;
+    .setting__wrapper{
+        width: 100%;
+        @media screen and (min-width: 768px) {
+            width: 70%;
+        }
+        .tabs__con{
+            .tab-btn{
+                padding: .5rem .5rem;
+                border-radius: 10px;
+                border: 1px solid #111;
+                margin: .5rem .2rem;
+
+            }
+        }
+    }
+}

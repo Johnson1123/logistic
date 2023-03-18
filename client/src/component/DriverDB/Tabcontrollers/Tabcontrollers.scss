@@ -3,12 +3,13 @@
     background-color: $secondaryColor;
     padding: 1rem 0rem 0;
     width: 38%;
-    // height: 677px;
+    display: none;
     @media screen and (min-width: 768px) {
         margin-top: 3.7rem;
         width: 20%;
         padding: 1rem 0rem 0;
         height: 792px;
+        display: block;
     }
     .getApp{
         background-color: $whiteColor;

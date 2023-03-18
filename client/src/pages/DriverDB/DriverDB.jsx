@@ -5,6 +5,14 @@ import Tabcontrollers from '../../component/DriverDB/Tabcontrollers/Tabcontrolle
 import FirstTab from '../../component/DriverDB/Tabs/FirstTab/FirstTab'
 import SecondTab from '../../component/DriverDB/Tabs/SecondTab/SecondTab'
 import Myride from '../../component/DriverDB/Tabs/Myride/Myride'
+import Mydocument from '../../component/DriverDB/Tabs/Mydocument/Mydocument'
+import Vehicle from '../../component/DriverDB/Tabs/Vehicle/Vehicle'
+import RiderInvoice from '../../component/DriverDB/Tabs/RiderInvoice/RiderInvoice'
+import Invoice from '../../component/DriverDB/Tabs/Invoice/Invoice'
+import BalanceReport from '../../component/DriverDB/Tabs/BalanceReport/BalanceReport'
+import TaxReport from '../../component/DriverDB/Tabs/TaxReport/TaxReport'
+import Payout from '../../component/DriverDB/Tabs/Payout/Payout'
+import Setting from '../../component/DriverDB/Tabs/Setting/Setting'
 
 function DriverDB() {
   return (
@@ -15,7 +23,15 @@ function DriverDB() {
              <Tabcontrollers />
              {/* <FirstTab /> */}
              {/* <SecondTab /> */}
-             <Myride />
+             {/* <Myride /> */}
+             {/* <Mydocument /> */}
+             {/* <Vehicle /> */}
+             {/* <RiderInvoice /> */}
+             {/* <Invoice /> */}
+             {/* <BalanceReport /> */}
+             {/* <TaxReport /> */}
+             {/* <Payout /> */}
+             <Setting />
             </div>
         </div>
     </div>
