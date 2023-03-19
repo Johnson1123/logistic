@@ -19,7 +19,7 @@ function OurService() {
                                 {service.title}
                             </h4>
                             
-                            <p className="p-text">
+                            <p className="p-text para">
                                 {service.content}
                                 <ReadMore />
                             </p>

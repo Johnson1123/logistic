@@ -7,15 +7,17 @@
     backdrop-filter: blur(1);
     flex-direction: column;
     justify-content: center;
-    padding: 1rem 5rem;
+    padding: 1rem 1rem;
     position: relative;
     top: 0;
     @media screen and (min-width:768px) {
         height: 70px;
+        padding: 1rem 5rem;
     }
     .app__navbar-wrapper-sm{
         justify-content: space-between;
         align-items: center;
+        width: 100%;
         .navbar__logo{
             justify-content: space-between;
             width: 100%;
