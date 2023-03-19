@@ -4,16 +4,21 @@ import Tabcontroller from '../Tabcontroller/Tabcontroller'
 import {RxDashboard} from 'react-icons/rx'
 import { DBcontroller } from '../../../content/DBcontroller'
 import { images } from '../../../asset'
+import { useDispatch } from 'react-redux'
+import { handleDashboard } from '../../../features/toggleSlice/toggleSlice'
 
-export class Tabcontrollers extends Component {
-  render() {
-    return (
-      <div className='Tabcontrollers'>
+function Tabcontrollers() {
+  const Dispatch = useDispatch();
+  const handleDB = (n) => {
+     Dispatch(handleDashboard(n))
+    }
+  return (
+    <div className='Tabcontrollers'>
         <div>
         {
           DBcontroller.map((item, index) => {
             return(
-              <Tabcontroller label={item.label} icon={item.icon} key={index}/>
+              <Tabcontroller label={item.label} icon={item.icon} key={index} handler={() => handleDB(item.label)}/>
             )
           })
         }
@@ -29,8 +34,7 @@ export class Tabcontrollers extends Component {
         </div>
       </div>
     </div>
-    )
-  }
+  )
 }
 
 export default Tabcontrollers

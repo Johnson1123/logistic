@@ -8,7 +8,6 @@ function Forgetuser() {
         <p className='form-title'>Forget Password? <br />Worry Less!</p>
         <p className="form-text">Please enter your registered Phone Number</p>
         <Forgetform />
-        <p className="form-text">To verify your number, an OTP willl be send to your registered Number</p>
     </div>
   )
 }

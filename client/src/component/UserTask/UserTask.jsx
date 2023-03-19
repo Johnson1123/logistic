@@ -4,7 +4,7 @@ import { userTask } from '../../content/userTask'
 import './UserTask.scss'
 function UserTask() {
   return (
-    <div className='userTask__container flex'>
+    <div className='userTask__container flex box-shadow'>
         {
             userTask.map((task) => {
                 return(

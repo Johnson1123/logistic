@@ -7,7 +7,7 @@
     backdrop-filter: blur(1);
     flex-direction: column;
     justify-content: center;
-    padding: 1rem;
+    padding: 1rem 5rem;
     position: relative;
     top: 0;
     @media screen and (min-width:768px) {
@@ -46,6 +46,8 @@
         .nav__items{
             .nav__items-con{
                 position: relative;
+                top: 0;
+                left: 0;
                 margin: 0 20px;
                 padding: .5rem;
                 border-radius: 5px;
@@ -57,6 +59,12 @@
                     }
                     &:hover{
                         background-color: $secondaryColor;
+                        a{
+                            color: #fff;
+                        }
+                        .link{
+                            color: #fff
+                        }
                     }
                 a{
                     text-decoration: none;
@@ -113,26 +121,6 @@
                 margin: 0 15px;
             }
         }
-        // .cart__container{
-        //     align-items: flex-start;
-        //     svg{
-        //         margin: 0 0px;
-        //     }
-        //     span{
-        //         font-size: 10px;
-        //         height: 15px;
-        //         width: 15px;
-        //         border-radius: 50%;
-        //         color: $primaryColor;
-        //         background-color: $primaryColor;
-        //         padding: 5px;
-        //         @media screen and (min-width: 767px) {
-        //             font-size: 14px;
-        //             height: 20px;
-        //             width: 20px;
-        //         }
-        //     }
-        // }
     }
     .app__navbar-wrapper-lg{
         display: none;
@@ -166,8 +154,14 @@
                     list-style: none;
                     color: $secondaryColor;
                 }
+                
                 &:hover + ul{
                     display: flex;
+                }
+                &:hover{
+                    .normal-text{
+                        color: $whiteColor;
+                    }
                 }
             }
             .menu__drop{

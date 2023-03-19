@@ -52,10 +52,10 @@
         p{
             color: $primaryColor;
             font-weight: 300;
-            font-size: $font-14;
+            font-size: $font-16;
             text-align: center;
             @media screen and (min-width: 768px) {
-                
+                font-weight: 500;
             }
         }
     }

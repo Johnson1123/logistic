@@ -1,3 +1,4 @@
+@import '../../style/variable.scss';
 .signup__content{
     position: absolute;
     top: 5rem;
@@ -8,8 +9,8 @@
     z-index: 20;
     @media screen and (min-width: 768px) {
         width: 50%;
-        top: 5rem;
-        padding-left: 4rem;
+        top: 8rem;
+        padding-left: 7rem;
     }
     .bold-text{
         line-height: 3;
@@ -36,6 +37,10 @@
         p{
             padding: 0 10px;
             color: #F93F2D;
+            @media screen and (min-width: 768px) {
+                font-size: $font-14;
+                font-weight: 500;
+            }
         }
     }
 }

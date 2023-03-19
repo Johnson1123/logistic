@@ -16,19 +16,20 @@
         text-align: center;
         @media screen and (min-width: 768px) {
             text-align: left;
+            font-size: $font-30;
         }
     }
     .test__inner-con{
         justify-content: space-between;
         margin: 0 auto;
         @media screen and (min-width: 768px) {
-            width: 70%;
+            width: 90%;
         }
         .test__box{
             width: 48%;
             padding: .5rem;
             @media screen and (min-width: 768px) {
-                width: 45%;
+                width: 40%;
             }
            .test__img-con{
                 position: relative;
@@ -38,9 +39,10 @@
                 height: 130px;
                 border-radius: 50%;
                 overflow: hidden;
+                margin: 0 auto;
                 @media screen and (min-width: 768px) {
                     height: 150px;
-                    width: 60%;
+                    width: 50%;
                 }
                 .test__ell{
                     position: absolute;
@@ -64,10 +66,17 @@
             line-height: 3;
             font-weight: 900;
             overflow: ellipses;
-           }
-           p{
-            font-size: $font-12;
             text-align: center;
+            @media screen and (min-width: 768px) {
+                font-size: $font-18;
+            }
+           }
+           .para-text{
+            font-size: $font-12;
+            text-align: left;
+            @media screen and (min-width: 768px) {
+                font-size: $font-14;
+            }
            }
         }
     }

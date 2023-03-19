@@ -14,7 +14,7 @@ import {TbFileInvoice} from 'react-icons/tb'
 export const DBcontroller = [
     {
         id: 1,
-        label: 'Dashbord',
+        label: 'Dashboard',
         icon: <RxDashboard />,
     },
     {

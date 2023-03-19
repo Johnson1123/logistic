@@ -9,7 +9,7 @@ function Loginuser() {
         <p className='form-title'>Welcome Back!</p>
         <p className="form-sm">Please fill in Your Accurate Information</p>
         <LoginForm />
-        <Link className='form-sm p-text' to='/forgetpwd'>Forget  Password?</Link>
+        <Link className='form-sm p-text fw-500 forget' to='/forgetpwd'>Forget  Password?</Link>
     </div>
   )
 }

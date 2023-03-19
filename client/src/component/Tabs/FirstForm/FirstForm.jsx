@@ -14,12 +14,12 @@ function FirstForm() {
         <div className="input__group">
             <div className='singleInput'>
                 <TabInput label='Referral code' type='text' placeholder='' name='Referrer'/>
-                <p className="form-text">If someone referred you, enter their code.</p>
+                <p className="form-text refer-text">If someone referred you, enter their code.</p>
             </div>
             <div className='Mfleet'>
                 <p className="form-bold">Have multiple vehicles?</p>
-                <p className="p-text"><Link to='signLocalP'> Sign up as a fleet owner </Link> to become Local Partner</p>
-                <div><input type='checkbox' name='Mfleet' />I have a vehicle that i will drive.</div>
+                <p className="p-text"><Link to='signLocalP' className='link-text'> Sign up as a fleet owner </Link> to become Local Partner</p>
+                <div className='flex'><input type='checkbox' name='Mfleet' /><p className='check-text'>I have a vehicle that i will drive.</p></div>
             </div>
         </div>
         <div className="input__group">

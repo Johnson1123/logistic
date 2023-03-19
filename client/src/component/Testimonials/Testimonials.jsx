@@ -18,7 +18,7 @@ function Testimonials() {
                             <h2 className='p-text'>
                                 {test.name}
                             </h2>
-                            <p className="t-text">
+                            <p className="para-text">
                                 {test.content}
                             </p>
                             <div className="rating__container">

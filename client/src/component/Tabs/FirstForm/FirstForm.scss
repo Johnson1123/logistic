@@ -19,11 +19,17 @@
             width: 100%;
             @media screen and (min-width: 768px) {
                 width: 45%;
+                .refer-text{
+                    color: #a1a1a1;
+                    @media screen and (min-width: 768px) {
+                        font-weight: 300;
+                    }
+                }
             }
             .form-text{
-                color: #bdbdbd;
                 width: 100%;
                 text-align: left;
+
             }
             .input__container{
                 width: 100%;
@@ -35,10 +41,21 @@
             .form-bold{
                 text-align: left;
                 width: 100%;
+                font-weight: 400;
+
+                font-size: 14px;
             }
             .p-text{
                 @media screen and (min-width: 768px) {
-                    line-height: 2;
+                    width: 100%;
+                    font-size: 14px;
+                    font-weight: 400;
+                    .link-text{
+                        line-height: 1.2;
+                        font-size: 14px;
+                        color: #3AB54A;
+                        font-weight: 400;
+                    }
                 }
             }
             input{
@@ -46,6 +63,9 @@
             }
             @media screen and (min-width: 768px) {
                 width: 45%;
+                .check-text{
+                    font-weight: 300;
+                }
             }
         }
     }

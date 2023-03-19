@@ -39,15 +39,23 @@
                 }
             }
             @media screen and (min-width: 768px) {
-                width: 40%;
+                width:100%;
                 justify-content: space-between;
                 flex-direction: row;
                 align-items: center;
                 .p-text{
                     width: 40%;
+                    font-size: 14px;
+                }
+                .name{
+                    font-weight: 700;
+                    line-height: 3;
+                    font-size: 30px;
                 }
                 .small-title{
                     width: 60%;
+                    font-size: 16px;
+                    font-weight: 400;
                 }
             }
         }

@@ -29,9 +29,9 @@ function Whattolearn() {
                 <img src={images.womanlearn} alt="technovix" />
 
             </div>
-            <div className="whatto__content">
+            <div className="whatto__content box-shadow">
                 <h4 className="p-text form-bold">Welcome! How are you doing?</h4>
-                <p className="p-text">
+                <p className="p-text para-text">
                     Before you start driving, it's important that you know how to use the
                     XLCABTRANSFER Partner App. So how 'bout we start with that?
                 </p>

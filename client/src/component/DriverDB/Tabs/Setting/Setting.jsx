@@ -20,9 +20,9 @@ function Setting() {
             <p className="title">Settings</p>
             <div className="tabs__con flex">
                 {
-                    ['Personal', 'Vehicle details', 'Billing', 'Invoice', 'Payment info'].map((tab, index) => {
+                    ['Personal', 'Vehicle details', 'Billing', 'Invoice', 'Payment info'].map((tabs, index) => {
                         return (
-                            <button className="tab-btn" key={index} onClick={() => handleTab(tab)}>{tab}</button>
+                            <button className={tab === tabs ? "tab-btn active" : "tab-btn"} key={index} onClick={() => handleTab(tabs)}>{tabs}</button>
                         )
                     })
                 }

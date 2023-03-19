@@ -13,25 +13,32 @@ import BalanceReport from '../../component/DriverDB/Tabs/BalanceReport/BalanceRe
 import TaxReport from '../../component/DriverDB/Tabs/TaxReport/TaxReport'
 import Payout from '../../component/DriverDB/Tabs/Payout/Payout'
 import Setting from '../../component/DriverDB/Tabs/Setting/Setting'
+import { useSelector } from 'react-redux'
 
 function DriverDB() {
+  const tab = useSelector(state => state.toggleReducer.dashboardToggle);
+  console.log(tab);
   return (
     <div className='DriverDB'>
         <div className="DriverDB__wrapper">
             <DBNav />
             <div className="DriverDB__content">
+              
              <Tabcontrollers />
-             {/* <FirstTab /> */}
-             {/* <SecondTab /> */}
-             {/* <Myride /> */}
-             {/* <Mydocument /> */}
-             {/* <Vehicle /> */}
-             {/* <RiderInvoice /> */}
-             {/* <Invoice /> */}
-             {/* <BalanceReport /> */}
-             {/* <TaxReport /> */}
-             {/* <Payout /> */}
-             <Setting />
+             <div className="tab__container">
+                {tab === 'Dashboard' && <FirstTab /> }
+                {tab === 'Profile' && <SecondTab />}
+                {tab === 'FaUserAlt' && <Myride />}
+                {tab === 'Messages' && <Mydocument />}
+                {tab === '' && <Vehicle />}
+                {tab === 'Rider Invoices' && <RiderInvoice />}
+                {tab === 'Invoices' && <Invoice />}
+                {tab === 'Balance Reports' && <BalanceReport />}
+                {tab === 'Tax Reports' && <TaxReport />}
+                {tab === 'Payout' && <Payout />}
+                {tab === 'Setting' && <Setting />}
+             </div>
+             
             </div>
         </div>
     </div>

@@ -3,13 +3,17 @@
     top: 0;
     left: 0;
     margin-top: 50px;
+    @media screen and (min-width: 768px) {
+        margin-top: 10px;
+    }
     width: 100%;
     .input_group{
         flex-direction: column;
         width: 100%;
         @media screen and (min-width: 768px) {
             width: 100%;
-            margin-top: 25px;
+            margin-top: 15px;
+            
         }
     }
     .sign__in{
@@ -22,6 +26,7 @@
             @media screen and (min-width: 768px) {
                 padding: 10px;
                 width: 90%;
+                margin-top: 2rem;
             }  
         }
         @media screen and (min-width: 768px) {

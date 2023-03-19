@@ -20,9 +20,9 @@ function Experiencedriver() {
             <div className="exper__left">
                 <h3 className='form-title'>EXPERIENCED DRIVER</h3>
                 <p className="form-text">
-                    You have taken a bold step by joining our community as a
-                    driver, a sustainable means of income is guarranted.
-                    However, we need you to verify your account by providing 
+                    You have taken a bold step by joining our community as a <br />
+                    driver, a sustainable means of income is guarranted. <br />
+                    However, we need you to verify your account by providing <br />
                     some documents as required. 
                 </p>
                 <SignupBtn label='PROCEED' handler={handleNavigate}/>

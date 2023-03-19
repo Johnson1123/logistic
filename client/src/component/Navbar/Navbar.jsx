@@ -8,17 +8,11 @@ import { images } from '../../asset'
 import Search from '../Search/Search'
 
 import { AiOutlineMenu } from 'react-icons/ai'
-import { CiSearch } from 'react-icons/ci'
-import { HiOutlineShoppingBag } from 'react-icons/hi'
 import { AiOutlineClose } from 'react-icons/ai'
-import { TfiAngleRight } from 'react-icons/tfi'
 
 
 import {motion} from 'framer-motion'
 import NavLink from './NavLink'
-import DropLink from './DropLink'
-import ShoppingDpd from './nav/ShoppingDpd/ShoppingDpd'
-import AccountDpd from './nav/Account/AccountDPd'
 import NavLinkLg from './NavLinkLg'
 import DownApp from './nav/DownApp/DownApp'
 import Company from './nav/Company/Company'
@@ -45,11 +39,10 @@ function Navbar() {
 
         <div className="nav__list flex">
           <ul className="nav__items flex">
-          {/* okataraphael3@gmail.com */}
               <div className='nav__items-con'>
                 <Link to='/'>Home</Link>
               </div>
-              {<div className='nav__items-con'>
+              {true && <div className='nav__items-con'>
                 <Link to='/'>Partnership</Link>
               </div>}
               { false && <div className='nav__items-con'>

@@ -15,20 +15,23 @@
     }
     .charges__content{
         flex: 1;
-        h6{
+        .small-title{
             font-size: $font-12;
             font-weight: 900;
             text-align: center;
             @media screen and (min-width: 768px) {
-                font-size: $font-16;
+                font-size: $font-24;
             }
         }
         p{
             font-size: $font-12;
             text-align: center;
             margin-top: 5px;
+            font-weight: 500;
             @media screen and (min-width: 768px) {
-                font-size: $font-14;
+                font-size: $font-16;
+                padding: .5rem 4rem;
+
             }
         }
     }

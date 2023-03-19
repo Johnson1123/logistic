@@ -18,7 +18,8 @@ function Forgetform() {
         <div className='flex input_group'>
             <Input type='tel' name='email' image={<BsTelephone />} placeholder='Phone/Email Address'/>           
         </div>
-        <div className='sign__in'>
+        <div className='sign__in flex'>
+          <p className="form-text">To verify your number, an OTP willl be send to your registered Number</p>
           <SignupBtn label='PROCEED' handler={handleNavigate}/>
         </div>
     </form>

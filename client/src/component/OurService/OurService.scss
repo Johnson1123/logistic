@@ -11,6 +11,7 @@
         text-align: center;
         @media screen and (min-width: 768px) {
             margin-top: 4rem;
+            font-size: $font-30;
         }
         span{
             color: $secondaryColor;
@@ -56,7 +57,7 @@
             }
 
             .service__content{
-                width: 48%;
+                width: 45%;
                 margin-left: 5px;
                 @media screen and (min-width: 768px) {
                     margin-left: 10px;

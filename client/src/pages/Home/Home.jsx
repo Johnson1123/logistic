@@ -16,6 +16,7 @@ export const Home = () => {
   const navigate = useNavigate()
   
 
+
   // const locationHandler = () => {
   //   const navigate = useNavigate;
   //   return (
@@ -36,7 +37,7 @@ export const Home = () => {
 
           <div className="home__intro-title">
 
-            <h1 className='p-text'>
+            <h1 className='p-text fw-500'>
               Fast & Easy Way To Rent A Car
             </h1>
           </div>

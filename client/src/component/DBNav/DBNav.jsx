@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 function DBNav() {
   return (
-    <div className='DBNav flex'>
+    <div className='DBNav flex box-shadow'>
         <div className="DBNav__box  DBNav__logo">
             <Link to='/'>
                 <img src={images.logo} alt='Technovixdriver' />

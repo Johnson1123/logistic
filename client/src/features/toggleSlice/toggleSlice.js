@@ -2,7 +2,9 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState  = {
     menuValue: false,
-    closeValue: false
+    closeValue: false,
+    dashboardToggle: 'Dashboard',
+    login: false,
 }
 const toggleSlice = createSlice({
     name: 'toggleMenu',
@@ -16,9 +18,12 @@ const toggleSlice = createSlice({
         },
         closeSearch: (state) => {
             state.closeValue ? state.closeValue = false : state.closeValue = true
-        }
+        },
+        handleDashboard: (state, action) => {
+            state.dashboardToggle = action.payload;
+        } 
     }
 })
 
 export default toggleSlice.reducer;
-export const { toggleMenu, closeToggle, closeSearch } = toggleSlice.actions;
+export const { toggleMenu, closeToggle, closeSearch, handleDashboard} = toggleSlice.actions;

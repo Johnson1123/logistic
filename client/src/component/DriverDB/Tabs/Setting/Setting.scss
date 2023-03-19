@@ -12,7 +12,16 @@
                 border-radius: 10px;
                 border: 1px solid #111;
                 margin: .5rem .2rem;
+                background-color: $whiteColor;
+                @media screen and (min-width: 768px) {
+                    padding: .5rem 1.5rem;
+                    font-size: 16px;
+                }
 
+            }
+            .active{
+                background-color: $secondaryColor;
+                color: $whiteColor;
             }
         }
     }

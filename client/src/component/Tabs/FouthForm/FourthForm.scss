@@ -21,15 +21,19 @@
                 .input__container{
                     width: 100%;
                 }
+                .p-text{
+                    font-size: 14px;
+                    margin-top: 5px;
+                }
             }
 
         }
         .form__select{
             width: 100%;
             margin-top: 15px;
-            @media screen and (min-width: 768px) {
-                width: 45%;
-            }
+                @media screen and (min-width: 768px) {
+                    width: 45%;
+                }
             .select{
                 width: 100%;
             }
@@ -67,8 +71,11 @@
         }
     }
     .vat {
+        margin-top: 5px;
         .form-bold{
-        line-height: 1.6;
+            line-height: 1.3;
+            font-size: 14px;
+            font-weight: 500;
         }
         .input__container{
             margin-top: 0;
@@ -78,6 +85,10 @@
             input{
                 margin-right: 10px;
             }
+            @media screen and (min-width: 768px) {
+                font-size: 14px;
+            }
+            
         }
         @media screen and (min-width: 768px) {
             width: 45%;
@@ -89,7 +100,7 @@
     button{
       margin-top: 2rem;
       @media screen and (min-width: 768px) {
-        width: 45%;
+        width: 35%;
         margin: 0 auto;
         margin-top: 4rem;
       }

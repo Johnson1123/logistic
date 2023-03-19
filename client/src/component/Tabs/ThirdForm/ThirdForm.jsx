@@ -6,6 +6,7 @@ function ThirdForm() {
     <div className='Thirdform'>
         <div className='input__file-group'>
             <p className="form-text">Driver’s license</p>
+            
             <input type="file" required/>
             <div className="p-text req-text">Required *</div>
         </div>

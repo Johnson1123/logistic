@@ -21,7 +21,7 @@ function RiderInvoice() {
                     {
                         riderinvoices.map((invoice, index) => {
                             return (
-                                <div className="file__box flex">
+                                <div className="file__box flex" key={index}>
                                     <p className="p-text col-1">{invoice.date}</p>
                                     <p className="p-text col-2">{invoice.pickUp}</p>
                                     <p className="p-text col-3">${invoice.sum}</p>

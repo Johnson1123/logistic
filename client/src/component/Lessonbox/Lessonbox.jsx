@@ -11,7 +11,7 @@ function Lessonbox() {
         {
             activities.map((lesson, index) => {
                 return (
-                <div className="Lessonbox flex shadow">
+                <div className="Lessonbox flex box-shadow">
                     <div className="p-text flex time__con"><span>{lesson.id}. Lesson</span><span className='time-span'><FiClock />{lesson.minute}mins</span></div>
                     <div className="small-title">{lesson.title}</div>
                     <SignupBtn label='Start Lesson'/>
