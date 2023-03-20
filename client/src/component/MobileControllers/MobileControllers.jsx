@@ -4,7 +4,7 @@ import './MobileControllers.scss'
 import { AiOutlineClose } from 'react-icons/ai'
 import { useDispatch, useSelector } from 'react-redux'
 import { images } from '../../asset'
-import { DBcontroller } from '../../content/DBcontroller'
+import { DBcontroller, passengercontroller } from '../../content/DBcontroller'
 import { handleDashboard, handleMenuClose } from '../../features/toggleSlice/toggleSlice'
 import Tabcontroller from '../DriverDB/Tabcontroller/Tabcontroller'
 
@@ -12,7 +12,6 @@ import Tabcontroller from '../DriverDB/Tabcontroller/Tabcontroller'
 function MobileControllers() {
     const Dispatch = useDispatch();
     const tab = useSelector(state => state.toggleReducer.dashboarMenu);
-    console.log(tab);
   const handleDB = (n) => {
      Dispatch(handleDashboard(n))
      Dispatch(handleMenuClose())
@@ -34,7 +33,8 @@ function MobileControllers() {
           </div>
           <div>
             {
-              DBcontroller.map((item, index) => {
+
+              passengercontroller.map((item, index) => {
                 return(
                   <Tabcontroller label={item.label} icon={item.icon} key={index} handler={() => handleDB(item.label)}/>
                 )

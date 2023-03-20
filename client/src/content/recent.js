@@ -42,3 +42,54 @@ export const recents = [
         address: '18 Rue Pottier, Le Chesnay 78150'
     },
 ]
+export const recentActivities = [
+    {
+        id: 1,
+        name: 'Christiana James',
+        Date: '17/12/2022',
+        Processing: 'completed',
+        email: 'Christianajames@gmail.com'
+    },
+    {
+        id: 2,
+        name: 'Christiana James',
+        Date: '17/12/2022',
+        email: 'Christianajames@gmail.com',
+        Processing: 'completed'
+    },
+    {
+        id: 3,
+        name: 'Christiana James',
+        Date: '17/12/2022',
+        Processing: 'completed',
+        email: 'Christianajames@gmail.com'
+    },
+    {
+        id: 4,
+        name: 'Christiana James',
+        Date: '17/12/2022',
+        Processing: 'completed',
+        email: 'Christianajames@gmail.com'
+    },
+    {
+        id: 5,
+        name: 'Christiana James',
+        Date: '17/12/2022',
+        Processing: 'completed',
+        email: 'Christianajames@gmail.com'
+    },
+    {
+        id: 6,
+        name: 'Christiana James',
+        Date: '17/12/2022',
+        Processing: 'completed',
+        email: 'Christianajames@gmail.com'
+    },
+    {
+        id: 7,
+        name: 'Christiana James',
+        Date: '17/12/2022',
+        Processing: 'completed',
+        email: 'Christianajames@gmail.com'
+    },
+]

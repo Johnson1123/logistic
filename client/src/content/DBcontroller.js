@@ -73,3 +73,50 @@ export const DBcontroller = [
         icon: <FcSettings />,
     }
 ]
+export const passengercontroller = [
+    {
+        id: 1,
+        label: 'Dashboard',
+        icon: <RxDashboard />,
+    },
+    {
+        id: 2,
+        label: ' Trips',
+        icon: <FaUserAlt />,
+    },
+    {
+        id: 3,
+        label: 'Booking',
+        icon: <FaThList />,
+    },
+    {
+        id: 4,
+        label: ' Messages',
+        icon: <TbMessage />,
+    },
+    {
+        id: 5,
+        label: 'Become a Partner',
+        icon: <TbFileInvoice />,
+    },
+    {
+        id: 6,
+        label: 'International Partnership ',
+        icon: <RxDashboard />,
+    },
+    {
+        id: 7,
+        label: 'Profile',
+        icon: <RxDashboard />,
+    },
+    {
+        id: 8,
+        label: 'Setting',
+        icon: <RxDashboard />,
+    },
+    {
+        id: 9,
+        label: 'Get Help',
+        icon: <MdPayment />,
+    }
+]

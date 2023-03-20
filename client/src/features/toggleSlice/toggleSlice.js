@@ -5,7 +5,8 @@ const initialState  = {
     closeValue: false,
     dashboardToggle: 'Dashboard',
     login: false,
-    dashboarMenu: false
+    dashboarMenu: false,
+    role: false
 }
 const toggleSlice = createSlice({
     name: 'toggleMenu',

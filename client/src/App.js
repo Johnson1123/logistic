@@ -120,6 +120,10 @@ const router = createBrowserRouter([
     element: <AccessInfo />,
   },
   {
+    path: "/passengerdb",
+    element: <PassengerDB />,
+  },
+  {
     path: "*",
     element: <NotFound />,
   },

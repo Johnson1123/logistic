@@ -1,0 +1,47 @@
+@import '../../../style/variable.scss';
+.Dashboard{
+    flex: 1;
+    margin: 4rem .5rem 0;
+    .left__content{
+        width: 100%;
+        @media screen and (min-width: 768px) {
+            width: 80%;
+        }
+        .badge__con{
+            margin-top: 2rem;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            .badge{
+                margin: .7rem 0;
+                width: 90%;
+                padding: 1.5rem 1rem;
+                border-radius: 10px;
+                .badge__title{
+                    font-size: $font-16;
+                    font-weight: 700;
+                }
+                .badge__para{
+                    font-size: $font-30;
+                    font-weight: 700;
+                    margin-top: 1rem;
+                }
+            }
+            .first__badge{
+                background-color: green;
+                color: $whiteColor;
+                .badge__content{
+                    width: 80%;
+                    
+                }
+            }
+            .second__badge{
+                background-color: red;
+                color: $whiteColor;
+                .badge__para{
+                    color: $whiteColor;
+                }
+            }
+        }
+    }
+}
