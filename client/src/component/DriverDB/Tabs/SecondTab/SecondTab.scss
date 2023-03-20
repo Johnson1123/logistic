@@ -1,6 +1,7 @@
 .SecondTab{
-    width: 60%;
+    width: 100%;
     @media screen and (min-width: 768px) {
+        width: 60%;
         padding-left: 4rem;
     }
     .title{
@@ -14,34 +15,42 @@
         }
     }
     .profile__content{
-        margin-top: 1rem;
+        margin-top: 2rem;
         @media screen and (min-width: 768px) {
             margin-top: 1.5rem;
         }
         img{
             width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
             @media screen and (min-width: 768px) {
                 width: 120px;
+                height: 120px;
             }
         }
         .small-title{
             line-height: 2;
         }
         .name{
-            font-weight: 700;
+            font-weight: 900;
         }
         .profile__box{
-            flex-direction: column;
+            width: 100%;
+            align-items: center;
             &:first-of-type{
                 margin-top: 1rem;
                 @media screen and (min-width: 768px) {
                     margin-top: .5rem;
                 }
             }
+            .p-text{
+                width: 40%;
+                font-size: 14px;
+            }
             @media screen and (min-width: 768px) {
                 width:100%;
                 justify-content: space-between;
-                flex-direction: row;
                 align-items: center;
                 .p-text{
                     width: 40%;

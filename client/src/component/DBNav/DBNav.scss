@@ -1,7 +1,7 @@
 .DBNav{
     width: 100%;
     height: auto;
-    padding: 1rem .5rem;
+    padding: 1rem 2rem;
     justify-content: space-between;
     align-items: center;
     border-radius: 0 0 10px 10px;
@@ -10,7 +10,6 @@
     left: 0;
     z-index: 10;
     background-color: #fff;
-    -webkit-box-shadow: 2px 2px 2px 0px #111;
     @media screen and (min-width: 768px) {
         padding: 1rem 4rem;
         justify-content: flex-start;
@@ -21,11 +20,10 @@
     .user-icon{
         margin-left: auto;
         position: relative;
-        font-size: 30px;
-        display: none;
+        font-size: 24px;
         margin-right: 1rem;
         @media screen and (min-width: 768px) {
-            display: inline-flex;
+            font-size: 30px;
         }
         .dot__user{
             position: absolute;
@@ -38,9 +36,11 @@
         }
     }
     .user__img-details{
-        width: 45%;
+        display: none;
         @media screen and (min-width: 768px) {
+            width: 45%;
             width: auto;
+            display: flex;
         }
         justify-content: flex-start;
         .user__img{
@@ -73,6 +73,16 @@
                     font-weight: 500;
                 }
             }
+        }
+    }
+    .db__menu{
+        font-size: 20px;
+        cursor: pointer;
+        svg{
+            color: #5c5c5c;
+        }
+        @media screen and (min-width: 768px) {
+            display: none;
         }
     }
     

@@ -14,16 +14,17 @@ import TaxReport from '../../component/DriverDB/Tabs/TaxReport/TaxReport'
 import Payout from '../../component/DriverDB/Tabs/Payout/Payout'
 import Setting from '../../component/DriverDB/Tabs/Setting/Setting'
 import { useSelector } from 'react-redux'
+import MobileControllers from '../../component/MobileControllers/MobileControllers'
 
 function DriverDB() {
   const tab = useSelector(state => state.toggleReducer.dashboardToggle);
-  console.log(tab);
+  const menu = useSelector(state => state.toggleReducer.dashboarMenu);
   return (
     <div className='DriverDB'>
         <div className="DriverDB__wrapper">
             <DBNav />
+            {menu && <MobileControllers />}
             <div className="DriverDB__content">
-              
              <Tabcontrollers />
              <div className="tab__container">
                 {tab === 'Dashboard' && <FirstTab /> }
