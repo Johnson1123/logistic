@@ -9,7 +9,7 @@
         padding: .3rem 0;
         .p-text{
             font-weight: 500;
-            font-size: $font-14;
+            font-size: $font-12;
         }
         .col-4{
             text-align: left;
@@ -35,5 +35,8 @@
     .recent__box{
         justify-content: space-between;
         padding: .3rem .3rem;
+        .p-text{
+            font-size: 11px;
+        }
     }
 }
