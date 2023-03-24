@@ -4,6 +4,8 @@
     width: 95%;
     padding: 2rem .5rem;
     justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
     position: relative;
     background-color: #fff;
     border-radius: 10px;
@@ -17,11 +19,12 @@
     -webkit-box-shadow: 7px 7px 5px 0px $boxShadow;
     -moz-box-shadow: 7px 7px 5px 0px $boxShadow;
     @media screen and (min-width: 768px) {
+        flex-direction: row;
         width: 80%;
         justify-content: space-around;
     }
     .task__box{
-        width: 50%;
+        width: 80%;
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
@@ -30,12 +33,12 @@
             width: 25%;
         }
         .task__img-box{
-            width: 100%;
+            width: 70%;
             height: 100px;
             padding: 1rem;
             overflow: hidden;
             @media screen and (min-width: 768px) {
-                width: 30%
+                width: 33%
                 
             }
             img{
@@ -46,6 +49,20 @@
         .box-1{
             @media screen and (min-width: 768px) {
                 width: 70%;
+                
+            }
+        }
+        .box-2{
+            width: 40%;
+            @media screen and (min-width: 768px) {
+                width: 40%;
+                
+            }
+        }
+        .box-3{
+            width: 34%;
+            @media screen and (min-width: 768px) {
+                width: 35%;
                 
             }
         }

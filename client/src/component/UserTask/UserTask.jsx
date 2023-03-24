@@ -8,8 +8,8 @@ function UserTask() {
         {
             userTask.map((task, index) => {
                 return(
-                    <div className={`task__box flex box-${index + 1}`} key={index}>
-                        <div className="task__img-box">
+                    <div className='task__box flex' key={index}>
+                        <div className={`task__img-box box-${index + 1}`}>
                             <img src={task.image} alt="" />
                         </div>
                         <h3 className='p-text'>
