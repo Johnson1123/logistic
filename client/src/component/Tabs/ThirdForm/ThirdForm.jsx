@@ -7,13 +7,15 @@ function ThirdForm() {
         <div className='input__file-group'>
             <p className="form-text">Driver’s license</p>
             
-            <input type="file" required/>
+            <input type="file" required id='file1'/>
+            <label htmlFor="file1" className='p-text upload'>+ Upload file</label>
             <div className="p-text req-text">Required *</div>
         </div>
         <div className='input__file-group'>
             <p className="form-text">Interior picture of your Car</p>
             <p className="p-text">Provide a clear interior picture of your car.</p>
-            <input type="file" required/>
+            <input type="file" id='file2' required/>
+            <label htmlFor="file2" className='p-text upload'>+ Upload file</label>
             <div className="p-text req-text">Required *</div>
         </div>
         <div className='input__file-group'>
@@ -22,7 +24,8 @@ function ThirdForm() {
                 Please provide a clear portrait picture (not a full
                 body picture) of yourself. It should show your full
                 face, front veiw with eyes open.</p>
-            <input type="file" required/>
+            <input type="file" required id='file3'/>
+            <label htmlFor="file3" className='p-text upload'>+ Upload file</label>
             <div className="p-text req-text">Required *</div>
         </div>
         <div className='input__file-group'>
@@ -37,13 +40,15 @@ function ThirdForm() {
                     <li>Start and expiry dates. Confirm the policy has been updated on askniid.org</li>
                 </ol>
             </div>
-            <input type="file" required/>
+            <input type="file" required id='file4'/>
+            <label htmlFor="file4" className='p-text upload'>+ Upload file</label>
             <div className="p-text req-text">Required *</div>
         </div>
         <div className='input__file-group'>
             <p className="form-text">Exterior picture of your Car</p>
             <p className="p-text">Provide a clear exterior picture of your car.</p>
-            <input type="file" required/>
+            <input type="file" required id='file5'/>
+            <label htmlFor="file5" className='p-text upload'>+ Upload file</label>
             <div className="p-text req-text">Required *</div>
         </div>
         <div className="btn__wrapper">

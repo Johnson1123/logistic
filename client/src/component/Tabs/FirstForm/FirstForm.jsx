@@ -1,10 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import TabInput from '../TabInput/TabInput'
 import './FirstForm.scss'
 import SignupBtn from '../../Btn/SignupBtn/SignupBtn'
 import { Link } from 'react-router-dom'
 
 function FirstForm() {
+    const [toggle, settoggle] = useState(false)
+  const handleOnchange = () => {
+    if(toggle){
+      settoggle(false)
+    } else {
+      settoggle(true)
+    }
+  }
   return (
     <form className='fisrtForm'>
         <div className="input__group">
@@ -19,17 +27,21 @@ function FirstForm() {
             <div className='Mfleet'>
                 <p className="form-bold">Have multiple vehicles?</p>
                 <p className="p-text"><Link to='signLocalP' className='link-text'> Sign up as a fleet owner </Link> to become Local Partner</p>
-                <div className='flex'><input type='checkbox' name='Mfleet' /><p className='check-text'>I have a vehicle that i will drive.</p></div>
+                <div className='flex'><input type='checkbox' name='Mfleet' onChange={handleOnchange}/><p className='check-text'>I have a vehicle that i will drive.</p></div>
             </div>
         </div>
-        <div className="input__group">
-            <TabInput label='Vehicle manufacturer and model' type='text' placeholder='' name='Model'/>
-            <TabInput label='Vehicle Year' type='text' placeholder='' name='Vyear'/>
-        </div>
-        <div className="input__group">
-            <TabInput label='License Plate' type='text' placeholder='' name='Model'/>
-            <TabInput label='Vehicle Color' type='text' placeholder='' name='Vcolor'/>
-        </div>
+        { toggle && 
+          <>
+            <div className="input__group">
+                <TabInput label='Vehicle manufacturer and model' type='text' placeholder='' name='Model'/>
+                <TabInput label='Vehicle Year' type='text' placeholder='' name='Vyear'/>
+            </div>
+            <div className="input__group">
+                <TabInput label='License Plate' type='text' placeholder='' name='Model'/>
+                <TabInput label='Vehicle Color' type='text' placeholder='' name='Vcolor'/>
+            </div>
+          </>
+        }
         <SignupBtn label='PROCEED' />
     </form>
   )

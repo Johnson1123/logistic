@@ -18,6 +18,10 @@
             // justify-content: space-between;
             width: 48%;
         }
+        .form-text{
+            font-size: 18px;
+            font-weight: 500;
+        }
         .p-text{
             text-align: left;
             font-weight: 300;
@@ -35,6 +39,17 @@
         }
         input{
             margin-top: .5rem;
+            &[type='file']{
+                display: none;
+            }
+        }
+        .upload{
+            background-color: #f3f3f3;
+            font-weight: 700;
+            width: auto;
+            padding: .3rem 0.5rem;
+            border-radius: 10px;
+            margin-top: 0.5rem;
         }
     }
     .third__ul{

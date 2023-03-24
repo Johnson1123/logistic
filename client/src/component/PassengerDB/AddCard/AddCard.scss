@@ -1,0 +1,42 @@
+@import '../../../style/variable.scss';
+.AddCard{
+    width: 100%;
+    .card__form{
+        width: 30%;
+        margin-top: 2rem;
+        form{
+            width: 100%;
+            height: auto;
+            .input__con{
+
+                border: none;
+                background-color: transparent;
+                margin: 15px 0;
+                width: 100%;
+                height: auto;
+                label{
+                    font-size: $font-14;
+                }
+                input{
+                    margin-top: 0.2rem;
+                    width: 100%;
+                    height: 40px;
+                    border-radius: 10px;
+                    outline: none;
+                    border: 2px solid $secondaryColor;
+                    padding: 0 .5rem;
+                }
+            }
+            .group__input{
+                display: flex;
+                justify-content: space-between;
+                .input__con{
+                    width: 40%;
+                }
+            }
+            button{
+                width: 50%;
+            }
+        }
+    }
+}

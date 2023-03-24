@@ -1,16 +1,23 @@
 .PassengerDB{
+    width: 100%;
     padding: 1rem 0 2rem;
-    .PassengerDB__content{
-        margin-top: 4rem;
-        display: flex;
+    position: relative;
+    .PassengerDB__wrapper{
         width: 100%;
-        margin: 0 auto;
-        .tab__container{
-            flex: 1;
-            margin: 2rem 1rem;
-            @media screen and (min-width: 768px) {
-                margin: 2rem 3rem;
+        .PassengerDB__content{
+            margin-top: 4rem;
+            display: flex;
+            width: 100%;
+            margin: 0 auto;
+            .tab__container{
+                width: 100% !important;
+                margin: 5rem 1rem 2rem;
+                @media screen and (min-width: 768px) {
+                    width: 100%;
+                }
             }
+            
         }
+        
     }
 }

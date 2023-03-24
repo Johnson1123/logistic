@@ -4,13 +4,13 @@
     padding: .5rem .7rem;
     border-radius: 10px;
     border: none;
-    margin-top: 15px;
+    margin: 15px 0;
     color: $whiteColor !important;
     font-weight: 500;
     transition: all .5s;
     font-size: 14px !important;
     @media screen and (min-width: 768px) {
-        padding: .5rem 2rem ;
+        padding: .7rem 2rem;
         font-size: 16px !important;
     }
     &:hover{

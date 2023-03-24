@@ -1,15 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import SignupBtn from '../../Btn/SignupBtn/SignupBtn'
 import TabInput from '../TabInput/TabInput'
 import './FourthForm.scss'
 
 function FourthForm() {
+  const [toggle, settoggle] = useState(false)
     const navigate = useNavigate();
     const handleNavigate = () => {
       return (
         navigate('/wattogo')
       )
+    }
+    const handleOnchange = () => {
+      if(toggle){
+        settoggle(false)
+      } else {
+        settoggle(true)
+      }
     }
   return (
 <form className='fouthForm'>
@@ -34,17 +42,21 @@ function FourthForm() {
         <div className='vat'>
             <p className="form-bold">Registration code?</p>
             <TabInput type='text' placeholder='' name='5 place des pyramides 92800, Paris La defense'/>
-            <div className='vat__checkbox p-text'><input type='checkbox' name='vat' />VAT liability</div>
+            <div className='vat__checkbox p-text'><input type='checkbox' name='vat' onChange={handleOnchange} />VAT liability</div>
         </div>
     </div>
-    <div className="input__group">
-        <TabInput label='VAT number' type='number' placeholder='89754' name='Vat'/>
-        <TabInput label='Bank account holder name' type='text' placeholder='Technovix Innovations' name=''/>
-    </div>
-    <div className="input__group">
-        <TabInput label='Technovix Innovations' type='number' placeholder='3874646099383335' name=''/>
-        <TabInput label='Bank name or BIC/SWIFT' type='text' placeholder='TRANS BANK' name='Vcolor'/>
-    </div>
+    { toggle && 
+      <>
+        <div className="input__group">
+            <TabInput label='VAT number' type='number' placeholder='89754' name='Vat'/>
+            <TabInput label='Bank account holder name' type='text' placeholder='Technovix Innovations' name=''/>
+        </div>
+        <div className="input__group">
+            <TabInput label='Technovix Innovations' type='number' placeholder='3874646099383335' name=''/>
+            <TabInput label='Bank name or BIC/SWIFT' type='text' placeholder='TRANS BANK' name='Vcolor'/>
+        </div>
+       </>
+    }
     <SignupBtn label='PROCEED' handler={handleNavigate}/>
 </form>
   )

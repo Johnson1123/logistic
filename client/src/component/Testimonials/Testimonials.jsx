@@ -1,3 +1,4 @@
+import { Rate } from 'antd'
 import React from 'react'
 import { testimonials } from '../../content/testimonials'
 import './Testimonial.scss'
@@ -18,11 +19,11 @@ function Testimonials() {
                             <h2 className='p-text'>
                                 {test.name}
                             </h2>
-                            <p className="para-text">
+                            <p className="para-text p-text">
                                 {test.content}
                             </p>
                             <div className="rating__container">
-
+                                <Rate allowHalf count={5} value={test.rating} style={{color: 'green'}} disabled/>
                             </div>
                         </div>
                     )

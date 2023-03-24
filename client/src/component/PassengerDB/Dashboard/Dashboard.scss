@@ -1,22 +1,28 @@
 @import '../../../style/variable.scss';
 .Dashboard{
-    flex: 1;
-    margin: 4rem .5rem 0;
+    width: 100%;
+    margin: 4rem 0rem 0;
+    justify-content: space-between;
     .left__content{
         width: 100%;
         @media screen and (min-width: 768px) {
-            width: 80%;
+            width: 79%;
         }
         .badge__con{
-            margin-top: 2rem;
             width: 100%;
             flex-direction: column;
             align-items: center;
+            @media screen and (min-width: 768px) {
+                flex-direction: row;
+                justify-content: space-between;
+            }
             .badge{
-                margin: .7rem 0;
                 width: 90%;
                 padding: 1.5rem 1rem;
                 border-radius: 10px;
+                @media screen and (min-width: 768px) {
+                    width: 45%;
+                }
                 .badge__title{
                     font-size: $font-16;
                     font-weight: 700;
@@ -43,5 +49,19 @@
                 }
             }
         }
+        .recent__act{
+            width: 100%;
+        }
+        .booking__activities{
+            width: 100%;
+        }
+        .recent-booking-text{
+            line-height: 4;
+        }
+    }
+    .chart__group{
+        flex-direction: column;
+        width: 20%;
+        row-gap: 1.5rem;
     }
 }

@@ -6,9 +6,9 @@ function UserTask() {
   return (
     <div className='userTask__container flex box-shadow'>
         {
-            userTask.map((task) => {
+            userTask.map((task, index) => {
                 return(
-                    <div className="task__box flex">
+                    <div className={`task__box flex box-${index + 1}`} key={index}>
                         <div className="task__img-box">
                             <img src={task.image} alt="" />
                         </div>

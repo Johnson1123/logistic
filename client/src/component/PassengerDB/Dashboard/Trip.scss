@@ -1,0 +1,18 @@
+@import '../../../style/variable.scss';
+.Trip{
+    width: 100%;
+    .control__con{
+        background-color: $asheColor;
+        justify-content: space-between;
+        margin-top: 1rem;
+        padding: .5rem 3rem;
+        border-radius: 20px;
+        .control-btn{
+            border: none;
+            background-color: transparent;
+            color: $primaryColor;
+            font-weight: 700;
+            font-size: $font-14;
+        }
+    }
+}

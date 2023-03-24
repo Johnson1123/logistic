@@ -1,3 +1,4 @@
+import { Rate } from 'antd'
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { images } from '../../asset'
@@ -19,6 +20,9 @@ function Experiencedriver() {
         <div className='exper__wrapper flex'>
             <div className="exper__left">
                 <h3 className='form-title'>EXPERIENCED DRIVER</h3>
+                <div className="rating__container flex center">
+                  <Rate value={5}  style={{color: 'green'}}/>
+                </div>
                 <p className="form-text">
                     You have taken a bold step by joining our community as a <br />
                     driver, a sustainable means of income is guarranted. <br />

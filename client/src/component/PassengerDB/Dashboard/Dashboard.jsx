@@ -33,6 +33,10 @@ function Dashboard() {
                 <BookingActivities />
             </div>
         </div>
+        <div className="chart__group flex">
+                <Chart />
+                <Review />
+        </div>
     </div>
   )
 }

@@ -2,7 +2,7 @@ import {images} from '../asset'
 export const userTask = [
     {
         title: 'Request Ride',
-        image: `${images.suvColorAches}`,
+        image: `${images.suvColorCream}`,
         content: 'Request  a ride, get pick up by a nearby community driver'
     },
     {

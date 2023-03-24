@@ -35,11 +35,18 @@
             padding: 1rem;
             overflow: hidden;
             @media screen and (min-width: 768px) {
-                width: 40%
+                width: 30%
+                
             }
             img{
                 width: 100%;
                 object-fit: cover;
+            }
+        }
+        .box-1{
+            @media screen and (min-width: 768px) {
+                width: 70%;
+                
             }
         }
         h3{

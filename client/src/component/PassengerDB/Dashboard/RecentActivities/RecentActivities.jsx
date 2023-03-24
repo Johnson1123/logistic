@@ -4,7 +4,7 @@ import './RecentActivities.scss'
 
 function RecentActivities() {
   return (
-    <div className='RecentActivities'>
+    <div className='RecentActivities box-shadow'>
         <div className="col__title flex">
             <div className="p-text col-1">Name</div>
             <div className="p-text col-2">Email</div>
