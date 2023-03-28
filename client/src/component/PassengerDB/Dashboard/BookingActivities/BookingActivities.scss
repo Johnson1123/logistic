@@ -24,6 +24,7 @@
     .col-2{
         width: 35%;
         text-align: center;
+        align-self: center;
     }
     .col-3{
         width: 10%;
@@ -35,10 +36,12 @@
     }
     .booking__box{
         justify-content: space-between;
+        align-items: center;
         padding: .3rem .3rem;
         margin-top: .5rem;
         .p-text{
             font-size: 12px;
+            font-weight: 500;
             @media screen and (min-width: 768px) {
                 font-size: $font-16;
             }

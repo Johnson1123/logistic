@@ -2,10 +2,28 @@ import React from 'react'
 import { images } from '../../../../asset'
 import Badges from '../../../Badges/Badges'
 import Booking from '../../Booking/Booking'
-import Chart from '../../Chart/Chart'
+import Chat from '../../Chat/Chat'
 import RecentBooking from '../../RecentBooking/RecentBooking'
 import Review from '../../Review/Review'
 import './FirstTab.scss'
+import Chart from 'react-google-charts'
+
+const LineData = [
+  ['x', 'dogs', 'cats'],
+  [0, 0, 0],
+  [1, 10, 5],
+  [2, 23, 15],
+  [3, 17, 9],
+  [4, 18, 10],
+  [5, 9, 5],
+  [6, 11, 3],
+  [7, 27, 19],
+]
+const LineChartOptions = {
+  series: {
+    1: { curveType: 'function' },
+  },
+}
 
 function FirstTab() {
   return (
@@ -26,8 +44,18 @@ function FirstTab() {
                  />
             </div>
             <div className="graph__group flex">
-                <div className="graph__con box-shadow">
-
+                <div className="graph__con">
+                    <div className="chart box-shadow">
+                    <Chart
+                          width={'400px'}
+                          height={'300px'}
+                          chartType="LineChart"
+                          loader={<div>Loading Chart</div>}
+                          data={LineData}
+                          options={LineChartOptions}
+                          rootProps={{ 'data-testid': '2' }}
+                    />
+                    </div>
                 </div>
                 <div className="recent__ride box-shadow">
                     <p className="p-text title">Recent Rides</p>
@@ -38,7 +66,7 @@ function FirstTab() {
         <Booking />
         </div>
         <div className="chart__group flex">
-                <Chart />
+                <Chat />
                 <Review />
             </div>
     </div>

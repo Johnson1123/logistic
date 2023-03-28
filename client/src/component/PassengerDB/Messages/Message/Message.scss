@@ -1,0 +1,46 @@
+@import '../../../../style/variable.scss';
+.Message__container{
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    gap: .5rem;
+    img{
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    .message__details{
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        max-width: 70%;
+        .message{
+            width: auto;
+            font-size: $font-14;
+            background-color: #f3f3f3;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            padding: .5rem;
+        }
+        .time{
+            font-size: $font-12;
+            font-weight: 500;
+            align-self: flex-end;
+
+        }
+    }
+}
+.Message__reverse{
+    flex-direction: row-reverse;
+    .message{
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: none;
+    }
+    .time{
+        align-self: flex-end;
+    }
+}

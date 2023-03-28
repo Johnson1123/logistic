@@ -6,7 +6,7 @@ import './SuccessOTP.scss'
 function SuccessOTP() {
   return (
     <div className='successOTP flex center'>
-        <div className='successOTP__inner flex center'>
+        <div className='successOTP__inner flex center box-shadow'>
             <img src={images.checked} alt='checked' />
             <p className="form-text">Verification Sucessful</p>
             <SignupBtn label='PROCEED' />

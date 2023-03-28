@@ -1,11 +1,18 @@
 import React, { useState } from 'react'
+
+import './AppFeatures.scss'
+
 import { FaAngleLeft } from 'react-icons/fa'
+import { useNavigate } from 'react-router-dom'
 import { Appfeatures } from '../../../../../content/AboutXcab'
+
+
 import Overlay from '../../../../Overlay/Overlay'
 import HelpButton from '../HelpButton'
 import Modal from '../Modal/Modal'
 
 function AppFeatures() {
+  const navigate = useNavigate()
     const [idx, setidx] = useState(0)
     const [toggle, setToggle] = useState(false)
     const content = Appfeatures.filter((item) => {
@@ -23,7 +30,7 @@ function AppFeatures() {
   
   return (
     <div className='AppFeatures'>
-        <div className="title flex"><div className='arrow__back'><FaAngleLeft/></div>App and Features</div>
+        <div className="title flex"><div className='arrow__back' onClick={() => navigate('/passengerdb/help/')}><FaAngleLeft/></div>App and Features</div>
         <div className="btn__container">
         <div className='AboutXcab'>
             {

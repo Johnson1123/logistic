@@ -1,8 +1,8 @@
 import React from 'react'
 import { charts } from '../../../content/chart'
-import './Chart.scss'
+import './Chat.scss'
 
-function Chart() {
+function Chat() {
   return (
     <div className='chart__con box-shadow'>
         <p className="title p-text">Chart</p>
@@ -21,4 +21,4 @@ function Chart() {
   )
 }
 
-export default Chart
+export default Chat

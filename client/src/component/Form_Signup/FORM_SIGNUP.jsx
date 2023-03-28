@@ -10,7 +10,7 @@ import './Form_Sign.scss'
 import SignupBtn from '../Btn/SignupBtn/SignupBtn'
 import { useNavigate } from 'react-router-dom'
 
-function FORM_SIGN() {
+function FORM_SIGN(props) {
   const navigate = useNavigate();
   const handleNavigate = () => {
     return (
@@ -29,7 +29,7 @@ function FORM_SIGN() {
           <Input type='password' name='pwd' image={<AiFillLock />} placeholder='Password'/>
         </div>
         <div>
-          <SignupBtn label='Sign Up' handler={handleNavigate}/>
+          <SignupBtn label='Sign Up' handler={props.handler}/>
         </div>                         
     </form>
   )

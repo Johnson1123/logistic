@@ -2,25 +2,25 @@ import React, { Component, useEffect, useState } from 'react'
 import './Tabcontrollers.scss'
 import Tabcontroller from '../Tabcontroller/Tabcontroller'
 import {RxDashboard} from 'react-icons/rx'
-import { DBcontroller, passengercontroller } from '../../../content/DBcontroller'
+import {DBcontroller, passengercontroller } from '../../../content/DBcontroller'
 import { images } from '../../../asset'
 import { useDispatch, useSelector } from 'react-redux'
-import { handleDashboard } from '../../../features/toggleSlice/toggleSlice'
+import { useNavigate } from 'react-router-dom'
 
 function Tabcontrollers() {
-  const role = useSelector(state => state.toggleReducer.dashboardToggle);
-  console.log(passengercontroller)
-  const Dispatch = useDispatch();
-  const handleDB = (n) => {
-     Dispatch(handleDashboard(n))
-    }
+  const navigate = useNavigate()
+  const handleNavigate = () => {
+    return (
+      navigate('/tab')
+    )
+  }
   return (
     <div className='Tabcontrollers'>
         <div className='Tabcontrollers__con'>
         {
           passengercontroller.map((item, index) => {
             return(
-              <Tabcontroller label={item.label} icon={item.icon} key={index} handler={() => handleDB(item.label)}/>
+              <Tabcontroller label={item.label} icon={item.icon} key={index} href={item.href}/>
             )
           })
         }

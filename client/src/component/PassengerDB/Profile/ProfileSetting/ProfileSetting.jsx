@@ -5,8 +5,10 @@ import { images } from '../../../../asset'
 import TabInput from '../../../Tabs/TabInput/TabInput'
 import SignupBtn from '../../../Btn/SignupBtn/SignupBtn'
 import './ProfileSetting.scss'
+import { useNavigate } from 'react-router-dom'
 
 function ProfileSetting() {
+        const navigate = useNavigate()
         const [selectedFile, setSelectedFile] = useState()
         const [preview, setPreview] = useState()
         useEffect(() => {

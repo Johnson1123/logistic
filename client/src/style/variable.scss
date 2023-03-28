@@ -7,6 +7,21 @@ $darkAshe: rgb(137, 147, 156);
 $boxShadow: #111;
 $asheColor: #FAF9F9;
 
+@mixin mobile{
+    @media screen and (max-width: 767px) {
+        @content;
+    }
+}
+@mixin tablet{
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}
+@mixin desktop{
+    @media screen and (min-width: 1200px) {
+        @content;
+    }
+}
 
 $font-10: 10px;
 $font-12: 12px;

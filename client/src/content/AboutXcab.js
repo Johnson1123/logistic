@@ -1,3 +1,4 @@
+import { images } from "../asset"
 export const aboutRides = [
     {
         _id: 1,
@@ -201,6 +202,33 @@ export const AcountData = [
         para: 'Although your data will be deleted, we still store informations such as invoices and payment information to comply with the law and as stated in our Privacy Policy.',
         feedback: 'Does this information solve your issues?',
     },
+]
+
+export const paymentMethod = [ 
+    {
+        _id: 1,
+        num: '**** **** **** 5873',
+        img: images.master,
+        expire: 'Expires 09/25',
+        status: ''
+    },
+    {
+        _id: 2,
+        num: '**** **** **** 5873',
+        img: images.visa,
+        expire: 'Expires 09/25',
+        status: ''
+    },
+    {
+        _id: 3,
+        img: images.paypal,
+        email: 'technovix@gmail.com',
+    },
+    {
+        _id: 4,
+        img: images.cash,
+        text: 'Cash'
+    }
 ]
 
 export const PaymentPrice = [

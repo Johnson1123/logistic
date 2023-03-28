@@ -16,7 +16,7 @@ function Booking() {
             bookings.map((recent, index) => {
                 return (
                     <div className='booking__box flex' key={index} >
-                       <div className="box p-text col-1 flex"><img src={recent.image} alt="" />{recent.name}</div>
+                       <div className="box p-text col-1 flex"><img src={recent.image} alt="" /><span>{recent.name}</span></div>
                        <div className="box p-text col-2">{recent.email}</div>
                        <div className="box p-text col-3">{recent.time}</div>
                        <div className="box p-text col-4">{recent.status}</div>

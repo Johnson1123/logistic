@@ -18,6 +18,7 @@ import checked from './checked.png'
 import experience from './experience.png'
 import womanlearn from './technovixwoman.png'
 import appLogo from './apple-logo.png'
+import Mapping from './Mapping.png'
 import iphones from './Iphones.png'
 import appleStore from './appleStore.png'
 import playStore from './playStore.png'
@@ -26,8 +27,9 @@ import paypal from './paypal.png'
 import visa from './Visa.png'
 import master from './Master.png'
 import cash from './cash.png'
+import angleRight from './angleRight.png'
 
-export default {bgSvg,cash, paypal, master, visa, playStoreLogo, appleStore, playStore, 
+export default {bgSvg,cash, angleRight, paypal, master, visa, playStoreLogo, appleStore, playStore, 
         womanlearn,iphones, appLogo, experience, checked, bgPath, handShake, opendoor, ChargesBadge, handheldPhone, operate, driver, logo, location, suvColorAches,map,
-         suvColorCream, Elia, James, passenger
+         suvColorCream, Elia, James, passenger, Mapping
     }

@@ -1,7 +1,7 @@
 import React from 'react'
 import './Dashboard.scss'
 import Booking from '../../DriverDB/Booking/Booking'
-import Chart from '../../DriverDB/Chart/Chart'
+import Chat from '../../DriverDB/Chat/Chat'
 import Review from '../../DriverDB/Review/Review'
 import RecentActivities from './RecentActivities/RecentActivities'
 import BookingActivities from './BookingActivities/BookingActivities'
@@ -34,7 +34,7 @@ function Dashboard() {
             </div>
         </div>
         <div className="chart__group flex">
-                <Chart />
+                <Chat />
                 <Review />
         </div>
     </div>

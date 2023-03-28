@@ -1,3 +1,4 @@
+@import '../../../style/variable.scss';
 .recent__booking{
     padding: 1rem;
     .col__title{
@@ -11,22 +12,47 @@
         width: 25%;
         text-align: center;
         justify-content: center;
+        align-items: center;
         img{
-            width: 23%;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
             margin-right: 15px;
+
+        }
+        @include tablet{
+            font-size: $font-14;
+            font-weight: 500;
         }
     }
     .col-2{
         width: 23%;
         text-align: center;
+        align-self: center;
+        @include tablet{
+            font-size: $font-14;
+            font-weight: 500;
+        }
     }
     .col-3{
         width: 23%;
         text-align: center;
+        align-self: center;
+        @include tablet{
+            font-size: $font-14;
+            font-weight: 500;
+            
+        }
     }
     .col-4{
         width: 23%;
         text-align: center;
+        align-self: center;
+        @include tablet{
+            font-size: $font-14;
+            font-weight: 500;
+        }
     }
     .booking__box{
         justify-content: space-between;

@@ -12,7 +12,10 @@
     background-attachment: fixed;
     flex-direction: column;
     .btn__con{
-        width: 80%;
+        width: 70%;
         margin-top: 20px;
+        @media screen and (min-width: 768px) {
+            width: 30%;
+        }
     }
 }

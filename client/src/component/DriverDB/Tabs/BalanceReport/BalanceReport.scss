@@ -6,6 +6,13 @@
         @media screen and (min-width: 768px) {
             width: 70%;
         }
+        .pagination{
+            margin-top: 1rem;
+            align-items: center;
+            .page__con{
+                align-items: center;
+            }
+        }
         .balance__con{
             margin-top: 1.5rem;
             .col-1, .col-2{
@@ -29,7 +36,7 @@
                 .report__box{
                     justify-content: space-between;
                     padding: .5rem 0;
-                    border-bottom: 2px solid $asheColor;
+                    border-bottom: 2px solid rgb(211, 211, 211);
                     @media screen and (min-width: 768px) {
                         padding: 1rem 0;
                     }

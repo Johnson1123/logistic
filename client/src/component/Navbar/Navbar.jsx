@@ -71,11 +71,11 @@ function Navbar() {
           </ul>  
         </div>
 
-        <div className="navbar__icon flex-center">
-          {/* <div className="cart__container flex-center">
-            <HiOutlineShoppingBag />
-            <span className='flex-center'>{cart.length}</span>
-          </div> */}
+        <div className="navbar__user flex-center">
+          <div className="user__container flex center">
+            <img src={images.Elia} alt='user image' />
+            <span className='p-text'><Link to='/passangerDB' className='user-link '>Dashboard</Link></span>
+          </div>
         </div>
       </div>
       { toggle && 

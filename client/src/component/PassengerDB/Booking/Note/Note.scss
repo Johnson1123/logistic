@@ -1,0 +1,18 @@
+@import '../../../../style/variable.scss';
+.Note{
+    padding: 0.5rem;
+    width: 100%;
+    .small-title{
+        text-align: left;
+        font-weight: 700;
+    }
+    ul{
+        width: 90%;
+        margin: 0 auto;
+        .p-text{
+            font-size: $font-14;
+            font-weight: 500;
+            margin-top: 0.3rem;
+        }
+    }
+}

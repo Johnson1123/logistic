@@ -3,7 +3,7 @@ import './SignupBtn.scss'
 
 function SignupBtn(props) {
   return (
-    <button onClick={props.handler} className='sign-btn flex"'>{props.label}</button>
+    <button onClick={props.handler} className={`sign-btn flex ${props.className}`}>{props.label}</button>
   )
 }
 

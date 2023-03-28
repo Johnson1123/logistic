@@ -8,7 +8,10 @@
         .col-1{
             width: 20%;
             img{
-                width: 80%;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                object-fit: cover;
             }
         }
         .col-2{
@@ -16,8 +19,12 @@
             text-align: left;
             .col-rating{
                 font-size: 12px;
+                justify-content: space-between;
                 .p-text{
                     font-size: 12px;
+                }
+                li{
+                    margin-inline-end: 0 !important;
                 }
             }
         }

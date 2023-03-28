@@ -1,9 +1,15 @@
+@import '../../style/variable.scss';
 .PassengerDB{
     width: 100%;
     padding: 1rem 0 2rem;
     position: relative;
     .PassengerDB__wrapper{
         width: 100%;
+        .Tabcontrollers{
+            @include tablet{
+                width: 30%;
+            }
+        }
         .PassengerDB__content{
             margin-top: 4rem;
             display: flex;

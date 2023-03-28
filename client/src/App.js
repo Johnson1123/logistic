@@ -3,21 +3,36 @@ import {
   createBrowserRouter,
   RouterProvider,
   Route,
-  Outlet
+  Outlet,
+  createRoutesFromElements,
+  Routes
 } from "react-router-dom";
 import Navbar from './component/Navbar/Navbar'
 import Footer from './component/Footer/Footer'
 import { 
-  Home,InterP, LocalP, OTP,
-  Loginuser, Login, NotFound,
-  PassengerDB, Profile, UserSignup, Whattolearn,
-  ForgetPwd, Newpwd, mylearnnig, Experiencedriver, WatToGo, 
-  StartTraining, Techdrive, FormTab, Tab, Mylearnnig, DriverDB
+  Home,InterP, LocalP, OTP,Loginuser, Login, NotFound,PassengerDB, Profile, UserSignup, Whattolearn,
+  ForgetPwd, Newpwd, mylearnnig, Experiencedriver, WatToGo, StartTraining, Techdrive, FormTab, Tab, Mylearnnig, DriverDB
 } from './pages';
+
+import {
+  Dashboard, Upcoming, Booking, Message, PassengerProfile, ProfileSetting, PaymentSettings,AddCard, GetHelp
+} from './component/PassengerDB/index'
+
+import { 
+  DriverDashboard, DriverProfile, Myride, Mydocument, Messages, Vehicle, Vehicledetail, Invoice, XlcabInvoice, BalanceReport,
+  TaxReport, Payout, Setting
+} from './component/DriverDB';
+
 import Signupbanner from './pages/Signupbanner/Signupbanner';
 import Background from './component/Background/Background';
 import AccessInfo from './pages/AccessInfo/AccessInfo';
 import LessonVideo from './pages/LessonVideo/LessonVideo';
+import AboutXcab from './component/PassengerDB/GetHelp/HelpButton/AboutXcab/AboutXcab';
+import AppFeatures from './component/PassengerDB/GetHelp/HelpButton/AppFeatures/AppFeatures';
+import UsingRide from './component/PassengerDB/GetHelp/HelpButton/UsingApp/UsingRide';
+import AccountData from './component/PassengerDB/GetHelp/HelpButton/AccoutData/AccoutData';
+import PaymentPricing from './component/PassengerDB/GetHelp/HelpButton/PaymentPricing/PaymentPricing';
+
 
 const Layout = () => {
   return <>
@@ -108,7 +123,7 @@ const router = createBrowserRouter([
     element: <LessonVideo />,
   },
   {
-    path: "/driverDb",
+    path: "/db",
     element: <DriverDB />,
   },
   {
@@ -122,12 +137,124 @@ const router = createBrowserRouter([
   {
     path: "/passengerdb",
     element: <PassengerDB />,
+    children: [
+      {
+        path: "dashboard",
+        element: <Dashboard />,
+      },
+      {
+        path: "profile",
+        element: <PassengerProfile />,
+      },
+      {
+        path: "trip",
+        element: <Upcoming />,
+      },
+      {
+        path: "booking",
+        element: <Booking />,
+      },
+      {
+        path: "messages",
+        element: <Message />,
+      },
+      {
+        path: "profile",
+        element: <PassengerProfile />,
+      },
+      {
+        path: "setting",
+        element: <ProfileSetting />,
+      },
+      {
+        path: "help",
+        element: <GetHelp />,
+      },
+      {
+        path: "help/ride",
+        element: <AboutXcab />,
+      },
+      {
+        path: "help/account",
+        element: <AccountData />,
+      },
+      {
+        path: "help/payment",
+        element: <PaymentPricing />,
+      },
+      {
+        path: "help/app",
+        element: <AppFeatures />,
+      },
+      {
+        path: "help/using/ride",
+        element: <UsingRide />,
+      }
+  
+    ]
   },
   {
-    path: "*",
-    element: <NotFound />,
+    path: "/driver",
+    element: <DriverDB />,
+    children: [
+      {
+        path: "dashboard",
+        element: <DriverDashboard />,
+      },
+      {
+        path: "profile",
+        element: <DriverProfile />,
+      },
+      {
+        path: "ride",
+        element: <Myride />,
+      },
+      {
+        path: "document",
+        element: <Mydocument />,
+      },
+      {
+        path: "message",
+        element: <Message />,
+      },
+      {
+        path: "vehicle",
+        element: <Vehicle />,
+      },
+      {
+        path: "invoice",
+        element: <Invoice />,
+      },
+      {
+        path: "xlcabinvoice",
+        element: <XlcabInvoice />,
+      },
+      {
+        path: "balance",
+        element: <BalanceReport />,
+      },
+      {
+        path: "tax",
+        element: <TaxReport />,
+      },
+      {
+        path: "payout",
+        element: <Payout />,
+      },
+      {
+        path: "setting",
+        element: <Setting />,
+      },
+      {
+        path: "help",
+        element: <Setting />,
+      },
+      {
+        path: "Logout",
+        element: <Setting />,
+      }
+    ]
   },
-  
   {
     path: "/login",
     element: <Login />

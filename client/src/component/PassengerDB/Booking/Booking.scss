@@ -1,0 +1,251 @@
+@import '../../../style/variable.scss';
+.Booking__container{
+    width: 100%;
+    margin-top: 2rem;
+    padding: 1rem .5rem;
+    .Booking__wrapper{
+        width: 97%;
+        display: flex;
+        flex-direction: column;
+        .main__container{
+            width: 100%;
+            min-height: 70vh;
+            gap: 1rem;
+            
+            .left__container{
+                width: 33%;               
+                .map{
+                    position: relative;
+                    top: 0;
+                    height: 450px;
+                }
+                .map__container{
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 10px;
+                        object-fit: cover;
+                    }
+                }
+                .search__container{
+                    position: absolute;
+                    top: 15px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background-color: $whiteColor;
+                    input{
+                        width: 100%;
+                        border: none;
+                        outline: none;
+                    }
+                    svg{
+                        font-size: 14px;
+                        color: #929292;
+                    }
+
+                }
+                .destination-btn{
+                    position: absolute;
+                    transform: translateX(-50%);
+                    bottom: 15px;
+                    left: 50%;
+                    width: 80%;
+                }
+
+            }
+            .center__container{
+                width: 35%;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                .top__container{
+                    width: 100%;
+                    flex-direction: column;
+                    align-items: center;
+                    padding: 1rem;
+                    background: #dddddd;
+                    border-radius: 10px;
+                    h3{
+                        width: 100%;
+                        
+                    }
+                    .favourite__container{
+                        width: 100%;
+                        flex-direction: column;
+                        align-items: center;
+                        margin-top: 20px;
+                        gap: 10px;
+                        .favourite{
+                            width: 90%;
+                            background-color: $whiteColor;
+                            align-items: center;
+                            padding: .5rem 1rem;
+                            gap: 10px;
+                            .name{
+                                font-weight: 500;
+                                font-size: $font-14;
+                            }
+                            .right{
+                                margin-left: auto;
+                            }
+                        }
+
+                    }    
+                }
+                h4{
+                    margin-top: 1rem;
+                    font-size: $font-14;
+                }
+                .places{
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    align-items: flex-start;
+                    margin-top: .5rem;
+                    gap: 15px;
+                    .place{
+                        width: 47%;
+                        align-items: center;
+                        svg{
+                            font-size: 20px;
+                            min-width: 20%;
+                            color: #F5DF14;
+                        }
+                        .place__info{
+                            .title{
+                                font-size: $font-14;
+                            }
+                            .p-text{
+                                font-size: $font-12;
+                            }
+                        }
+                    }
+                }
+
+                .bottom__container{
+                    width: 100%;
+                    flex-direction: column;
+                    align-items: center;
+                    padding: .5rem 1rem;
+                    background: #dddddd;
+                    border-radius: 10px;
+                    .title{
+                        font-size: $font-16;
+                        text-align: center;
+                    }
+                    form{
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        flex-direction: column;
+                        .input__container{
+                            width: 80%;
+                            display: flex;
+                            flex-direction: column;
+                            label{
+                                font-size: $font-14;
+                            }
+                            input{
+                                width: 100%;
+                                border-radius: 10px;
+                                margin-top: 0.4rem;
+                                padding: .5rem;
+                            }  
+                        }
+                        .btn-add{
+                            margin-top: 0.5rem;
+                            background-color: transparent;
+                            width: auto;
+                            color: blue;
+                            font-weight: 500;
+                        }
+                    }
+                }
+            }
+            .right__container{
+                width: 32%;
+                .title{
+                    font-size: $font-18;
+                }
+                .text{
+                    font-size: $font-14;
+                }
+                .small-title{
+                    margin-top: 1rem;
+                    font-size: $font-16;
+                }
+                .payment__method{
+                    margin-top: 0.5rem;
+                    flex-direction: column;
+                    gap: 10px;
+                }
+                .pickUp__time{
+                    width: 100%;
+                    flex-direction: column;
+                    align-items: center;
+                    padding: .5rem;
+                    background: #dddddd;
+                    border-radius: 10px;
+                    margin-top: 2rem;
+                    h3{
+                        width: 100%;
+                        text-align: center;
+                        
+                    }
+                    .control__btn{
+                        width: 100%;
+                        align-items: center;
+                        flex-direction: column;
+                        gap: 10px;
+                        .control-btn{
+                            width: 100%;
+                            border-radius: 10px;
+                            border: 2px solid gray;
+                            padding: .5rem;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            .small-title{
+                                margin-top: 0;
+                                font-size: $font-14;
+                            }
+                            .p-text{
+                                font-size: $font-12;
+                            }
+                            .circle-checked{
+                                height: 20px;
+                                width: 20px;
+                                background-color: $secondaryColor;
+                                border-radius: 50%;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                svg{
+                                    color: $whiteColor;
+                                    font-size: 20px;
+                                }
+                            }
+                            .circle{
+                                height: 20px;
+                                width: 20px;
+                                border: 2px solid gray;
+                                border-radius: 50%;
+                            }
+                        }
+                        .active{
+                            border: 2px solid $secondaryColor;
+                            .small-title, .p-text{
+                                color: $secondaryColor;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}

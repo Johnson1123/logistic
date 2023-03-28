@@ -11,6 +11,8 @@ import Map from '../../component/Map'
 import ChargesBadge from '../../component/ChargesBadge/ChargesBadge'
 import DownloadSection from '../../component/DownloadSection/DownloadSection'
 import { useNavigate } from 'react-router-dom'
+import OurBrand from '../../component/OurBrand/OurBrand'
+import Safety from '../../component/Safety/Safety'
 
 export const Home = () => {
   const navigate = useNavigate()
@@ -57,7 +59,7 @@ export const Home = () => {
               </div>
 
               <div className="btn-box">
-                <SignupBtn label='Sign up' handler={() => navigate('/signupuser')}/>
+                <SignupBtn label='Sign up' handler={() => navigate('/tosignUp')}/>
               </div>
 
             </div>
@@ -69,6 +71,8 @@ export const Home = () => {
         <Testimonials />
         <Map />
         <ChargesBadge />
+        <OurBrand />
+        <Safety />
         <DownloadSection />
 
       </div>

@@ -6,10 +6,11 @@ import { UsingRides } from '../../../../../content/AboutXcab'
 import Overlay from '../../../../Overlay/Overlay'
 import HelpButton from '../HelpButton'
 import Modal from '../Modal/Modal'
+import { useNavigate } from 'react-router-dom'
 
 
 function UsingRide() {
-    
+   const navigate = useNavigate()  
     const [idx, setidx] = useState(3)
     const [toggle, setToggle] = useState(false)
     const content = UsingRides.filter((item) => {
@@ -26,7 +27,7 @@ function UsingRide() {
   
   return (
     <div className='PaymentPricing'>
-        <div className="title flex"><div className='arrow__back'><FaAngleLeft/></div>Payment and pricing</div>
+        <div className="title flex"><div className='arrow__back' onClick={() => navigate('/passengerdb/help/')}><FaAngleLeft/></div>Payment and pricing</div>
         <div className="btn__container">
         <div className='AccountData'>
             {

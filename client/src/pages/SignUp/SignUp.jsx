@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { images } from '../../asset'
 import Background from '../../component/Background/Background'
@@ -8,15 +8,21 @@ import SuccessSignUp from '../../component/SuccessSignUp/SuccessSignUp'
 import './SignUp.scss'
 
 function SignUp() {
+  const [toggle, settoggle] = useState(false)
+  const handleClick =  (e) => {
+      e.preventdDefault()
+      settoggle(true)
+  }
+  
   return (
     <div className='signUp__con'>
         <Background />
-        <CreateAccout />
+        <CreateAccout handler={handleClick}/>
         {
-                false && <SuccessSignUp />
+                toggle && <SuccessSignUp />
         }
         {
-                false && <Overlay />
+                toggle && <Overlay />
         }
     </div>
   )

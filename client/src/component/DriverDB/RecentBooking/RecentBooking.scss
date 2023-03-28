@@ -1,25 +1,61 @@
+@import '../../../style/variable.scss';
 .RecentBooking{
+    padding: .5rem;
     .col__title{
-        justify-content: space-between;
+        justify-content: space-around;
+        margin-top: 0.5rem;
+        .col-1{
+            width: 25%;
+            text-align: center;
+        }
         .col-3{
+            width: 10%;
+            text-align: center;
+        }
+        .col-3{
+            width: 124px;
+            text-align: center;
+        }
+        .p-text{
+            font-weight: 700;
+            font-size: $font-14;
             text-align: center;
         }
     }
     width: 100%;
-    .col-1{
-        width: 25%;
-        text-align: center;
-    }
-    .col-2{
-        width: 10%;
-        text-align: center;
-    }
-    .col-3{
-        width: 50%;
-        text-align: left;
-    }
     .recent__box{
         justify-content: space-between;
         padding: .3rem .3rem;
+        border-bottom: 1px solid rgb(209, 209, 209);
+        padding: .5rem .3rem;
+        margin: .3rem 0;
+        &:last-of-type{
+            border: none;
+        }
+        .col-1{
+            width: 25%;
+            text-align: center;
+            @include tablet{
+                font-size: $font-14;
+            }
+        }
+        .col-2{
+            width: 10%;
+            text-align: center;
+            @include tablet{
+                font-size: $font-14;
+            }
+        }
+        .col-3{
+            width: 124px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            text-align: left;
+            @include tablet{
+                font-size: $font-14;
+            }
+    
+        }
     }
 }

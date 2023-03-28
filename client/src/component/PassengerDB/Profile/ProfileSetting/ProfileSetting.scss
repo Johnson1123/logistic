@@ -22,8 +22,8 @@
         @media screen and (min-width: 768px) {
             width: 30%;
         }
-        img__con{
-            width: 100%;
+        .img__con{
+            width: 160px;
             height:160px;
             overflow: hidden;
             @media screen and (min-width: 768px) {
@@ -31,7 +31,7 @@
             }
         }
         img{
-            width: 100%;
+            width: 160px;
             height:160px;
             border-radius: 50%;
             object-fit: cover;
@@ -45,7 +45,7 @@
         .custom-upload{
             position: absolute;
             top: 60%;
-            right: 5px;
+            right: 0;
             z-index: 1;
             color: $whiteColor;
             border-radius: 10px;
@@ -53,7 +53,7 @@
             background-color: $secondaryColor;
             @media screen and (min-width: 768px) {
                 padding: .4rem .5rem;
-                right: -5px;
+                right: -20px;
                 top: auto;
                 bottom: 50px;
             }

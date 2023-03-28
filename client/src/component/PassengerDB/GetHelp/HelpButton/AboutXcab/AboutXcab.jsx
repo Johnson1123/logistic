@@ -6,9 +6,11 @@ import {FaAngleLeft} from 'react-icons/fa'
 import Overlay from '../../../../Overlay/Overlay'
 import Modal from '../Modal/Modal'
 import { aboutRides } from '../../../../../content/AboutXcab'
+import { useNavigate } from 'react-router-dom'
 
 
 function AboutXcab() {
+  const navigate =useNavigate()
   const [idx, setidx] = useState(3)
   const [toggle, setToggle] = useState(false)
   const content = aboutRides.filter((item) => {
@@ -26,7 +28,7 @@ function AboutXcab() {
 
   return (
     <div className='AboutXcab'>
-        <p className="title flex"><div className='arrow__back'><FaAngleLeft /></div>About XLCAB Ride</p>
+        <p className="title flex"><div className='arrow__back' onClick={() => navigate('/passengerdb/help/')}><FaAngleLeft /></div>About XLCAB Ride</p>
         <HelpButton label='Where can i find XLCAB Ride Office?' className='mt-2' handler={() => handleContent(1)}/>
         <HelpButton label='XLCAB Ride Public API' handler={() => handleContent(2)}/>
         <HelpButton label='Where does XLCAB Ride operate?' handler={() => handleContent(3)}/>

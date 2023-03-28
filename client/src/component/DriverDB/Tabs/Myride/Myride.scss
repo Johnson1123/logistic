@@ -1,6 +1,39 @@
+@import '../../../../style/variable.scss';
 .myride__wrapper{
     width: 100%;
     @media screen and (min-width: 768px) {
         width: 70%;
+    }
+    .input__container{
+        width: 60%;
+        .download{
+            padding: .5rem;
+            border: 1px solid blue;
+            border-radius: 5px;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+    }
+    
+    .input__details{
+        width: 40%;
+        margin-top: 1rem;
+        .box{
+            .small-title{
+                font-size: $font-14;
+                width: 70%;
+                margin: 3px 0;
+            }
+            .p-text{
+                font-size: $font-14;
+            }
+        }
+    }
+    .page__container{
+        align-items: center;
+        margin-top: 1rem;
+        .page__con{
+            align-items: center;
+        }
     }
 }
