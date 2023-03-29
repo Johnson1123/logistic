@@ -16,7 +16,9 @@ function Trip() {
               })
             }
         </div>
-        <Upcoming />
+        <div className='scroll__container'>
+          <Upcoming />
+        </div>
     </div>
   )
 }

@@ -5,6 +5,9 @@
     height: auto;
     border-radius: 10px;
     margin-top: 20px;
+    @include mobile{
+        width: 230%;
+    }
     .col__title{
         justify-content: space-between;
         margin-bottom: 1.5rem;

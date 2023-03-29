@@ -15,7 +15,7 @@ import {
 } from './pages';
 
 import {
-  Dashboard, Upcoming, Booking, Message, PassengerProfile, ProfileSetting, PaymentSettings,AddCard, GetHelp
+  Dashboard, Upcoming, Booking, Message, PassengerProfile, ProfileSetting, PaymentSettings,AddCard, GetHelp, Trip
 } from './component/PassengerDB/index'
 
 import { 
@@ -32,6 +32,7 @@ import AppFeatures from './component/PassengerDB/GetHelp/HelpButton/AppFeatures/
 import UsingRide from './component/PassengerDB/GetHelp/HelpButton/UsingApp/UsingRide';
 import AccountData from './component/PassengerDB/GetHelp/HelpButton/AccoutData/AccoutData';
 import PaymentPricing from './component/PassengerDB/GetHelp/HelpButton/PaymentPricing/PaymentPricing';
+import { TbRipple } from 'react-icons/tb';
 
 
 const Layout = () => {
@@ -148,7 +149,7 @@ const router = createBrowserRouter([
       },
       {
         path: "trip",
-        element: <Upcoming />,
+        element: <Trip />,
       },
       {
         path: "booking",

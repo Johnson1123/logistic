@@ -7,3 +7,4 @@ export { default as ProfileSetting } from './Profile/ProfileSetting/ProfileSetti
 export { default as PaymentSettings } from './PaymentSettings/PaymentSettings'
 export { default as AddCard } from './AddCard/AddCard'
 export { default as GetHelp } from './GetHelp/GetHelp'
+export { default as Trip } from './Dashboard/Trip'

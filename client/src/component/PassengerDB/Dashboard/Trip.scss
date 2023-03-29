@@ -1,6 +1,9 @@
 @import '../../../style/variable.scss';
 .Trip{
     width: 100%;
+    @include mobile{
+        padding: 0 1rem;
+    }
     .control__con{
         background-color: $asheColor;
         justify-content: space-between;
@@ -13,6 +16,15 @@
             color: $primaryColor;
             font-weight: 700;
             font-size: $font-14;
+        }
+    }
+    .scroll__container{
+        width: 100%;
+        overflow: scroll;
+        -ms-overflow-style: none;
+        scrollbar-width: none; 
+        &::-webkit-scrollbar {
+            display: none;
         }
     }
 }
