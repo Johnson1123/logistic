@@ -5,7 +5,8 @@
     border-radius: 10px;
     @include mobile {
         margin-top: 1rem;
-        width: 140%;
+        width: 170%;
+
     }
     @media screen and (min-width: 768px) {
         width: 100%;
@@ -46,6 +47,7 @@
     .recent__box{
         justify-content: space-between;
         padding: .3rem .3rem;
+        font-weight: 500;
         .p-text{
             font-size: 14px;
             font-weight: 500;

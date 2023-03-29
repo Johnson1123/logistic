@@ -1,19 +1,30 @@
+@import '../../../style/variable.scss';
 .chart__con{
     width: 100%;
     background-color: #f3f3f3;
     border-radius: 10px;
     padding: 1rem 0;
+    @include mobile{
+        padding: 1rem;
+    }
     .chart__box{
         padding: 0.5rem 0.3rem;
         .col-1{
             position: relative;
             width: 20%;
             margin-right: 10px;
+            @include mobile{
+                width: 18%;
+            }
             img{
-                width: 40px;
-                height: 40px;
+                width: 50px;
+                height: 50px;
                 border-radius: 50%;
                 object-fit: cover;
+                @include tablet{
+                    width: 40px;
+                    height: 40px;
+                }
             }
             .dot{
                 position: absolute;
@@ -23,7 +34,10 @@
                 width: 7px;
                 border-radius: 50%;
                 background-color: #3AB54A;
-                ;
+                @include mobile{
+                    top: 1px;
+                    right: 11px;
+                }
             }
         }
         .col-2{
