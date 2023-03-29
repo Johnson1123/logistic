@@ -10,7 +10,7 @@ import {
 import Navbar from './component/Navbar/Navbar'
 import Footer from './component/Footer/Footer'
 import { 
-  Home,InterP, LocalP, OTP,Loginuser, Login, NotFound,PassengerDB, Profile, UserSignup, Whattolearn,
+  Home, LocalP, OTP,Loginuser, Login, NotFound,PassengerDB, Profile, UserSignup, Whattolearn,
   ForgetPwd, Newpwd, mylearnnig, Experiencedriver, WatToGo, StartTraining, Techdrive, FormTab, Tab, Mylearnnig, DriverDB
 } from './pages';
 
@@ -32,7 +32,9 @@ import AppFeatures from './component/PassengerDB/GetHelp/HelpButton/AppFeatures/
 import UsingRide from './component/PassengerDB/GetHelp/HelpButton/UsingApp/UsingRide';
 import AccountData from './component/PassengerDB/GetHelp/HelpButton/AccoutData/AccoutData';
 import PaymentPricing from './component/PassengerDB/GetHelp/HelpButton/PaymentPricing/PaymentPricing';
+import Wattogo from './component/InternaltionalP/Wattogo/Wattogo';
 import { TbRipple } from 'react-icons/tb';
+import InterP from './component/PassengerDB/InterP/InterP';
 
 
 const Layout = () => {
@@ -159,6 +161,11 @@ const router = createBrowserRouter([
         path: "messages",
         element: <Message />,
       },
+      {
+        path: "international/Partner",
+        element: <InterP />,
+      },
+      
       {
         path: "profile",
         element: <PassengerProfile />,

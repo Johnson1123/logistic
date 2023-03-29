@@ -128,13 +128,13 @@ export const passengercontroller = [
         id: 5,
         label: 'Become a Partner',
         icon: <TbFileInvoice />,
-        href: 'partner'
+        href: 'local/Partner'
     },
     {
         id: 6,
         label: 'International Partnership ',
         icon: <RxDashboard />,
-        href: 'International',
+        href: 'international/Partner',
     },
 
     {

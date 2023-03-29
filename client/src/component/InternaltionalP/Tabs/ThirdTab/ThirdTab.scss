@@ -1,0 +1,27 @@
+@import '../../../../style/variable.scss';
+.thirdTab{
+    width: 120%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+    padding: 1rem 0 2rem;
+    @include mobile{
+        width: 95%;
+        padding: 1rem;
+    }
+    .form-bold{
+        text-align: center;
+        font-size: 24px;
+        line-height: 2;
+    }
+    .p-text{
+        width: 100%;
+        text-align: center;
+    }
+    .thirdTab-text{
+        @media screen and (min-width: 768px) {
+          width: 65%;
+        }
+    }
+}

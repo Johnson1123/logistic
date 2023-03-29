@@ -1,0 +1,19 @@
+@import '../../../../style/variable.scss';
+.forthTab{
+    width: 95%;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+    padding: 1rem 0.5rem 2rem;
+    @include mobile{
+        padding: 1rem;
+    }
+    .form-title{
+        width: 65%;
+        text-align: center;
+        color: $primaryColor;
+    }
+    .forthTab-text{
+        margin-top: .5rem;
+    }
+}
