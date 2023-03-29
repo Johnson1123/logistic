@@ -7,13 +7,15 @@ import { images } from '../../asset'
 import { DBcontroller, passengercontroller } from '../../content/DBcontroller'
 import { handleDashboard, handleMenuClose } from '../../features/toggleSlice/toggleSlice'
 import Tabcontroller from '../DriverDB/Tabcontroller/Tabcontroller'
+import { useNavigate } from 'react-router-dom'
 
 
 function MobileControllers() {
     const Dispatch = useDispatch();
+    const navigate = useNavigate()
     const tab = useSelector(state => state.toggleReducer.dashboarMenu);
   const handleDB = (n) => {
-     Dispatch(handleDashboard(n))
+      navigate(n)
      Dispatch(handleMenuClose())
     }
   return (
@@ -36,7 +38,7 @@ function MobileControllers() {
 
               passengercontroller.map((item, index) => {
                 return(
-                  <Tabcontroller label={item.label} icon={item.icon} key={index} handler={() => handleDB(item.label)}/>
+                  <Tabcontroller label={item.label} icon={item.icon} key={index} handler={() => handleDB(item.href)}/>
                 )
               })
             }

@@ -9,6 +9,7 @@
     transition: all .5s;
     font-size: 14px !important;
     list-style: none;
+    color: $whiteColor !important;
     @media screen and (min-width: 768px) {
         padding: .7rem 2rem;
         font-size: 16px !important;
@@ -17,21 +18,12 @@
         background-color: $whiteColor;
         margin-left: 10px;
         color: $primaryColor !important;
-        a{
-            color: $primaryColor !important;
-        }
-    }
-    a{
-        color: $whiteColor !important;
     }
     svg{
         margin-right: .8rem;
         @media screen and (min-width: 768px) {
             margin-right: 0.4rem;
         }
-    }
-    li{
-        color: $primaryColor !important;
     }
 
 }

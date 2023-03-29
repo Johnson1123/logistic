@@ -9,10 +9,8 @@ import { useNavigate } from 'react-router-dom'
 
 function Tabcontrollers() {
   const navigate = useNavigate()
-  const handleNavigate = () => {
-    return (
-      navigate('/tab')
-    )
+  const handleDB = (n) => {
+    navigate(n)
   }
   return (
     <div className='Tabcontrollers'>
@@ -20,7 +18,7 @@ function Tabcontrollers() {
         {
           passengercontroller.map((item, index) => {
             return(
-              <Tabcontroller label={item.label} icon={item.icon} key={index} href={item.href}/>
+              <Tabcontroller label={item.label} icon={item.icon} key={index} handler={() => handleDB(item.href)}/>
             )
           })
         }

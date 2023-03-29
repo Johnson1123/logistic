@@ -17,9 +17,10 @@
             margin: 0 auto;
             .tab__container{
                 width: 100% !important;
-                margin: 5rem 1rem 2rem;
+                margin: 5rem 0rem 2rem;
                 @media screen and (min-width: 768px) {
                     width: 100%;
+                    margin: 5rem 1rem 2rem;
                 }
             }
             

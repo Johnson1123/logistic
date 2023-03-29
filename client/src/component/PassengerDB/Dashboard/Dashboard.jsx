@@ -1,6 +1,5 @@
 import React from 'react'
 import './Dashboard.scss'
-import Booking from '../../DriverDB/Booking/Booking'
 import Chat from '../../DriverDB/Chat/Chat'
 import Review from '../../DriverDB/Review/Review'
 import RecentActivities from './RecentActivities/RecentActivities'

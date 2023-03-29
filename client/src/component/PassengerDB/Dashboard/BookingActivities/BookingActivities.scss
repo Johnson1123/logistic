@@ -5,6 +5,9 @@
     height: auto;
     background-color: $asheColor;
     border-radius: 10px;
+    @include mobile {
+        width: 140%;
+    }
     .col__title{
         justify-content: space-between;
         .p-text{
