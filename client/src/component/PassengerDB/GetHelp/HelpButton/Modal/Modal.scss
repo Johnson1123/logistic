@@ -5,6 +5,7 @@
     left: 0;
     width: 100%;
     height: 100%;
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,6 +16,9 @@
     background-color: $whiteColor;
     padding: 1rem 3rem;
     border-radius: 10px;
+    @include mobile{
+        padding: 1rem;
+    }
     .title{
         margin-bottom: 1rem;
     }

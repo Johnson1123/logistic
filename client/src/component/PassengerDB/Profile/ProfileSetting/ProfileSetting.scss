@@ -1,4 +1,12 @@
 @import '../../../../style/variable.scss';
+.ProfileSetting{
+    @include mobile{
+        .title{
+            padding: 0 1rem;
+        }
+        margin-top: 1rem;
+     }
+}
 .ProfileSetting__con{
     width: 95%;
     margin: 0 auto;
@@ -9,6 +17,9 @@
     flex-direction: column;
     align-items: center;
     min-height: 200px;
+    @include mobile{
+        margin-top: 0;
+    }
     @media screen and (min-width: 768px) {
         width: 50%;
     }

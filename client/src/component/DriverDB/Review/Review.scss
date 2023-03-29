@@ -13,6 +13,7 @@
             width: 20%;
             @include mobile {
                 width: 18%;
+                margin-right: 10px;
             }
             img{
                 width: 30px;

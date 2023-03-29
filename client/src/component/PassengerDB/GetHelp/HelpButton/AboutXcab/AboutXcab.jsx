@@ -28,7 +28,10 @@ function AboutXcab() {
 
   return (
     <div className='AboutXcab'>
-        <p className="title flex"><div className='arrow__back' onClick={() => navigate('/passengerdb/help/')}><FaAngleLeft /></div>About XLCAB Ride</p>
+        <div className="title flex">
+          <div className='arrow__back' onClick={() => navigate('/passengerdb/help/')}><FaAngleLeft /></div>
+          <p> About XLCAB Ride</p>
+          </div>
         <HelpButton label='Where can i find XLCAB Ride Office?' className='mt-2' handler={() => handleContent(1)}/>
         <HelpButton label='XLCAB Ride Public API' handler={() => handleContent(2)}/>
         <HelpButton label='Where does XLCAB Ride operate?' handler={() => handleContent(3)}/>

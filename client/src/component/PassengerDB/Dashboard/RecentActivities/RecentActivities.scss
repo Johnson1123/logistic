@@ -48,6 +48,9 @@
         justify-content: space-between;
         padding: .3rem .3rem;
         font-weight: 500;
+        @include mobile{
+            margin: .5rem 0;
+        } 
         .p-text{
             font-size: 14px;
             font-weight: 500;

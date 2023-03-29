@@ -3,6 +3,7 @@
     width: 100%;
     @include mobile{
         padding: 0 1rem;
+        margin-top: 1rem;
     }
     .control__con{
         background-color: $asheColor;
@@ -10,6 +11,9 @@
         margin-top: 1rem;
         padding: .5rem 3rem;
         border-radius: 20px;
+        @include mobile{
+            padding: .7rem 1rem;
+        }
         .control-btn{
             border: none;
             background-color: transparent;

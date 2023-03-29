@@ -27,7 +27,10 @@ function PaymentPricing() {
   
   return (
     <div className='PaymentPricing'>
-        <div className="title flex"><div className='arrow__back' onClick={() => navigate('/passengerdb/help/')}><FaAngleLeft/></div>Payment and pricing</div>
+        <div className="title flex">
+          <div className='arrow__back' onClick={() => navigate('/passengerdb/help/')}><FaAngleLeft/></div>
+          <p>Payment and pricing</p>
+        </div>
         <div className="btn__container">
         <div className='AccountData'>
             {

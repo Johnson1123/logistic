@@ -1,8 +1,13 @@
+@import '../../../style/variable.scss';
 .Profile{
     width: 100%;
-    @media screen and (min-width: 768px) {
+    @include mobile{
+        padding: 1rem 2rem;
+    }
+    @include tablet {
         width: 60%;
         padding-left: 4rem;
+
     }
     .title{
         font-weight: 900;

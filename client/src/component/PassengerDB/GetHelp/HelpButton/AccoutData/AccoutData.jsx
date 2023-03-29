@@ -27,7 +27,12 @@ function AccountData() {
   
   return (
     <div className='AccountData'>
-        <div className="title flex"><div className='arrow__back align' onClick={() => navigate('/passengerdb/help/')}><FaAngleLeft/></div>Account and Data</div>
+        <div className="title flex">
+          <div className='arrow__back align' onClick={() => navigate('/passengerdb/help/')}>
+          <FaAngleLeft/>
+          </div>
+          <p>Account and Data</p>
+          </div>
         <div className="btn__container">
         <div className='AccountData'>
             {
