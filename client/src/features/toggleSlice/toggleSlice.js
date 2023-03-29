@@ -6,7 +6,8 @@ const initialState  = {
     dashboardToggle: 'Dashboard',
     login: false,
     dashboarMenu: false,
-    role: false
+    role: false,
+    user: false
 }
 const toggleSlice = createSlice({
     name: 'toggleMenu',
@@ -29,9 +30,15 @@ const toggleSlice = createSlice({
         },
         handleMenuOpen: (state) => {
             state.dashboarMenu = true
+        },
+        userActive: (state) => {
+            state.user = true
+        },
+        userInActive: (state) => {
+            state.user = false
         }
     }
 })
 
 export default toggleSlice.reducer;
-export const { toggleMenu, closeToggle, closeSearch, handleDashboard, handleMenuClose, handleMenuOpen} = toggleSlice.actions;
+export const { toggleMenu, closeToggle, userInActive, userActive, closeSearch, handleDashboard, handleMenuClose, handleMenuOpen} = toggleSlice.actions;

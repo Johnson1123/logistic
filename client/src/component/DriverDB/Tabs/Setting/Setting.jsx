@@ -15,7 +15,7 @@ function Setting() {
       )
     }
   return (
-    <div className='Setting dbTab'>
+    <div className='Setting'>
         <div className="setting__wrapper">
             <p className="title">Settings</p>
             <div className="tabs__con flex">

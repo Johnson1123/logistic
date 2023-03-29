@@ -6,7 +6,7 @@ import './Mydocument.scss'
 
 function Mydocument() {
   return (
-    <div className='Mydocument dbTab'>
+    <div className='Mydocument'>
         <div className="title">My Documents</div>
         <p className="small-title p-text fw-300">Here are documents associated with your driver profile.</p>
         <div className="documents con">

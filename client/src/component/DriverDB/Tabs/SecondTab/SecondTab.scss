@@ -1,5 +1,9 @@
+@import '../../../../style/variable.scss';
 .SecondTab{
     width: 100%;
+    @include mobile{
+        padding: 0 2rem;
+    }
     @media screen and (min-width: 768px) {
         width: 60%;
         padding-left: 4rem;

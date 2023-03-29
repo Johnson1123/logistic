@@ -6,6 +6,9 @@
     }
     .input__container{
         width: 60%;
+        @include mobile{
+            width: 100%;
+        }
         .download{
             padding: .5rem;
             border: 1px solid blue;
@@ -18,6 +21,9 @@
     .input__details{
         width: 40%;
         margin-top: 1rem;
+        @include mobile{
+            width: 75%;
+        }
         .box{
             .small-title{
                 font-size: $font-14;

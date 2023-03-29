@@ -4,7 +4,7 @@ import './SecondTab.scss'
 
 export default function SecondTab() {
   return (
-    <div className='SecondTab dbTab'>
+    <div className='SecondTab'>
         <h4 className="title">My Profile</h4>
         <p className="p- small-title">Here you can check your driver profile details and modify some if they are outdated.</p>
         <div className="profile__content">

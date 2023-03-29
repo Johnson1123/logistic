@@ -4,7 +4,7 @@ import './Payout.scss'
 function Payout() {
   const isPayout = false
   return (
-    <div className='Payout dbTab'>
+    <div className='Payout'>
         <div className="payout__wrapper">
             <h4 className="title">Tax Reports</h4>
             <p className="small-title">Here you see list of tax reports for recent months.</p>

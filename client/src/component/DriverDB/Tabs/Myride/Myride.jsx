@@ -8,7 +8,7 @@ import './Myride.scss'
 function Myride() {
   const PagiNum = [1,2,3,4,5,6,7,8,9]
   return (
-    <div className='Myride dbTab'>
+    <div className='Myride'>
         <div className="myride__wrapper">
           <div className="input__container">
             <InputDropGroup />

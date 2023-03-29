@@ -1,6 +1,7 @@
 @import '../../style/variable.scss';
-.dbNav__menu-container{
+.PNav__menu-container{
     width: 100%;
+    height: 770px;
     background-color: rgba(0, 0, 0, 0.452);
     position: absolute;
     top: 0;
@@ -10,6 +11,7 @@
         display: none;
     }
     .MobileControllers{
+        height: 100%;
         background-color: $secondaryColor;
         padding: 1rem 0rem 0;
         width: 80%;

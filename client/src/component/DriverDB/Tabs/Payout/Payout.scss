@@ -1,6 +1,9 @@
 @import '../../../../style/variable.scss';
 .Payout{
     width: 95%;
+    @include mobile{
+        padding: 1rem 2rem;
+    }
     .payout__wrapper{
         width: 100%;
         @media screen and (min-width: 768px) {

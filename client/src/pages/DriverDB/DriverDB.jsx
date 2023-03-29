@@ -5,8 +5,8 @@ import { useSelector } from 'react-redux'
 
 import './DriverDB.scss'
 import DBNav from '../../component/DBNav/DBNav'
-import Tabcontrollers from '../../component/DriverDB/Tabcontrollers/Tabcontrollers'
-import MobileControllers from '../../component/MobileControllers/MobileControllers'
+import DriverController from '../../component/DriverController/DriverController'
+import DBMobileControllers from '../../component/MobileControllers/DBMobileControllers'
 
 
 function DriverDB() {
@@ -15,9 +15,9 @@ function DriverDB() {
     <div className='DriverDB'>
         <div className="DriverDB__wrapper">
             <DBNav />
-            {menu && <MobileControllers />}
+            {menu && <DBMobileControllers />}
             <div className="DriverDB__content">
-             <Tabcontrollers />
+             <DriverController />
              <div className="tab__container">
                 <Outlet />
              </div>

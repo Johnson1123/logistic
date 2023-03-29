@@ -20,6 +20,7 @@ function Booking() {
                        <div className="box p-text col-2">{recent.email}</div>
                        <div className="box p-text col-3">{recent.time}</div>
                        <div className="box p-text col-4">{recent.status}</div>
+                       
                     </div>
                 )
             })

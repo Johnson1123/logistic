@@ -1,5 +1,5 @@
 import React from 'react'
-import './MobileControllers.scss'
+import './DBMobileControllers.scss'
 
 import { AiOutlineClose } from 'react-icons/ai'
 import { useDispatch, useSelector } from 'react-redux'
@@ -10,7 +10,7 @@ import Tabcontroller from '../DriverDB/Tabcontroller/Tabcontroller'
 import { useNavigate } from 'react-router-dom'
 
 
-function MobileControllers() {
+function DBMobileControllers() {
     const Dispatch = useDispatch();
     const navigate = useNavigate()
     const tab = useSelector(state => state.toggleReducer.dashboarMenu);
@@ -36,7 +36,7 @@ function MobileControllers() {
           <div>
             {
 
-              passengercontroller.map((item, index) => {
+              DBcontroller.map((item, index) => {
                 return(
                   <Tabcontroller label={item.label} icon={item.icon} key={index} handler={() => handleDB(item.href)}/>
                 )
@@ -58,4 +58,4 @@ function MobileControllers() {
   )
 }
 
-export default MobileControllers
+export default DBMobileControllers

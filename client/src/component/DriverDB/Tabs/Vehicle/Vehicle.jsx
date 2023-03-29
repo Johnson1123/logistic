@@ -16,11 +16,26 @@ function Vehicle() {
         return (
                 <div className="details__con">
                     <div className="flex details__properties">
-                        <div className="p-text detail flex"><p className="bold-text">Model</p><p className="p-text">{vehicles[toggle].model}</p></div>
-                        <div className="p-text detail flex"><p className="bold-text">Year</p><p className="p-text">{vehicles[toggle].year}</p></div>
-                        <div className="p-text detail flex"><p className="bold-text">License Plate</p><p className="p-text">{vehicles[toggle].plate}</p></div>
-                        <div className="p-text detail flex"><p className="bold-text">Color</p><p className="p-text">{vehicles[toggle].color}</p></div>
-                        <div className="p-text detail flex"><p className="bold-text">Seats</p><p className="p-text">{vehicles[toggle].seats}</p></div>
+                        <div className="p-text detail flex">
+                            <p className="bold-text">Model</p>
+                            <p className="p-text">{vehicles[toggle].model}</p>
+                        </div>
+                        <div className="p-text detail flex">
+                            <p className="bold-text">Year</p>
+                            <p className="p-text">{vehicles[toggle].year}</p>
+                        </div>
+                        <div className="p-text detail flex">
+                            <p className="bold-text">License Plate</p>
+                            <p className="p-text">{vehicles[toggle].plate}</p>
+                        </div>
+                        <div className="p-text detail flex">
+                            <p className="bold-text">Color</p
+                            ><p className="p-text">{vehicles[toggle].color}</p>
+                        </div>
+                        <div className="p-text detail flex">
+                            <p className="bold-text">Seats</p
+                            ><p className="p-text">{vehicles[toggle].seats}</p>
+                        </div>
                     </div>
                     <div className="vehicle__documents">
                         <p className="title">Vehicle Documents</p>
@@ -47,12 +62,12 @@ function Vehicle() {
                                 )
                             })
                         }
-            </div>
+                    </div>
                 </div>
         )
     }
   return (
-    <div className='Vehicle dbTab'>
+    <div className='Vehicle'>
         <div className="control__con">
             <p className="title">Vehicles</p>
             <p className="small-title fw-500">Here you see overview of your vehicles.</p>

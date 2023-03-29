@@ -4,7 +4,7 @@ import './TaxReport.scss'
 
 function TaxReport() {
   return (
-    <div className='TaxReport dbTab'>
+    <div className='TaxReport dbtab'>
         <div className="taxReport__wrapper">
             <h4 className="title">Tax Reports</h4>
             <p className="small-title">Here you see list of tax reports for recent months.</p>

@@ -5,10 +5,12 @@ import {ImUser} from 'react-icons/im'
 import { Link } from 'react-router-dom'
 import { AiOutlineMenu } from 'react-icons/ai'
 import { useDispatch, useSelector } from 'react-redux'
-import { handleMenuOpen } from '../../features/toggleSlice/toggleSlice'
+import { handleMenuOpen, userActive } from '../../features/toggleSlice/toggleSlice'
 
 
 function DBNav() {
+    const dispatch = useDispatch()
+    const user = useSelector(state => state.toggleReducer.user)
     const Dispatch = useDispatch();
     const menuHandler = () => {
      Dispatch(handleMenuOpen())
@@ -20,7 +22,7 @@ function DBNav() {
                 <img src={images.logo} alt='Technovixdriver' />
             </Link>
         </div>
-        <div className="DBNav__box user-icon">
+        <div className="DBNav__box user-icon" onClick={() => dispatch(userActive())}>
             <ImUser />
             <div className="dot__user"></div>
         </div>

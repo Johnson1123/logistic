@@ -1,5 +1,5 @@
 import React, { Component, useEffect, useState } from 'react'
-import './Tabcontrollers.scss'
+import './PassengerController.scss'
 import Tabcontroller from '../Tabcontroller/Tabcontroller'
 import {RxDashboard} from 'react-icons/rx'
 import {DBcontroller, passengercontroller } from '../../../content/DBcontroller'
@@ -7,13 +7,13 @@ import { images } from '../../../asset'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
-function Tabcontrollers() {
+function PassengerController() {
   const navigate = useNavigate()
   const handleDB = (n) => {
     navigate(n)
   }
   return (
-    <div className='Tabcontrollers'>
+    <div className='Passenger__controller'>
         <div className='Tabcontrollers__con'>
         {
           passengercontroller.map((item, index) => {
@@ -22,6 +22,7 @@ function Tabcontrollers() {
             )
           })
         }
+        
         <div className="getApp flex">
           <div className="getApp__content">
             <p className="small-title p-text">Get Mobile App</p>
@@ -37,4 +38,4 @@ function Tabcontrollers() {
   )
 }
 
-export default Tabcontrollers
+export default PassengerController

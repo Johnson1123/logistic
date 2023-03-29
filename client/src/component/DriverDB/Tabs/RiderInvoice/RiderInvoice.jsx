@@ -7,7 +7,7 @@ import './RiderInvoice.scss'
 function RiderInvoice() {
     const PagiNum = [1,2,3,4,5,6,7,8,9]
   return (
-    <div className='RiderInvoice dbTab'>
+    <div className='RiderInvoice '>
         <div className="RiderInvoice__wrapper">
             <p className="title">Rider Invoices</p>
             <div className="input__con flex">

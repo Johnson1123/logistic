@@ -62,13 +62,15 @@ function FirstTab() {
                     <RecentBooking />
                 </div>
             </div>
-        <p className="recent-booking-text title">Recent Booking</p>
-        <Booking />
+            <p className="recent-booking-text title">Recent Booking</p>
+            <div className="scroll__container">
+              <Booking />
+            </div>
         </div>
         <div className="chart__group flex">
                 <Chat />
                 <Review />
-            </div>
+        </div>
     </div>
   )
 }

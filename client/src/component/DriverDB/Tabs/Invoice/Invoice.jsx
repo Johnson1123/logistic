@@ -4,7 +4,7 @@ import './Invoice.scss'
 function Invoice() {
     const isInvoice = false;
   return (
-    <div className='Invoice dbTab'>
+    <div className='Invoice'>
         <div className="invoice__wrapper">
             <p className="title">XLCAB Invoices</p>
             <div className="invoice__con">

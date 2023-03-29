@@ -6,7 +6,7 @@ import './BalanceReport.scss'
 function BalanceReport() {
     const PagiNum = [1,2,3,4,5,6,7,8,9]
   return (
-    <div className='BalanceReport dbTab'>
+    <div className='BalanceReport'>
         <div className="balanceReport__wrapper">
             <h4 className="title">Balance Reports</h4>
             <p className="small-title">Here you see list of balance reports for recent weeks.</p>
