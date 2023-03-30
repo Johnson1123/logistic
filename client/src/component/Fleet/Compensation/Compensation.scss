@@ -1,0 +1,87 @@
+@import '../../../style/variable.scss';
+.Compensation{
+    width: 95%;
+    padding: 1rem .5rem 0;
+    @media screen and (min-width: 768px) {
+        .RiderInvoice__wrapper{
+            width: 90%;
+        }         
+    }
+    .col-1{
+        width: 15%;
+        text-align: left;
+    }
+    .col-2{
+        width: 60%;
+        text-align: center;
+    }
+    .col-3{
+        width: 15%;
+        text-align: center;
+    }
+    .col-4{
+        width: 10%;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        text-align: center;
+    }
+    .files__con{
+        width: 100%;
+        overflow: scroll;
+        .file__header{
+            margin-top: 1rem;
+            width: 150%;
+            height: 50px;
+            background-color: $asheColor;
+            align-items: center;
+            border-radius: 10px;
+            justify-content: space-between;
+            @media screen and (min-width: 768px) {
+                    padding: 1rem;
+                    width: 100%;
+            }
+            .bold-text{
+                text-align: center;
+                text-overflow: hidden;
+                font-size: 14px;
+                &:first-of-type{
+                    text-align: left;
+                }
+                @media screen and (min-width: 768px) {
+                    font-size: 16px;
+                }
+            }
+        }
+        .file__box-con{
+            margin-top: .5rem;
+            width: 150%;
+            @include tablet{
+                width: 100%;
+            }
+            .file__box{
+                justify-content: space-between;
+                padding: .8rem .2rem;
+                margin: .3rem 0;
+                border-bottom: 2px solid $asheColor;
+                @media screen and (min-width: 768px) {
+                    text-align: center;
+                    padding: 1rem;
+                }
+                .pdf{
+                    color: $secondaryColor;
+                    cursor: pointer;
+                    font-weight: 900;
+                }
+            }     
+            .p-text{
+                font-size: 12px;
+                @media screen and (min-width: 768px) {
+                    font-size: 14px;
+                    font-weight: 500;
+                }
+            }
+        }
+
+    }
+    
+}

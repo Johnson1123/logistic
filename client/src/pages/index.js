@@ -1,5 +1,5 @@
 export { Home } from './Home/Home'
-export { default as InterP } from './InterP/InterP'
+export { default as InterP } from './FleetDB/FleetDB'
 export { default as LocalP } from './LocalP/LocalP'
 export { default as Login } from './Login/Login'
 export { default as NotFound } from './NotFound/NotFound'

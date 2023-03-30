@@ -23,6 +23,14 @@ import {
   TaxReport, Payout, Setting
 } from './component/DriverDB';
 
+import { 
+  FleetProfile, FleetDriver, OrderHistory, DriversList, Vehicles, FleetInvoice, RiderInvoice,
+  Compensation,
+  DailyReport,
+  WeeklyReport,
+  FleetPayouts
+} from './component/Fleet';
+
 import Signupbanner from './pages/Signupbanner/Signupbanner';
 import Background from './component/Background/Background';
 import AccessInfo from './pages/AccessInfo/AccessInfo';
@@ -35,6 +43,7 @@ import PaymentPricing from './component/PassengerDB/GetHelp/HelpButton/PaymentPr
 import Wattogo from './component/InternaltionalP/Wattogo/Wattogo';
 import { TbRipple } from 'react-icons/tb';
 import InterP from './component/PassengerDB/InterP/InterP';
+import FleetDB from './pages/FleetDB/FleetDB';
 
 
 const Layout = () => {
@@ -261,6 +270,68 @@ const router = createBrowserRouter([
         path: "Logout",
         element: <Setting />,
       }
+    ]
+  },
+  {
+    path: "/fleet",
+    element: <FleetDB />,
+    children: [
+      {
+        path: "dashboard",
+        element: <DriverDashboard />,
+      },
+      {
+        path: "profile",
+        element: <FleetProfile />,
+      },
+      {
+        path: "order",
+        element: <OrderHistory />,
+      },
+      {
+        path: "drivers",
+        element: <FleetDriver />,
+      },
+      {
+        path: "message",
+        element: <DriversList />,
+      },
+      {
+        path: "vehicles",
+        element: <Vehicles />,
+      },
+      {
+        path: "expired",
+        element: <Vehicle />,
+      },
+      {
+        path: "invoice",
+        element: <FleetInvoice />,
+      },
+      {
+        path: "rider/invoice",
+        element: <RiderInvoice />,
+      },
+      {
+        path: "compensation",
+        element: <Compensation />,
+      },
+      {
+        path: "daily/report",
+        element: <DailyReport />,
+      },
+      {
+        path: "Weekly/report",
+        element: <WeeklyReport />,
+      },
+      {
+        path: "Payout",
+        element: <FleetPayouts />,
+      },
+      {
+        path: "setting",
+        element: <Setting />,
+      },
     ]
   },
   {

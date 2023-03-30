@@ -98,6 +98,100 @@ export const DBcontroller = [
     },
     
 ]
+
+export const FleetDB = [
+    {
+        id: 1,
+        label: 'Dashboard',
+        icon: <RxDashboard />,
+        href: 'dashboard'
+    },
+    {
+        id: 2,
+        label: 'Profile',
+        icon: <FaUserAlt />,
+        href: 'profile'
+    },
+    {
+        id: 3,
+        label: 'Order History',
+        icon: <FaThList />,
+        href: 'order'
+    },
+
+    {
+        id: 4,
+        label: 'Drivers',
+        icon: <BsFillFilePostFill />,
+        href: 'drivers'
+    },
+    {
+        id: 4,
+        label: 'messages',
+        icon: <TbMessage />,
+        href: 'message'
+    },
+    {
+        id: 4,
+        label: 'Vehicles',
+        icon: <TbMessage />,
+        href: 'vehicles'
+    },
+    {
+        id: 5,
+        label: 'Expiring Documents',
+        icon: <TbFileInvoice />,
+        href: 'expired'
+    },
+    {
+        id: 6,
+        label: 'Invoices',
+        icon: <RxDashboard />,
+        href: 'invoice'
+    },
+    {
+        id: 7,
+        label: 'Rider Invoices',
+        icon: <RxDashboard />,
+        href: 'rider/invoice'
+    },
+    {
+        id: 9,
+        label: 'Compensation',
+        icon: <RxDashboard />,
+        href: 'compensation'
+    },
+    {
+        id: 10,
+        label: 'Daily Reports',
+        icon: <RxDashboard />,
+        href: 'daily/report'
+    },
+    {
+        id: 11,
+        label: 'Weekly Reports',
+        icon: <RxDashboard />,
+        href: 'Weekly/report'
+    },
+    {
+        id: 12,
+        label: 'Payout',
+        icon: <MdPayment />,
+        href: 'payout'
+    },
+    {
+        id: 13,
+        label: 'Setting',
+        icon: <FcSettings />,
+        href: 'setting'
+    },
+    {
+        id: 14,
+        label: 'Logout',
+        icon: <BiHelpCircle />,
+    },
+    
+]
 export const passengercontroller = [
     {
         id: 1,
