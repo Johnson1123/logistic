@@ -25,8 +25,8 @@ function RiderInvoice() {
         },
     ]
 return (
-    <div className='RiderInvoice '>
-        <div className="RiderInvoice__wrapper">
+    <div className='FRiderInvoice '>
+        <div className="FRiderInvoice__wrapper">
             <p className="title">Rider Invoices</p>
             <p className="p-text">Invoices that have been issued to riders from you.</p>
             <div className="input__con flex">

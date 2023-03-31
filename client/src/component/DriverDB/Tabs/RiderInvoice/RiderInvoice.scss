@@ -1,6 +1,7 @@
 @import '../../../../style/variable.scss';
 .RiderInvoice{
     width: 95%;
+    padding: 1rem;
     @media screen and (min-width: 768px) {
         .RiderInvoice__wrapper{
             width: 70%;
@@ -18,6 +19,15 @@
     .input__con{
         width: 70%;
         margin-top: 10px;
+        @include mobile{
+            width: 100%;
+        }
+        .ant-space{
+            flex-wrap: nowrap;
+            .ant-select{
+                width: 100px;
+            }
+        }
         .download{
             padding: .5rem;
             border: 1px solid blue;
@@ -43,17 +53,24 @@
     }
     .col-5{
         width: 10%;
+        text-align: right;
+    }
+    .files__con{
+        width: 100%;
+        overflow-x: scroll;
     }
     .file__header{
         margin-top: 1rem;
-        width: 100%;
+        width: 200%;
         height: 50px;
         background-color: $asheColor;
         align-items: center;
         border-radius: 10px;
         justify-content: space-between;
+        padding: 0 1rem;
         @media screen and (min-width: 768px) {
                 padding: 1rem;
+                width: 100%;
         }
         .bold-text{
             text-align: center;
@@ -62,6 +79,9 @@
             &:first-of-type{
                 text-align: left;
             }
+            &:last-of-type{
+                text-align: right;
+            }
             @media screen and (min-width: 768px) {
                 font-size: 16px;
             }
@@ -69,6 +89,10 @@
     }
     .file__box-con{
         margin-top: .5rem;
+        width: 200%;
+        @include tablet{
+            width: 100%;
+        }
         .file__box{
             justify-content: space-between;
             padding: .5rem .2rem;

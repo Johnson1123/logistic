@@ -1,9 +1,9 @@
 @import '../../../style/variable.scss';
-.RiderInvoice{
+.FRiderInvoice{
     width: 95%;
     padding: 1rem .5rem 0;
     @media screen and (min-width: 768px) {
-        .RiderInvoice__wrapper{
+        .FRiderInvoice__wrapper{
             width: 90%;
         }         
     }

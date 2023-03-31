@@ -9,14 +9,12 @@ function InputDropGroup() {
   const [cities, setCities] = useState();
   const [secondCity, setSecondCity] = useState();
   return (
-    <Space wrap>
+    <Space >
       <Select
         defaultValue={provinceData[0]}
-        style={{ width: 120 }}
         options={provinceData.map((province) => ({ label: province, value: province }))}
       />
       <Select
-        style={{ width: 120 }}
         defaultValue={cityData[0]}
         options={cityData.map((city) => ({ label: city, value: city }))}
       />
