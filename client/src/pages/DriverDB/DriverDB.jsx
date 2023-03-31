@@ -7,10 +7,12 @@ import './DriverDB.scss'
 import DBNav from '../../component/DBNav/DBNav'
 import DriverController from '../../component/DriverController/DriverController'
 import DBMobileControllers from '../../component/MobileControllers/DBMobileControllers'
+import UserInfo from '../../component/UserInfo/UserInfo'
 
 
 function DriverDB() {
   const menu = useSelector(state => state.toggleReducer.dashboarMenu);
+  const user = useSelector(state => state.toggleReducer.user)
   return (
     <div className='DriverDB'>
         <div className="DriverDB__wrapper">
@@ -21,7 +23,7 @@ function DriverDB() {
              <div className="tab__container">
                 <Outlet />
              </div>
-             
+             {user && <UserInfo />}
             </div>
         </div>
     </div>
