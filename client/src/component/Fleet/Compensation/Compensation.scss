@@ -28,6 +28,11 @@
     .files__con{
         width: 100%;
         overflow: scroll;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+            display: none;
+        }
         .file__header{
             margin-top: 1rem;
             width: 150%;

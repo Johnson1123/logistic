@@ -13,6 +13,7 @@
     .p-text{
         width: 100%;
         font-weight: 500;
+        font-size: $font-14;
         @include tablet{
             font-size: 14px;
         }
@@ -34,11 +35,8 @@
         }
         .user__info{
             .name{
-                font-weight: 900;
-                font-size: $font-20;
-                @include tablet{
-                    font-size: $font-16;
-                }
+                font-weight: 700;
+                font-size: $font-16;
             }
             .p-text{
                 background-color: $secondaryColor;
@@ -63,7 +61,7 @@
             margin-top: 2rem;
         }
         .small-title{
-            font-size: $font-18;
+            font-size: $font-16;
             font-weight: 700;
             @include tablet{
                 font-size: 500;
@@ -77,13 +75,13 @@
                 margin: .5rem 0;
                 .personal-title{
                     width: 37%;
-                    @include tablet{
-                        font-size: $font-14;
-                    }
+                    font-size: $font-14
                 }
                 .p-text{
                     width: 63%;
                     font-weight: 300;
+                    font-size: $font-14;
+
                 }
             }
         }

@@ -10,12 +10,16 @@
             .controls__container{
                 margin-top: 1rem;
                 .control-btn{
-                    padding: 0.7rem 1rem;
-                    margin-right: 1rem;
+                    padding: 0.7rem .8rem;
+                    margin-right: .5rem;
                     background-color: transparent;
                     border: 1px solid  $lightAshe;
                     border-radius: 5px;
                     font-weight: 500;
+                    @include tablet{
+                        margin-right: 1rem;
+                        padding: .7rem 1rem;
+                    }
                     &.active{
                         background-color: $secondaryColor;
                         color: $whiteColor;

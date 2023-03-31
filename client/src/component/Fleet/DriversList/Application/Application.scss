@@ -29,23 +29,34 @@
     }
     .scroll__container{
         margin-top: 1rem;
-        width: 60%;
+        width: 100%;
         overflow: scroll;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+            display: none;
+        }
         @include tablet{
             overflow: hidden;
         }
         .col-1{
-            width: 60%;
+            width: 35%;
         }
         .col-2{
-            width: 40%;
+            width: 15%;
+        }
+        .col-3{
+            width: 30%;
+        }
+        .col-4{
+            width: 20%;
         }
         
         .title__container{
             margin-top: 0.5rem;
             padding: .7rem;
             border-radius: 10px;
-            width: 100%;
+            width: 150%;
         }
         .data__container{
             margin-top: 1rem;
