@@ -4,7 +4,7 @@ import './FleetDB.scss'
 import { useSelector } from 'react-redux'
 import DBNav from '../../component/DBNav/DBNav'
 import { Outlet } from 'react-router-dom'
-import PMobileControllers from '../../component/MobileControllers/PMobileControllers'
+import FleetMobileController from '../../component/MobileControllers/FleetMobileController'
 import UserInfo from '../../component/UserInfo/UserInfo'
 import FleetDBController from '../../component/FleetControllers/FleetControllers'
 
@@ -16,7 +16,7 @@ function FleetDB() {
     <div className='FleetDB'>
         <div className="FleetDB__wrapper">
             <DBNav />
-            { menu && <PMobileControllers />}
+            { menu && <FleetMobileController />}
             <div className="FleetDB__content flex">
               <FleetDBController />
               <div className="tab__container">

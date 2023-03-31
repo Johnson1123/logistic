@@ -18,11 +18,14 @@ function DBMobileControllers() {
       navigate(n)
      Dispatch(handleMenuClose())
     }
+    const handleClose = () => {
+      Dispatch(handleMenuClose())
+    }
   return (
     <div className='dbNav__menu-container'>
       <div className='MobileControllers'>
           <div className="db__close">
-              <AiOutlineClose />
+              <AiOutlineClose onClick={handleClose} />
           </div>
           <div className="DBNav__box user__img-details flex">
               <div className="user__img flex center">
