@@ -6,9 +6,13 @@
     justify-content: center;
     .driverList__wrapper{
         width: 95%;
+        .p-text{
+            font-weight: 500;
+            font-size: $font-16;
+        }
         .driverList__content{
             .controls__container{
-                margin-top: 1rem;
+                margin-top: 1.5rem;
                 .control-btn{
                     padding: 0.7rem .8rem;
                     margin-right: .5rem;

@@ -8,13 +8,14 @@ import { images } from '../../asset'
 
 import './Form_Sign.scss'
 import SignupBtn from '../Btn/SignupBtn/SignupBtn'
-import { useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { startSignUp } from '../../features/toggleSlice/toggleSlice'
 
 function FORM_SIGN(props) {
-  const navigate = useNavigate();
-  const handleNavigate = () => {
+  const Dispatch = useDispatch()
+  const handleToggle = () => {
     return (
-      navigate('/loginuser')
+        Dispatch(startSignUp())
     )
   }
   return (
@@ -29,7 +30,7 @@ function FORM_SIGN(props) {
           <Input type='password' name='pwd' image={<AiFillLock />} placeholder='Password'/>
         </div>
         <div>
-          <SignupBtn label='Sign Up' handler={props.handler}/>
+          <SignupBtn label='Sign Up' onClick={handleToggle}/>
         </div>                         
     </form>
   )

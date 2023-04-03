@@ -1,7 +1,7 @@
 @import '../../../../style/variable.scss';
 .Application{
     width: 100%;
-    margin-top: 1.5rem;
+    margin-top: 2.5rem;
     .top__container{
         justify-content: space-between;
         // align-items: flex-start;
@@ -11,8 +11,11 @@
         .desc{
             width: 70%;
             @include tablet{
-                width: 80%;
-                
+                width: 60%;
+            }
+            .p-text{
+                font-size: $font-14;
+                font-weight: 500;
             }
         }
         .small-title{
@@ -29,6 +32,7 @@
     }
     .scroll__container{
         margin-top: 1rem;
+        padding: .5rem;
         width: 100%;
         overflow: scroll;
         -ms-overflow-style: none;
@@ -57,6 +61,9 @@
             padding: .7rem;
             border-radius: 10px;
             width: 150%;
+            @include tablet{
+                width: 70%;
+            }
         }
         .data__container{
             margin-top: 1rem;

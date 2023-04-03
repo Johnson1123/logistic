@@ -1,0 +1,46 @@
+@import "../../style/variable.scss";
+.footer__container {
+  flex-wrap: wrap;
+  padding: 1rem;
+  margin-top: 1rem;
+  row-gap: 1rem;
+  .foo_box {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .footer-title {
+      line-height: 2.5;
+      text-align: left;
+    }
+    .footer__link {
+      list-style: none;
+      line-height: 1.8;
+      text-align: left;
+      padding-left: 0.5rem;
+      cursor: pointer;
+      &.store {
+        a {
+          color: blue;
+        }
+      }
+      a {
+        color: $primaryColor;
+        font-family: roboto;
+        font-weight: 300;
+      }
+    }
+  }
+  .box__1 {
+    .lang {
+      margin-top: 0.5rem;
+      align-items: center;
+      font-size: $font-16;
+      svg {
+        margin-right: 0.5rem;
+        color: gray;
+      }
+    }
+  }
+}

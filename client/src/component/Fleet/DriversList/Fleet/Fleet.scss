@@ -19,6 +19,12 @@
     .scroll__container{
         width: 100%;
         overflow: scroll;
+        padding: 0.5rem;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+            display: none;
+        }
         @include tablet{
             overflow: hidden;
         }

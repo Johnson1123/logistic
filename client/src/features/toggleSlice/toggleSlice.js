@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
+import SignUp from '../../pages/SignUp/SignUp'
 
 const initialState  = {
     menuValue: false,
@@ -7,7 +8,8 @@ const initialState  = {
     login: false,
     dashboarMenu: false,
     role: false,
-    user: false
+    user: false,
+    signUp: false
 }
 const toggleSlice = createSlice({
     name: 'toggleMenu',
@@ -36,9 +38,15 @@ const toggleSlice = createSlice({
         },
         userInActive: (state) => {
             state.user = false
+        },
+        startSignUp: (state) => {
+            state.signUp = true
+        },
+        endSignUp: (state) => {
+            state.signUp = false
         }
     }
 })
 
 export default toggleSlice.reducer;
-export const { toggleMenu, closeToggle, userInActive, userActive, closeSearch, handleDashboard, handleMenuClose, handleMenuOpen} = toggleSlice.actions;
+export const { toggleMenu, closeToggle, startSignUp, endSignUp, userInActive, userActive, closeSearch, handleDashboard, handleMenuClose, handleMenuOpen} = toggleSlice.actions;

@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Application from './Application/Application'
 import Vehicle from './Vehicle/Vehicle'
 import './Vehicles.scss'
 
 function Vehicles() {
+    const [tab, setTab] = useState('Vehicles')
   return (
     <div className='Vehicles'>
         <div className="Vehicles__wrapper">
@@ -14,13 +15,13 @@ function Vehicles() {
                     {
                         ['Vehicles', 'Applications'].map((item, index) => {
                             return(
-                            <button className="control-btn active" key={index}>{item}</button>
+                            <button className="control-btn active" key={index} onClick={() => setTab(item)}>{item}</button>
                             )
                         })
                     }
                 </div>
-                {/* <Vehicle /> */}
-                <Application />
+                {tab == 'Vehicles' && <Vehicle />}
+                {tab == 'Applications' && <Application />}
             </div>
         </div>
         

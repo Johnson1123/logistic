@@ -7,7 +7,7 @@ function Signupbanner() {
   const navigate = useNavigate();
   return (
     <div className='signupbanner__con center flex'>
-        <div className="btn__con"><SignupBtn label='SIGN UP AS USER' handler={() => navigate('/s')}/></div>
+        <div className="btn__con"><SignupBtn label='SIGN UP AS USER' handler={() => navigate('/signupuser')}/></div>
         <div className="btn__con" ><SignupBtn label='SIGN UP AS DRIVER' handler={() => navigate('/signupuser')}/></div>
     </div>
   )

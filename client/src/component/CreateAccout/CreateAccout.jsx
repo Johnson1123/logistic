@@ -10,7 +10,7 @@ function CreateAccout(props) {
             <p className="form-bold">START FOR FREE</p>
             <p className="form-title p-text">CREATE AN ACCOUNT</p>
             <p className="form-text">Please fill in Your Accurate Information</p>
-            <FORM_SIGN handler={props.handler}/>
+            <FORM_SIGN handle={props.handler}/>
             <p className='form-text login_here'>Already have an account?<Link to='/loginuser'>Login here!</Link></p>
             <div className=' connect_sign flex center'>
                 <div></div><p className='small-text'>Connect With</p><div></div>

@@ -1,5 +1,5 @@
 @import '../../../../style/variable.scss';
-.Application{
+.SApplication{
     width: 100%;
     margin-top: 1.5rem;
     .top__container{
@@ -9,7 +9,7 @@
         }
         .small-title{
             font-weight: 700;
-            font-size: $font-16;
+            font-size: $font-14;
         }
         .add__driver{
             background-color: transparent;
@@ -21,38 +21,25 @@
     }
     .scroll__container{
         width: 100%;
-        overflow: scroll;
         @include tablet{
             overflow: hidden;
         }
         .col-1{
-            width: 25%;
+            width: 60%;
         }
         .col-2{
-            width: 15%;
-        }
-        .col-3{
-            width: 30%;
-        }
-        .col-4{
-            width: 25%;
+            width: 40%;
         }
         
         .title__container{
             margin-top: 0.5rem;
-            width: 250%;
+            width: 100%;
             padding: .7rem;
             border-radius: 10px;
-            @include tablet{
-                width: 100%;
-            }
         }
         .data__container{
             margin-top: 1rem;
-            width: 250%;
-            @include tablet{
-                width: 100%;
-            }
+            width: 100%;
             .box{
                 padding: .5rem;
                 border-bottom: 1px solid $lightAshe;

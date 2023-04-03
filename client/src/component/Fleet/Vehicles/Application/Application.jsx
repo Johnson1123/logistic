@@ -1,10 +1,11 @@
 import React from 'react'
 import { drivers } from '../../../../content/Fleet'
+import './Application.scss'
 
 function Application() {
     const application = false
   return (
-    <div className='Application'>
+    <div className='SApplication'>
         <div className="top__container flex">
                 <div className="desc">
                     <p className="title">Vehicle Applications</p>

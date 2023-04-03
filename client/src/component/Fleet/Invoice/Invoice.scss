@@ -28,15 +28,24 @@
         }
         .invoice__con{
             margin-top: 1.2rem;
+            padding: 0.5rem;
+            overflow: scroll;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            &::-webkit-scrollbar {
+                display: none;
+            }
             .file__header{
-                width: 100%;
+                width: 200%;
                 height: 50px;
+                padding: 0.5rem;
                 background-color: $asheColor;
                 align-items: center;
                 border-radius: 10px;
                 justify-content: space-between;
                 @media screen and (min-width: 768px) {
                         padding: 1rem;
+                        width: 100%;
                 }
                 .bold-text{
                     text-align: center;

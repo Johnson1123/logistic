@@ -14,7 +14,7 @@ function Vehicle() {
                 <div className="title__container  box-shadow flex">
                     <p className="small-title col-1">Name</p>
                     <p className="small-title col-2">Status</p>
-                    <p className="small-title col-4">Mobile</p>
+                    <p className="small-title col-3">Mobile</p>
                 </div>
                 <div className="data__container">
                     {
@@ -23,7 +23,7 @@ function Vehicle() {
                                 <div className="box flex" key={index}>
                                     <p className="p-text col-1">{item.name}</p>
                                     <p className="p-text col-2 "><span className='reject'>{item.status}</span></p>
-                                    <p className="p-text col-4">{item.plate}</p>
+                                    <p className="p-text col-3">{item.plate}</p>
                                 </div>
                             )
                         })

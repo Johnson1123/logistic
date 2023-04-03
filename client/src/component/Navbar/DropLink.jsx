@@ -11,5 +11,3 @@ export default function DropLink(props) {
     </li>
   )
 }
-
-// to={`/${props.label}`

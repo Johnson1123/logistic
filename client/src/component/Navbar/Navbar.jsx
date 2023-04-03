@@ -74,7 +74,7 @@ function Navbar() {
         <div className="navbar__user flex-center">
           <div className="user__container flex center">
             <img src={images.Elia} alt='user image' />
-            <span className='p-text'><Link to='/passangerDB' className='user-link '>Dashboard</Link></span>
+            <span className='p-text'><Link to='/driver/dashboard' className='user-link '>Dashboard</Link></span>
           </div>
         </div>
       </div>

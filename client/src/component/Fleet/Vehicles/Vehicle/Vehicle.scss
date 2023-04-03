@@ -6,7 +6,7 @@
         justify-content: space-between;
         .small-title{
             font-weight: 700;
-            font-size: $font-16;
+            font-size: $font-14;
         }
         .add__driver{
             background-color: transparent;
@@ -19,39 +19,59 @@
     .scroll__container{
         width: 100%;
         overflow: scroll;
+        padding: 0.5rem;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+            display: none;
+        }   
         @include tablet{
             overflow: hidden;
         }
         .col-1{
-            width: 160px;
+            width: 170px;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space:nowrap;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             
             @include tablet{
                 width: 30%;
             }
         }
         .col-2{
-            width: 35%;
+            width: 25%;
             margin-left: 0.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .col-3{
-            width: 30%;
-            text-overflow: ellipsis;
+            width: 25%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             @include tablet{
                 width: 30%;
             }
         }
         .title__container{
             margin-top: 0.5rem;
-            width: 100%;
+            width: 120%;
             padding: .7rem;
             border-radius: 10px;
+            @include tablet{
+                width: 100%;
+            }
         }
         .data__container{
             margin-top: 1rem;
-            width: 100%;
+            width: 120%;
+            @include tablet{
+                width: 100%;
+            }
             .box{
                 padding: .5rem;
                 border-bottom: 1px solid $lightAshe;

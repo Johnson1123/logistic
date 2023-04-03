@@ -28,7 +28,8 @@ import {
   Compensation,
   DailyReport,
   WeeklyReport,
-  FleetPayouts
+  FleetPayouts,
+  FleetDashboard
 } from './component/Fleet';
 
 import Signupbanner from './pages/Signupbanner/Signupbanner';
@@ -278,7 +279,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "dashboard",
-        element: <DriverDashboard />,
+        element: <FleetDashboard />,
       },
       {
         path: "profile",

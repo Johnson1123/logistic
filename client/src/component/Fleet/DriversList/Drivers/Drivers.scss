@@ -1,5 +1,5 @@
 @import '../../../../style/variable.scss';
-.fleetDriver{
+.content__wrapper{
     width: 100%;
     margin-top: 1.5rem;
     .top__container{
@@ -18,7 +18,13 @@
     }
     .scroll__container{
         width: 100%;
+        padding: .5rem;
         overflow: scroll;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+            display: none;
+        }
         @include tablet{
             overflow: hidden;
         }
@@ -30,10 +36,10 @@
             }
         }
         .col-2{
-            width: 15%;
+            width: 20%;
         }
         .col-3{
-            width: 200px;
+            width: 250px;
             text-overflow: ellipsis;
             @include tablet{
                 width: 30%;
@@ -45,10 +51,13 @@
         .col-5{
             width: 20%;
             text-align: right;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .title__container{
             margin-top: 0.5rem;
-            width: 200%;
+            width: 220%;
             padding: .7rem;
             border-radius: 10px;
             @include tablet{
@@ -57,7 +66,7 @@
         }
         .data__container{
             margin-top: 1rem;
-            width: 200%;
+            width: 220%;
             @include tablet{
                 width: 100%;
             }

@@ -28,7 +28,7 @@
 }
 
 .p-text{
-    font-size: $font-16;
+    font-size: $font-14;
     font-family: $primaryFont;
     line-height: 1.3;
     font-weight: 300;
@@ -134,4 +134,12 @@
 .align{
     margin-top: 5px;
     margin-right: 10px;
+}
+.active{
+    color: $whiteColor;
+    background-color: $secondaryColor;
+}
+.disable{
+    color: $whiteColor;
+    background-color: red;
 }
