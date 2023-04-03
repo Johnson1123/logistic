@@ -2,7 +2,7 @@
 .footer__container {
   flex-wrap: wrap;
   padding: 1rem;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   row-gap: 1rem;
   .foo_box {
     width: 50%;
@@ -28,7 +28,8 @@
       a {
         color: $primaryColor;
         font-family: roboto;
-        font-weight: 300;
+        font-weight: 500;
+        font-size: $font-14;
       }
     }
   }
