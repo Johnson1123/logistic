@@ -4,15 +4,26 @@
   padding: 1rem;
   margin-top: 1.5rem;
   row-gap: 1rem;
+  @include tablet {
+    width: 65%;
+    margin: 3rem auto 1rem;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
   .foo_box {
     width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    @include tablet {
+      width: auto;
+      align-items: flex-start;
+    }
     .footer-title {
       line-height: 2.5;
       text-align: left;
+      font-weight: 700;
     }
     .footer__link {
       list-style: none;
@@ -37,7 +48,9 @@
     .lang {
       margin-top: 0.5rem;
       align-items: center;
-      font-size: $font-16;
+      .p-text {
+        font-size: $font-14;
+      }
       svg {
         margin-right: 0.5rem;
         color: gray;

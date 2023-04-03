@@ -1,13 +1,11 @@
 @import "../../style/variable.scss";
 .DownloadSection__container {
-  position: relative;
-  top: 0;
-  left: 0;
   width: 90%;
   margin: 6rem auto 0;
   @media screen and (min-width: 768px) {
-    width: 70%;
-    margin-top: 6rem;
+    width: 60%;
+    margin: 6rem auto 0;
+    justify-content: space-around;
   }
   .Download__content {
     width: 45%;
@@ -19,7 +17,7 @@
       line-height: 2;
       @media screen and (min-width: 768px) {
         font-size: 65px;
-        font-size: 24px;
+        font-size: 30px;
         line-height: 1.1;
         padding: 1rem 0 0;
       }
