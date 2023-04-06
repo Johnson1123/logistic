@@ -1,46 +1,48 @@
-@import '../../../../style/variable.scss';
-.myride__wrapper{
-    width: 100%;
-    padding: 1rem 1rem;
-    @media screen and (min-width: 768px) {
+@import "../../../../style/variable.scss";
+.myride__wrapper {
+  width: 100%;
+  padding: 0 1rem;
+  @media screen and (min-width: 768px) {
+    padding: 0 0.5rem;
+    width: 70%;
+  }
+  .input__container {
+    width: 60%;
+    margin: 0;
+    @include mobile {
+      width: 100%;
+    }
+    .download {
+      padding: 0.5rem;
+      border: 1px solid blue;
+      border-radius: 5px;
+      font-size: 12px;
+      margin-left: 10px;
+    }
+  }
+
+  .input__details {
+    width: 40%;
+    margin-top: 1rem;
+    @include mobile {
+      width: 75%;
+    }
+    .box {
+      .small-title {
+        font-size: $font-14;
         width: 70%;
+        margin: 3px 0;
+      }
+      .p-text {
+        font-size: $font-14;
+      }
     }
-    .input__container{
-        width: 60%;
-        @include mobile{
-            width: 100%;
-        }
-        .download{
-            padding: .5rem;
-            border: 1px solid blue;
-            border-radius: 5px;
-            font-size: 12px;
-            margin-left: 10px;
-        }
+  }
+  .page__container {
+    align-items: center;
+    margin-top: 1rem;
+    .page__con {
+      align-items: center;
     }
-    
-    .input__details{
-        width: 40%;
-        margin-top: 1rem;
-        @include mobile{
-            width: 75%;
-        }
-        .box{
-            .small-title{
-                font-size: $font-14;
-                width: 70%;
-                margin: 3px 0;
-            }
-            .p-text{
-                font-size: $font-14;
-            }
-        }
-    }
-    .page__container{
-        align-items: center;
-        margin-top: 1rem;
-        .page__con{
-            align-items: center;
-        }
-    }
+  }
 }

@@ -1,76 +1,76 @@
-@import '../../../../style/variable.scss';
-.SecondTab{
-    width: 100%;
-    @include mobile{
-        padding: 0 2rem;
-    }
+@import "../../../../style/variable.scss";
+.SecondTab {
+  width: 100%;
+  @include mobile {
+    padding: 0 1rem;
+  }
+  @include tablet {
+    width: 60%;
+    padding: 1rem 0.5rem;
+  }
+  .title {
+    font-weight: 900;
+    line-height: 2;
+  }
+  .small-title {
+    font-size: 14px;
     @media screen and (min-width: 768px) {
-        width: 60%;
-        padding-left: 4rem;
+      font-size: 16px;
     }
-    .title{
-        font-weight: 900;
-        line-height: 2;
+  }
+  .profile__content {
+    margin-top: 2rem;
+    @media screen and (min-width: 768px) {
+      margin-top: 1.5rem;
     }
-    .small-title{
+    img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      @media screen and (min-width: 768px) {
+        width: 120px;
+        height: 120px;
+      }
+    }
+    .small-title {
+      line-height: 2;
+    }
+    .name {
+      font-weight: 900;
+    }
+    .profile__box {
+      width: 100%;
+      align-items: center;
+      &:first-of-type {
+        margin-top: 1rem;
+        @media screen and (min-width: 768px) {
+          margin-top: 0.5rem;
+        }
+      }
+      .p-text {
+        width: 40%;
         font-size: 14px;
-        @media screen and (min-width: 768px) {
-            font-size: 16px;
+      }
+      @media screen and (min-width: 768px) {
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        .p-text {
+          width: 40%;
+          font-size: 14px;
         }
+        .name {
+          font-weight: 700;
+          line-height: 3;
+          font-size: 30px;
+        }
+        .small-title {
+          width: 60%;
+          font-size: 16px;
+          font-weight: 400;
+        }
+      }
     }
-    .profile__content{
-        margin-top: 2rem;
-        @media screen and (min-width: 768px) {
-            margin-top: 1.5rem;
-        }
-        img{
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-            @media screen and (min-width: 768px) {
-                width: 120px;
-                height: 120px;
-            }
-        }
-        .small-title{
-            line-height: 2;
-        }
-        .name{
-            font-weight: 900;
-        }
-        .profile__box{
-            width: 100%;
-            align-items: center;
-            &:first-of-type{
-                margin-top: 1rem;
-                @media screen and (min-width: 768px) {
-                    margin-top: .5rem;
-                }
-            }
-            .p-text{
-                width: 40%;
-                font-size: 14px;
-            }
-            @media screen and (min-width: 768px) {
-                width:100%;
-                justify-content: space-between;
-                align-items: center;
-                .p-text{
-                    width: 40%;
-                    font-size: 14px;
-                }
-                .name{
-                    font-weight: 700;
-                    line-height: 3;
-                    font-size: 30px;
-                }
-                .small-title{
-                    width: 60%;
-                    font-size: 16px;
-                    font-weight: 400;
-                }
-            }
-        }
-    }
+  }
 }

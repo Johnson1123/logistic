@@ -285,10 +285,10 @@ const router = createBrowserRouter([
       },
       {
         path: "invoice",
-        element: <Invoice />,
+        element: <XlcabInvoice />,
       },
       {
-        path: "xlcabinvoice",
+        path: "xlcabInvoice",
         element: <XlcabInvoice />,
       },
       {

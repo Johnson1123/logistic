@@ -4,8 +4,8 @@
   margin: 4rem auto 0;
   padding: 0.5rem;
   justify-content: space-between;
-  @media screen and (min-width: 768px) {
-    width: 60%;
+  @include tablet {
+    width: 70%;
     margin: 6rem auto 0;
     justify-content: space-around;
   }
@@ -13,23 +13,28 @@
     width: 45%;
     text-align: center;
     align-self: center;
+    @include tablet {
+      width: 50%;
+      text-align: left;
+    }
     .title {
       font-weight: 700;
       font-size: 20px;
       line-height: 2;
-      @media screen and (min-width: 768px) {
+      @include tablet {
         font-size: 65px;
-        font-size: 30px;
-        line-height: 1.1;
+        font-size: 35px;
+        line-height: 1;
         padding: 1rem 0 0;
       }
     }
     .para-text {
       font-size: 14px;
-      text-align: left;
+      text-align: center;
       @media screen and (min-width: 768px) {
         font-size: $font-18;
         padding: 1rem 0;
+        text-align: left;
       }
     }
     .store_con {
@@ -37,6 +42,7 @@
 
       img {
         width: 80%;
+        object-fit: cover;
         @media screen and (min-width: 768px) {
           width: 60%;
         }

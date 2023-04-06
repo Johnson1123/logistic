@@ -12,12 +12,11 @@
   z-index: 100;
   top: -50px;
   left: 0;
-
   row-gap: 20px;
   flex-wrap: wrap;
   @media screen and (min-width: 768px) {
     flex-direction: row;
-    width: 80%;
+    width: 70%;
     justify-content: space-around;
   }
   .task__box {
@@ -32,6 +31,8 @@
     .task__img-box {
       width: 70%;
       height: 100px;
+      min-height: 100px;
+      max-height: 100px;
       padding: 1rem;
       overflow: hidden;
       @media screen and (min-width: 768px) {
@@ -56,7 +57,13 @@
     .box-3 {
       width: 31%;
       @media screen and (min-width: 768px) {
-        width: 35%;
+        width: 34%;
+        display: flex;
+        align-items: center;
+        img {
+          margin-top: 20px;
+          width: 80%;
+        }
       }
     }
     h3 {

@@ -1,67 +1,70 @@
-@import '../../../../style/variable.scss';
-.BalanceReport{
-    width: 95%;
-    @include mobile{
-        padding: 1rem 2rem;
-    }
-    .balanceReport__wrapper{
-        width: 100%;
-        @media screen and (min-width: 768px) {
-            width: 70%;
-        }
-        .pagination{
-            margin-top: 1rem;
-            align-items: center;
-            .page__con{
-                align-items: center;
-            }
-        }
-        .balance__con{
-            margin-top: 1.5rem;
-            .col-1, .col-2{
-                width: 50%;
-            }
-            .col-2{
-                text-align: center;
-            }
-            .balance__header{
-                width: 100%;
-                height: 40px;
-                padding: .5rem;
-                background-color: $asheColor;
-                align-items: center;
-                border-radius: 10px;
-                justify-content: space-between;
-            }
-            .reports__box-con{
-                margin-top: 0.5rem;
-                padding: .5rem;
-                .report__box{
-                    justify-content: space-between;
-                    padding: .5rem 0;
-                    border-bottom: 2px solid rgb(211, 211, 211);
-                    @media screen and (min-width: 768px) {
-                        padding: 1rem 0;
-                    }
-                    .pdf{
-                        color: $secondaryColor;
-                    }   
-                    .p-text{
-                        
-                        font-size: 12px;
+@import "../../../../style/variable.scss";
+.BalanceReport {
+  width: 95%;
+  padding: 0 1rem;
+  @include tablet {
+    padding: 1rem 0.5rem;
+  }
 
-                        &:last-of-type{
-                            text-align: center;
-                        }
-                        @media screen and (min-width: 768px) {
-                            font-size: 14px;
-                            font-weight: 500;
-                        }
-                    }
-                }
-            }
-            
-        }
+  .balanceReport__wrapper {
+    width: 100%;
+    @media screen and (min-width: 768px) {
+      width: 70%;
     }
-    
+    .pagination {
+      margin-top: 1rem;
+      align-items: center;
+      .page__con {
+        align-items: center;
+      }
+    }
+    .balance__con {
+      margin-top: 1.5rem;
+      .col-1,
+      .col-2 {
+        width: 50%;
+      }
+      .col-2 {
+        text-align: center;
+      }
+      .balance__header {
+        width: 100%;
+        height: 40px;
+        padding: 0.5rem;
+        background-color: $asheColor;
+        align-items: center;
+        border-radius: 10px;
+        justify-content: space-between;
+      }
+      .reports__box-con {
+        margin-top: 0.5rem;
+        padding: 0.5rem;
+        .report__box {
+          justify-content: space-between;
+          padding: 0.5rem 0;
+          border-bottom: 2px solid rgb(211, 211, 211);
+          &:last-of-type {
+            border-bottom: none;
+          }
+          @media screen and (min-width: 768px) {
+            padding: 1rem 0;
+          }
+          .pdf {
+            color: $secondaryColor;
+          }
+          .p-text {
+            font-size: 12px;
+
+            &:last-of-type {
+              text-align: center;
+            }
+            @media screen and (min-width: 768px) {
+              font-size: 14px;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+  }
 }

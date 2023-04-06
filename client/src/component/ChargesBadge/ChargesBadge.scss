@@ -6,16 +6,18 @@
   -webkit-box-shadow: 2px 4px 5px 1px #f3f3f3;
   -moz-box-shadow: 2px 4px 5px 1px #f3f3f3;
   margin-top: 3rem;
+  border-radius: 5px;
   @media screen and (min-width: 768px) {
-    margin-top: 4rem;
-    width: 50%;
+    margin-top: 2rem;
+    width: 70%;
+    justify-content: center;
   }
   img {
-    width: 40%;
+    width: 25%;
     margin-right: 5px;
   }
   .charges__content {
-    flex: 1;
+    width: 50%;
     .badge-title {
       text-align: center;
       @media screen and (min-width: 768px) {

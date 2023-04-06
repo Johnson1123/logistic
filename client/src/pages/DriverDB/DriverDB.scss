@@ -1,18 +1,19 @@
-@import '../../style/variable.scss';
-.DriverDB{
-    padding: 1rem 0 2rem;
-    .DriverDB__content{
-        margin-top: 4rem;
-        display: flex;
-        width: 100%;
-        margin: 0 auto;
-        
-        .tab__container{
-            flex: 1;
-            margin: 4rem 0 0;
-            @media screen and (min-width: 768px) {
-                margin: 2rem 1rem;
-            }
-        }
+@import "../../style/variable.scss";
+.DriverDB {
+  padding: 1rem 0 2rem;
+  .DriverDB__content {
+    margin-top: 4rem;
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+
+    .tab__container {
+      flex: 1;
+      margin: 4rem 0 0;
+      @media screen and (min-width: 768px) {
+        margin-top: 3rem;
+        padding: 1rem 0.5rem;
+      }
     }
+  }
 }

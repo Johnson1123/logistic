@@ -15,8 +15,10 @@ function OurBrand() {
               <div className="brand__box">
                 <div className="content__box">
                   <img src={brand.image} alt={`${brand.title} with us`} />
-                  <h2 className="p-text title">{brand.title}</h2>
-                  <p className="p-text text">{brand.text}</p>
+                  <div className="text__content">
+                    <h2 className="bold-text title">{brand.title}</h2>
+                    <p className="p-text text">{brand.text}</p>
+                  </div>
                 </div>
               </div>
             );

@@ -1,116 +1,125 @@
-@import '../../../../style/variable.scss';
-.RiderInvoice{
-    width: 95%;
-    padding: 1rem;
+@import "../../../../style/variable.scss";
+.RiderInvoice {
+  width: 95%;
+  padding: 0 1rem;
+  @include tablet {
+    padding: 1rem 0.5rem;
+    .RiderInvoice__wrapper {
+      width: 70%;
+    }
+  }
+
+  .pagination {
+    margin-top: 1rem;
+    align-items: center;
+    .page__con {
+      align-items: center;
+    }
+  }
+
+  .input__con {
+    width: 70%;
+    margin-top: 10px;
+    @include mobile {
+      width: 100%;
+    }
+    .ant-space {
+      flex-wrap: nowrap;
+      .ant-select {
+        width: 100px;
+      }
+    }
+    .download {
+      padding: 0.5rem;
+      border: 1px solid blue;
+      border-radius: 5px;
+      font-size: 12px;
+      margin-left: 10px;
+    }
+  }
+
+  .col-1 {
+    width: 20%;
+    text-align: left;
+  }
+  .col-2 {
+    width: 28%;
+  }
+  .col-3 {
+    width: 10%;
+  }
+  .col-4 {
+    width: 28%;
+    text-overflow: ellipsis;
+  }
+  .col-5 {
+    width: 10%;
+    text-align: right;
+  }
+  .files__con {
+    width: 100%;
+    padding: 0.2rem;
+    overflow-x: scroll;
+    @include tablet {
+      overflow-x: hidden;
+    }
+  }
+  .file__header {
+    margin-top: 1rem;
+    width: 200%;
+    height: 50px;
+    background-color: $asheColor;
+    align-items: center;
+    border-radius: 10px;
+    justify-content: space-between;
+    padding: 0 1rem;
     @media screen and (min-width: 768px) {
-        .RiderInvoice__wrapper{
-            width: 70%;
-        }         
+      width: 100%;
+      padding: 1rem;
+      width: 100%;
     }
-    
-    .pagination{
-        margin-top: 1rem;
-        align-items: center;
-        .page__con{
-            align-items: center;
-        }
-    }
-
-    .input__con{
-        width: 70%;
-        margin-top: 10px;
-        @include mobile{
-            width: 100%;
-        }
-        .ant-space{
-            flex-wrap: nowrap;
-            .ant-select{
-                width: 100px;
-            }
-        }
-        .download{
-            padding: .5rem;
-            border: 1px solid blue;
-            border-radius: 5px;
-            font-size: 12px;
-            margin-left: 10px;
-        }
-    }
-
-    .col-1{
-        width: 20%;
+    .bold-text {
+      text-align: center;
+      text-overflow: hidden;
+      font-size: 14px;
+      &:first-of-type {
         text-align: left;
-    }
-    .col-2{
-        width: 28%;
-    }
-    .col-3{
-        width: 10%;
-    }
-    .col-4{
-        width: 28%;
-        text-overflow: ellipsis;
-    }
-    .col-5{
-        width: 10%;
+      }
+      &:last-of-type {
         text-align: right;
+      }
+      @media screen and (min-width: 768px) {
+        font-size: 16px;
+      }
     }
-    .files__con{
-        width: 100%;
-        overflow-x: scroll;
+  }
+  .file__box-con {
+    margin-top: 0.5rem;
+    width: 200%;
+    @include tablet {
+      width: 100%;
     }
-    .file__header{
-        margin-top: 1rem;
-        width: 200%;
-        height: 50px;
-        background-color: $asheColor;
-        align-items: center;
-        border-radius: 10px;
-        justify-content: space-between;
-        padding: 0 1rem;
-        @media screen and (min-width: 768px) {
-                padding: 1rem;
-                width: 100%;
-        }
-        .bold-text{
-            text-align: center;
-            text-overflow: hidden;
-            font-size: 14px;
-            &:first-of-type{
-                text-align: left;
-            }
-            &:last-of-type{
-                text-align: right;
-            }
-            @media screen and (min-width: 768px) {
-                font-size: 16px;
-            }
-        }
+    .file__box {
+      justify-content: space-between;
+      padding: 0.5rem 0.2rem;
+      border-bottom: 2px solid $asheColor;
+      &:last-of-type {
+        border-bottom: none;
+      }
+      @media screen and (min-width: 768px) {
+        text-align: center;
+        padding: 1rem;
+      }
+      .pdf {
+        color: $secondaryColor;
+      }
     }
-    .file__box-con{
-        margin-top: .5rem;
-        width: 200%;
-        @include tablet{
-            width: 100%;
-        }
-        .file__box{
-            justify-content: space-between;
-            padding: .5rem .2rem;
-            border-bottom: 2px solid $asheColor;
-            @media screen and (min-width: 768px) {
-                text-align: center;
-                padding: 1rem;
-            }
-            .pdf{
-                color: $secondaryColor;
-            }
-        }     
-        .p-text{
-            font-size: 12px;
-            @media screen and (min-width: 768px) {
-                font-size: 14px;
-                font-weight: 500;
-            }
-        }
+    .p-text {
+      font-size: 12px;
+      @media screen and (min-width: 768px) {
+        font-size: 14px;
+        font-weight: 500;
+      }
     }
+  }
 }

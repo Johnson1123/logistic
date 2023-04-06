@@ -1,285 +1,277 @@
-@import '../../../style/variable.scss';
-.Messages__container{
-    width: 100%;
-    height: 100vh;
-    justify-content: center;
-    align-items: center; 
-    @include mobile{
+@import "../../../style/variable.scss";
+.Messages__container {
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  @include mobile {
+  }
+  .Messages__wrapper {
+    width: 95%;
+    height: 100%;
+    display: flex;
+    gap: 1rem;
+    overflow: hidden;
+    padding: 1rem;
+    @include mobile {
+      width: 100%;
+      padding: 0;
     }
-    .Messages__wrapper{
-        width: 95%;
-        height: 100%;
+    .chat__left {
+      flex: 1;
+      border-radius: 10px;
+      background-color: #faf9f9;
+      padding: 0 1rem;
+      @include mobile {
+      }
+      .title {
+      }
+      .search__container {
+        background-color: transparent;
         display: flex;
-        gap: 1rem;
-        overflow: hidden;
-        padding: 1rem;
-        @include mobile{
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        margin-top: 1rem;
+        .search__box {
+          display: flex;
+          align-items: center;
+          border-radius: 20px;
+          padding: 0.2rem 0.5rem;
+          background-color: $whiteColor;
+          svg {
+            font-size: 16px;
+            color: #bbbbbb;
+          }
+          .input {
             width: 100%;
-            padding: 0;
+            border: none;
+            outline: none;
+            padding-left: 10px;
+            &::placeholder {
+              color: #bbbbbb;
+            }
+          }
+          .search__control {
+            .ant-select-selector {
+              height: 100%;
+              border: none;
+            }
+          }
         }
-        .chat__left{
-            flex: 1;
-            border-radius: 10px;
-            background-color: #FAF9F9;
-            padding: 1rem;
-            @include mobile {
-            }
-            .title{
+        .search__result {
+          width: 100%;
+          margin-top: 1rem;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0.5rem 0;
+          .chat__info {
+            width: 70%;
+            display: flex;
+            align-items: center;
+            .info__image-box {
+              width: 45px;
+              position: relative;
+              margin-right: 0.5rem;
 
+              img {
+                width: 45px;
+                height: 45px;
+                border-radius: 50%;
+                object-fit: cover;
+              }
+              span {
+                display: inline-flex;
+                width: 7px;
+                height: 7px;
+                background: green;
+                border-radius: 50%;
+                position: absolute;
+                top: 0;
+                right: 7px;
+                @include mobile {
+                  top: 3px;
+                  right: 5px;
+                }
+              }
             }
-            .search__container{
-                background-color: transparent;
-                display: flex;
-                flex-direction: column;
+            .info__details {
+              display: flex;
+              flex-direction: column;
+              .name {
+                font-size: $font-12;
+                font-weight: 500;
+                text-overflow: ellipsis;
+                @include mobile {
+                  font-size: $font-14;
+                }
+              }
+              .message {
                 width: 100%;
-                padding: 0;
-                margin-top: 1rem;
-                .search__box{
-                    display: flex;
-                    align-items: center;
-                    border-radius: 20px;
-                    padding: .2rem .5rem;
-                    background-color: $whiteColor;
-                    svg{
-                        font-size: 16px;
-                        color: #bbbbbb;
-                    }
-                    .input{
-                        width: 100%;
-                        border: none;
-                        outline: none;
-                        padding-left: 10px;
-                        &::placeholder{
-                            color: #bbbbbb;
-                        }
-                    }
-                    .search__control{
-                        .ant-select-selector{
-                            height: 100%;
-                            border: none ;
-                        }
-                    }
-                    
-
-
-                }
-                .search__result{
-                    width: 100%;
-                    margin-top: 1rem;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    padding: .5rem 0;
-                    .chat__info{
-                        width: 70%;
-                        display: flex;
-                        align-items: center;
-                        .info__image-box{
-                            width: 45px;
-                            position: relative;
-                            margin-right: .5rem;
-
-                            img{
-                                width: 45px;
-                                height: 45px;
-                                border-radius: 50%;
-                                object-fit: cover;
-                            }
-                            span{
-                                display: inline-flex;
-                                width: 7px;
-                                height: 7px;
-                                background: green;
-                                border-radius: 50%;
-                                position: absolute;
-                                top: 0;
-                                right: 7px;
-                                @include mobile{
-                                    top: 3px;
-                                    right: 5px;
-                                }
-                            }
-                        }
-                        .info__details{
-                            display: flex;
-                            flex-direction: column;
-                            .name{
-                                font-size: $font-12;
-                                font-weight: 500;
-                                text-overflow: ellipsis;
-                                @include mobile{
-                                    font-size: $font-14;
-                                }
-                            }
-                            .message{
-                                width: 100%;
-                                font-size: $font-12;
-
-                            }
-                        }
-                    }
-                    .time{
-                        font-size: $font-12;
-                    }
-                }
-            
+                font-size: $font-12;
+              }
             }
-            .chats{
-                width: 100%;
-                margin-top: .3rem;
-                .chat{
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    padding: .3rem 0;
-                    .chat__info{
-                        width: 70%;
-                        display: flex;
-                        align-items: center;
-                    }
-                    .info__image-box{
-                        width: 45px;
-                        position: relative;
-                        margin-right: .5rem;
-
-                        img{
-                            width: 45px;
-                            height: 45px;
-                            border-radius: 50%;
-                            object-fit: cover;
-                        }
-                        span{
-                            display: inline-flex;
-                            width: 7px;
-                            height: 7px;
-                            background: green;
-                            border-radius: 50%;
-                            position: absolute;
-                            top: 0;
-                            right: 7px;
-                            @include mobile{
-                                right: 5px;
-                                top: 3px;
-                              }
-                        }
-                    }
-                    .info__details{
-                        display: flex;
-                        flex-direction: column;
-                        .name{
-                            font-size: $font-12;
-                            font-weight: 500;
-                            text-overflow: ellipsis;
-                        }
-                        .message{
-                            width: 100%;
-                            font-size: $font-12;
-
-                        }
-                    }
-                }
-                .time{
-                    font-size: $font-12;
-                }
-            }
+          }
+          .time {
+            font-size: $font-12;
+          }
         }
-        .chat__right{
-            flex: 2;
-            border-radius: 10px;
-            height: 100%;
-            padding: 0rem 0 1rem;
-            @include mobile{
-                display: none;
-            }
-            .messages__nav{
-                height: 60px;
-                padding: .8rem 1rem;
-                display: flex;
-                justify-content: space-between;
-                border-bottom-right-radius: 10px;
-                border-bottom-left-radius: 10px;
-                .chat__info{
-                  width: 50%;
-                  display: flex;
-                  align-items: center;
-                  .info__image-box{
-                      width: 45px;
-                      position: relative;
-                      margin-right: .5rem;
-                      img{
-                          width: 45px;
-                          height: 45px;
-                          border-radius: 50%;
-                          object-fit: cover;
-                      }
-                      span{
-                          display: inline-flex;
-                          width: 7px;
-                          height: 7px;
-                          background: green;
-                          border-radius: 50%;
-                          position: absolute;
-                          top: 0;
-                          right: 7px;
-                          @include mobile{
-                            right: 5px;
-                            top: 3px;
-                          }
-                      }
-                  }
-                  .info__details{
-                      display: flex;
-                      flex-direction: column;
-                      .name{
-                          font-size: $font-12;
-                          font-weight: 500;
-                          text-overflow: ellipsis;
-                      }
-                      .message{
-                          width: 100%;
-                          font-size: $font-12
-                      }
-                  }
-                }
-                
-            }
+      }
+      .chats {
+        width: 100%;
+        margin-top: 0.3rem;
+        .chat {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0.3rem 0;
+          .chat__info {
+            width: 70%;
+            display: flex;
+            align-items: center;
+          }
+          .info__image-box {
+            width: 45px;
+            position: relative;
+            margin-right: 0.5rem;
 
-            .message__container{
-                height: calc(100% - 100px);
-                width: 100%;
-                padding: 1rem;
+            img {
+              width: 45px;
+              height: 45px;
+              border-radius: 50%;
+              object-fit: cover;
             }
-
-            .send__message{
-                height: 40px;
-                width: 90%;
-                margin: 0 auto;
-                border-radius: 10px;
-                display: flex;
-                align-items: center;
-                overflow: hidden;
-                input{
-                    width: 100%;
-                    border: none;
-                    outline: none;
-                }
-                .btn-send{
-                    height: 100%;
-                    background-color: #bbbbbb;
-                    font-weight: 500;
-                    font-size: $font-14;
-                    align-items: center;
-                    border: none;
-                    cursor: pointer;
-                    padding: .3rem 1rem;
-                    border-top-left-radius: 20px;
-                    border-bottom-left-radius: 20px;
-                    img{
-                        width: 20px;
-                        margin-left: .8rem;
-                    }
-                }
+            span {
+              display: inline-flex;
+              width: 7px;
+              height: 7px;
+              background: green;
+              border-radius: 50%;
+              position: absolute;
+              top: 0;
+              right: 7px;
+              @include mobile {
+                right: 5px;
+                top: 3px;
+              }
             }
+          }
+          .info__details {
+            display: flex;
+            flex-direction: column;
+            .name {
+              font-size: $font-12;
+              font-weight: 500;
+              text-overflow: ellipsis;
+            }
+            .message {
+              width: 100%;
+              font-size: $font-12;
+            }
+          }
         }
+        .time {
+          font-size: $font-12;
+        }
+      }
     }
+    .chat__right {
+      flex: 2;
+      border-radius: 10px;
+      height: 100%;
+      padding: 0rem 0 1rem;
+      @include mobile {
+        display: none;
+      }
+      .messages__nav {
+        height: 60px;
+        padding: 0.8rem 1rem;
+        display: flex;
+        justify-content: space-between;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        .chat__info {
+          width: 50%;
+          display: flex;
+          align-items: center;
+          .info__image-box {
+            width: 45px;
+            position: relative;
+            margin-right: 0.5rem;
+            img {
+              width: 45px;
+              height: 45px;
+              border-radius: 50%;
+              object-fit: cover;
+            }
+            span {
+              display: inline-flex;
+              width: 7px;
+              height: 7px;
+              background: green;
+              border-radius: 50%;
+              position: absolute;
+              top: 0;
+              right: 7px;
+              @include mobile {
+                right: 5px;
+                top: 3px;
+              }
+            }
+          }
+          .info__details {
+            display: flex;
+            flex-direction: column;
+            .name {
+              font-size: $font-12;
+              font-weight: 500;
+              text-overflow: ellipsis;
+            }
+            .message {
+              width: 100%;
+              font-size: $font-12;
+            }
+          }
+        }
+      }
+
+      .message__container {
+        height: calc(100% - 100px);
+        width: 100%;
+        padding: 1rem;
+      }
+
+      .send__message {
+        height: 40px;
+        width: 90%;
+        margin: 0 auto;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        input {
+          width: 100%;
+          border: none;
+          outline: none;
+        }
+        .btn-send {
+          height: 100%;
+          background-color: #bbbbbb;
+          font-weight: 500;
+          font-size: $font-14;
+          align-items: center;
+          border: none;
+          cursor: pointer;
+          padding: 0.3rem 1rem;
+          border-top-left-radius: 20px;
+          border-bottom-left-radius: 20px;
+          img {
+            width: 20px;
+            margin-left: 0.8rem;
+          }
+        }
+      }
+    }
+  }
 }

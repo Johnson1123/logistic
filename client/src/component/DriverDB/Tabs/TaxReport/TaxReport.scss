@@ -1,60 +1,62 @@
-@import '../../../../style/variable.scss';
-.TaxReport{
-    width: 95%;
-    @include mobile{
-        padding: 1rem 2rem 1rem;
+@import "../../../../style/variable.scss";
+.TaxReport {
+  width: 95%;
+  padding: 0rem 1rem;
+  @include tablet {
+    padding: 1rem 0.5rem;
+  }
+  .taxReport__wrapper {
+    width: 100%;
+    @media screen and (min-width: 768px) {
+      width: 70%;
     }
-    .taxReport__wrapper{
+    .tax__con {
+      margin-top: 1.5rem;
+      .col-1,
+      .col-2 {
+        width: 50%;
+      }
+      .col-2 {
+        text-align: center;
+      }
+      .tax__header {
         width: 100%;
-        @media screen and (min-width: 768px) {
-            width: 70%;
-        }
-        .tax__con{
-            margin-top: 1.5rem;
-            .col-1, .col-2{
-                width: 50%;
-            }
-            .col-2{
-                text-align: center;
-            }
-            .tax__header{
-                width: 100%;
-                height: 40px;
-                padding: .5rem;
-                background-color: $asheColor;
-                align-items: center;
-                border-radius: 10px;
-                justify-content: space-between;
-            }
-            .tax__box-con{
-                margin-top: 0.5rem;
-                padding: .5rem;
-                .taxes__box{
-                    justify-content: space-between;
-                    padding: .5rem 0;
-                    border-bottom: 2px solid $asheColor;
-                    @media screen and (min-width: 768px) {
-                        padding: 1rem 0;
-                    }
-                    .pdf{
-                        color: $secondaryColor;
-                    }   
-                    .p-text{
-                        
-                        font-size: 12px;
+        height: 40px;
+        padding: 0.5rem;
+        background-color: $asheColor;
+        align-items: center;
+        border-radius: 10px;
+        justify-content: space-between;
+      }
+      .tax__box-con {
+        margin-top: 0.5rem;
+        padding: 0.5rem;
+        .taxes__box {
+          justify-content: space-between;
+          padding: 0.5rem 0;
+          border-bottom: 2px solid $asheColor;
+          &:last-of-type {
+            border-bottom: none;
+          }
+          @media screen and (min-width: 768px) {
+            padding: 1rem 0;
+          }
+          .pdf {
+            color: $secondaryColor;
+          }
+          .p-text {
+            font-size: 12px;
 
-                        &:last-of-type{
-                            text-align: center;
-                        }
-                        @media screen and (min-width: 768px) {
-                            font-size: 14px;
-                            font-weight: 500;
-                        }
-                    }
-                }
+            &:last-of-type {
+              text-align: center;
             }
-            
+            @media screen and (min-width: 768px) {
+              font-size: 14px;
+              font-weight: 500;
+            }
+          }
         }
+      }
     }
-    
+  }
 }
