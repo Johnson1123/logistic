@@ -1,59 +1,105 @@
-import React from 'react'
+import React from "react";
 import {
   createBrowserRouter,
   RouterProvider,
   Route,
   Outlet,
   createRoutesFromElements,
-  Routes
+  Routes,
 } from "react-router-dom";
-import Navbar from './component/Navbar/Navbar'
-import Footer from './component/Footer/Footer'
-import { 
-  Home, LocalP, OTP,Loginuser, Login, NotFound,PassengerDB, Profile, UserSignup, Whattolearn,
-  ForgetPwd, Newpwd, mylearnnig, Experiencedriver, WatToGo, StartTraining, Techdrive, FormTab, Tab, Mylearnnig, DriverDB
-} from './pages';
+import Navbar from "./component/Navbar/Navbar";
+import Footer from "./component/Footer/Footer";
+import {
+  Home,
+  LocalP,
+  OTP,
+  Loginuser,
+  Login,
+  NotFound,
+  PassengerDB,
+  Profile,
+  UserSignup,
+  Whattolearn,
+  ForgetPwd,
+  Newpwd,
+  mylearnnig,
+  Experiencedriver,
+  WatToGo,
+  StartTraining,
+  Techdrive,
+  FormTab,
+  Tab,
+  Mylearnnig,
+  DriverDB,
+} from "./pages";
 
 import {
-  Dashboard, Upcoming, Booking, Message, PassengerProfile, ProfileSetting, PaymentSettings,AddCard, GetHelp, Trip
-} from './component/PassengerDB/index'
+  Dashboard,
+  Upcoming,
+  Booking,
+  Message,
+  PassengerProfile,
+  ProfileSetting,
+  PaymentSettings,
+  AddCard,
+  GetHelp,
+  Trip,
+} from "./component/PassengerDB/index";
 
-import { 
-  DriverDashboard, DriverProfile, Myride, Mydocument, Messages, Vehicle, Vehicledetail, Invoice, XlcabInvoice, BalanceReport,
-  TaxReport, Payout, Setting
-} from './component/DriverDB';
+import {
+  DriverDashboard,
+  DriverProfile,
+  Myride,
+  Mydocument,
+  Messages,
+  Vehicle,
+  Vehicledetail,
+  Invoice,
+  XlcabInvoice,
+  BalanceReport,
+  TaxReport,
+  Payout,
+  Setting,
+} from "./component/DriverDB";
 
-import { 
-  FleetProfile, FleetDriver, OrderHistory, DriversList, Vehicles, FleetInvoice, RiderInvoice,
+import {
+  FleetProfile,
+  FleetDriver,
+  OrderHistory,
+  DriversList,
+  Vehicles,
+  FleetInvoice,
+  RiderInvoice,
   Compensation,
   DailyReport,
   WeeklyReport,
   FleetPayouts,
-  FleetDashboard
-} from './component/Fleet';
+  FleetDashboard,
+} from "./component/Fleet";
 
-import Signupbanner from './pages/Signupbanner/Signupbanner';
-import Background from './component/Background/Background';
-import AccessInfo from './pages/AccessInfo/AccessInfo';
-import LessonVideo from './pages/LessonVideo/LessonVideo';
-import AboutXcab from './component/PassengerDB/GetHelp/HelpButton/AboutXcab/AboutXcab';
-import AppFeatures from './component/PassengerDB/GetHelp/HelpButton/AppFeatures/AppFeatures';
-import UsingRide from './component/PassengerDB/GetHelp/HelpButton/UsingApp/UsingRide';
-import AccountData from './component/PassengerDB/GetHelp/HelpButton/AccoutData/AccoutData';
-import PaymentPricing from './component/PassengerDB/GetHelp/HelpButton/PaymentPricing/PaymentPricing';
-import Wattogo from './component/InternaltionalP/Wattogo/Wattogo';
-import { TbRipple } from 'react-icons/tb';
-import InterP from './component/PassengerDB/InterP/InterP';
-import FleetDB from './pages/FleetDB/FleetDB';
-
+import Signupbanner from "./pages/Signupbanner/Signupbanner";
+import Background from "./component/Background/Background";
+import AccessInfo from "./pages/AccessInfo/AccessInfo";
+import LessonVideo from "./pages/LessonVideo/LessonVideo";
+import AboutXcab from "./component/PassengerDB/GetHelp/HelpButton/AboutXcab/AboutXcab";
+import AppFeatures from "./component/PassengerDB/GetHelp/HelpButton/AppFeatures/AppFeatures";
+import UsingRide from "./component/PassengerDB/GetHelp/HelpButton/UsingApp/UsingRide";
+import AccountData from "./component/PassengerDB/GetHelp/HelpButton/AccoutData/AccoutData";
+import PaymentPricing from "./component/PassengerDB/GetHelp/HelpButton/PaymentPricing/PaymentPricing";
+import Wattogo from "./component/InternaltionalP/Wattogo/Wattogo";
+import { TbRipple } from "react-icons/tb";
+import InterP from "./component/PassengerDB/InterP/InterP";
+import FleetDB from "./pages/FleetDB/FleetDB";
 
 const Layout = () => {
-  return <>
-    <Navbar />
-    <Outlet />
-    <Footer />
-  </>
-}
+  return (
+    <>
+      <Navbar />
+      <Outlet />
+      <Footer />
+    </>
+  );
+};
 
 const router = createBrowserRouter([
   {
@@ -62,7 +108,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/profile",
-        element: <Profile />
+        element: <Profile />,
       },
       {
         path: "/InterP",
@@ -74,13 +120,13 @@ const router = createBrowserRouter([
       },
       {
         path: "/home",
-        element: <Home />
+        element: <Home />,
       },
       {
         path: "/",
-        element: <Home />
+        element: <Home />,
       },
-    ]
+    ],
   },
   {
     path: "/signupuser",
@@ -101,7 +147,6 @@ const router = createBrowserRouter([
   {
     path: "/newpwd",
     element: <Newpwd />,
-    
   },
   {
     path: "/experience",
@@ -175,7 +220,7 @@ const router = createBrowserRouter([
         path: "international/Partner",
         element: <InterP />,
       },
-      
+
       {
         path: "profile",
         element: <PassengerProfile />,
@@ -207,9 +252,8 @@ const router = createBrowserRouter([
       {
         path: "help/using/ride",
         element: <UsingRide />,
-      }
-  
-    ]
+      },
+    ],
   },
   {
     path: "/driver",
@@ -270,8 +314,8 @@ const router = createBrowserRouter([
       {
         path: "Logout",
         element: <Setting />,
-      }
-    ]
+      },
+    ],
   },
   {
     path: "/fleet",
@@ -333,17 +377,15 @@ const router = createBrowserRouter([
         path: "setting",
         element: <Setting />,
       },
-    ]
+    ],
   },
   {
     path: "/login",
-    element: <Login />
-  }
+    element: <Login />,
+  },
 ]);
 
 function App() {
-  return (
-    <RouterProvider router={router} />
-  );
+  return <RouterProvider router={router} />;
 }
-export default App
+export default App;

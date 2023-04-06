@@ -1,17 +1,10 @@
-import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
-import toggleReducer from '../features/toggleSlice/toggleSlice'
-// import { slideApi } from '../features/SlideApi/SlideApi';
-// import { categoryApi } from '../features/categorySlice/categorySlice';
-// import cartSlice from '../features/CartSlice/CartSlice'
-// import AuthReducer from '../features/AuthSlice/AuthSlice';
+import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
+import toggleReducer from "../features/toggleSlice/toggleSlice";
+import authSlice from "../features/Auths";
 
 export const store = configureStore({
   reducer: {
     toggleReducer,
-    // [slideApi.reducerPath]: slideApi.reducer,
-    // [categoryApi.reducerPath]: categoryApi.reducer,
-    // cartItem: cartSlice,
-    // Auth: AuthReducer,
+    auth: authSlice,
   },
-    // middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(slideApi.middleware, categoryApi.middleware),
 });

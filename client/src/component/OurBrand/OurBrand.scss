@@ -1,78 +1,79 @@
-@import '../../style/variable.scss';
-.OurBrand{
+@import "../../style/variable.scss";
+.OurBrand {
+  width: 95%;
+  padding: 0.5rem;
+  .wrapper {
     width: 100%;
-    .wrapper{
-        width: 90%;
-        margin-top: 3rem;
-        overflow: hidden;
+    margin-top: 3rem;
+    overflow: hidden;
+    @media screen and (min-width: 768px) {
+      width: 50%;
+    }
+  }
+  h3 {
+    text-align: center;
+    @media screen and (min-width: 768px) {
+      margin-top: 4rem;
+      font-size: $font-30;
+    }
+    span {
+      color: $secondaryColor;
+      margin-right: 10px;
+    }
+  }
+  .brand__box-con {
+    justify-content: space-between;
+    margin-top: 1rem;
+    .brand__box {
+      height: 45vh;
+      width: 100%;
+      padding: 1rem;
+      min-width: 100%;
+      display: flex;
+      justify-content: center;
+      @media screen and (min-width: 768px) {
+        width: 48%;
+        min-width: 48%;
+        padding: 1rem 2rem;
+        height: 50vh;
+      }
+      img {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        right: 40px;
+        z-index: 20;
         @media screen and (min-width: 768px) {
-            width: 50%;
+          width: 100%;
         }
-    }
-    h3{
-        text-align: center;
+      }
+      .content__box {
+        position: relative;
+        top: 0;
+        display: flex;
+        height: 95%;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 1rem 1rem;
+        border: 1px solid #f3f3f3;
+        box-shadow: 2px 2px 10px 5px #f3f3f3;
+        border-radius: 10px;
+        width: 80%;
         @media screen and (min-width: 768px) {
-            margin-top: 4rem;
-            font-size: $font-30;
+          width: 100%;
         }
-        span{
-            color: $secondaryColor;
-            margin-right: 10px;
+        .title {
+          margin-top: 1rem;
         }
+        .text {
+          font-weight: 500;
+          line-height: 1.5;
+          font-size: $font-14;
+          @media screen and (min-width: 768px) {
+            font-size: $font-12;
+          }
+        }
+      }
     }
-    .brand__box-con{
-        justify-content: space-between;
-        margin-top: 1rem;
-        .brand__box{
-            height: 45vh;
-            width: 100%;
-            padding: 1rem;
-            min-width: 100%;
-            display: flex;
-            justify-content: center;
-            @media screen and (min-width: 768px) {
-                width: 48%;
-                min-width: 48%;
-                padding:  1rem 2rem;
-                height: 50vh;
-            }
-            img{
-                width: 100%;
-                position: absolute;
-                top: 0;
-                right: 40px;
-                z-index: 20;
-                @media screen and (min-width: 768px) {
-                    width: 100%;
-                }
-            }
-            .content__box{
-                position: relative;
-                top: 0;
-                display: flex;
-                height: 95%;
-                flex-direction: column;
-                justify-content: flex-end;
-                padding: 1rem 1rem;
-                border: 1px solid #f3f3f3;
-                box-shadow: 2px 2px 10px 5px #f3f3f3;
-                border-radius: 10px;
-                width: 80%;
-                @media screen and (min-width: 768px) {
-                    width: 100%;
-                }
-                .title{
-                    margin-top: 1rem;
-                }
-                .text{
-                    font-weight: 500;
-                    line-height: 1.5;
-                    font-size: $font-14;
-                    @media screen and (min-width: 768px) {
-                        font-size: $font-12;
-                    }
-                }
-            }
-        }
-    }
+  }
 }

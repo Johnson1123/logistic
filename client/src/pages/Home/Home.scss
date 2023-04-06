@@ -1,90 +1,88 @@
-@import '../../style/variable.scss';
-.home__container{
-    .app__wrapper{
+@import "../../style/variable.scss";
+.home__container {
+  .app__wrapper {
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    .home__intro {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: calc(100vh - 70px);
+      background-image: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.4),
+          rgba(0, 0, 0, 0.4)
+        ),
+        url("../../asset/image/bg__suv.jpeg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+
+      .home__intro-title {
+        width: 95%;
+        padding: 1rem 1.5rem;
+
+        @media screen and (min-width: 768px) {
+          width: 40%;
+        }
+        h1 {
+          color: $whiteColor !important;
+          font-size: $font-40 !important;
+          text-align: center;
+          line-height: 1.2;
+          @media screen and (min-width: 768px) {
+            font-size: $font-50 !important;
+          }
+        }
+      }
+
+      .home__intro-p {
+        width: 95%;
+        padding: 1rem 1.5rem;
+        @media screen and (min-width: 768px) {
+          width: 80%;
+        }
+
+        p {
+          color: $whiteColor !important;
+          text-align: center;
+          margin-top: 20px;
+        }
+      }
+
+      .btn__container {
+        width: 95%;
+        margin: 20px 0;
         flex-direction: column;
         align-items: center;
-        position: relative;
-
-        .home__intro{
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            height: calc(100vh - 70px);
-            background-image: 
-            linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-            url('../../asset/image/bg__suv.jpeg');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position:center ;
-
-            .home__intro-title{
-                width: 95%;
-                padding: 1rem 1.5rem;
-
-                @media screen and (min-width: 768px) {
-                    width: 40%;
-                }
-                h1{
-                    color: $whiteColor !important;
-                    font-size: $font-40 !important;
-                    text-align: center;
-                    line-height: 1.2;
-                    @media screen and (min-width: 768px) {
-                        font-size: $font-50 !important;
-                    }
-                }
-                
-            }
-
-            .home__intro-p{
-                width: 95%;
-                padding: 1rem 1.5rem;
-                @media screen and (min-width: 768px) {
-                        width: 80%;
-                }
-
-                p{
-                    color: $whiteColor !important;
-                    text-align: center;
-                    line-height: 1.5;
-                    margin-top: 20px;
-                    @media screen and (min-width: 768px) {
-                        
-                    }
-                }
-            }
-
-            .btn__container{
-                width: 95%;
-                margin: 20px 0;
-                flex-direction: column;
-                align-items: center;
-                @media screen and (min-width: 768px) {
-                        margin-top: 30px;
-                        width: 55%;
-                        flex-direction: row;
-                        justify-content: space-between;
-                }
-                .btn-box{
-                    width: 40%;
-                    margin: 10px 0;
-                    @media screen and (min-width: 768px) {
-                        width: 30%;
-                    }
-                }
-            }
+        @media screen and (min-width: 768px) {
+          margin-top: 30px;
+          width: 55%;
+          flex-direction: row;
+          justify-content: space-between;
         }
-        .map{
-            width: 96%;
-            padding: 1rem;
-            margin-top: 2rem;
-            @media screen and (min-width: 768px) {
-                width: 80%;
-            }
-            img{
-                width: 100%;
-            }
+        .btn-box {
+          width: 40%;
+          margin: 10px 0;
+          @media screen and (min-width: 768px) {
+            width: 30%;
+          }
         }
+      }
     }
+    .map {
+      width: 95%;
+      padding: 1rem;
+      margin-top: 2rem;
+      @media screen and (min-width: 768px) {
+        width: 80%;
+      }
+      img {
+        width: 100%;
+      }
+    }
+  }
 }

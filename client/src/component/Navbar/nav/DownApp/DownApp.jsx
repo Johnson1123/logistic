@@ -1,18 +1,13 @@
-import React from 'react'
-import DropLink from '../../DropLink'
-import {motion} from 'framer-motion'
-
+import React from "react";
+import DropLink from "../../DropLink";
 
 function DownApp() {
   return (
-    <motion.ul className='menu__drop'
-    whileInView={{y: [-200, 0]}}
-    transition={{duration: .73}}
-    >
-        <DropLink label='Android' />
-        <DropLink label='IOS' />
-    </motion.ul>
-  )
+    <ul className="menu__drop box-shadow">
+      <DropLink label="Android" />
+      <DropLink label="IOS" />
+    </ul>
+  );
 }
 
-export default DownApp
+export default DownApp;

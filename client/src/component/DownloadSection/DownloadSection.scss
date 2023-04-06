@@ -1,7 +1,9 @@
 @import "../../style/variable.scss";
 .DownloadSection__container {
-  width: 90%;
-  margin: 6rem auto 0;
+  width: 95%;
+  margin: 4rem auto 0;
+  padding: 0.5rem;
+  justify-content: space-between;
   @media screen and (min-width: 768px) {
     width: 60%;
     margin: 6rem auto 0;
@@ -23,7 +25,7 @@
       }
     }
     .para-text {
-      font-size: $font-16;
+      font-size: 14px;
       text-align: left;
       @media screen and (min-width: 768px) {
         font-size: $font-18;

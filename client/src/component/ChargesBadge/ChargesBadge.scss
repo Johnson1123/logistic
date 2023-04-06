@@ -1,38 +1,34 @@
-@import '../../style/variable.scss';
-.Charges__container{
-    width: 85%;
-    box-shadow: 2px 4px 5px 1px #F3f3f3;
-    -webkit-box-shadow: 2px 4px 5px 1px #F3f3f3;
-    -moz-box-shadow: 2px 4px 5px 1px #F3f3f3;
-    margin-top: 3rem;
-    @media screen and (min-width: 768px) {
-        margin-top: 4rem;
-        width: 50%;
+@import "../../style/variable.scss";
+.Charges__container {
+  width: 95%;
+  padding: 0.5rem;
+  box-shadow: 2px 4px 5px 1px #f3f3f3;
+  -webkit-box-shadow: 2px 4px 5px 1px #f3f3f3;
+  -moz-box-shadow: 2px 4px 5px 1px #f3f3f3;
+  margin-top: 3rem;
+  @media screen and (min-width: 768px) {
+    margin-top: 4rem;
+    width: 50%;
+  }
+  img {
+    width: 40%;
+    margin-right: 5px;
+  }
+  .charges__content {
+    flex: 1;
+    .badge-title {
+      text-align: center;
+      @media screen and (min-width: 768px) {
+        font-size: $font-24;
+      }
     }
-    img{
-        width: 40%;
-        margin-right: 5px;
+    p {
+      text-align: center;
+      margin-top: 5px;
+      @media screen and (min-width: 768px) {
+        font-size: $font-16;
+        padding: 0.5rem 4rem;
+      }
     }
-    .charges__content{
-        flex: 1;
-        .small-title{
-            font-size: $font-18;
-            font-weight: 900;
-            text-align: center;
-            @media screen and (min-width: 768px) {
-                font-size: $font-24;
-            }
-        }
-        p{
-            font-size: $font-14;
-            text-align: center;
-            margin-top: 5px;
-            font-weight: 500;
-            @media screen and (min-width: 768px) {
-                font-size: $font-16;
-                padding: .5rem 4rem;
-
-            }
-        }
-    }
+  }
 }
