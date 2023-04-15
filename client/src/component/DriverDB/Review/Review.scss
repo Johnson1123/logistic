@@ -1,50 +1,50 @@
-@import '../../../style/variable.scss';
-.review__con{
-    width: 100%;
-    background-color: #f3f3f3;
-    border-radius: 10px;
-    padding: 1rem 0;
-    @include mobile {
-        padding: 1rem;
-    }
-    .review__box{
-        padding: 0.5rem 0.3rem;
-        .col-1{
-            width: 20%;
-            @include mobile {
-                width: 18%;
-                margin-right: 10px;
-            }
-            img{
-                width: 30px;
-                height: 30px;
-                border-radius: 50%;
-                object-fit: cover;
-                @include mobile {
-                    width: 50px;
-                    height: 50px;
-                }
-            }
+@import "../../../style/variable.scss";
+.review__con {
+  width: 100%;
+  background-color: #f3f3f3;
+  border-radius: 10px;
+  padding: 1rem 0;
+  @include mobile {
+    padding: 1rem;
+  }
+  .review__box {
+    padding: 0.5rem 0.3rem;
+    .col-1 {
+      width: 20%;
+      @include mobile {
+        width: 18%;
+        margin-right: 10px;
+      }
+      img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        object-fit: cover;
+        @include mobile {
+          width: 50px;
+          height: 50px;
         }
-        .col-2{
-            flex: 1;
-            text-align: left;
-            .col-rating{
-                font-size: 12px;
-                justify-content: space-between;
-                .p-text{
-                    font-size: 12px;
-                }
-                li{
-                    margin-inline-end: 0 !important;
-                }
-            }
-        }
-        .col-3{
-            font-size: 12px;
-        }
+      }
     }
-    .title{
-        line-height: 1.5;
+    .col-2 {
+      flex: 1;
+      text-align: left;
+      .col-rating {
+        font-size: 12px;
+        justify-content: space-between;
+        .p-text {
+          font-size: 12px;
+        }
+        li {
+          margin-inline-end: 0 !important;
+        }
+      }
     }
+    .col-3 {
+      font-size: 12px;
+    }
+  }
+  .title {
+    line-height: 1.5;
+  }
 }

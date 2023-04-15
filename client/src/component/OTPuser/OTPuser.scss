@@ -1,37 +1,39 @@
-.otpuser__con{
-    position: absolute;
+@import "../../style/variable.scss";
+.otpuser__con {
+  position: absolute;
+  width: 70%;
+  height: auto;
+  top: 10rem;
+  left: 0;
+  z-index: 20;
+  margin-left: 2rem;
+  flex-direction: column;
+  @include tablet {
+    width: 40%;
+    margin: 3rem 0 0 6rem;
+    .form-title {
+      font-size: 36px;
+    }
+  }
+  .form-text {
+    margin-top: 5px;
+    line-height: 1.7;
+    text-align: center;
+    @include tablet {
+      width: 60%;
+    }
+  }
+  .input-container {
+    margin-top: 20px;
     width: 70%;
-    height: auto;
-    top: 10rem;
-    left: 0;
-    z-index: 20;
-    margin-left: 2rem;
-    flex-direction: column;
-    @media screen and (min-width: 768px) {
-        width: 40%;
-        margin: 3rem 0 0 6rem ;
-        .form-title{
-            font-size: 36px;
-        }
+    @include tablet {
+      width: 40%;
     }
-    .form-text{
-        line-height: 1.4;
-        text-align: center;
-        @media screen and (min-width: 768px) {
-            width: 60%;
-        }
+    button {
+      margin-top: 3rem;
+      @include tablet {
+        width: 60%;
+      }
     }
-    .input-container{
-        margin-top: 20px;
-        width: 70%;
-        @media screen and (min-width: 768px) {
-            width: 40%;
-        }
-        button{
-            margin-top: 20px;
-            @media screen and (min-width: 768px) {
-                width: 60%;
-            }
-        }
-    }
+  }
 }

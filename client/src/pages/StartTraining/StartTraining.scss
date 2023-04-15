@@ -1,37 +1,38 @@
-.starttraining{
-    width: 100%;
-    height: 100%;
-    .Form__navbar{
-        position: static;
+@import "../../style/variable.scss";
+.starttraining {
+  width: 100%;
+  height: 100%;
+  .Form__navbar {
+    position: static;
+  }
+  .stn__wrapper {
+    width: 90%;
+    margin: 0 auto;
+    padding: 1rem;
+    margin-top: 3rem;
+    text-align: center;
+    @include tablet {
+      width: 50%;
     }
-    .stn__wrapper{
-        width: 90%;
-        margin: 0 auto;
-        padding: 1rem;
-        margin-top: 3rem;
-        text-align: center;
-        @media screen and (min-width: 768px){
-            width: 50%;
-        }
-        .para{
-            margin: 1rem 0;
-            @media screen and (min-width: 768px){
-                margin: .5rem 0;
-            }
-        }
-        .m-para{
-            margin: 1rem 0;
-            line-height: 1.6;
-            @media screen and (min-width: 768px){
-                margin: 3rem 0 5rem;
-            }
-        }
-        button{
-            margin-top: 3rem;
-            margin: 0 auto;
-            @media screen and (min-width: 768px){
-                width: 50%;
-            }
-        }
+    .para {
+      margin: 1rem 0;
+      @include tablet {
+        margin: 0.5rem 0;
+      }
     }
+    .m-para {
+      margin: 1rem 0;
+      line-height: 1.6;
+      @include tablet {
+        margin: 3rem 0 5rem;
+      }
+    }
+    button {
+      margin-top: 3rem;
+      margin: 0 auto;
+      @include tablet {
+        width: 50%;
+      }
+    }
+  }
 }

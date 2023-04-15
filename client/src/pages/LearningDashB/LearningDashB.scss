@@ -1,22 +1,22 @@
-@import '../../style/utils.scss';
-.LearningDashB{
-    width: 100%;
-    height: auto;
-    justify-content: center;
-    .LearningDashB__wrapper{
-        width: 90%;
-        margin-top: 7rem;
-        padding: 1rem 0 4rem;
-        .form-title{
-            color: $primaryColor;
-            line-height: 2;
-        }
-        .small-title{
-            font-weight: 500;
-            margin-top: 2rem;
-        }
-        @media screen and (min-width: 768px) {
-            width: 50%;
-        }
+@import "../../style/utils.scss";
+.LearningDashB {
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  .LearningDashB__wrapper {
+    width: 90%;
+    margin-top: 7rem;
+    padding: 1rem 0 4rem;
+    .form-title {
+      color: $primaryColor;
+      line-height: 2;
     }
+    .small-title {
+      font-weight: 500;
+      margin-top: 2rem;
+    }
+    @include tablet {
+      width: 50%;
+    }
+  }
 }

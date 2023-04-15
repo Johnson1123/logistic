@@ -25,7 +25,7 @@
         width: 95%;
         padding: 1rem 1.5rem;
 
-        @media screen and (min-width: 768px) {
+        @include tablet {
           width: 40%;
         }
         h1 {
@@ -33,7 +33,7 @@
           font-size: $font-40 !important;
           text-align: center;
           line-height: 1.2;
-          @media screen and (min-width: 768px) {
+          @include tablet {
             font-size: $font-50 !important;
           }
         }
@@ -42,7 +42,7 @@
       .home__intro-p {
         width: 95%;
         padding: 1rem 1.5rem;
-        @media screen and (min-width: 768px) {
+        @include tablet {
           width: 80%;
         }
 
@@ -58,7 +58,7 @@
         margin: 20px 0;
         flex-direction: column;
         align-items: center;
-        @media screen and (min-width: 768px) {
+        @include tablet {
           margin-top: 30px;
           width: 55%;
           flex-direction: row;
@@ -67,7 +67,7 @@
         .btn-box {
           width: 40%;
           margin: 10px 0;
-          @media screen and (min-width: 768px) {
+          @include tablet {
             width: 30%;
           }
         }
@@ -77,7 +77,7 @@
       width: 95%;
       padding: 1rem;
       margin-top: 2rem;
-      @media screen and (min-width: 768px) {
+      @include tablet {
         width: 70%;
       }
       img {

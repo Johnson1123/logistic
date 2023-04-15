@@ -1,36 +1,36 @@
-@import '../../style//variable.scss';
-.Badges{
-    width: 90%;
-    border-radius: 10px;
-    padding: 1rem 1rem;
-    margin-top: 1rem;
-    @media screen and (min-width: 768px) {
-        width: 30%;
+@import "../../style//variable.scss";
+.Badges {
+  width: 90%;
+  border-radius: 10px;
+  padding: 1rem 1rem;
+  margin-top: 1rem;
+  @include tablet {
+    width: 30%;
+  }
+  .text,
+  .balance {
+    font-weight: 700;
+    line-height: 1.2;
+    color: $whiteColor;
+    @include tablet {
+      padding-right: 3rem;
     }
-    .text, .balance{
-        font-weight: 700;
-        line-height: 1.2;
-        color: $whiteColor;
-        @media screen and (min-width: 768px) {
-            padding-right: 3rem;
-        }
-    }
-    .balance{
-        color: $primaryColor;
-    }
-    .accepted{
-        font-weight: 900;
-        line-height: 1.2;
-        margin-top: 0.5rem;
-        color: $whiteColor;
-
-    }
-    .amount{
-        font-size: 20px;
-        line-height: 1.4;
-        font-weight: 900;
-    }
-    .duration{
-        margin-top: 0.5rem;
-    }
+  }
+  .balance {
+    color: $primaryColor;
+  }
+  .accepted {
+    font-weight: 900;
+    line-height: 1.2;
+    margin-top: 0.5rem;
+    color: $whiteColor;
+  }
+  .amount {
+    font-size: 20px;
+    line-height: 1.4;
+    font-weight: 900;
+  }
+  .duration {
+    margin-top: 0.5rem;
+  }
 }

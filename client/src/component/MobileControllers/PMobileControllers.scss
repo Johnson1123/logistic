@@ -1,85 +1,84 @@
-@import '../../style/variable.scss';
-.PNav__menu-container{
-    width: 100%;
-    height: 770px;
-    background-color: rgba(0, 0, 0, 0.452);
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 20;
-    @media screen and (min-width: 768px) {
-        display: none;
+@import "../../style/variable.scss";
+.PNav__menu-container {
+  width: 100%;
+  height: 770px;
+  background-color: rgba(0, 0, 0, 0.452);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  @include tablet {
+    display: none;
+  }
+  .MobileControllers {
+    height: 100%;
+    background-color: $secondaryColor;
+    padding: 1rem 0rem 0;
+    width: 80%;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    .db__close {
+      width: 100%;
+      display: flex;
+      cursor: pointer;
+      justify-content: flex-end;
+      padding: 0.5rem 1rem;
+      svg {
+        font-size: 20px;
+        color: $whiteColor;
+      }
     }
-    .MobileControllers{
-        height: 100%;
-        background-color: $secondaryColor;
-        padding: 1rem 0rem 0;
-        width: 80%;
-        border-top-right-radius: 15px;
-        border-bottom-right-radius: 15px;
-        .db__close{
-            width: 100%;
-            display: flex;
-            cursor: pointer;
-            justify-content: flex-end;
-            padding: .5rem 1rem;
-            svg{
-                font-size: 20px;
-                color: $whiteColor;
-
-            }
+    .user__img-details {
+      width: 100%;
+      align-items: center;
+      padding: 1rem;
+      .user__img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        margin-right: 0.5rem;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 50%;
         }
-        .user__img-details{
-            width: 100%;
-            align-items: center;
-            padding: 1rem;
-            .user__img{
-                width: 70px;
-                height: 70px;
-                border-radius: 50%;
-                margin-right: .5rem;
-                img{
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    border-radius: 50%;
-                }
-            }
-            .user__details{
-                .username-text{
-                    font-size: $font-16;
-                    font-weight: 500;
-                    color: $whiteColor;
-                }
-                .small-text{
-                    font-size: $font-14;
-                    font-weight: 500;
-                    color: $whiteColor;
-                }
-            }
+      }
+      .user__details {
+        .username-text {
+          font-size: $font-16;
+          font-weight: 500;
+          color: $whiteColor;
         }
-        .getApp{
-            background-color: $whiteColor;
-            width: 100%;
-            border-radius: 0 20px 0 0;
-            padding: 1rem .5rem;
-            margin-top: 1rem;
-            .iphones{
-                width: 40%;
-            }
-            .getApp__content{
-                width: 60%;
-                .small-title{
-                    font-size: 11px;
-                }
-                .img__con{
-                    margin-top: 0.5rem;
-                    justify-content: space-between;
-                    img{
-                        width: 30%;
-                    }
-                }
-            }
+        .small-text {
+          font-size: $font-14;
+          font-weight: 500;
+          color: $whiteColor;
         }
+      }
     }
+    .getApp {
+      background-color: $whiteColor;
+      width: 100%;
+      border-radius: 0 20px 0 0;
+      padding: 1rem 0.5rem;
+      margin-top: 1rem;
+      .iphones {
+        width: 40%;
+      }
+      .getApp__content {
+        width: 60%;
+        .small-title {
+          font-size: 11px;
+        }
+        .img__con {
+          margin-top: 0.5rem;
+          justify-content: space-between;
+          img {
+            width: 30%;
+          }
+        }
+      }
+    }
+  }
 }

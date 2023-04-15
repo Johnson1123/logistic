@@ -29,10 +29,12 @@
   }
   .graph__group {
     justify-content: space-between;
-    margin-top: 1rem;
+    margin-top: 2rem;
     display: flex;
+    gap: 20px;
     @include mobile {
       flex-direction: column;
+      margin-top: 1rem;
       width: 95%;
     }
     .graph__con {
@@ -43,9 +45,13 @@
       }
       .chart {
         width: 100%;
-        height: 350px;
+        height: 100%;
         background-color: #f3f3f3;
         border-radius: 10px;
+        overflow: hidden;
+        div {
+          border-radius: 10px;
+        }
         @include mobile {
           width: 120%;
         }
@@ -66,9 +72,10 @@
     }
   }
   .recent-booking-text {
-    // display: block;
+    line-height: 4rem;
     @include mobile {
       margin-top: 1rem;
+      line-height: 1.5rem;
     }
   }
   .scroll__container {

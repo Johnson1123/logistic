@@ -1,23 +1,23 @@
-.form_sign{
-    margin-top: 30px;
+@import "../../style/variable.scss";
+.form_sign {
+  margin-top: 30px;
+  width: 100%;
+  @include tablet {
+    margin-top: 5px;
+  }
+  .input_group {
+    flex-direction: column;
     width: 100%;
-    @media screen and (min-width: 768px) {
-        margin-top: 5px;
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 15px;
     }
-    .input_group{
-        flex-direction: column;
-        width: 100%;
-        @media screen and (min-width: 768px) {
-            flex-direction: row;
-            justify-content: space-between;
-            width: 100%;
-            margin-top: 15px;
-        }
-    }
-    button{
-        width: 50%;
-        margin: 0 auto;
-        margin-top: 3rem;
-        
-    }
+  }
+  button {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 3rem;
+  }
 }

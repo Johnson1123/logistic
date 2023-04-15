@@ -1,17 +1,18 @@
-.NewpwdForm{
-    position: absolute;
-    top: 10rem;
-    left: 0;
-    width: 90%;
-    height: auto;
-    z-index: 25;
-    @media screen and (min-width: 768px) {
-        width: 70%;
+@import "../../style/variable.scss";
+.NewpwdForm {
+  position: absolute;
+  top: 10rem;
+  left: 0;
+  width: 90%;
+  height: auto;
+  z-index: 25;
+  @include tablet {
+    width: 70%;
+  }
+  .NewpwdForm__con {
+    width: 80%;
+    @include tablet {
+      width: 40%;
     }
-    .NewpwdForm__con{
-        width: 80%;
-        @media screen and (min-width: 768px) {
-            width: 40%;
-        }
-    }
+  }
 }

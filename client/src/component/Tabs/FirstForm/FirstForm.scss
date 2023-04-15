@@ -1,81 +1,81 @@
-.fisrtForm{
+@import "../../../style/variable.scss";
+.fisrtForm {
+  margin-top: 1rem;
+  width: 95%;
+  padding: 0rem 0 2rem;
+  @include tablet {
+    width: 90%;
+  }
+  .input__group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     margin-top: 1rem;
-    width: 95%;
-    padding: 0rem 0 2rem; 
-    @media screen and (min-width: 768px) {
-        width: 90%;
+    @include tablet {
+      flex-direction: row;
     }
-    .input__group{
+    .singleInput {
+      width: 100%;
+      width: 100%;
+      @include tablet {
+        width: 45%;
+        .refer-text {
+          color: #a1a1a1;
+          @include tablet {
+            font-weight: 300;
+          }
+        }
+      }
+      .form-text {
         width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        margin-top: 1rem;
-        @media screen and (min-width: 768px) {
-            flex-direction: row;
-        }
-        .singleInput{
-            width: 100%;
-            width: 100%;
-            @media screen and (min-width: 768px) {
-                width: 45%;
-                .refer-text{
-                    color: #a1a1a1;
-                    @media screen and (min-width: 768px) {
-                        font-weight: 300;
-                    }
-                }
-            }
-            .form-text{
-                width: 100%;
-                text-align: left;
-
-            }
-            .input__container{
-                width: 100%;
-            }
-        }
-        .Mfleet{
-            width: 100%;
-            margin-top: 0.5rem;
-            .form-bold{
-                text-align: left;
-                width: 100%;
-                font-weight: 400;
-
-                font-size: 14px;
-            }
-            .p-text{
-                @media screen and (min-width: 768px) {
-                    width: 100%;
-                    font-size: 14px;
-                    font-weight: 400;
-                    .link-text{
-                        line-height: 1.2;
-                        font-size: 14px;
-                        color: #3AB54A;
-                        font-weight: 400;
-                    }
-                }
-            }
-            input{
-                margin-right: 5px;
-            }
-            @media screen and (min-width: 768px) {
-                width: 45%;
-                .check-text{
-                    font-weight: 300;
-                }
-            }
-        }
+        text-align: left;
+      }
+      .input__container {
+        width: 100%;
+      }
     }
-    button{
-        width: 50%;
-        margin: 0 auto;
-        margin-top: 2rem;
-        @media screen and (min-width: 768px) {
-            width: 40%;
-            margin-top: 3rem;
+    .Mfleet {
+      width: 100%;
+      margin-top: 0.5rem;
+      .form-bold {
+        text-align: left;
+        width: 100%;
+        font-weight: 400;
+
+        font-size: 14px;
+      }
+      .p-text {
+        @include tablet {
+          width: 100%;
+          font-size: 14px;
+          font-weight: 400;
+          .link-text {
+            line-height: 1.2;
+            font-size: 14px;
+            color: #3ab54a;
+            font-weight: 400;
+          }
         }
+      }
+      input {
+        margin-right: 5px;
+      }
+      @include tablet {
+        width: 45%;
+        .check-text {
+          font-weight: 300;
+        }
+      }
     }
+  }
+  button {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 2rem;
+    @include tablet {
+      width: 40%;
+      margin-top: 3rem;
+    }
+  }
 }

@@ -20,7 +20,7 @@
     @include mobile {
       width: 100%;
     }
-    @media screen and (min-width: 768px) {
+    @include tablet {
       width: 70%;
     }
     .doc__box {
@@ -33,13 +33,13 @@
       }
       .title {
         line-height: 1.5;
-        @media screen and (min-width: 768px) {
+        @include tablet {
           font-size: $font-24;
         }
       }
       .left__con {
         width: 60%;
-        @media screen and (min-width: 768px) {
+        @include tablet {
           width: 70%;
         }
       }
@@ -48,13 +48,13 @@
         margin-top: 1rem;
         justify-content: space-between;
 
-        @media screen and (min-width: 768px) {
+        @include tablet {
           width: 100%;
         }
         .p-text {
           line-height: 1.5;
           font-size: 12px;
-          @media screen and (min-width: 768px) {
+          @include tablet {
             font-size: $font-14;
           }
         }
@@ -64,10 +64,21 @@
           svg {
             width: 10%;
             margin-right: 3px;
-            font-size: 20px;
-            @media screen and (min-width: 768px) {
+            font-size: 18px;
+            margin-left: -5px;
+            @include tablet {
               font-size: $font-14;
+              margin-left: -8px;
               width: 5%;
+              font-size: 20px;
+            }
+          }
+          .p-text {
+            @include mobile {
+              width: 160px;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
             }
           }
         }
@@ -76,7 +87,7 @@
         width: 31%;
         align-items: flex-end;
         justify-content: flex-end;
-        @media screen and (min-width: 768px) {
+        @include tablet {
           width: auto;
         }
         input[type="file"] {

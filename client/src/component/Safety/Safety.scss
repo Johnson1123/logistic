@@ -44,7 +44,7 @@
       .text {
         margin-top: 0.3rem;
         color: $whiteColor;
-        @media screen and (min-width: 768px) {
+        @include tablet {
           font-size: $font-14;
         }
       }

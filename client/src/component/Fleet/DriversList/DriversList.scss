@@ -1,35 +1,35 @@
-@import '../../../style/variable.scss';
-.DriversList{
-    width: 100%;
-    padding: 1rem;
-    display: flex;
-    justify-content: center;
-    .driverList__wrapper{
-        width: 95%;
-        .p-text{
-            font-weight: 500;
-            font-size: $font-16;
-        }
-        .driverList__content{
-            .controls__container{
-                margin-top: 1.5rem;
-                .control-btn{
-                    padding: 0.7rem .8rem;
-                    margin-right: .5rem;
-                    background-color: transparent;
-                    border: 1px solid  $lightAshe;
-                    border-radius: 5px;
-                    font-weight: 500;
-                    @include tablet{
-                        margin-right: 1rem;
-                        padding: .7rem 1rem;
-                    }
-                    &.active{
-                        background-color: $secondaryColor;
-                        color: $whiteColor;
-                    }
-                }
-            }
-        }
+@import "../../../style/variable.scss";
+.DriversList {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  .driverList__wrapper {
+    width: 95%;
+    .p-text {
+      font-weight: 500;
+      font-size: $font-16;
     }
+    .driverList__content {
+      .controls__container {
+        margin-top: 1.5rem;
+        .control-btn {
+          padding: 0.7rem 0.8rem;
+          margin-right: 0.5rem;
+          background-color: transparent;
+          border: 1px solid $lightAshe;
+          border-radius: 5px;
+          font-weight: 500;
+          @include tablet {
+            margin-right: 1rem;
+            padding: 0.7rem 1rem;
+          }
+          &.active {
+            background-color: $secondaryColor;
+            color: $whiteColor;
+          }
+        }
+      }
+    }
+  }
 }

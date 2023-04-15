@@ -1,10 +1,11 @@
-.Form__navbar{
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 20;
-    padding: 2rem 1rem;
-    @media screen and (min-width: 768px) {
-        padding: 2rem 5rem;
-    }
+@import "../../style/variable.scss";
+.Form__navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  padding: 2rem 1rem;
+  @include tablet {
+    padding: 2rem 5rem;
+  }
 }

@@ -1,19 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Input from "../Input/Input";
 import { HiOutlineMail } from "react-icons/hi";
 import { CiUser } from "react-icons/ci";
 import { BsTelephone } from "react-icons/bs";
 import { AiFillLock } from "react-icons/ai";
-import { images } from "../../asset";
 
 import "./Form_Sign.scss";
 import SignupBtn from "../Btn/SignupBtn/SignupBtn";
 import { useDispatch, useSelector } from "react-redux";
-import { startSignUp } from "../../features/toggleSlice/toggleSlice";
-import { registerUser } from "../../features/Auths";
+import { registerUser, storeUser } from "../../features/Auths";
+import { useNavigate } from "react-router-dom";
 
 function FORM_SIGN(props) {
-  const user = useSelector((state) => state.auth);
   const Dispatch = useDispatch();
   const [values, setValue] = useState({
     username: "",
@@ -22,13 +20,14 @@ function FORM_SIGN(props) {
     password: "",
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    Dispatch(registerUser(values));
-    console.log(values);
-    console.log(user);
+    try {
+      const token = await Dispatch(registerUser(values)).unwrap();
+    } catch (err) {
+      console.log(err);
+    }
   };
-
   return (
     <form className="form_sign" onSubmit={handleSubmit}>
       <div className="flex input_group">

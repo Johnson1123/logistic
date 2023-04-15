@@ -1,29 +1,28 @@
-@import '../../../style/variable.scss';
-.Tabcontroller-btn{
-    background-color: transparent;
-    padding: .5rem .7rem;
-    border-radius: 10px;
-    border: none;
-    margin: 15px 0;
-    font-weight: 500;
-    transition: all .5s;
-    font-size: 14px !important;
-    list-style: none;
-    color: $whiteColor !important;
-    @media screen and (min-width: 768px) {
-        padding: .7rem 2rem;
-        font-size: 16px !important;
+@import "../../../style/variable.scss";
+.Tabcontroller-btn {
+  background-color: transparent;
+  padding: 0.5rem 0.7rem;
+  border-radius: 10px;
+  border: none;
+  margin: 15px 0;
+  font-weight: 500;
+  transition: all 0.5s;
+  font-size: 14px !important;
+  list-style: none;
+  color: $whiteColor !important;
+  @include tablet {
+    padding: 0.7rem 2rem;
+    font-size: 16px !important;
+  }
+  &:hover {
+    background-color: $whiteColor;
+    margin-left: 10px;
+    color: $primaryColor !important;
+  }
+  svg {
+    margin-right: 0.8rem;
+    @include tablet {
+      margin-right: 0.4rem;
     }
-    &:hover{
-        background-color: $whiteColor;
-        margin-left: 10px;
-        color: $primaryColor !important;
-    }
-    svg{
-        margin-right: .8rem;
-        @media screen and (min-width: 768px) {
-            margin-right: 0.4rem;
-        }
-    }
-
+  }
 }

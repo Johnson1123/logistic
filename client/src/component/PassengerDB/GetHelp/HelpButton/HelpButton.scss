@@ -1,19 +1,18 @@
-@import '../../../../style/variable.scss';
-.help__button{
-    border: none;
-    padding: .7rem 1rem;
-    border-radius: 10px;
-    display: flex;
-    margin: .8rem 0;
-    width: 30%;
-    justify-content: space-between;
-    cursor: pointer;
-    font-weight: 500;
-    @include mobile{
-        width: 80%;
-    }
-    svg{
-        margin-top: 3px;
-    }
-    
+@import "../../../../style/variable.scss";
+.help__button {
+  border: none;
+  padding: 0.7rem 1rem;
+  border-radius: 10px;
+  display: flex;
+  margin: 0.8rem 0;
+  width: 30%;
+  justify-content: space-between;
+  cursor: pointer;
+  font-weight: 500;
+  @include mobile {
+    width: 80%;
+  }
+  svg {
+    margin-top: 3px;
+  }
 }

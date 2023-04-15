@@ -1,47 +1,47 @@
-@import '../../style/variable.scss';
+@import "../../style/variable.scss";
 
-.search__container{
-    width: 80%;
-    background-color: $lightAshe;
-    border-radius: 10px;
-    padding: .5rem 1rem;
-    margin: 0 auto;
-    form{
-        align-items: center;
-        justify-content: center;
-        svg{
-            font-size: 20px;
-            color: $darkAshe;
-            font-weight: 700;
-        }
-        svg.search-icon{
-            margin-right: 10px;
-            width: 10%;
-        }
-        input{
-            flex: 1;
-            border: 0;
-            background-color: transparent;
-            &:focus{
-                outline: none;
-            }
-            &::placeholder{
-                text-align: center;
-                color: $darkAshe;
-            }
-        }
-        .close-icon-box{
-            background-color: rgb(137, 147, 156);
-            border-radius: 50%;
-            width: 25px;
-            height: 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            svg{
-                color: #f3f3f3;
-            }
-        }
+.search__container {
+  width: 80%;
+  background-color: $lightAshe;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  margin: 0 auto;
+  form {
+    align-items: center;
+    justify-content: center;
+    svg {
+      font-size: 20px;
+      color: $darkAshe;
+      font-weight: 700;
     }
+    svg.search-icon {
+      margin-right: 10px;
+      width: 10%;
+    }
+    input {
+      flex: 1;
+      border: 0;
+      background-color: transparent;
+      &:focus {
+        outline: none;
+      }
+      &::placeholder {
+        text-align: center;
+        color: $darkAshe;
+      }
+    }
+    .close-icon-box {
+      background-color: rgb(137, 147, 156);
+      border-radius: 50%;
+      width: 25px;
+      height: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      svg {
+        color: #f3f3f3;
+      }
+    }
+  }
 }

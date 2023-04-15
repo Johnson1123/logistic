@@ -1,105 +1,104 @@
-@import '../../../style/variable.scss';
-.Dashboard{
+@import "../../../style/variable.scss";
+.Dashboard {
+  width: 100%;
+  justify-content: space-between;
+  @include mobile {
+    margin-top: 2rem;
+    padding-bottom: 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  @include tablet {
+    margin: 2rem 0 0;
+  }
+  .left__content {
     width: 100%;
-    justify-content: space-between;
-    @include mobile{
-        margin-top: 2rem;
-        padding-bottom: 1rem;
-        flex-direction: column;
-        align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include tablet {
+      width: 75%;
     }
-    @include tablet{
-        margin: 2rem 0 0;
-    }
-    .left__content{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        @include tablet {
-            width: 75%;
-        }
-        .badge__con{
-            width: 100%;
-            flex-direction: column;
-            align-items: center;
-            @include mobile{
-                gap: 20px;
-            }
-            @include tablet {
-                flex-direction: row;
-                justify-content: space-between;
-            }
-            .badge{
-                width: 90%;
-                padding: 1.5rem 1rem;
-                border-radius: 10px;
-                @media screen and (min-width: 768px) {
-                    width: 45%;
-                }
-                .badge__title{
-                    font-size: $font-16;
-                    font-weight: 700;
-                }
-                .badge__para{
-                    font-size: $font-30;
-                    font-weight: 700;
-                    margin-top: 1rem;
-                }
-            }
-            .first__badge{
-                background-color: green;
-                color: $whiteColor;
-                .badge__content{
-                    width: 80%;
-                    
-                }
-            }
-            .second__badge{
-                background-color: red;
-                color: $whiteColor;
-                .badge__para{
-                    color: $whiteColor;
-                }
-            }
-        }
-        .recent__act{
-            width: 100%;
-            @include mobile {
-                width: 95%;
-                overflow: scroll;
-                -ms-overflow-style: none;
-                scrollbar-width: none;
-                &::-webkit-scrollbar {
-                    display: none;
-                }
-            }
-        }
-        .booking__activities{
-            width: 100%;
-            @include mobile {
-                width: 95%;
-                overflow: scroll;
-                -ms-overflow-style: none;
-                scrollbar-width: none;
-                &::-webkit-scrollbar {
-                    display: none;
-                }
-            }
-        }
-        .recent-booking-text{
-            line-height: 4;
-        }
-    }
-    .chart__group{
-        flex-direction: column;
+    .badge__con {
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      @include mobile {
+        gap: 20px;
+      }
+      @include tablet {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      .badge {
         width: 90%;
-        row-gap: 1.5rem;
-        @include mobile{
-            margin-top: 1rem;
+        padding: 1.5rem 1rem;
+        border-radius: 10px;
+        @media screen and (min-width: 768px) {
+          width: 45%;
         }
-        @include tablet{
-            width: 23%;
+        .badge__title {
+          font-size: $font-16;
+          font-weight: 700;
         }
+        .badge__para {
+          font-size: $font-30;
+          font-weight: 700;
+          margin-top: 1rem;
+        }
+      }
+      .first__badge {
+        background-color: green;
+        color: $whiteColor;
+        .badge__content {
+          width: 80%;
+        }
+      }
+      .second__badge {
+        background-color: red;
+        color: $whiteColor;
+        .badge__para {
+          color: $whiteColor;
+        }
+      }
     }
+    .recent__act {
+      width: 100%;
+      @include mobile {
+        width: 95%;
+        overflow: scroll;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+    }
+    .booking__activities {
+      width: 100%;
+      @include mobile {
+        width: 95%;
+        overflow: scroll;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+    }
+    .recent-booking-text {
+      line-height: 4;
+    }
+  }
+  .chart__group {
+    flex-direction: column;
+    width: 90%;
+    row-gap: 1.5rem;
+    @include mobile {
+      margin-top: 1rem;
+    }
+    @include tablet {
+      width: 23%;
+    }
+  }
 }

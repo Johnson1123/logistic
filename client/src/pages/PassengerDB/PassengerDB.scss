@@ -1,35 +1,33 @@
-@import '../../style/variable.scss';
-.PassengerDB{
+@import "../../style/variable.scss";
+.PassengerDB {
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  padding: 1rem 0 2rem;
+  position: relative;
+  @include mobile {
+    padding: 1rem 0 0;
+  }
+  .PassengerDB__wrapper {
     width: 100%;
-    height: auto;
-    min-height: 100vh;
-    padding: 1rem 0 2rem;
-    position: relative;
-    @include mobile{
-        padding: 1rem 0 0;
+    .Tabcontrollers {
+      @include tablet {
+        width: 30%;
+      }
     }
-    .PassengerDB__wrapper{
-        width: 100%;
-        .Tabcontrollers{
-            @include tablet{
-                width: 30%;
-            }
+    .PassengerDB__content {
+      margin-top: 4rem;
+      display: flex;
+      width: 100%;
+      margin: 0 auto;
+      .tab__container {
+        width: 100% !important;
+        margin: 3rem 0rem 0;
+        @include tablet {
+          width: 100%;
+          margin: 5rem 1rem 2rem;
         }
-        .PassengerDB__content{
-            margin-top: 4rem;
-            display: flex;
-            width: 100%;
-            margin: 0 auto;
-            .tab__container{
-                width: 100% !important;
-                margin: 3rem 0rem 0;
-                @media screen and (min-width: 768px) {
-                    width: 100%;
-                    margin: 5rem 1rem 2rem;
-                }
-            }
-            
-        }
-        
+      }
     }
+  }
 }

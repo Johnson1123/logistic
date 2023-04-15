@@ -8,7 +8,7 @@
 
   .balanceReport__wrapper {
     width: 100%;
-    @media screen and (min-width: 768px) {
+    @include tablet {
       width: 70%;
     }
     .pagination {
@@ -16,6 +16,16 @@
       align-items: center;
       .page__con {
         align-items: center;
+        .ant-select-selector {
+          height: 26px;
+        }
+        .ant-select-selection-item {
+          line-height: 24px;
+        }
+        .page-num {
+          font-size: 23px;
+          font-weight: 100;
+        }
       }
     }
     .balance__con {
@@ -46,7 +56,7 @@
           &:last-of-type {
             border-bottom: none;
           }
-          @media screen and (min-width: 768px) {
+          @include tablet {
             padding: 1rem 0;
           }
           .pdf {
@@ -58,7 +68,7 @@
             &:last-of-type {
               text-align: center;
             }
-            @media screen and (min-width: 768px) {
+            @include tablet {
               font-size: 14px;
               font-weight: 500;
             }

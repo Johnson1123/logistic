@@ -1,13 +1,17 @@
-import React from 'react'
-import './TabInput.scss'
+import React from "react";
+import "./TabInput.scss";
 
 function TabInput(props) {
   return (
-    <div className='flex input__container'>
+    <div className="flex input__container">
       <p className="form-text">{props.label}</p>
-      <input type={props.type} placeholder={props.placeholder} name={'props.name'} />
+      <input
+        type={props.type}
+        placeholder={props.placeholder}
+        name={"props.name"}
+      />
     </div>
-  )
+  );
 }
 
-export default TabInput
+export default TabInput;

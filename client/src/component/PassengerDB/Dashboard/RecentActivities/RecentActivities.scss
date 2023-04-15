@@ -1,63 +1,62 @@
-@import '../../../../style/variable.scss';
-.RecentActivities{
-    background-color: $asheColor;
-    padding: 1rem 0;
-    border-radius: 10px;
-    @include mobile {
-        margin-top: 1rem;
-        width: 170%;
+@import "../../../../style/variable.scss";
+.RecentActivities {
+  background-color: $asheColor;
+  padding: 1rem 0;
+  border-radius: 10px;
+  @include mobile {
+    margin-top: 1rem;
+    width: 170%;
+  }
+  @include tablet {
+    width: 100%;
+    margin-top: 2rem;
+  }
+  .col__title {
+    justify-content: space-between;
+    font-weight: 700;
+    padding: 0.3rem 0;
+    .p-text {
+      font-weight: 500;
+      font-size: $font-14;
+      @include tablet {
+        font-size: $font-14;
+      }
+    }
+    .col-4 {
+      text-align: left;
+    }
+  }
 
+  .col-1 {
+    width: 23%;
+    text-align: center;
+  }
+  .col-2 {
+    width: 35%;
+    text-align: center;
+  }
+  .col-3 {
+    width: 20%;
+    text-align: center;
+  }
+  .col-4 {
+    width: 18%;
+    text-align: center;
+  }
+  .recent__box {
+    justify-content: space-between;
+    padding: 0.3rem 0.3rem;
+    font-weight: 500;
+    @include mobile {
+      margin: 0.5rem 0;
     }
-    @media screen and (min-width: 768px) {
-        width: 100%;
-        margin-top: 2rem;
+    .p-text {
+      font-size: 14px;
+      font-weight: 500;
+      @include tablet {
+        padding: 0.4rem 0;
+        font-size: $font-16;
+      }
     }
-    .col__title{
-        justify-content: space-between;
-        font-weight: 700;
-        padding: .3rem 0;
-        .p-text{
-            font-weight: 500;
-            font-size: $font-14;
-            @media screen and (min-width: 768px) {
-                font-size: $font-14;
-            }
-        }
-        .col-4{
-            text-align: left;
-        }
-    }
-    
-    .col-1{
-        width: 23%;
-        text-align: center;
-    }
-    .col-2{
-        width: 35%;
-        text-align: center;
-    }
-    .col-3{
-        width: 20%;
-        text-align: center;
-    }
-    .col-4{
-        width: 18%;
-        text-align: center;
-    }
-    .recent__box{
-        justify-content: space-between;
-        padding: .3rem .3rem;
-        font-weight: 500;
-        @include mobile{
-            margin: .5rem 0;
-        } 
-        .p-text{
-            font-size: 14px;
-            font-weight: 500;
-            @media screen and (min-width: 768px) {
-                padding: .4rem 0;
-                font-size: $font-16;
-            }
-        }
-    }
+  }
 }

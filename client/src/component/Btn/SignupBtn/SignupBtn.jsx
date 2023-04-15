@@ -1,10 +1,15 @@
-import React from 'react'
-import './SignupBtn.scss'
+import React from "react";
+import "./SignupBtn.scss";
 
 function SignupBtn(props) {
   return (
-    <button onClick={props.handler} className={`sign-btn flex ${props.className}`}>{props.label}</button>
-  )
+    <button
+      onClick={props.handler}
+      className={`sign-btn flex ${props.className}`}
+    >
+      {props.label}
+    </button>
+  );
 }
 
-export default SignupBtn
+export default SignupBtn;

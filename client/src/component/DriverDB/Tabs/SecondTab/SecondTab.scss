@@ -14,13 +14,13 @@
   }
   .small-title {
     font-size: 14px;
-    @media screen and (min-width: 768px) {
+    @include tablet {
       font-size: 16px;
     }
   }
   .profile__content {
     margin-top: 2rem;
-    @media screen and (min-width: 768px) {
+    @include tablet {
       margin-top: 1.5rem;
     }
     img {
@@ -28,7 +28,7 @@
       height: 100px;
       border-radius: 50%;
       object-fit: cover;
-      @media screen and (min-width: 768px) {
+      @include tablet {
         width: 120px;
         height: 120px;
       }
@@ -44,7 +44,7 @@
       align-items: center;
       &:first-of-type {
         margin-top: 1rem;
-        @media screen and (min-width: 768px) {
+        @include tablet {
           margin-top: 0.5rem;
         }
       }
@@ -52,7 +52,7 @@
         width: 40%;
         font-size: 14px;
       }
-      @media screen and (min-width: 768px) {
+      @include tablet {
         width: 100%;
         justify-content: space-between;
         align-items: center;

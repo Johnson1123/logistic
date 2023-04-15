@@ -1,63 +1,64 @@
-.Exper__driver{
-    width: 100%;
-    height: 100vh;
-    .Form__navbar{
-        position: static;
+@import "../../style/variable.scss";
+.Exper__driver {
+  width: 100%;
+  height: 100vh;
+  .Form__navbar {
+    position: static;
+  }
+  .exper__wrapper {
+    flex-direction: column;
+    padding: 1rem 3rem;
+    @include tablet {
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: center;
     }
-    .exper__wrapper{
-        flex-direction: column;
-        padding: 1rem 3rem;
-        @media screen and (min-width: 768px){
-            flex-direction: row;
-            align-items: flex-start;
-            justify-content: center;
-        }
-        .exper__left, .exper__right{
-            width: 95%;
-            @media screen and (min-width: 768px){
-                width: 35%;
-                padding: 2rem;                                    
-            }
-        }
-        .exper__left{
-
-            button{
-                margin-top: 2rem;
-                @media screen and (min-width: 768px){
-                    margin-top: 3rem;
-                }
-            }
-            .form-title{
-                text-align: center;
-            }
-            .form-text{
-                text-align: center;
-                margin-top: 2rem;
-                line-height: 1.6;
-                font-weight: 300;
-                @media screen and (min-width: 768px){
-                    line-height: 1.3;
-                    font-size: 16px;
-                    margin-top: 3rem;
-                    padding: 0 1rem;
-                }
-            }
-            button{
-                @media screen and (min-width: 768px){
-                    width: 50%;
-                    margin: 0 auto;
-                    margin-top: 2.3rem;
-                }
-            }
-        }
-        .exper__right{
-            margin-top: 3rem;
-            img{
-                width: 100%;
-                @media screen and (min-width: 768px){
-                    width: 100%;
-                }
-            }
-        }
+    .exper__left,
+    .exper__right {
+      width: 95%;
+      @include tablet {
+        width: 35%;
+        padding: 2rem;
+      }
     }
+    .exper__left {
+      button {
+        margin-top: 2rem;
+        @include tablet {
+          margin-top: 3rem;
+        }
+      }
+      .form-title {
+        text-align: center;
+      }
+      .form-text {
+        text-align: center;
+        margin-top: 2rem;
+        line-height: 1.6;
+        font-weight: 300;
+        @include tablet {
+          line-height: 1.3;
+          font-size: 16px;
+          margin-top: 3rem;
+          padding: 0 1rem;
+        }
+      }
+      button {
+        @include tablet {
+          width: 50%;
+          margin: 0 auto;
+          margin-top: 2.3rem;
+        }
+      }
+    }
+    .exper__right {
+      margin-top: 3rem;
+      img {
+        width: 100%;
+        @include tablet {
+          width: 100%;
+        }
+      }
+    }
+  }
 }

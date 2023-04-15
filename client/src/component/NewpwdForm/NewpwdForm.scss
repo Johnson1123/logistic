@@ -1,19 +1,20 @@
-.Newpwdform{
+@import "../../style/variable.scss";
+.Newpwdform {
+  margin-top: 2rem;
+  .input_group {
+    flex-direction: column;
+    @media screen {
+      .input__con {
+        width: 100%;
+      }
+    }
+  }
+  .Newpwdform__btn {
     margin-top: 2rem;
-    .input_group{
-        flex-direction: column;
-        @media screen {
-            .input__con{
-                width: 100%;
-            }
-        }
+    @include tablet {
+      button {
+        width: 50%;
+      }
     }
-    .Newpwdform__btn{
-        margin-top: 2rem;
-        @media screen and (min-width: 768px) {
-            button{
-                width: 50%;
-            }
-        }
-    }
+  }
 }

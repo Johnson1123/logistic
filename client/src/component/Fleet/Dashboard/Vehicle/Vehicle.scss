@@ -1,47 +1,47 @@
-@import '../../../../style/variable.scss';
-.dashboard__vehicle{
-    width: 100%;
-    background-color: $lightAshe;
-    padding: 1rem .5rem;
-    border-radius: 10px;
-    .vehicle__con{
-        margin-top: .8rem;
-        .col-1{
-            width: 70%;
-        }
-        .col-2{
-            width: 30%;
-        }
-        .vehicle__header{
-            padding: 1rem;
-            border-radius: 10px;
-            .small-title{
-                font-size: $font-18;
-                font-weight: 700;
-            }
-        }
-        .vehicleList__content{
-            padding: .5rem;
-            margin-top: .5rem;
-            .vehicle{
-                padding: .5rem 0;
-                border-bottom: 1px solid $darkAshe;
-                &:last-of-type{
-                    border: none;
-                }
-                .bold-text{
-                    color: $secondaryColor;
-                }
-                .col-2{
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    span{
-                        padding: .3rem 1rem;
-                        border-radius: 5px;
-                    }
-                }
-            }
-        }
+@import "../../../../style/variable.scss";
+.dashboard__vehicle {
+  width: 100%;
+  background-color: $lightAshe;
+  padding: 1rem 0.5rem;
+  border-radius: 10px;
+  .vehicle__con {
+    margin-top: 0.8rem;
+    .col-1 {
+      width: 70%;
     }
+    .col-2 {
+      width: 30%;
+    }
+    .vehicle__header {
+      padding: 1rem;
+      border-radius: 10px;
+      .small-title {
+        font-size: $font-18;
+        font-weight: 700;
+      }
+    }
+    .vehicleList__content {
+      padding: 0.5rem;
+      margin-top: 0.5rem;
+      .vehicle {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid $darkAshe;
+        &:last-of-type {
+          border: none;
+        }
+        .bold-text {
+          color: $secondaryColor;
+        }
+        .col-2 {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          span {
+            padding: 0.3rem 1rem;
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+  }
 }

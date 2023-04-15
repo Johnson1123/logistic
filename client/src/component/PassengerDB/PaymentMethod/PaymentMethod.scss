@@ -1,25 +1,25 @@
-@import '../../../style/variable.scss';
-.method{
-    width: 80%;
-    align-items: center;
-    border: 1px solid $primaryColor;
-    border-radius: 10px;
-    height: 40px;
-    .img{
-        width: 20%;
-        margin-right: 0.5rem;
-        img{
-            width: 100%;
-            object-fit: cover;
-        }
+@import "../../../style/variable.scss";
+.method {
+  width: 80%;
+  align-items: center;
+  border: 1px solid $primaryColor;
+  border-radius: 10px;
+  height: 40px;
+  .img {
+    width: 20%;
+    margin-right: 0.5rem;
+    img {
+      width: 100%;
+      object-fit: cover;
     }
-    .method_detail{
-        .p-text{
-            font-size: $font-14;
-            line-height: 1.2;
-            &:first-of-type{
-                font-weight: 500;
-            }
-        }
+  }
+  .method_detail {
+    .p-text {
+      font-size: $font-14;
+      line-height: 1.2;
+      &:first-of-type {
+        font-weight: 500;
+      }
     }
+  }
 }

@@ -1,46 +1,46 @@
-@import '../../style/variable.scss';
-.signup__content{
-    position: absolute;
-    top: 5rem;
-    left: 0;
-    width: 90%;
-    height: auto;
-    padding: 1rem 2rem;
-    z-index: 20;
-    @media screen and (min-width: 768px) {
-        width: 50%;
-        top: 8rem;
-        padding-left: 7rem;
+@import "../../style/variable.scss";
+.signup__content {
+  position: absolute;
+  top: 5rem;
+  left: 0;
+  width: 90%;
+  height: auto;
+  padding: 1rem 2rem;
+  z-index: 20;
+  @include tablet {
+    width: 50%;
+    top: 8rem;
+    padding-left: 7rem;
+  }
+  .bold-text {
+    line-height: 3;
+  }
+  .login_here {
+    text-align: center;
+    margin-top: 10px;
+    a {
+      text-decoration: none;
+      padding-left: 5px;
     }
-    .bold-text{
-        line-height: 3;
+  }
+  .connect_sign {
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 10px;
+    width: 80%;
+    div {
+      flex: 1;
+      height: 1px;
+      background-color: #111;
+      display: inline-block;
     }
-    .login_here{
-        text-align: center;
-        margin-top: 10px;
-        a{
-            text-decoration: none;
-            padding-left: 5px;
-        }
+    p {
+      padding: 0 10px;
+      color: #f93f2d;
+      @include tablet {
+        font-size: $font-14;
+        font-weight: 500;
+      }
     }
-    .connect_sign{
-        text-align: center;
-        margin: 0 auto;
-        margin-top: 10px;
-        width: 80%;
-        div{
-            flex: 1;
-            height: 1px;
-            background-color: #111;
-            display: inline-block;
-        }
-        p{
-            padding: 0 10px;
-            color: #F93F2D;
-            @media screen and (min-width: 768px) {
-                font-size: $font-14;
-                font-weight: 500;
-            }
-        }
-    }
+  }
 }

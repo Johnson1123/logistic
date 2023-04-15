@@ -1,12 +1,12 @@
-import React from 'react'
-import FirstTab from '../../component/Tabs/FirstTab/FirstTab'
+import React from "react";
+import FirstTab from "../../component/Tabs/FirstTab/FirstTab";
 
 function FormTab() {
   return (
     <div>
-        <FirstTab />
+      <FirstTab />
     </div>
-  )
+  );
 }
 
-export default FormTab
+export default FormTab;

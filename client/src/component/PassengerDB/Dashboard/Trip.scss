@@ -1,34 +1,34 @@
-@import '../../../style/variable.scss';
-.Trip{
+@import "../../../style/variable.scss";
+.Trip {
+  width: 100%;
+  @include mobile {
+    padding: 0 1rem;
+    margin-top: 1rem;
+  }
+  .control__con {
+    background-color: $asheColor;
+    justify-content: space-between;
+    margin-top: 1rem;
+    padding: 0.5rem 3rem;
+    border-radius: 20px;
+    @include mobile {
+      padding: 0.7rem 1rem;
+    }
+    .control-btn {
+      border: none;
+      background-color: transparent;
+      color: $primaryColor;
+      font-weight: 700;
+      font-size: $font-14;
+    }
+  }
+  .scroll__container {
     width: 100%;
-    @include mobile{
-        padding: 0 1rem;
-        margin-top: 1rem;
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
     }
-    .control__con{
-        background-color: $asheColor;
-        justify-content: space-between;
-        margin-top: 1rem;
-        padding: .5rem 3rem;
-        border-radius: 20px;
-        @include mobile{
-            padding: .7rem 1rem;
-        }
-        .control-btn{
-            border: none;
-            background-color: transparent;
-            color: $primaryColor;
-            font-weight: 700;
-            font-size: $font-14;
-        }
-    }
-    .scroll__container{
-        width: 100%;
-        overflow: scroll;
-        -ms-overflow-style: none;
-        scrollbar-width: none; 
-        &::-webkit-scrollbar {
-            display: none;
-        }
-    }
+  }
 }

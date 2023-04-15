@@ -1,28 +1,17 @@
-import React from "react";
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Route,
-  Outlet,
-  createRoutesFromElements,
-  Routes,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Navbar from "./component/Navbar/Navbar";
 import Footer from "./component/Footer/Footer";
 import {
   Home,
-  LocalP,
   OTP,
   Loginuser,
   Login,
-  NotFound,
   PassengerDB,
   Profile,
   UserSignup,
   Whattolearn,
   ForgetPwd,
   Newpwd,
-  mylearnnig,
   Experiencedriver,
   WatToGo,
   StartTraining,
@@ -35,13 +24,10 @@ import {
 
 import {
   Dashboard,
-  Upcoming,
   Booking,
   Message,
   PassengerProfile,
   ProfileSetting,
-  PaymentSettings,
-  AddCard,
   GetHelp,
   Trip,
 } from "./component/PassengerDB/index";
@@ -51,10 +37,7 @@ import {
   DriverProfile,
   Myride,
   Mydocument,
-  Messages,
   Vehicle,
-  Vehicledetail,
-  Invoice,
   XlcabInvoice,
   BalanceReport,
   TaxReport,
@@ -78,7 +61,6 @@ import {
 } from "./component/Fleet";
 
 import Signupbanner from "./pages/Signupbanner/Signupbanner";
-import Background from "./component/Background/Background";
 import AccessInfo from "./pages/AccessInfo/AccessInfo";
 import LessonVideo from "./pages/LessonVideo/LessonVideo";
 import AboutXcab from "./component/PassengerDB/GetHelp/HelpButton/AboutXcab/AboutXcab";
@@ -107,7 +89,7 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-        path: "/profile",
+        path: "profile",
         element: <Profile />,
       },
       {

@@ -7,7 +7,7 @@
   -moz-box-shadow: 2px 4px 5px 1px #f3f3f3;
   margin-top: 3rem;
   border-radius: 5px;
-  @media screen and (min-width: 768px) {
+  @include tablet {
     margin-top: 2rem;
     width: 70%;
     justify-content: center;
@@ -20,14 +20,14 @@
     width: 50%;
     .badge-title {
       text-align: center;
-      @media screen and (min-width: 768px) {
+      @include tablet {
         font-size: $font-24;
       }
     }
     p {
       text-align: center;
       margin-top: 5px;
-      @media screen and (min-width: 768px) {
+      @include tablet {
         font-size: $font-16;
         padding: 0.5rem 4rem;
       }

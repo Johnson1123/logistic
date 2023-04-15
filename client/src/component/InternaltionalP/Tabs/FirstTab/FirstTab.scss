@@ -1,29 +1,29 @@
-@import '../../../../style/variable.scss';
-.firstTab{
-    width: 95%;
-    height: auto;
-    flex-direction: column;
-    margin-top: 2rem;
-    align-items: center;
-    @include mobile{
-        padding: 1rem;
+@import "../../../../style/variable.scss";
+.firstTab {
+  width: 95%;
+  height: auto;
+  flex-direction: column;
+  margin-top: 2rem;
+  align-items: center;
+  @include mobile {
+    padding: 1rem;
+  }
+  .form-bold {
+    width: 60%;
+    line-height: 1.6;
+    text-align: center;
+    @include tablet {
+      width: 30%;
+      line-height: 1.6;
     }
-    .form-bold{
-        width: 60%;
-        line-height: 1.6;
-        text-align: center;
-        @media screen and (min-width: 768px) {
-            width: 30%;
-            line-height: 1.6;
-        }
+  }
+  .small-title {
+    width: 70%;
+    text-align: center;
+    margin-top: 0.5rem;
+    @include tablet {
+      width: 50%;
+      line-height: 1.6;
     }
-    .small-title{
-        width: 70%;
-        text-align: center;
-        margin-top: .5rem;
-        @media screen and (min-width: 768px) {
-            width: 50%;
-            line-height: 1.6;
-        }
-    }
+  }
 }

@@ -1,47 +1,47 @@
-@import '../../../../style/variable.scss';
-.dashboard__driver{
-    width: 100%;
-    background-color: $lightAshe;
-    padding: 1rem .5rem;
-    border-radius: 10px;
-    .driver__con{
-        margin-top: .8rem;
-        .col-1{
-            width: 70%;
-        }
-        .col-2{
-            width: 30%;
-        }
-        .driver__header{
-            padding: 1rem;
-            border-radius: 10px;
-            .small-title{
-                font-size: $font-18;
-                font-weight: 700;
-            }
-        }
-        .driverList__content{
-            padding: .5rem;
-            margin-top: .5rem;
-            .driver{
-                padding: .5rem 0;
-                border-bottom: 1px solid $darkAshe;
-                &:last-of-type{
-                    border: none;
-                }
-                .bold-text{
-                    color: $secondaryColor;
-                }
-                .col-2{
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    span{
-                        padding: .3rem 1rem;
-                        border-radius: 5px;
-                    }
-                }
-            }
-        }
+@import "../../../../style/variable.scss";
+.dashboard__driver {
+  width: 100%;
+  background-color: $lightAshe;
+  padding: 1rem 0.5rem;
+  border-radius: 10px;
+  .driver__con {
+    margin-top: 0.8rem;
+    .col-1 {
+      width: 70%;
     }
+    .col-2 {
+      width: 30%;
+    }
+    .driver__header {
+      padding: 1rem;
+      border-radius: 10px;
+      .small-title {
+        font-size: $font-18;
+        font-weight: 700;
+      }
+    }
+    .driverList__content {
+      padding: 0.5rem;
+      margin-top: 0.5rem;
+      .driver {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid $darkAshe;
+        &:last-of-type {
+          border: none;
+        }
+        .bold-text {
+          color: $secondaryColor;
+        }
+        .col-2 {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          span {
+            padding: 0.3rem 1rem;
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+  }
 }

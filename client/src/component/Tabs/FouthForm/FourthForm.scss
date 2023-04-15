@@ -1,108 +1,106 @@
-@import '../../../style/variable.scss';
-.fouthForm{
-    width: 100%;
-    padding: .5rem;
-    margin-top: 1.5rem;
-    @media screen and (min-width: 768px) {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: space-between;
-        margin-top: 2rem;
-    }
-    .input__group{
-        @media screen and (min-width: 768px) {
-            width: 100%;
-            flex-direction: row;
-            justify-content: space-between;
-            display: flex;
-            .singleInput{
-                width: 45%;
-                .input__container{
-                    width: 100%;
-                }
-                .p-text{
-                    font-size: 14px;
-                    margin-top: 5px;
-                }
-            }
-
-        }
-        .form__select{
-            width: 100%;
-            margin-top: 15px;
-                @media screen and (min-width: 768px) {
-                    width: 45%;
-                }
-            .select{
-                width: 100%;
-            }
-        }
-    }
-    .select {
-      position: relative;
-      display: flex;
+@import "../../../style/variable.scss";
+.fouthForm {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 1.5rem;
+  @include tablet {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 2rem;
+  }
+  .input__group {
+    @include tablet {
       width: 100%;
-      height: 3em;
-      overflow: hidden;
-      background-color: #f3f3f3;
-      select {
-          width: 30%;
-          appearance: none;
-          outline: 0;
-          border: 0;
-          box-shadow: none;
-          flex: 1;
-          padding: 0 1em;
-          overflow: hidden !important;
-          color: $primaryColor;
-          background-color: #f3f3f3;
-          cursor: pointer;
-          .select::after {
-              content: '\25BC';
-              position: absolute;
-              top: 0;
-              right: 0;
-              padding: 1em;
-              background-color: #34495e;
-              transition: .25s all ease;
-              pointer-events: none;
-            }
+      flex-direction: row;
+      justify-content: space-between;
+      display: flex;
+      .singleInput {
+        width: 45%;
+        .input__container {
+          width: 100%;
         }
-    }
-    .vat {
-        margin-top: 5px;
-        .form-bold{
-            line-height: 1.3;
-            font-size: 14px;
-            font-weight: 500;
+        .p-text {
+          font-size: 14px;
+          margin-top: 5px;
         }
-        .input__container{
-            margin-top: 0;
-        }
-        .vat__checkbox{
-            margin-top: 0.3rem;
-            input{
-                margin-right: 10px;
-            }
-            @media screen and (min-width: 768px) {
-                font-size: 14px;
-            }
-            
-        }
-        @media screen and (min-width: 768px) {
-            width: 45%;
-            .input__container{
-               width: 100%;
-            }
-        }
-    }
-    button{
-      margin-top: 2rem;
-      @media screen and (min-width: 768px) {
-        width: 35%;
-        margin: 0 auto;
-        margin-top: 4rem;
       }
     }
+    .form__select {
+      width: 100%;
+      margin-top: 15px;
+      @include tablet {
+        width: 45%;
+      }
+      .select {
+        width: 100%;
+      }
+    }
+  }
+  .select {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 3em;
+    overflow: hidden;
+    background-color: #f3f3f3;
+    select {
+      width: 30%;
+      appearance: none;
+      outline: 0;
+      border: 0;
+      box-shadow: none;
+      flex: 1;
+      padding: 0 1em;
+      overflow: hidden !important;
+      color: $primaryColor;
+      background-color: #f3f3f3;
+      cursor: pointer;
+      .select::after {
+        content: "\25BC";
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 1em;
+        background-color: #34495e;
+        transition: 0.25s all ease;
+        pointer-events: none;
+      }
+    }
+  }
+  .vat {
+    margin-top: 5px;
+    .form-bold {
+      line-height: 1.3;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .input__container {
+      margin-top: 0;
+    }
+    .vat__checkbox {
+      margin-top: 0.3rem;
+      input {
+        margin-right: 10px;
+      }
+      @include tablet {
+        font-size: 14px;
+      }
+    }
+    @include tablet {
+      width: 45%;
+      .input__container {
+        width: 100%;
+      }
+    }
+  }
+  button {
+    margin-top: 2rem;
+    @include tablet {
+      width: 35%;
+      margin: 0 auto;
+      margin-top: 4rem;
+    }
+  }
 }

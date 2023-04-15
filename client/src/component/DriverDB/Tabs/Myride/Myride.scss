@@ -2,8 +2,8 @@
 .myride__wrapper {
   width: 100%;
   padding: 0 1rem;
-  @media screen and (min-width: 768px) {
-    padding: 0 0.5rem;
+  @include tablet {
+    padding: 1rem 0.5rem 0;
     width: 70%;
   }
   .input__container {
@@ -22,12 +22,16 @@
   }
 
   .input__details {
-    width: 40%;
+    width: 75%;
     margin-top: 1rem;
-    @include mobile {
-      width: 75%;
+    @include tablet {
+      width: 37%;
     }
     .box {
+      padding: 0.2rem 0;
+      @include tablet {
+        padding: 0.2rem 0;
+      }
       .small-title {
         font-size: $font-14;
         width: 70%;
@@ -35,6 +39,10 @@
       }
       .p-text {
         font-size: $font-14;
+        @include tablet {
+          text-align: right;
+          width: 30%;
+        }
       }
     }
   }
@@ -43,6 +51,29 @@
     margin-top: 1rem;
     .page__con {
       align-items: center;
+      .ant-select-selector {
+        height: 26px;
+      }
+      .ant-select-selection-item {
+        line-height: 24px;
+      }
+      .page-num {
+        font-size: 23px;
+        font-weight: 100;
+      }
+      @include tablet {
+        margin: 0.7rem;
+        .ant-select-selector {
+          height: 26px;
+        }
+        .ant-select-selection-item {
+          line-height: 24px;
+        }
+        .page-num {
+          font-size: 23px;
+          font-weight: 100;
+        }
+      }
     }
   }
 }

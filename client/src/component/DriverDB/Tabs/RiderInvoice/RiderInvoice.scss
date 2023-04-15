@@ -73,7 +73,7 @@
     border-radius: 10px;
     justify-content: space-between;
     padding: 0 1rem;
-    @media screen and (min-width: 768px) {
+    @include tablet {
       width: 100%;
       padding: 1rem;
       width: 100%;
@@ -88,7 +88,7 @@
       &:last-of-type {
         text-align: right;
       }
-      @media screen and (min-width: 768px) {
+      @include tablet {
         font-size: 16px;
       }
     }
@@ -106,7 +106,7 @@
       &:last-of-type {
         border-bottom: none;
       }
-      @media screen and (min-width: 768px) {
+      @include tablet {
         text-align: center;
         padding: 1rem;
       }
@@ -116,7 +116,7 @@
     }
     .p-text {
       font-size: 12px;
-      @media screen and (min-width: 768px) {
+      @include tablet {
         font-size: 14px;
         font-weight: 500;
       }

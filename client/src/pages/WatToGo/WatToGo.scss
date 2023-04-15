@@ -1,56 +1,56 @@
-.WatToGo{
-    width: 100%;
-    height: 100vh;
-    .Form__navbar{
-        position: static;
+@import "../../style/variable.scss";
+.WatToGo {
+  width: 100%;
+  height: 100vh;
+  .Form__navbar {
+    position: static;
+  }
+  .WatToGo__wrapper {
+    flex-direction: column;
+    padding: 1rem 3rem;
+    @include tablet {
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: center;
     }
-    .WatToGo__wrapper{
-        flex-direction: column;
-        padding: 1rem 3rem;
-        @media screen and (min-width: 768px){
-            flex-direction: row;
-            align-items: flex-start;
-            justify-content: center;
-        }
-        .WatToGo__left, .WatToGo__right{
-            width: 95%;
-            @media screen and (min-width: 768px){
-                width: 35%;
-                padding: 2rem;                                    
-            }
-        }
-        .WatToGo__left{
-
-            button{
-                margin-top: 2rem;
-                @media screen and (min-width: 768px){
-                    margin: 0 auto;
-                    margin-top: 3rem;
-                    width: 60%;
-                    
-                }
-            }
-            .form-title{
-                text-align: center;
-            }
-            .form-text{
-                text-align: center;
-                margin-top: 3rem;
-                line-height: 1.6;
-                @media screen and (min-width: 768px){
-                    line-height: 1.7;
-                    margin-top: 6rem;
-                }
-            }
-        }
-        .WatToGo__right{
-            margin-top: 3rem;
-            img{
-                width: 100%;
-                @media screen and (min-width: 768px){
-                    width: 100%;
-                }
-            }
-        }
+    .WatToGo__left,
+    .WatToGo__right {
+      width: 95%;
+      @include tablet {
+        width: 35%;
+        padding: 2rem;
+      }
     }
+    .WatToGo__left {
+      button {
+        margin-top: 2rem;
+        @include tablet {
+          margin: 0 auto;
+          margin-top: 3rem;
+          width: 60%;
+        }
+      }
+      .form-title {
+        text-align: center;
+      }
+      .form-text {
+        text-align: center;
+        margin-top: 3rem;
+        line-height: 1.6;
+        @include tablet {
+          line-height: 1.7;
+          margin-top: 6rem;
+        }
+      }
+    }
+    .WatToGo__right {
+      margin-top: 3rem;
+      img {
+        width: 100%;
+        @include tablet {
+          width: 100%;
+        }
+      }
+    }
+  }
 }

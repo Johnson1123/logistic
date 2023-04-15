@@ -1,104 +1,102 @@
-@import '../../../style/variable.scss';
-.FRiderInvoice{
-    width: 95%;
-    padding: 1rem .5rem 0;
-    @media screen and (min-width: 768px) {
-        .FRiderInvoice__wrapper{
-            width: 90%;
-        }         
+@import "../../../style/variable.scss";
+.FRiderInvoice {
+  width: 95%;
+  padding: 1rem 0.5rem 0;
+  @include tablet {
+    .FRiderInvoice__wrapper {
+      width: 90%;
     }
-    .input__con{
-        width: 70%;
-        margin-top: 10px;
-        border: none;
-        @include tablet{
-            .ant-select{
-                margin-right: 1rem;
-            }
-        }
+  }
+  .input__con {
+    width: 70%;
+    margin-top: 10px;
+    border: none;
+    @include tablet {
+      .ant-select {
+        margin-right: 1rem;
+      }
     }
+  }
 
-    .col-1{
-        width: 15%;
-        text-align: left;
-    }
-    .col-2{
-        width: 18%;
-        text-align: center;
-    }
-    .col-3{
-        width: 33%;
-        text-align: center;
-    }
-    .col-4{
-        width: 10%;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        text-align: center;
-    }
-    .col-5{
-        width: 18%;
-        text-align: center;
-    }
-    .col-6{
-        width: 7%;
-        text-align: center;
-    }
-    .files__con{
+  .col-1 {
+    width: 15%;
+    text-align: left;
+  }
+  .col-2 {
+    width: 18%;
+    text-align: center;
+  }
+  .col-3 {
+    width: 33%;
+    text-align: center;
+  }
+  .col-4 {
+    width: 10%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+  }
+  .col-5 {
+    width: 18%;
+    text-align: center;
+  }
+  .col-6 {
+    width: 7%;
+    text-align: center;
+  }
+  .files__con {
+    width: 100%;
+    overflow: scroll;
+    .file__header {
+      margin-top: 1rem;
+      width: 200%;
+      height: 50px;
+      background-color: $asheColor;
+      align-items: center;
+      border-radius: 10px;
+      justify-content: space-between;
+      @include tablet {
+        padding: 1rem;
         width: 100%;
-        overflow: scroll;
-        .file__header{
-            margin-top: 1rem;
-            width: 200%;
-            height: 50px;
-            background-color: $asheColor;
-            align-items: center;
-            border-radius: 10px;
-            justify-content: space-between;
-            @media screen and (min-width: 768px) {
-                    padding: 1rem;
-                    width: 100%;
-            }
-            .bold-text{
-                text-align: center;
-                text-overflow: hidden;
-                font-size: 14px;
-                &:first-of-type{
-                    text-align: left;
-                }
-                @media screen and (min-width: 768px) {
-                    font-size: 16px;
-                }
-            }
+      }
+      .bold-text {
+        text-align: center;
+        text-overflow: hidden;
+        font-size: 14px;
+        &:first-of-type {
+          text-align: left;
         }
-        .file__box-con{
-            margin-top: .5rem;
-            width: 200%;
-            @include tablet{
-                width: 100%;
-            }
-            .file__box{
-                justify-content: space-between;
-                padding: .8rem .2rem;
-                margin: .3rem 0;
-                border-bottom: 2px solid $asheColor;
-                @media screen and (min-width: 768px) {
-                    text-align: center;
-                    padding: 1rem;
-                }
-                .pdf{
-                    color: $secondaryColor;
-                }
-            }     
-            .p-text{
-                font-size: 12px;
-                @media screen and (min-width: 768px) {
-                    font-size: 14px;
-                    font-weight: 500;
-                }
-            }
+        @include tablet {
+          font-size: 16px;
         }
-
+      }
     }
-    
+    .file__box-con {
+      margin-top: 0.5rem;
+      width: 200%;
+      @include tablet {
+        width: 100%;
+      }
+      .file__box {
+        justify-content: space-between;
+        padding: 0.8rem 0.2rem;
+        margin: 0.3rem 0;
+        border-bottom: 2px solid $asheColor;
+        @include tablet {
+          text-align: center;
+          padding: 1rem;
+        }
+        .pdf {
+          color: $secondaryColor;
+        }
+      }
+      .p-text {
+        font-size: 12px;
+        @include tablet {
+          font-size: 14px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
 }

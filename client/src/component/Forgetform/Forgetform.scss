@@ -1,13 +1,14 @@
-.form_login{
-    .sign__in{
-        flex-direction: column;
+@import "../../style/variable.scss";
+.form_login {
+  .sign__in {
+    flex-direction: column;
+    margin-top: 1rem;
+    @include tablet {
+      width: 60% !important;
+      button {
+        width: 30%;
         margin-top: 1rem;
-        @media screen and (min-width: 768px) {
-            width: 60% !important;
-            button{
-                width: 30%;
-                margin-top: 1rem;
-            }
-        }
+      }
     }
+  }
 }

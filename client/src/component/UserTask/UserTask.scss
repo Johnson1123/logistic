@@ -14,7 +14,7 @@
   left: 0;
   row-gap: 20px;
   flex-wrap: wrap;
-  @media screen and (min-width: 768px) {
+  @include tablet {
     flex-direction: row;
     width: 70%;
     justify-content: space-around;
@@ -25,7 +25,7 @@
     justify-content: flex-start;
     align-items: center;
     padding: 0.5rem;
-    @media screen and (min-width: 768px) {
+    @include tablet {
       width: 25%;
     }
     .task__img-box {
@@ -35,7 +35,7 @@
       max-height: 100px;
       padding: 1rem;
       overflow: hidden;
-      @media screen and (min-width: 768px) {
+      @include tablet {
         width: 33%;
       }
       img {
@@ -44,19 +44,19 @@
       }
     }
     .box-1 {
-      @media screen and (min-width: 768px) {
+      @include tablet {
         width: 70%;
       }
     }
     .box-2 {
       width: 40%;
-      @media screen and (min-width: 768px) {
+      @include tablet {
         width: 40%;
       }
     }
     .box-3 {
       width: 31%;
-      @media screen and (min-width: 768px) {
+      @include tablet {
         width: 34%;
         display: flex;
         align-items: center;

@@ -1,86 +1,86 @@
-@import '../../../../style/variable.scss';
-.Application{
+@import "../../../../style/variable.scss";
+.Application {
+  width: 100%;
+  margin-top: 2.5rem;
+  .top__container {
+    justify-content: space-between;
+    // align-items: flex-start;
+    // @include tablet{
+    //     align-items: center;
+    // }
+    .desc {
+      width: 70%;
+      @include tablet {
+        width: 60%;
+      }
+      .p-text {
+        font-size: $font-14;
+        font-weight: 500;
+      }
+    }
+    .small-title {
+      font-weight: 700;
+      font-size: $font-14;
+    }
+    .add__driver {
+      background-color: transparent;
+      border: none;
+      font-weight: 700;
+      color: $secondaryColor;
+      font-size: $font-16;
+    }
+  }
+  .scroll__container {
+    margin-top: 1rem;
+    padding: 0.5rem;
     width: 100%;
-    margin-top: 2.5rem;
-    .top__container{
-        justify-content: space-between;
-        // align-items: flex-start;
-        // @include tablet{
-        //     align-items: center;
-        // }
-        .desc{
-            width: 70%;
-            @include tablet{
-                width: 60%;
-            }
-            .p-text{
-                font-size: $font-14;
-                font-weight: 500;
-            }
-        }
-        .small-title{
-            font-weight: 700;
-            font-size: $font-14;
-        }
-        .add__driver{
-            background-color: transparent;
-            border: none;
-            font-weight: 700;
-            color: $secondaryColor;
-            font-size: $font-16;
-        }
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
     }
-    .scroll__container{
-        margin-top: 1rem;
-        padding: .5rem;
-        width: 100%;
-        overflow: scroll;
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-        &::-webkit-scrollbar {
-            display: none;
-        }
-        @include tablet{
-            overflow: hidden;
-        }
-        .col-1{
-            width: 35%;
-        }
-        .col-2{
-            width: 15%;
-        }
-        .col-3{
-            width: 30%;
-        }
-        .col-4{
-            width: 20%;
-        }
-        
-        .title__container{
-            margin-top: 0.5rem;
-            padding: .7rem;
-            border-radius: 10px;
-            width: 150%;
-            @include tablet{
-                width: 70%;
-            }
-        }
-        .data__container{
-            margin-top: 1rem;
-            width: 100%;
-            .box{
-                padding: .5rem;
-                border-bottom: 1px solid $lightAshe;
-                padding: .7rem;
-                margin: .3rem;
-                .col-1.p-text{
-                    color: $secondaryColor;
-                }
-                .p-text{
-                    font-size: $font-14;
-                    font-weight: 500;
-                }
-            }
-        }
+    @include tablet {
+      overflow: hidden;
     }
+    .col-1 {
+      width: 35%;
+    }
+    .col-2 {
+      width: 15%;
+    }
+    .col-3 {
+      width: 30%;
+    }
+    .col-4 {
+      width: 20%;
+    }
+
+    .title__container {
+      margin-top: 0.5rem;
+      padding: 0.7rem;
+      border-radius: 10px;
+      width: 150%;
+      @include tablet {
+        width: 70%;
+      }
+    }
+    .data__container {
+      margin-top: 1rem;
+      width: 100%;
+      .box {
+        padding: 0.5rem;
+        border-bottom: 1px solid $lightAshe;
+        padding: 0.7rem;
+        margin: 0.3rem;
+        .col-1.p-text {
+          color: $secondaryColor;
+        }
+        .p-text {
+          font-size: $font-14;
+          font-weight: 500;
+        }
+      }
+    }
+  }
 }

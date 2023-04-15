@@ -23,7 +23,7 @@ function BalanceReport() {
                 value: province,
               }))}
             />
-            <p>/10</p>
+            <p className="page-num">/ 10</p>
           </div>
         </div>
         <div className="balance__con">

@@ -1,17 +1,18 @@
-@import '../../style/variable.scss';
-.combine__con{
-    flex-direction: column;
-    .combineinput__form {
-        width: 100%;
-        justify-content: space-between;
-        .combineinput{
-            width: 23%;
-            border: 1px solid $lightAshe;
-            height: 44px;
-            border-radius: 10px;
-            &:focus{
-                outline: none;
-            }
-        }
+@import "../../style/variable.scss";
+.combine__con {
+  flex-direction: column;
+  margin: 0.8rem 0 2rem;
+  input {
+    width: 35px !important;
+    border: 1px solid $lightAshe;
+    height: 35px;
+    border-radius: 10px;
+    margin: 0 5px;
+    &:focus {
+      outline: none;
     }
+  }
+  .sign-btn {
+    margin-top: 2rem;
+  }
 }
