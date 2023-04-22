@@ -6,25 +6,27 @@ import Input from "../Input/Input";
 import "./LoginForm.scss";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "../../features/Auths";
 
 function LoginForm() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const auth = useSelector((state) => state.auth);
+  console.log(auth.user_id);
   const [loginData, setLoginData] = useState({
     email: "",
     password: "",
-    user_type: "customer",
   });
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      dispatch(loginUser(loginData)).unwrap();
+      const data = await dispatch(loginUser(loginData));
     } catch (err) {
       console.log(err);
     }
   };
+  console.log(auth);
   return (
     <form className="form_login" onSubmit={handleLogin}>
       <div className="flex input_group">
@@ -52,7 +54,12 @@ function LoginForm() {
         />
       </div>
       <div className="sign__in">
-        <SignupBtn label="Sign in" />
+        {auth?.loginError && (
+          <p className="error">{auth?.loginError.message}</p>
+        )}
+        <SignupBtn
+          label={auth?.loginStatus === "pending" ? "Sign in..." : "Sign in"}
+        />
       </div>
     </form>
   );

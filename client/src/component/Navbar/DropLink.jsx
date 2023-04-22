@@ -7,7 +7,9 @@ export default function DropLink(props) {
   const Dispatch = useDispatch();
   return (
     <li className="dropDown" onClick={() => Dispatch(closeToggle())}>
-      <Link to="#">{props.label}</Link>
+      <Link to={props.links} target="_blank">
+        {props.label}
+      </Link>
     </li>
   );
 }

@@ -6,13 +6,16 @@ import { BsTelephone } from "react-icons/bs";
 import { AiFillLock } from "react-icons/ai";
 
 import "./Form_Sign.scss";
-import SignupBtn from "../Btn/SignupBtn/SignupBtn";
 import { useDispatch, useSelector } from "react-redux";
-import { registerUser, storeUser } from "../../features/Auths";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { registerUser } from "../../features/Auths";
+import { closeSignUp, otpToggle } from "../../features/toggleSlice/toggleSlice";
 
 function FORM_SIGN(props) {
+  const navigate = useNavigate();
   const Dispatch = useDispatch();
+  const location = useLocation();
+  const auth = useSelector((state) => state.auth);
   const [values, setValue] = useState({
     username: "",
     phone: "",
@@ -20,67 +23,82 @@ function FORM_SIGN(props) {
     password: "",
   });
 
+  useEffect(() => {
+    if (auth.registerStatus === "success") navigate("/otp");
+  }, [navigate, auth.registerStatus]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const token = await Dispatch(registerUser(values)).unwrap();
-    } catch (err) {
-      console.log(err);
-    }
+    await Dispatch(registerUser({ ...values, user_type: user_type }));
   };
+  const user_type = location.state;
+  console.log(user_type);
   return (
     <form className="form_sign" onSubmit={handleSubmit}>
       <div className="flex input_group">
-        <Input
-          type="text"
-          name="username"
-          image={<CiUser />}
-          placeholder="Username"
-          onChange={(e) => {
-            setValue((prevValues) => {
-              return { ...prevValues, username: e.target.value };
-            });
-          }}
-        />
-        <Input
-          type="email"
-          name="email"
-          image={<HiOutlineMail />}
-          placeholder="Email Address"
-          onChange={(e) => {
-            setValue((prevValues) => {
-              return { ...prevValues, email: e.target.value };
-            });
-          }}
-        />
+        <div className="input__group-inner">
+          <Input
+            type="text"
+            name="username"
+            image={<CiUser />}
+            placeholder="Username"
+            onChange={(e) => {
+              setValue((prevValues) => {
+                return { ...prevValues, username: e.target.value };
+              });
+            }}
+          />
+        </div>
+        <div className="input__group-inner">
+          <Input
+            type="email"
+            name="email"
+            image={<HiOutlineMail />}
+            placeholder="Email Address"
+            onChange={(e) => {
+              setValue((prevValues) => {
+                return { ...prevValues, email: e.target.value };
+              });
+            }}
+          />
+        </div>
+      </div>
+      <div className="flex input_group">
+        <div className="input__group-inner">
+          <Input
+            type="number"
+            name="tell"
+            image={<BsTelephone />}
+            placeholder="Telephone"
+            onChange={(e) => {
+              setValue((prevValues) => {
+                return { ...prevValues, phone: e.target.value };
+              });
+            }}
+          />
+        </div>
+        <div className="input__group-inner">
+          <Input
+            type="password"
+            name="pwd"
+            image={<AiFillLock />}
+            placeholder="Password"
+            onChange={(e) => {
+              setValue((prevValues) => {
+                return { ...prevValues, password: e.target.value };
+              });
+            }}
+          />
+        </div>
       </div>
 
-      <div className="flex input_group">
-        <Input
-          type="tel"
-          name="tell"
-          image={<BsTelephone />}
-          placeholder="Telephone"
-          onChange={(e) => {
-            setValue((prevValues) => {
-              return { ...prevValues, phone: e.target.value };
-            });
-          }}
-        />
-        <Input
-          type="password"
-          name="pwd"
-          image={<AiFillLock />}
-          placeholder="Password"
-          onChange={(e) => {
-            setValue((prevValues) => {
-              return { ...prevValues, password: e.target.value };
-            });
-          }}
-        />
-      </div>
-      <div>
-        <SignupBtn label="Sign Up" />
+      <div className="flex signup-btn-err">
+        {auth.registerStatus === "rejected" ? (
+          <p className="error">{auth?.registerError?.message}</p>
+        ) : null}
+        <button className="btn sign_btn">
+          {auth.registerStatus === "pending" ? "Submitting..." : "Sign Up"}
+        </button>
       </div>
     </form>
   );

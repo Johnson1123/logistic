@@ -11,9 +11,6 @@
   border: 1px solid #f3f3f3;
   border-radius: 10px;
   padding: 0.2rem;
-  @include tablet {
-    width: 45%;
-  }
   i {
     margin-right: 5px;
   }
@@ -21,6 +18,7 @@
     border: none;
     height: 100%;
     width: 100%;
+    padding: 2px 5px;
     &:focus {
       outline: none;
     }

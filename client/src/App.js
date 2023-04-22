@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Navbar from "./component/Navbar/Navbar";
 import Footer from "./component/Footer/Footer";
+import { loadUser } from "./features/Auths";
 import {
   Home,
   OTP,
@@ -72,6 +73,8 @@ import Wattogo from "./component/InternaltionalP/Wattogo/Wattogo";
 import { TbRipple } from "react-icons/tb";
 import InterP from "./component/PassengerDB/InterP/InterP";
 import FleetDB from "./pages/FleetDB/FleetDB";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
 
 const Layout = () => {
   return (
@@ -115,7 +118,7 @@ const router = createBrowserRouter([
     element: <UserSignup />,
   },
   {
-    path: "/loginuser",
+    path: "/login",
     element: <Loginuser />,
   },
   {
@@ -368,6 +371,11 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(loadUser(null));
+  }, [dispatch]);
   return <RouterProvider router={router} />;
 }
 export default App;

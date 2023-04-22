@@ -12,7 +12,26 @@
       outline: none;
     }
   }
-  .sign-btn {
-    margin-top: 2rem;
+  .verify-otp-error {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 140px;
+    @include tablet {
+      width: 100%;
+    }
+    .sign-btn {
+      @include tablet {
+        width: 80%;
+      }
+      margin-top: 1rem;
+      padding: 10px 2rem;
+      &:hover {
+        background-color: $whiteColor;
+        color: $secondaryColor;
+        border: 1px solid $secondaryColor;
+        padding: 9px;
+      }
+    }
   }
 }

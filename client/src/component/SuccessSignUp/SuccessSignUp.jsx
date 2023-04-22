@@ -1,19 +1,13 @@
-import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import image from "../../asset/image";
-import { endSignUp } from "../../features/toggleSlice/toggleSlice";
 import SignupBtn from "../Btn/SignupBtn/SignupBtn";
 import "./SuccessSignUp.scss";
 
 function SuccessSignUp() {
   const navigate = useNavigate();
-  const Dispatch = useDispatch();
-  const toggle = useSelector((state) => state.toggleReducer.signUp);
   const handleNavigate = () => {
-    Dispatch(endSignUp());
-    console.log(toggle);
-    return navigate("/experience");
+    return navigate("/login");
   };
 
   return (

@@ -5,19 +5,31 @@ import CreateAccout from "../../component/CreateAccout/CreateAccout";
 import Overlay from "../../component/Overlay/Overlay";
 import SuccessSignUp from "../../component/SuccessSignUp/SuccessSignUp";
 import "./SignUp.scss";
-import OTP from "../OTP/OTP";
 import FORM_SIGN from "../../component/Form_Signup/FORM_SIGNUP";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SocialMedia from "../../component/SocialMedia/SocialMedia";
+import OTP from "../OTP/OTP";
+import { useEffect } from "react";
+import {
+  closeOtpToggle,
+  closeSignUp,
+} from "../../features/toggleSlice/toggleSlice";
 
-function SignUp(props) {
-  const toggle = useSelector((state) => state.toggleReducer.signUp);
-  const [email_id, setEmail_id] = useState("");
+function SignUp({ type }) {
+  const signUptoggle = useSelector((state) => state.toggleReducer.signUp);
+  const Dispatch = useDispatch();
+  const navigate = useNavigate();
+  const auth = useSelector((state) => state.auth);
+  useEffect(() => {
+    if (auth.user_id) {
+      navigate("/");
+    }
+  }, [auth.user_id, navigate]);
   return (
     <>
-      {!email_id && (
-        <div className="signUp__con">
-          <Background />
+      <div className="signUp__con">
+        <Background />
+        {signUptoggle && (
           <div className="signup__content">
             <p className="form-bold">START FOR FREE</p>
             <p className="form-title p-text">CREATE AN ACCOUNT</p>
@@ -35,15 +47,8 @@ function SignUp(props) {
             </div>
             <SocialMedia />
           </div>
-          {toggle && <SuccessSignUp />}
-          {toggle && <Overlay />}
-        </div>
-      )}
-      {email_id && (
-        <div className="sign__otp">
-          <OTP />
-        </div>
-      )}
+        )}
+      </div>
     </>
   );
 }

@@ -10,6 +10,7 @@ function WatToGo() {
   const handleNavigate = () => {
     return navigate("/stn");
   };
+
   return (
     <div className="WatToGo">
       <Bgnav />

@@ -1,14 +1,30 @@
 @import "../../style/variable.scss";
-.form_login {
+.form__forget {
+  width: 80%;
+  @include tablet {
+    width: 40%;
+  }
+  .input_group {
+  }
   .sign__in {
     flex-direction: column;
     margin-top: 1rem;
+    width: 90%;
     @include tablet {
-      width: 60% !important;
-      button {
-        width: 30%;
-        margin-top: 1rem;
-      }
+      width: 100%;
+    }
+  }
+  .form-text {
+    margin: 0.8rem 0;
+    @include tablet {
+      padding-right: 20px;
+    }
+  }
+  button {
+    width: 70%;
+    margin-top: 1rem;
+    @include tablet {
+      width: 70%;
     }
   }
 }

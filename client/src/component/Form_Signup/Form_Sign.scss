@@ -9,15 +9,30 @@
     flex-direction: column;
     width: 100%;
     @include tablet {
+      column-gap: 20px;
+    }
+    .input__group-inner {
+      flex: 1;
+    }
+    @include tablet {
       flex-direction: row;
       justify-content: space-between;
       width: 100%;
       margin-top: 15px;
     }
   }
-  button {
+  .signup-btn-err {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 130px;
+    margin-top: 1rem;
+    p {
+      margin-bottom: 1rem;
+    }
+  }
+  .signup-btn {
     width: 50%;
     margin: 0 auto;
-    margin-top: 3rem;
   }
 }

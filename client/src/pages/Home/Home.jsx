@@ -13,9 +13,11 @@ import DownloadSection from "../../component/DownloadSection/DownloadSection";
 import { useNavigate } from "react-router-dom";
 import OurBrand from "../../component/OurBrand/OurBrand";
 import Safety from "../../component/Safety/Safety";
+import { useSelector } from "react-redux";
 
 export const Home = () => {
   const navigate = useNavigate();
+  const auth = useSelector((state) => state.auth);
 
   // const locationHandler = () => {
   //   const navigate = useNavigate;
@@ -65,11 +67,11 @@ export const Home = () => {
         <OperationArea />
         <OurService />
         <Testimonials />
-        <Map />
+        {auth.user_id && <Map />}
         <ChargesBadge />
-        <OurBrand />
-        <Safety />
-        <DownloadSection />
+        {auth.user_id && <DownloadSection />}
+        {auth.user_id ? "" : <OurBrand />}
+        {auth.user_id ? "" : <Safety />}
       </div>
     </div>
   );
