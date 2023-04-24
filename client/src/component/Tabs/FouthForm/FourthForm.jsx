@@ -87,6 +87,33 @@ function FourthForm() {
     setError(validate(formData));
     setIsSumitted(true);
   };
+  const driverData = {
+    vehicle: {
+      name: "acura",
+      plate_number: personalInfo.vehiclePlate,
+      color: personalInfo.vehicleColor,
+      external_picture: driverDocument.exteriorImage,
+      internal_picture: driverDocument.interiorImage,
+      manufacturer_and_model: personalInfo.vehicleModel,
+      vehicle_year: personalInfo.vehicleYear,
+    },
+    first_name: personalInfo.driverFName,
+    last_name: personalInfo.driverLName,
+    refferal_code: personalInfo.driverReferral,
+    vehicle_available: true,
+    driver_license: license,
+    driver_license_image: driverDocument.licenseImage,
+    drivers_picture: driverDocument.profileImage,
+    billing_type: formData.billType,
+    company_name: formData.companyName,
+    address: formData.paymentAdress,
+    registration_code: formData.regCode,
+    vat_liability: true,
+    vat_number: formData.vatNumber,
+    bank_account_holder_name: formData.accountName,
+    bank_account_number: formData.xlcabPayment,
+    bank_name_or_bic_swift: formData.bankName,
+  };
 
   useEffect(() => {
     if (Object.keys(error).length === 0 && isSumitted) {
@@ -104,34 +131,6 @@ function FourthForm() {
           bankName: formData.bankName,
         })
       );
-      const driverData = {
-        vehicle: {
-          name: "acura",
-          plate_number: personalInfo.vehiclePlate,
-          color: personalInfo.vehicleColor,
-          external_picture: driverDocument.exteriorImage,
-          internal_picture: driverDocument.interiorImage,
-          manufacturer_and_model: personalInfo.vehicleModel,
-          vehicle_year: personalInfo.vehicleYear,
-        },
-        first_name: personalInfo.driverFName,
-        last_name: personalInfo.driverLName,
-        refferal_code: personalInfo.driverReferral,
-        vehicle_available: true,
-        driver_license: license,
-        driver_license_image: driverDocument.licenseImage,
-        drivers_picture: driverDocument.profileImage,
-        billing_type: formData.billType,
-        company_name: formData.companyName,
-        address: formData.paymentAdress,
-        registration_code: formData.regCode,
-        vat_liability: true,
-        vat_number: formData.vatNumber,
-        bank_account_holder_name: formData.accountName,
-        bank_account_number: formData.xlcabPayment,
-        bank_name_or_bic_swift: formData.bankName,
-      };
-      Dispatch(uploadDriverDetail(driverData));
     }
   }, [formData, Dispatch, isSumitted, error]);
 
