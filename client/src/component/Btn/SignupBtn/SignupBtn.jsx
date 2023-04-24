@@ -5,6 +5,7 @@ function SignupBtn(props) {
   return (
     <button
       onClick={props.handler}
+      type={props.type}
       className={`sign-btn flex ${props.className}`}
     >
       {props.label}

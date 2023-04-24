@@ -16,25 +16,25 @@ function GetHelp() {
       <HelpButton label="Customer services" />
       <p className="small-title">Get help with something else?</p>
       <HelpButton
-        label="About XLCAB Ride"
+        label="How do I book a ride with XLCAB?"
         handler={() => handleNavigate("ride")}
       />
-      <HelpButton
+      {/* <HelpButton
         label="App and Features"
         handler={() => handleNavigate("app")}
-      />
+      /> */}
       <HelpButton
-        label="Account and data"
+        label="XCLEB Security"
         handler={() => handleNavigate("account")}
       />
       <HelpButton
         label="Payments and pricing"
         handler={() => handleNavigate("payment")}
       />
-      <HelpButton
+      {/* <HelpButton
         label="Using XLCAB Rid"
         handler={() => handleNavigate("using/ride")}
-      />
+      /> */}
     </div>
   );
 }

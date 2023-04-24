@@ -33,7 +33,7 @@ function AccountData() {
         >
           <FaAngleLeft />
         </div>
-        <p>Account and Data</p>
+        <p>XCLEB Security</p>
       </div>
       <div className="btn__container">
         <div className="AccountData">

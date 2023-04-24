@@ -24,7 +24,7 @@ const toggleSlice = createSlice({
       state.menuValue = false;
     },
     closeSearch: (state) => {
-      state.closeValue ? (state.closeValue = false) : (state.closeValue = true);
+      state.menuValue ? (state.closeValue = false) : (state.closeValue = true);
     },
     handleDashboard: (state, action) => {
       state.dashboardToggle = action.payload;

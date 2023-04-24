@@ -52,7 +52,7 @@ function Navbar() {
             </div>
             {auth.user_id && (
               <div className="nav__items-con">
-                <Link to="/">About</Link>
+                <Link to="/about">About</Link>
               </div>
             )}
             {auth.user_id ? (
@@ -65,17 +65,17 @@ function Navbar() {
 
             {auth.user_id && (
               <div className="nav__items-con">
-                <Link to="/">Our service</Link>
+                <Link to="/service">Our service</Link>
               </div>
             )}
             {auth.user_id && (
               <div className="nav__items-con">
-                <Link to="/">Testimonial</Link>
+                <Link to="/testimonial">Testimonial</Link>
               </div>
             )}
             {auth.user_id && (
               <div className="nav__items-con">
-                <Link to="/">F&Q</Link>
+                <Link to="/passengerdb/help/">F&Q</Link>
               </div>
             )}
             {auth.user_id ? (
@@ -90,7 +90,7 @@ function Navbar() {
               ""
             ) : (
               <div className="nav__items-con">
-                <Link to="/loginuser">Log in</Link>
+                <Link to="/login">Log in</Link>
               </div>
             )}
 
@@ -134,27 +134,37 @@ function Navbar() {
               </div>
               {true && (
                 <div className="meun__items-con">
-                  <Link to="/">Partnership</Link>
+                  <Link to="/" onClick={() => Dispatch(toggleMenu())}>
+                    Partnership
+                  </Link>
                 </div>
               )}
               {false && (
                 <div className="meun__items-con">
-                  <Link to="/">About</Link>
+                  <Link to="/" onClick={() => Dispatch(toggleMenu())}>
+                    About
+                  </Link>
                 </div>
               )}
               {false && (
                 <div className="meun__items-con">
-                  <Link to="/">Our Service</Link>
+                  <Link to="/" onClick={() => Dispatch(toggleMenu())}>
+                    Our Service
+                  </Link>
                 </div>
               )}
               {false && (
                 <div className="meun__items-con">
-                  <Link to="/">Testimonial</Link>
+                  <Link to="/" onClick={() => Dispatch(toggleMenu())}>
+                    Testimonial
+                  </Link>
                 </div>
               )}
               {false && (
                 <div className="meun__items-con">
-                  <Link to="/">F&Q</Link>
+                  <Link to="/" onClick={() => Dispatch(toggleMenu())}>
+                    F&Q
+                  </Link>
                 </div>
               )}
               <div className="meun__items-con">

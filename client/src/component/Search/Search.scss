@@ -1,11 +1,14 @@
 @import "../../style/variable.scss";
 
 .search__container {
-  width: 80%;
+  width: 70%;
   background-color: $lightAshe;
   border-radius: 10px;
   padding: 0.5rem 1rem;
   margin: 0 auto;
+  @include tablet {
+    width: 50%;
+  }
   form {
     align-items: center;
     justify-content: center;
@@ -17,6 +20,7 @@
     svg.search-icon {
       margin-right: 10px;
       width: 10%;
+      cursor: pointer;
     }
     input {
       flex: 1;
@@ -44,4 +48,8 @@
       }
     }
   }
+}
+
+.close {
+  display: none;
 }

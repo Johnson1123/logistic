@@ -8,7 +8,8 @@ function TabInput(props) {
       <input
         type={props.type}
         placeholder={props.placeholder}
-        name={"props.name"}
+        name={props.name}
+        onChange={props.onChange}
       />
     </div>
   );

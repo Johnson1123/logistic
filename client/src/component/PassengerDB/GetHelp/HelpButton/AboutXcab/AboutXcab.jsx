@@ -34,19 +34,19 @@ function AboutXcab() {
         >
           <FaAngleLeft />
         </div>
-        <p> About XLCAB Ride</p>
+        <p> About XLCAB?</p>
       </div>
       <HelpButton
-        label="Where can i find XLCAB Ride Office?"
+        label="How do I book a ride with XLCAB?"
         className="mt-2"
         handler={() => handleContent(1)}
       />
       <HelpButton
-        label="XLCAB Ride Public API"
+        label="What types of vehicles does XLCAB offer?"
         handler={() => handleContent(2)}
       />
       <HelpButton
-        label="Where does XLCAB Ride operate?"
+        label="Can I request a specific driver for my ride?"
         handler={() => handleContent(3)}
       />
       {toggle && <Overlay />}

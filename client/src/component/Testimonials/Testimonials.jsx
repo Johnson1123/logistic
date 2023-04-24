@@ -8,7 +8,7 @@ function Testimonials() {
     <div className="testionial__container box-shadow">
       <h3 className="p-text title">Testimonials</h3>
       <div className="test__inner-con flex">
-        {testimonials.map((test, index) => {
+        {testimonials.slice(0, 2).map((test, index) => {
           return (
             <div className="test__box" key={index}>
               <div className="test__img-con">

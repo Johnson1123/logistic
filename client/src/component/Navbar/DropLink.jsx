@@ -5,9 +5,12 @@ import { useDispatch } from "react-redux";
 
 export default function DropLink(props) {
   const Dispatch = useDispatch();
+  const handleToggle = () => {
+    Dispatch(closeToggle());
+  };
   return (
-    <li className="dropDown" onClick={() => Dispatch(closeToggle())}>
-      <Link to={props.links} target="_blank">
+    <li className="dropDown">
+      <Link to={props.links} target="_blank" onClick={handleToggle}>
         {props.label}
       </Link>
     </li>

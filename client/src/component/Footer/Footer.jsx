@@ -20,13 +20,13 @@ function Footer() {
         <p className="footer-title small-title">Company</p>
         <ul>
           <li className="footer__link">
-            <Link to="/">About us</Link>
+            <Link to="/about">About us</Link>
           </li>
           <li className="footer__link">
-            <Link to="/">Safty Policy</Link>
+            <Link to="/safety">Safty Policy</Link>
           </li>
           <li className="footer__link">
-            <Link to="/">Privacy & Policy</Link>
+            <Link to="/privacy">Privacy & Policy</Link>
           </li>
           <li className="footer__link">
             <Link to="/">Contact us</Link>
@@ -37,7 +37,7 @@ function Footer() {
         <p className="footer-title small-title">Help</p>
         <ul>
           <li className="footer__link">
-            <Link to="/">About Technovix Ride</Link>
+            <Link to="/xlcab">About Technovix Ride</Link>
           </li>
           <li className="footer__link">
             <Link to="/">Account and data</Link>
@@ -54,10 +54,17 @@ function Footer() {
         <p className="footer-title small-title">Quick Link</p>
         <ul>
           <li className="footer__link store">
-            <a href="">Google playstore</a>
+            <a
+              href="https://play.google.com/store/games?hl=en&gl=US&pli=1"
+              target="_blank"
+            >
+              Google playstore
+            </a>
           </li>
           <li className="footer__link store">
-            <a href="">Apple store</a>
+            <a href="https://www.apple.com/store" target="_blank">
+              Apple store
+            </a>
           </li>
         </ul>
       </div>

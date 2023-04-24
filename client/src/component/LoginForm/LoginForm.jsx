@@ -5,9 +5,9 @@ import SignupBtn from "../Btn/SignupBtn/SignupBtn";
 import Input from "../Input/Input";
 import "./LoginForm.scss";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "../../features/Auths";
+import { BeatLoader } from "react-spinners";
 
 function LoginForm() {
   const navigate = useNavigate();
@@ -58,7 +58,13 @@ function LoginForm() {
           <p className="error">{auth?.loginError.message}</p>
         )}
         <SignupBtn
-          label={auth?.loginStatus === "pending" ? "Sign in..." : "Sign in"}
+          label={
+            auth?.loginStatus === "pending" ? (
+              <BeatLoader color="#36d7b7" />
+            ) : (
+              "Sign in"
+            )
+          }
         />
       </div>
     </form>

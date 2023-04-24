@@ -1,0 +1,74 @@
+@import "../../../style/variable.scss";
+.testimonial-container {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  .top-section {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    .img-con {
+      width: 100%;
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.473);
+    }
+  }
+  .content-section {
+    width: 70%;
+    padding: 1rem 4rem;
+    position: relative;
+    top: -4rem;
+    z-index: 100;
+    background-color: #fff;
+    border-radius: 5px;
+
+    @include mobile {
+      width: 90%;
+      padding: 1rem;
+    }
+    .section-title {
+      text-align: center;
+      margin: 1.5rem 0;
+    }
+    .top__container {
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+      .testimonial-box {
+        width: 47%;
+        padding: 10px;
+        border-radius: 5px;
+        height: auto;
+        .top {
+          align-items: center;
+          column-gap: 20px;
+          img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+          }
+        }
+        .bottom {
+          margin: 1rem 0;
+          .p-text {
+            line-height: 1.5;
+          }
+        }
+      }
+    }
+  }
+}

@@ -30,7 +30,7 @@ export const Home = () => {
     <div className="app__container home__container">
       <div className="app__wrapper flex">
         <div className="home__intro flex">
-          {false && <Search />}
+          {auth.user_id && <Search />}
 
           <div className="home__intro-title">
             <h1 className="p-text fw-500">Fast & Easy Way To Rent A Car</h1>
@@ -46,7 +46,13 @@ export const Home = () => {
             </p>
           </div>
           {true && (
-            <div className="btn__container flex">
+            <div
+              className={
+                auth.user_id
+                  ? `btn__container flex btn-center`
+                  : `btn__container flex`
+              }
+            >
               <div className="btn-box">
                 <SignupBtn
                   label="Partnership"
@@ -54,12 +60,14 @@ export const Home = () => {
                 />
               </div>
 
-              <div className="btn-box">
-                <SignupBtn
-                  label="Sign up"
-                  handler={() => navigate("/tosignUp")}
-                />
-              </div>
+              {!auth.user_id && (
+                <div className="btn-box">
+                  <SignupBtn
+                    label="Sign up"
+                    handler={() => navigate("/tosignUp")}
+                  />
+                </div>
+              )}
             </div>
           )}
         </div>

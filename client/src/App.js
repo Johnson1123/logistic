@@ -75,6 +75,12 @@ import InterP from "./component/PassengerDB/InterP/InterP";
 import FleetDB from "./pages/FleetDB/FleetDB";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
+import About from "./pages/Footers/About/About";
+import Privacy from "./pages/Footers/Privacy/Privacy";
+import Safety from "./pages/Footers/Safety/Safety";
+import Intro from "./pages/Footers/Intro/Intro";
+import Service from "./pages/Footers/Service/Service";
+import Testimonial from "./pages/Footers/Testimonials/Testimonial";
 
 const Layout = () => {
   return (
@@ -104,8 +110,28 @@ const router = createBrowserRouter([
         element: <Signupbanner />,
       },
       {
-        path: "/home",
-        element: <Home />,
+        path: "/xlcab",
+        element: <Intro />,
+      },
+      {
+        path: "/service",
+        element: <Service />,
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "/privacy",
+        element: <Privacy />,
+      },
+      {
+        path: "/testimonial",
+        element: <Testimonial />,
+      },
+      {
+        path: "/safety",
+        element: <Safety />,
       },
       {
         path: "/",

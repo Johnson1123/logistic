@@ -38,7 +38,7 @@ function SignUp({ type }) {
             </p>
             <FORM_SIGN />
             <p className="form-text login_here">
-              Already have an account?<Link to="/loginuser">Login here!</Link>
+              Already have an account?<Link to="/login">Login here!</Link>
             </p>
             <div className=" connect_sign flex center">
               <div></div>

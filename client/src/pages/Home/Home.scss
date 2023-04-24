@@ -58,6 +58,9 @@
         margin: 20px 0;
         flex-direction: column;
         align-items: center;
+        &.btn-center {
+          justify-content: center;
+        }
         @include tablet {
           margin-top: 30px;
           width: 55%;

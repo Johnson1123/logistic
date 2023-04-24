@@ -115,7 +115,7 @@ export const verifyUser = createAsyncThunk(
         body,
         config
       );
-      localStorage.setItem("token", JSON.stringify(res.data));
+      localStorage.setItem("otp", JSON.stringify(res.data));
       return res.data;
     } catch (error) {
       if (error.response && error.response.data.message) {
@@ -186,7 +186,6 @@ const authSlice = createSlice({
       if (action.payload) {
         return {
           ...state,
-          token: action.payload,
           verifyStatus: "success",
         };
       } else {

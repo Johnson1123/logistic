@@ -9,6 +9,7 @@ import "./Form_Sign.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 import { registerUser } from "../../features/Auths";
+import { BeatLoader } from "react-spinners";
 import { closeSignUp, otpToggle } from "../../features/toggleSlice/toggleSlice";
 
 function FORM_SIGN(props) {
@@ -97,7 +98,11 @@ function FORM_SIGN(props) {
           <p className="error">{auth?.registerError?.message}</p>
         ) : null}
         <button className="btn sign_btn">
-          {auth.registerStatus === "pending" ? "Submitting..." : "Sign Up"}
+          {auth.registerStatus === "pending" ? (
+            <BeatLoader color="#36d7b7" />
+          ) : (
+            "Sign Up"
+          )}
         </button>
       </div>
     </form>
