@@ -4,14 +4,13 @@ import "./Input.scss";
 
 function Input(props) {
   return (
-    <div className="flex input__con">
+    <div className={`flex input__con ${props.className}`}>
       <i>{props.image}</i>
       <input
         type={props.type}
         placeholder={props.placeholder}
         name={"props.name"}
         onChange={props.onChange}
-        required
       />
     </div>
   );

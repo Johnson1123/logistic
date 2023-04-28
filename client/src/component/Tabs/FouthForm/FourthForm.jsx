@@ -118,7 +118,7 @@ function FourthForm() {
   useEffect(() => {
     if (Object.keys(error).length === 0 && isSumitted) {
       // Dispatch(handlePageNumber(4));
-
+      Dispatch(uploadDriverDetail(driverData));
       Dispatch(
         handleDriverPayment({
           billType: formData.billType,
@@ -150,14 +150,11 @@ function FourthForm() {
           <p className="form-text bill-text">Billing type</p>
           <div className="select">
             <select name="billType" onChange={handleOnchange}>
-              <option name="billType" value="1">
-                Cash
+              <option name="billType" value="company">
+                Company
               </option>
-              <option name="billType" value="2">
-                Transfer
-              </option>
-              <option name="billType" value="3">
-                Card
+              <option name="billType" value="personal">
+                Personal
               </option>
             </select>
           </div>

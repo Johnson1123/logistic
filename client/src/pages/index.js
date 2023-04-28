@@ -1,22 +1,22 @@
-export { Home } from './Home/Home'
-export { default as InterP } from './FleetDB/FleetDB'
-export { default as LocalP } from './LocalP/LocalP'
-export { default as Login } from './Login/Login'
-export { default as NotFound } from './NotFound/NotFound'
-export { default as PassengerDB } from './PassengerDB/PassengerDB'
-export { default as Profile } from './Profile/Profile'
-export { default as User } from './User/User'
-export { default as UserSignup} from './SignUp/SignUp'
-export { default as Loginuser} from './Login/User/Login'
-export { default as ForgetPwd} from './ForgetPwd/ForgetPwd'
-export { default as OTP} from './OTP/OTP'
-export { default as Newpwd} from './Newpwd/Newpwd'
-export { default as Experiencedriver} from './Experiencedriver/Experiencedriver'
-export { default as WatToGo} from './WatToGo/WatToGo'
-export { default as StartTraining} from './StartTraining/StartTraining'
-export { default as Techdrive } from './Techdrive/Techdrive'
-export { default as FormTab } from './FormTab/FormTab'
-export { default as Tab } from './Tabs/Tab'
-export { default as Whattolearn } from './Whattolearn/Whattolearn'
-export { default as Mylearnnig } from './LearningDashB/LearningDashB'
-export { default as DriverDB } from './DriverDB/DriverDB'
+export { Home } from "./Home/Home";
+export { default as InterP } from "./FleetDB/FleetDB";
+export { default as LocalP } from "./LocalP/LocalP";
+export { default as LoginDriver } from "./Login/Driver/LoginDriver";
+export { default as LoginCustomer } from "./Login/Customer/LoginCustomer";
+export { default as NotFound } from "./NotFound/NotFound";
+export { default as PassengerDB } from "./PassengerDB/PassengerDB";
+export { default as Profile } from "./Profile/Profile";
+export { default as User } from "./User/User";
+export { default as UserSignup } from "./SignUp/SignUp";
+export { default as ForgetPwd } from "./ForgetPwd/ForgetPwd";
+export { default as OTP } from "./OTP/OTP";
+export { default as Newpwd } from "./Newpwd/Newpwd";
+export { default as Experiencedriver } from "./Experiencedriver/Experiencedriver";
+export { default as WatToGo } from "./WatToGo/WatToGo";
+export { default as StartTraining } from "./StartTraining/StartTraining";
+export { default as Techdrive } from "./Techdrive/Techdrive";
+export { default as FormTab } from "./FormTab/FormTab";
+export { default as Tab } from "./Tabs/Tab";
+export { default as Whattolearn } from "./Whattolearn/Whattolearn";
+export { default as Mylearnnig } from "./LearningDashB/LearningDashB";
+export { default as DriverDB } from "./DriverDB/DriverDB";

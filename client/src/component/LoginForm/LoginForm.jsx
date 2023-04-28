@@ -6,27 +6,34 @@ import Input from "../Input/Input";
 import "./LoginForm.scss";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { loginUser } from "../../features/Auths";
+import { loginCustomer, loginDriver, loginUser } from "../../features/Auths";
 import { BeatLoader } from "react-spinners";
 
-function LoginForm() {
+function LoginForm(props) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
   const auth = useSelector((state) => state.auth);
-  console.log(auth.user_id);
+  const resStatus =
+    props.role === "driver" ? auth.loginDriverStatus : auth.loginCustomerStatus;
+  const resError =
+    props.role === "driver" ? auth.loginDriverError : auth.loginCustomerError;
   const [loginData, setLoginData] = useState({
     email: "",
     password: "",
   });
+  const handler = props.role === "driver" ? loginDriver : loginCustomer;
+  console.log(auth);
+  console.log(props.role);
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const data = await dispatch(loginUser(loginData));
+      const data = await dispatch(handler(loginData));
     } catch (err) {
       console.log(err);
     }
   };
-  console.log(auth);
+  console.log(resStatus);
   return (
     <form className="form_login" onSubmit={handleLogin}>
       <div className="flex input_group">
@@ -54,16 +61,12 @@ function LoginForm() {
         />
       </div>
       <div className="sign__in">
-        {auth?.loginError && (
-          <p className="error">{auth?.loginError.message}</p>
-        )}
+        {resStatus === "rejected" ? (
+          <p className="error">{resError?.message}</p>
+        ) : null}
         <SignupBtn
           label={
-            auth?.loginStatus === "pending" ? (
-              <BeatLoader color="#36d7b7" />
-            ) : (
-              "Sign in"
-            )
+            resStatus === "pending" ? <BeatLoader color="#36d7b7" /> : "Sign Up"
           }
         />
       </div>

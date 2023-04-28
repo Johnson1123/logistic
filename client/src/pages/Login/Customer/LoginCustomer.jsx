@@ -4,14 +4,14 @@ import Background from "../../../component/Background/Background";
 import Overlay from "../../../component/Overlay/Overlay";
 import "./Login.scss";
 
-function Login() {
+function LoginCustomer() {
   return (
-    <div className="login__user">
+    <div className="login__Customer">
       <Background />
-      <Loginuser />
+      <Loginuser role="customer" />
       {false && <Overlay />}
     </div>
   );
 }
 
-export default Login;
+export default LoginCustomer;

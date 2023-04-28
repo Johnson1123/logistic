@@ -9,14 +9,14 @@ function Signupbanner() {
     <div className="signupbanner__con center flex">
       <div className="btn__con">
         <SignupBtn
-          label="SIGN UP AS USER"
-          handler={() => navigate("/signupuser")}
+          label="SIGN UP AS CUSTOMER"
+          handler={() => navigate("/customer/register")}
         />
       </div>
       <div className="btn__con">
         <SignupBtn
           label="SIGN UP AS DRIVER"
-          handler={() => navigate("/signupuser", { state: "driver" })}
+          handler={() => navigate("/driver/register")}
         />
       </div>
     </div>

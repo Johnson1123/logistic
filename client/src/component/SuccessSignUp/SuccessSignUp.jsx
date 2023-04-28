@@ -4,12 +4,12 @@ import image from "../../asset/image";
 import SignupBtn from "../Btn/SignupBtn/SignupBtn";
 import "./SuccessSignUp.scss";
 
-function SuccessSignUp() {
+function SuccessSignUp(props) {
   const navigate = useNavigate();
   const handleNavigate = () => {
-    return navigate("/login");
+    return navigate(`/login/${props?.role}`);
   };
-
+  console.log(props.role);
   return (
     <div className="flex success__signup flex center">
       <div className="success__signup-inner flex box-shadow">

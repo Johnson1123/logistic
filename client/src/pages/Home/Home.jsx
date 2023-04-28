@@ -14,17 +14,23 @@ import { useNavigate } from "react-router-dom";
 import OurBrand from "../../component/OurBrand/OurBrand";
 import Safety from "../../component/Safety/Safety";
 import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import useAxiosPrivate from "../../Hooks/usePrivateAxios";
+import { useState } from "react";
+import useRefreshToken from "../../Hooks/useRefreshToken";
 
 export const Home = () => {
   const navigate = useNavigate();
   const auth = useSelector((state) => state.auth);
+  const [profile, setProfile] = useState("");
+  const refresh = useRefreshToken();
+  const axiosPrivate = useAxiosPrivate();
 
-  // const locationHandler = () => {
-  //   const navigate = useNavigate;
-  //   return (
-  //     navigate('/')
-  //   )
-  // }
+  const locationHandler = () => {
+    const navigate = useNavigate;
+    return navigate("/");
+  };
+  console.log(profile);
 
   return (
     <div className="app__container home__container">

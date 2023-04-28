@@ -21,7 +21,7 @@ function OurService() {
 
                 <p className="text para">
                   {service.content}
-                  <ReadMore />
+                  <ReadMore href="/service" />
                 </p>
               </div>
             </div>

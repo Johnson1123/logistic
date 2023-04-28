@@ -1,7 +1,10 @@
 import React from "react";
 import DropLink from "../../DropLink";
 import { useDispatch } from "react-redux";
-import { closeToggle } from "../../../../features/toggleSlice/toggleSlice";
+import {
+  closeToggle,
+  toggleMenu,
+} from "../../../../features/toggleSlice/toggleSlice";
 
 function Company() {
   const Dispatch = useDispatch();
@@ -13,7 +16,7 @@ function Company() {
       <DropLink
         label="About"
         links="about"
-        onClick={() => Dispatch(closeToggle())}
+        handleToggle={() => Dispatch(toggleMenu())}
       />
       <DropLink
         label="Service"

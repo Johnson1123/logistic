@@ -1,12 +1,12 @@
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Navbar from "./component/Navbar/Navbar";
 import Footer from "./component/Footer/Footer";
-import { loadUser } from "./features/Auths";
+import { loadUser, logoutUser } from "./features/Auths";
 import {
   Home,
   OTP,
-  Loginuser,
-  Login,
+  LoginDriver,
+  LoginCustomer,
   PassengerDB,
   Profile,
   UserSignup,
@@ -73,14 +73,17 @@ import Wattogo from "./component/InternaltionalP/Wattogo/Wattogo";
 import { TbRipple } from "react-icons/tb";
 import InterP from "./component/PassengerDB/InterP/InterP";
 import FleetDB from "./pages/FleetDB/FleetDB";
-import { useDispatch } from "react-redux";
-import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from "react";
 import About from "./pages/Footers/About/About";
 import Privacy from "./pages/Footers/Privacy/Privacy";
 import Safety from "./pages/Footers/Safety/Safety";
 import Intro from "./pages/Footers/Intro/Intro";
 import Service from "./pages/Footers/Service/Service";
 import Testimonial from "./pages/Footers/Testimonials/Testimonial";
+import Customer from "./pages/register/Customer/Customer";
+import Driver from "./pages/register/Driver/Driver";
+import useRefreshToken from "./Hooks/useRefreshToken";
 
 const Layout = () => {
   return (
@@ -109,6 +112,7 @@ const router = createBrowserRouter([
         path: "/tosignUp",
         element: <Signupbanner />,
       },
+
       {
         path: "/xlcab",
         element: <Intro />,
@@ -139,13 +143,25 @@ const router = createBrowserRouter([
       },
     ],
   },
+  // {
+  //   path: "/signupuser",
+  //   element: <UserSignup />,
+  // },
   {
-    path: "/signupuser",
-    element: <UserSignup />,
+    path: "/customer/register",
+    element: <Customer />,
   },
   {
-    path: "/login",
-    element: <Loginuser />,
+    path: "/driver/register",
+    element: <Driver />,
+  },
+  {
+    path: "/login/driver",
+    element: <LoginDriver />,
+  },
+  {
+    path: "/login/customer",
+    element: <LoginCustomer />,
   },
   {
     path: "/otp",
@@ -204,7 +220,7 @@ const router = createBrowserRouter([
     element: <AccessInfo />,
   },
   {
-    path: "/passengerdb",
+    path: "/customer",
     element: <PassengerDB />,
     children: [
       {
@@ -390,18 +406,87 @@ const router = createBrowserRouter([
       },
     ],
   },
-  {
-    path: "/login",
-    element: <Login />,
-  },
 ]);
 
 function App() {
+  const auth = useSelector((state) => state.auth);
+  const tokenData = JSON.parse(localStorage.getItem("token"));
+  const refreshToken = tokenData?.data?.refresh;
+
+  localStorage.setItem("authToken", tokenData?.data?.access);
+  const [isLoading, setIsLoading] = useState(true);
+  const [access, setAccess] = useState(
+    localStorage.getItem("authToken")
+      ? localStorage.getItem("authToken")
+      : localStorage.getItem("token")?.data?.access
+  );
+  let updateToken = async () => {
+    let response = await fetch(
+      "https://techvonix.onrender.com/api/v1/auth/token/refresh",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${access}`,
+        },
+        body: JSON.stringify({ refresh: refreshToken }),
+      }
+    );
+
+    let data = await response.json();
+
+    if (response.status === 200) {
+      setAccess(response.data);
+      localStorage.setItem("accessToken", JSON.stringify(data));
+    } else {
+      dispatch(logoutUser());
+    }
+
+    if (isLoading) {
+      setIsLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    if (isLoading) {
+      updateToken();
+    }
+
+    let fourMinutes = 1000 * 60 * 2;
+
+    let interval = setInterval(() => {
+      if (refreshToken) {
+        updateToken();
+      }
+    }, fourMinutes);
+    return () => clearInterval(interval);
+  }, [access, isLoading]);
   const dispatch = useDispatch();
+  useEffect(() => {
+    if (auth.user_id) {
+      let response = fetch("https://techvonix.onrender.com/api/v1/profile/", {
+        method: "get",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${access}`,
+        },
+      });
+      if (response.status === 200) {
+        localStorage.setItem("profile", JSON.stringify(response.data));
+      } else {
+        logoutUser();
+      }
+    }
+  }, [auth.user_id, dispatch]);
 
   useEffect(() => {
     dispatch(loadUser(null));
   }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(loadUser(null));
+  }, [dispatch]);
+
   return <RouterProvider router={router} />;
 }
 export default App;

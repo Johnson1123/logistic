@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   toggleMenu,
   closeSearch,
+  closeToggle,
 } from "../../features/toggleSlice/toggleSlice";
 import "./navbar.scss";
 import "./menu.scss";
@@ -18,15 +19,21 @@ import NavLinkLg from "./NavLinkLg";
 import DownApp from "./nav/DownApp/DownApp";
 import Company from "./nav/Company/Company";
 import { logoutUser } from "../../features/Auths";
+import { useEffect } from "react";
 
 function Navbar() {
   // const cart = useSelector((state) => state.cartItem.cartItems);
-  const toggle = useSelector((state) => state.toggleReducer.menuValue);
+  const authToggle = useSelector((state) => state.toggleReducer.menuValue);
   const searchToggle = useSelector((state) => state.toggleReducer.closeValue);
   const auth = useSelector((state) => state.auth);
+  const role = auth.role;
 
+  const [toggle, setToggle] = useState(authToggle);
   const Dispatch = useDispatch();
 
+  useEffect(() => {
+    setToggle(toggle);
+  }, [Dispatch, auth]);
   const handleLogout = (e) => {
     e.preventDefault();
     Dispatch(logoutUser());
@@ -75,7 +82,11 @@ function Navbar() {
             )}
             {auth.user_id && (
               <div className="nav__items-con">
-                <Link to="/passengerdb/help/">F&Q</Link>
+                <Link
+                  to={role === "driver" ? "/driver/help" : "/customer/help"}
+                >
+                  F&Q
+                </Link>
               </div>
             )}
             {auth.user_id ? (
@@ -110,7 +121,14 @@ function Navbar() {
             <div className="user__container flex center">
               <img src={images.Elia} alt="user image" />
               <span className="p-text">
-                <Link to="/driver/dashboard" className="user-link ">
+                <Link
+                  to={
+                    role === "driver"
+                      ? "/driver/dashboard"
+                      : "/customer/dashboard"
+                  }
+                  className="user-link "
+                >
                   Dashboard
                 </Link>
               </span>
@@ -118,9 +136,9 @@ function Navbar() {
           </div>
         )}
       </div>
-      {toggle && (
+      {authToggle && (
         <div className={`app__menu `}>
-          <motion.div
+          <div
             // whileInView={{x: [-300, 0] }} transition={{duration: 0.55, ease: 'easeIn'}}
             className="app__menu-wrapper wrapper"
           >
@@ -139,49 +157,65 @@ function Navbar() {
                   </Link>
                 </div>
               )}
-              {false && (
+              {auth.user_id && (
                 <div className="meun__items-con">
-                  <Link to="/" onClick={() => Dispatch(toggleMenu())}>
+                  <Link to="/about" onClick={() => Dispatch(toggleMenu())}>
                     About
                   </Link>
                 </div>
               )}
-              {false && (
+              {auth.user_id && (
                 <div className="meun__items-con">
-                  <Link to="/" onClick={() => Dispatch(toggleMenu())}>
+                  <Link to="/service" onClick={() => Dispatch(toggleMenu())}>
                     Our Service
                   </Link>
                 </div>
               )}
-              {false && (
+              {auth.user_id && (
                 <div className="meun__items-con">
-                  <Link to="/" onClick={() => Dispatch(toggleMenu())}>
+                  <Link
+                    to="/testimonial"
+                    onClick={() => Dispatch(toggleMenu())}
+                  >
                     Testimonial
                   </Link>
                 </div>
               )}
-              {false && (
+              {auth.user_id && (
                 <div className="meun__items-con">
-                  <Link to="/" onClick={() => Dispatch(toggleMenu())}>
+                  <Link to="" onClick={() => Dispatch(toggleMenu())}>
                     F&Q
                   </Link>
                 </div>
               )}
-              <div className="meun__items-con">
-                <NavLink label="Company" />
-                <Company />
-              </div>
-              {true && (
-                <div className="meun__items-con">
-                  <Link to="/">Login</Link>
+              {auth.user_id && (
+                <div
+                  className="meun__items-con"
+                  onClick={() => Dispatch(toggleMenu())}
+                >
+                  <Link to={`/login/${role}`}>Login</Link>
                 </div>
               )}
-              <div className="meun__items-con">
-                <NavLink label="Download App" />
-                <DownApp />
-              </div>
+              {auth.user_id && (
+                <div
+                  className="meun__items-con"
+                  onClick={() => Dispatch(toggleMenu())}
+                >
+                  <Link to="https://www.apple.com/app-store/">iOS App</Link>
+                </div>
+              )}
+              {auth.user_id && (
+                <div
+                  className="meun__items-con"
+                  onClick={() => Dispatch(toggleMenu())}
+                >
+                  <Link to="https://play.google.com/store/games?hl=en&gl=US&pli=1">
+                    Android App
+                  </Link>
+                </div>
+              )}
             </ul>
-          </motion.div>
+          </div>
         </div>
       )}
     </div>

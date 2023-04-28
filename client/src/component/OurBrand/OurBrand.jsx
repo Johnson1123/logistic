@@ -12,7 +12,7 @@ function OurBrand() {
         <div className="brand__box-con flex">
           {Ourbrand.map((brand, index) => {
             return (
-              <div className="brand__box">
+              <div className="brand__box" key={index}>
                 <div className="content__box">
                   <img src={brand.image} alt={`${brand.title} with us`} />
                   <div className="text__content">

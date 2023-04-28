@@ -48,10 +48,13 @@
       justify-content: space-between;
       gap: 20px;
       .testimonial-box {
-        width: 47%;
+        width: 98%;
         padding: 10px;
         border-radius: 5px;
         height: auto;
+        @include tablet {
+          width: 47%;
+        }
         .top {
           align-items: center;
           column-gap: 20px;

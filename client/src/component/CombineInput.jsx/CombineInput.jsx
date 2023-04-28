@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { verifyUser } from "../../features/Auths";
 import OtpInput from "react-otp-input";
 import { signUpSuccess } from "../../features/toggleSlice/toggleSlice";
+import { BeatLoader } from "react-spinners";
 
 function CombineInput() {
   const navigate = useNavigate();
@@ -26,8 +27,12 @@ function CombineInput() {
       email: localData,
     };
     await Dispatch(verifyUser(otpData));
-    if (auth.verifyStatus === "success") Dispatch(signUpSuccess());
   };
+  useEffect(() => {
+    if (auth.verifyStatus === "success") {
+      Dispatch(signUpSuccess());
+    }
+  }, [auth.verifyStatus, Dispatch, navigate]);
 
   // const handleOtp = async (e) => {
   //   e.preventDefault();
@@ -59,7 +64,13 @@ function CombineInput() {
           </p>
         ) : null}
         <SignupBtn
-          label={auth.verifyStatus === "pending" ? "Processing..." : "Proceed"}
+          label={
+            auth.verifyStatus === "pending" ? (
+              <BeatLoader color="#36d7b7" />
+            ) : (
+              "Proceed"
+            )
+          }
         />
       </div>
     </form>

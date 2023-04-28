@@ -2,6 +2,7 @@ import { Rate } from "antd";
 import React from "react";
 import { testimonials } from "../../content/testimonials";
 import "./Testimonial.scss";
+import { Link } from "react-router-dom";
 
 function Testimonials() {
   return (
@@ -30,6 +31,11 @@ function Testimonials() {
           );
         })}
       </div>
+      <p className="link-to-testimonial-con">
+        <Link to="/testimonial" className="link-to-testimonial bold-text">
+          Read More
+        </Link>
+      </p>
     </div>
   );
 }
