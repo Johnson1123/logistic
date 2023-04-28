@@ -15,16 +15,12 @@ import OurBrand from "../../component/OurBrand/OurBrand";
 import Safety from "../../component/Safety/Safety";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
-import useAxiosPrivate from "../../Hooks/usePrivateAxios";
 import { useState } from "react";
-import useRefreshToken from "../../Hooks/useRefreshToken";
 
 export const Home = () => {
   const navigate = useNavigate();
   const auth = useSelector((state) => state.auth);
   const [profile, setProfile] = useState("");
-  const refresh = useRefreshToken();
-  const axiosPrivate = useAxiosPrivate();
 
   const locationHandler = () => {
     const navigate = useNavigate;
@@ -59,12 +55,14 @@ export const Home = () => {
                   : `btn__container flex`
               }
             >
-              <div className="btn-box">
-                <SignupBtn
-                  label="Partnership"
-                  handler={() => navigate("/signupuser")}
-                />
-              </div>
+              {!auth.user_id && (
+                <div className="btn-box">
+                  <SignupBtn
+                    label="Partnership"
+                    handler={() => navigate("/signupuser")}
+                  />
+                </div>
+              )}
 
               {!auth.user_id && (
                 <div className="btn-box">

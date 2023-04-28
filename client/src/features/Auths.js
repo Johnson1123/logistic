@@ -131,8 +131,8 @@ export const forgetPwd = createAsyncThunk(
     const body = JSON.stringify(email);
 
     try {
-      const { data } = await axios.post(
-        `https://techvonix.onrender.com/api/v1/auth/forgot-password`,
+      const { data } = await axios.put(
+        "https://techvonix.onrender.com/api/v1/profile/",
         body,
         config
       );

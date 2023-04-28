@@ -30,7 +30,8 @@ function Driver() {
             </p>
             <FORM_SIGN handler={registerDriver} role="driver" />
             <p className="form-text login_here">
-              Already have an account?<Link to="/login">Login here!</Link>
+              Already have an account?
+              <Link to="/login/customer">Login here!</Link>
             </p>
             <div className=" connect_sign flex center">
               <div></div>

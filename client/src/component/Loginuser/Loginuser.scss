@@ -17,10 +17,18 @@
     width: 40%;
     margin-left: 10rem;
   }
-  .forget {
-    font-size: 16px;
-    padding-left: 5px;
-    margin-top: 5rem;
-    margin-top: 0.5rem;
+  .control__container {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    a {
+      font-size: 14px;
+      padding-left: 5px;
+    }
+    .role {
+      cursor: pointer;
+      color: blue;
+    }
   }
 }

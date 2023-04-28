@@ -83,7 +83,6 @@ import Service from "./pages/Footers/Service/Service";
 import Testimonial from "./pages/Footers/Testimonials/Testimonial";
 import Customer from "./pages/register/Customer/Customer";
 import Driver from "./pages/register/Driver/Driver";
-import useRefreshToken from "./Hooks/useRefreshToken";
 
 const Layout = () => {
   return (
@@ -412,6 +411,7 @@ function App() {
   const auth = useSelector((state) => state.auth);
   const tokenData = JSON.parse(localStorage.getItem("token"));
   const refreshToken = tokenData?.data?.refresh;
+  const dispatch = useDispatch();
 
   localStorage.setItem("authToken", tokenData?.data?.access);
   const [isLoading, setIsLoading] = useState(true);
@@ -460,23 +460,34 @@ function App() {
       }
     }, fourMinutes);
     return () => clearInterval(interval);
-  }, [access, isLoading]);
-  const dispatch = useDispatch();
+  }, [access, dispatch, isLoading]);
+
   useEffect(() => {
-    if (auth.user_id) {
-      let response = fetch("https://techvonix.onrender.com/api/v1/profile/", {
-        method: "get",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${access}`,
-        },
-      });
-      if (response.status === 200) {
-        localStorage.setItem("profile", JSON.stringify(response.data));
-      } else {
-        logoutUser();
+    (async () => {
+      try {
+        if (auth.user_id) {
+          let response = await fetch(
+            "https://techvonix.onrender.com/api/v1/profile/",
+            {
+              method: "get",
+              headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${access}`,
+              },
+            }
+          );
+          console.log(response);
+          if (response.status === 200) {
+            localStorage.setItem(
+              "profile",
+              JSON.stringify(response?.data?.data)
+            );
+          }
+        }
+      } catch (err) {
+        dispatch(logoutUser());
       }
-    }
+    })();
   }, [auth.user_id, dispatch]);
 
   useEffect(() => {

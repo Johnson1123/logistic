@@ -25,7 +25,17 @@ function Loginuser(props) {
         Please fill in Your Accurate Information
       </p>
       <LoginForm role={props.role} />
-      <p className="forget">
+      <p className="control__container">
+        {props.role === "customer" ? (
+          <Link className="form-sm p-text fw-500 role" to="/login/driver">
+            Login as driver
+          </Link>
+        ) : (
+          <Link className="form-sm p-text fw-500 role" to="/login/customer">
+            Login as customer
+          </Link>
+        )}
+        <span className="p-text fw-500">Or</span>
         <Link className="form-sm p-text fw-500 forget" to="/forgetpwd">
           Forget Password?
         </Link>

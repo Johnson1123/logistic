@@ -146,9 +146,30 @@ function Navbar() {
               className="menu__close"
               onClick={() => Dispatch(toggleMenu())}
             />
+            {auth.user_id && (
+              <div className="navbar__user flex-center">
+                <div className="user__container flex center">
+                  <img src={images.Elia} alt="user image" />
+                  <span className="p-text">
+                    <Link
+                      to={
+                        role === "driver"
+                          ? "/driver/dashboard"
+                          : "/customer/dashboard"
+                      }
+                      className="user-link "
+                    >
+                      Dashboard
+                    </Link>
+                  </span>
+                </div>
+              </div>
+            )}
             <ul className="menu__items">
               <div className="meun__items-con">
-                <Link to="/">Home</Link>
+                <Link to="/" onClick={() => Dispatch(toggleMenu())}>
+                  Home
+                </Link>
               </div>
               {true && (
                 <div className="meun__items-con">
@@ -157,30 +178,21 @@ function Navbar() {
                   </Link>
                 </div>
               )}
-              {auth.user_id && (
-                <div className="meun__items-con">
-                  <Link to="/about" onClick={() => Dispatch(toggleMenu())}>
-                    About
-                  </Link>
-                </div>
-              )}
-              {auth.user_id && (
-                <div className="meun__items-con">
-                  <Link to="/service" onClick={() => Dispatch(toggleMenu())}>
-                    Our Service
-                  </Link>
-                </div>
-              )}
-              {auth.user_id && (
-                <div className="meun__items-con">
-                  <Link
-                    to="/testimonial"
-                    onClick={() => Dispatch(toggleMenu())}
-                  >
-                    Testimonial
-                  </Link>
-                </div>
-              )}
+              <div className="meun__items-con">
+                <Link to="/about" onClick={() => Dispatch(toggleMenu())}>
+                  About
+                </Link>
+              </div>
+              <div className="meun__items-con">
+                <Link to="/service" onClick={() => Dispatch(toggleMenu())}>
+                  Our Service
+                </Link>
+              </div>{" "}
+              <div className="meun__items-con">
+                <Link to="/testimonial" onClick={() => Dispatch(toggleMenu())}>
+                  Testimonial
+                </Link>
+              </div>
               {auth.user_id && (
                 <div className="meun__items-con">
                   <Link to="" onClick={() => Dispatch(toggleMenu())}>
@@ -188,12 +200,28 @@ function Navbar() {
                   </Link>
                 </div>
               )}
-              {auth.user_id && (
+              <div
+                className="meun__items-con"
+                onClick={() => Dispatch(toggleMenu())}
+              >
+                <Link to="https://www.apple.com/app-store/">iOS App</Link>
+              </div>
+              <div
+                className="meun__items-con"
+                onClick={() => Dispatch(toggleMenu())}
+              >
+                <Link to="https://play.google.com/store/games?hl=en&gl=US&pli=1">
+                  Android App
+                </Link>
+              </div>
+              {auth.user_id ? (
+                ""
+              ) : (
                 <div
                   className="meun__items-con"
                   onClick={() => Dispatch(toggleMenu())}
                 >
-                  <Link to={`/login/${role}`}>Login</Link>
+                  <Link to={`/login/customer`}>Login</Link>
                 </div>
               )}
               {auth.user_id && (
@@ -201,17 +229,7 @@ function Navbar() {
                   className="meun__items-con"
                   onClick={() => Dispatch(toggleMenu())}
                 >
-                  <Link to="https://www.apple.com/app-store/">iOS App</Link>
-                </div>
-              )}
-              {auth.user_id && (
-                <div
-                  className="meun__items-con"
-                  onClick={() => Dispatch(toggleMenu())}
-                >
-                  <Link to="https://play.google.com/store/games?hl=en&gl=US&pli=1">
-                    Android App
-                  </Link>
+                  <Link to={`/login/${role}`}>Logout</Link>
                 </div>
               )}
             </ul>
