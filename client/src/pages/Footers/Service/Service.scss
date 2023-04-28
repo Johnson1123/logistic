@@ -56,7 +56,7 @@
           width: 100%;
         }
         .list-title {
-          width: 70%;
+          width: 80%;
           border-radius: 5px;
           padding: 1.2rem;
           margin-top: 0.5rem;
@@ -65,14 +65,18 @@
           cursor: pointer;
           @include mobile {
             font-size: 14px;
+            width: 100%;
           }
         }
         .list__content {
           padding: 1rem;
-          width: 70%;
+          width: 100%;
           border: 1px solid #f3f3f3;
           border-bottom-left-radius: 5px;
           border-bottom-right-radius: 5px;
+          @include tablet {
+            width: 80%;
+          }
           .list__content-text {
             line-height: 1.5;
             margin-top: 1rem;

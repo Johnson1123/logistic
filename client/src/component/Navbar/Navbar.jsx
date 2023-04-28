@@ -34,8 +34,8 @@ function Navbar() {
   useEffect(() => {
     setToggle(toggle);
   }, [Dispatch, auth]);
-  const handleLogout = (e) => {
-    e.preventDefault();
+  const handleLogout = () => {
+    Dispatch(toggleMenu());
     Dispatch(logoutUser());
   };
 
@@ -146,38 +146,39 @@ function Navbar() {
               className="menu__close"
               onClick={() => Dispatch(toggleMenu())}
             />
-            {auth.user_id && (
-              <div className="navbar__user flex-center">
-                <div className="user__container flex center">
-                  <img src={images.Elia} alt="user image" />
-                  <span className="p-text">
-                    <Link
-                      to={
-                        role === "driver"
-                          ? "/driver/dashboard"
-                          : "/customer/dashboard"
-                      }
-                      className="user-link "
-                    >
-                      Dashboard
-                    </Link>
-                  </span>
-                </div>
-              </div>
-            )}
+
             <ul className="menu__items">
+              {auth.user_id && (
+                <div className="mobile__user flex-center">
+                  <div className="user__container flex center">
+                    <img src={images.Elia} alt="user image" />
+                    <span className="p-text">
+                      <Link
+                        to={
+                          role === "driver"
+                            ? "/driver/dashboard"
+                            : "/customer/dashboard"
+                        }
+                        className="user-link "
+                      >
+                        Dashboard
+                      </Link>
+                    </span>
+                  </div>
+                </div>
+              )}
               <div className="meun__items-con">
                 <Link to="/" onClick={() => Dispatch(toggleMenu())}>
                   Home
                 </Link>
               </div>
-              {true && (
+              {/* {true && (
                 <div className="meun__items-con">
                   <Link to="/" onClick={() => Dispatch(toggleMenu())}>
                     Partnership
                   </Link>
                 </div>
-              )}
+              )} */}
               <div className="meun__items-con">
                 <Link to="/about" onClick={() => Dispatch(toggleMenu())}>
                   About
@@ -225,11 +226,8 @@ function Navbar() {
                 </div>
               )}
               {auth.user_id && (
-                <div
-                  className="meun__items-con"
-                  onClick={() => Dispatch(toggleMenu())}
-                >
-                  <Link to={`/login/${role}`}>Logout</Link>
+                <div className="meun__items-con" onClick={handleLogout}>
+                  <button className="btn">Logout</button>
                 </div>
               )}
             </ul>

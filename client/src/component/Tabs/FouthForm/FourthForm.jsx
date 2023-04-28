@@ -117,7 +117,6 @@ function FourthForm() {
 
   useEffect(() => {
     if (Object.keys(error).length === 0 && isSumitted) {
-      // Dispatch(handlePageNumber(4));
       Dispatch(uploadDriverDetail(driverData));
       Dispatch(
         handleDriverPayment({
