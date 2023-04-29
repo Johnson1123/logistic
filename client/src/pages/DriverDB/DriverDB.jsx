@@ -11,10 +11,6 @@ import UserInfo from "../../component/UserInfo/UserInfo";
 function DriverDB() {
   const menu = useSelector((state) => state.toggleReducer.dashboarMenu);
   const user = useSelector((state) => state.toggleReducer.user);
-  const navigate = useNavigate();
-  useEffect(() => {
-    navigate("dashboard");
-  }, []);
   return (
     <div className="DriverDB">
       <div className="DriverDB__wrapper">

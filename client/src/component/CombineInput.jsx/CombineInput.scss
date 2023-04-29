@@ -1,7 +1,8 @@
 @import "../../style/variable.scss";
 .combine__con {
   flex-direction: column;
-  margin: 0.8rem 0 2rem;
+  margin: 0.8rem 0;
+
   input {
     width: 35px !important;
     border: 1px solid $lightAshe;
@@ -14,9 +15,9 @@
   }
   .verify-otp-error {
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
-    height: 140px;
+    height: 100px;
     @include tablet {
       width: 100%;
     }
@@ -34,4 +35,14 @@
       }
     }
   }
+}
+.resend-otp {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  margin-top: 0 !important;
+  text-align: center;
+  width: 100% !important;
+  color: $secondaryColor;
+  font-weight: 500;
 }

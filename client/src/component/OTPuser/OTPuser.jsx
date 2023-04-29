@@ -7,7 +7,7 @@ function OTPuser() {
     <div className="otpuser__con flex center">
       <p className="form-title">Enter Your OTP</p>
       <p className="form-text">
-        Please enter the 4-digit code sent your registered Phone Number
+        Please enter the 4-digit code sent to your registered Email Address
       </p>
       <div className="input-container">
         <CombineInput />

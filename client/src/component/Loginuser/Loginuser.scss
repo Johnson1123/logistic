@@ -21,7 +21,10 @@
     margin-top: 5px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 4px;
+    @include tablet {
+      gap: 10px;
+    }
     a {
       font-size: 14px;
       padding-left: 5px;

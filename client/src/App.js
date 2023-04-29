@@ -14,7 +14,6 @@ import {
   LoginCustomer,
   PassengerDB,
   Profile,
-  UserSignup,
   Whattolearn,
   ForgetPwd,
   Newpwd,
@@ -25,7 +24,17 @@ import {
   FormTab,
   Tab,
   Mylearnnig,
+  Signupbanner,
   DriverDB,
+  Privacy,
+  About,
+  Safety,
+  Testimonial,
+  Service,
+  Customer,
+  Driver,
+  Intro,
+  NotFound,
 } from "./pages";
 
 import {
@@ -66,7 +75,6 @@ import {
   FleetDashboard,
 } from "./component/Fleet";
 
-import Signupbanner from "./pages/Signupbanner/Signupbanner";
 import AccessInfo from "./pages/AccessInfo/AccessInfo";
 import LessonVideo from "./pages/LessonVideo/LessonVideo";
 import AboutXcab from "./component/PassengerDB/GetHelp/HelpButton/AboutXcab/AboutXcab";
@@ -80,14 +88,6 @@ import InterP from "./component/PassengerDB/InterP/InterP";
 import FleetDB from "./pages/FleetDB/FleetDB";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import About from "./pages/Footers/About/About";
-import Privacy from "./pages/Footers/Privacy/Privacy";
-import Safety from "./pages/Footers/Safety/Safety";
-import Intro from "./pages/Footers/Intro/Intro";
-import Service from "./pages/Footers/Service/Service";
-import Testimonial from "./pages/Footers/Testimonials/Testimonial";
-import Customer from "./pages/register/Customer/Customer";
-import Driver from "./pages/register/Driver/Driver";
 
 const Layout = () => {
   return (
@@ -228,7 +228,7 @@ const router = createBrowserRouter([
     element: <PassengerDB />,
     children: [
       {
-        path: "dashboard",
+        path: "/customer",
         element: <Dashboard />,
       },
       {
@@ -291,7 +291,7 @@ const router = createBrowserRouter([
     element: <DriverDB />,
     children: [
       {
-        path: "dashboard",
+        path: "/driver",
         element: <DriverDashboard />,
       },
       {
@@ -410,6 +410,10 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: "*",
+    element: <NotFound />,
+  },
 ]);
 
 function App() {
@@ -457,7 +461,7 @@ function App() {
       updateToken();
     }
 
-    let fourMinutes = 1000 * 60 * 2;
+    let fourMinutes = 1000 * 60 * 60 * 2;
 
     let interval = setInterval(() => {
       if (refreshToken) {

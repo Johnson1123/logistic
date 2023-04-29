@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import SignUp from "../../pages/SignUp/SignUp";
+import SignUp from "../../pages/authPages/SignUp/SignUp";
 
 const initialState = {
   menuValue: false,

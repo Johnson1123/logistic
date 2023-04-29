@@ -41,7 +41,7 @@ function LoginForm(props) {
           type="email"
           name="username"
           image={<HiOutlineMail />}
-          placeholder="Username"
+          placeholder="Email"
           onChange={(e) => {
             setLoginData((prevValues) => {
               return { ...prevValues, email: e.target.value };
@@ -52,7 +52,7 @@ function LoginForm(props) {
           type="password"
           name="pwd"
           image={<AiFillLock />}
-          placeholder="Email Address"
+          placeholder="password"
           onChange={(e) => {
             setLoginData((prevValues) => {
               return { ...prevValues, password: e.target.value };

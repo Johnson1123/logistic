@@ -9,7 +9,7 @@ function Forgetuser() {
         Forget Password? <br />
         Worry Less!
       </p>
-      <p className="form-text">Please enter your registered Phone Number</p>
+      <p className="form-text">Please enter your registered Email Address</p>
       <Forgetform />
     </div>
   );

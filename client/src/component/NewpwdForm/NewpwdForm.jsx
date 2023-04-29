@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { AiFillLock } from "react-icons/ai";
 import SignupBtn from "../Btn/SignupBtn/SignupBtn";
 import Input from "../../component/Input/Input";
@@ -10,6 +10,8 @@ function NewpwdForm() {
   const handleNavigate = () => {
     return navigate("/experience");
   };
+
+  const [values, setValues] = useState({});
   return (
     <div className="Newpwdform">
       <div className="flex input_group">

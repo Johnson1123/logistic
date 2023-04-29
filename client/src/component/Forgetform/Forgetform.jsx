@@ -5,22 +5,39 @@ import SignupBtn from "../Btn/SignupBtn/SignupBtn";
 import Input from "../Input/Input";
 import "./Forgetform.scss";
 import { useDispatch } from "react-redux";
-import { forgetPwd } from "../../features/Auths";
+import axios from "axios";
 
 function Forgetform() {
-  const [email, setEmail] = useState({
-    email: "",
-  });
+  const [email, setEmail] = useState("");
   const Dispatch = useDispatch();
-  console.log(email);
   const navigate = useNavigate();
+
+  const body = JSON.stringify({
+    email,
+  });
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
   const handelForgetPwd = async (e) => {
     e.preventDefault();
+    console.log(body);
     try {
-      const data = await Dispatch(forgetPwd(email));
-      navigate("/otp");
+      const response = await axios.post(
+        "https://techvonix.onrender.com/api/v1/auth/forgot-password",
+        body,
+        config
+      );
+      if (response.status === 200) {
+        navigate("/newpwd");
+      }
     } catch (error) {
-      console.log(error.response);
+      if (error.response && error.response.data.message) {
+        return error?.response?.data?.message;
+      } else {
+        return error?.message;
+      }
     }
   };
   return (
@@ -32,7 +49,7 @@ function Forgetform() {
           image={<BsTelephone />}
           placeholder="Email Address"
           onChange={(e) => {
-            return setEmail({ email: e.target.value });
+            return setEmail(e.target.value);
           }}
         />
       </div>
