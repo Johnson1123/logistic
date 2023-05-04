@@ -29,7 +29,7 @@ function PaymentPricing() {
       <div className="title flex">
         <div
           className="arrow__back"
-          onClick={() => navigate("/customer/help/")}
+          onClick={() => navigate("/passengerdb/help/")}
         >
           <FaAngleLeft />
         </div>

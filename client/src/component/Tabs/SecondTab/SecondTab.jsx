@@ -15,20 +15,14 @@ function SecondTab() {
 
   const license = driver.license || "";
 
-  const [formData, setFormData] = useState({
-    license: license,
-  });
+  const [formData, setFormData] = useState("");
 
-  const handleOnchange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
   const [error, setError] = useState({});
 
   const validate = (formData) => {
     let formError = {};
 
-    if (!formData.license) {
+    if (!formData) {
       formError.license = "license number is required";
     }
     return formError;
@@ -46,11 +40,7 @@ function SecondTab() {
     if (Object.keys(error).length === 0 && isSumitted) {
       Dispatch(handlePageNumber(3));
 
-      Dispatch(
-        handleLicense({
-          license: formData.license,
-        })
-      );
+      Dispatch(handleLicense(formData));
     }
   }, [formData, Dispatch, error, isSumitted]);
 
@@ -66,7 +56,7 @@ function SecondTab() {
           placeholder="AB235235"
           type="text"
           name="license"
-          onChange={handleOnchange}
+          onChange={(e) => setFormData(e.target.value)}
         />
         {error.license && <p className="error">{error.license}</p>}
         <p className="form-text license-text">

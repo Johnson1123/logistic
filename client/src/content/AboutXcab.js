@@ -1,4 +1,7 @@
 import { images } from "../asset";
+import { BsPaypal } from "react-icons/bs";
+import { FaCcMastercard } from "react-icons/fa";
+import { RiVisaFill } from "react-icons/ri";
 export const aboutRides = [
   {
     _id: 1,
@@ -247,26 +250,30 @@ export const paymentMethod = [
   {
     _id: 1,
     num: "**** **** **** 5873",
-    img: images.master,
+    img: <FaCcMastercard />,
     expire: "Expires 09/25",
     status: "",
+    isTrue: false,
   },
   {
     _id: 2,
     num: "**** **** **** 5873",
-    img: images.visa,
+    img: <RiVisaFill />,
     expire: "Expires 09/25",
     status: "",
+    isTrue: false,
   },
   {
     _id: 3,
-    img: images.paypal,
+    img: <BsPaypal />,
     email: "technovix@gmail.com",
+    isTrue: false,
   },
   {
     _id: 4,
     img: images.cash,
     text: "Cash",
+    isTrue: true,
   },
 ];
 

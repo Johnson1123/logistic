@@ -6,6 +6,15 @@
   @include tablet {
     width: 90%;
   }
+  .input-error-con {
+    width: 100%;
+    @include tablet {
+      width: 45%;
+    }
+    .input__container {
+      width: 100%;
+    }
+  }
   .input__group {
     width: 100%;
     display: flex;
@@ -19,7 +28,7 @@
       width: 100%;
       width: 100%;
       @include tablet {
-        width: 45%;
+        width: 100%;
         .refer-text {
           color: #a1a1a1;
           @include tablet {

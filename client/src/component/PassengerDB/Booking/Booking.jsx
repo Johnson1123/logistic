@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 // file import
 import SignupBtn from "../../Btn/SignupBtn/SignupBtn";
@@ -17,6 +17,10 @@ import Note from "./Note/Note";
 import DatePicker from "../DatePicker/DatePicker";
 
 function Booking() {
+  const [isRoute, setIsRoute] = useState(false);
+  const handleToggle = () => {
+    setIsRoute(true);
+  };
   return (
     <div className="Booking__container flex center">
       <div className="Booking__wrapper">
@@ -26,11 +30,26 @@ function Booking() {
               <div className="map__container">
                 <img src={images.Mapping} alt="" />
               </div>
-              <div className="search__container flex">
+              {/* <div className="search__container flex">
                 <input type="text" />
                 <BsSearch />
+              </div> */}
+              <div className="setRoute">
+                <div className="routeIcon">
+                  <div>
+                    <IoLocationSharp />
+                  </div>
+                  <div>.</div>
+                  <div>.</div>
+                  <div>.</div>
+                  <div>.</div>
+                  <div className="box"></div>
+                </div>
+                <div className="input-con">
+                  <input type="text" placeholder="Pick up location?" />
+                  <input type="text" placeholder="Drop off location?" />
+                </div>
               </div>
-              <SignupBtn label="SET DESTINATION" className="destination-btn" />
             </div>
           </div>
           <div className="center__container">

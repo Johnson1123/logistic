@@ -29,7 +29,7 @@ export const uploadDriverDetail = createAsyncThunk(
         body,
         config
       );
-      localStorage.setItem("driver", JSON.parse(response.data));
+      localStorage.setItem("driver", JSON.stringify(response?.data));
       return response.data;
     } catch (error) {
       if (error.response && error.response.data.message) {

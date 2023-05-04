@@ -17,7 +17,7 @@ function Review() {
             <div className="col-2">
               <div className="box p-text col-rating flex">
                 <p className="p-text small-title">{review.name}</p>
-                <p className="p-text">
+                <div className="p-text">
                   <Rate
                     allowHalf
                     count={5}
@@ -30,7 +30,7 @@ function Review() {
                     }}
                     disabled
                   />
-                </p>
+                </div>
               </div>
               <p className="box p-text col-3">{review.comment}</p>
             </div>

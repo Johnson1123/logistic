@@ -43,5 +43,26 @@
         }
       }
     }
+    .logout-btn {
+      border: none;
+      cursor: pointer;
+      background-color: transparent;
+      display: flex;
+      padding: 8px 2rem;
+      align-items: center;
+      gap: 5px;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 1;
+      transition: 0.5s all;
+
+      &:hover {
+        background-color: #fff;
+        border-radius: 5px;
+        color: $secondaryColor;
+        margin-left: 2rem;
+      }
+    }
   }
 }

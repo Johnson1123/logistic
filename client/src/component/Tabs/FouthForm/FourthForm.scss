@@ -16,6 +16,12 @@
       flex-direction: row;
       justify-content: space-between;
       display: flex;
+      .input-error-con {
+        width: 45%;
+        .input__container {
+          width: 100%;
+        }
+      }
       .singleInput {
         width: 45%;
         .input__container {
@@ -31,7 +37,7 @@
       width: 100%;
       margin-top: 15px;
       @include tablet {
-        width: 45%;
+        width: 100%;
       }
       .select {
         width: 100%;

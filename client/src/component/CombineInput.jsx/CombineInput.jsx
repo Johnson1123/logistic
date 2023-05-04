@@ -46,7 +46,6 @@ function CombineInput() {
       } else {
         return error?.message;
       }
-      setIsLoading(false);
     }
   };
   const handleOtp = async (e) => {

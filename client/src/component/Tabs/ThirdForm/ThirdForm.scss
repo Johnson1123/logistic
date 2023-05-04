@@ -5,8 +5,14 @@
   @include tablet {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 2rem;
+    form {
+      width: 80%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
   }
   .input__file-group {
     width: 100%;

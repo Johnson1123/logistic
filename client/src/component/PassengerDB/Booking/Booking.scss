@@ -3,6 +3,9 @@
   width: 100%;
   margin-top: 2rem;
   padding: 1rem 0.5rem;
+  @include tablet {
+    margin-top: 0;
+  }
   .Booking__wrapper {
     width: 97%;
     display: flex;
@@ -11,19 +14,24 @@
       width: 100%;
       min-height: 70vh;
       gap: 1rem;
+      flex-wrap: wrap;
       @include mobile {
         flex-direction: column;
       }
 
       .left__container {
-        width: 33%;
-        @include mobile {
+        width: 100%;
+
+        @include tablet {
           width: 100%;
         }
         .map {
           position: relative;
           top: 0;
           height: 450px;
+          @include tablet {
+            width: 100%;
+          }
         }
         .map__container {
           width: 100%;
@@ -60,15 +68,74 @@
           bottom: 15px;
           left: 50%;
           width: 80%;
+          @include tablet {
+            width: 40%;
+          }
+        }
+        .setRoute {
+          position: absolute;
+          transform: translateX(-50%);
+          bottom: 15px;
+          left: 50%;
+          width: 85%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #fff;
+          border-radius: 10px;
+          padding: 20px 15px;
+          @include tablet {
+            width: 40%;
+            flex-direction: row;
+          }
+          .routeIcon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            margin-right: 10px;
+            div {
+              height: 0;
+              margin: 5px 0;
+              svg {
+                height: 15px;
+                color: $secondaryColor;
+              }
+            }
+            .box {
+              height: 10px;
+              width: 10px;
+              background-color: #111;
+            }
+          }
+          .input-con {
+            display: flex;
+            gap: 10px;
+            flex-direction: column;
+            width: 90%;
+            input {
+              height: 100%;
+              width: 100%;
+              height: 40px;
+              border: none;
+              outline: none;
+              border: 1px solid #777777;
+              border-radius: 5px;
+              padding: 2px 5px;
+              @include tablet {
+                width: 100%;
+              }
+            }
+          }
         }
       }
       .center__container {
-        width: 35%;
+        width: 100%;
         display: flex;
         flex-direction: column;
         gap: 20px;
-        @include mobile {
-          width: 100%;
+        @include tablet {
+          width: 50%;
         }
         .top__container {
           width: 100%;
@@ -175,9 +242,9 @@
         }
       }
       .right__container {
-        width: 32%;
-        @include mobile {
-          width: 100%;
+        width: 100%;
+        @include tablet {
+          width: 48%;
         }
         .title {
           font-size: $font-18;

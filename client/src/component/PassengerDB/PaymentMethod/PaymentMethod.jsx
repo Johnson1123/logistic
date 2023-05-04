@@ -8,9 +8,13 @@ function PaymentMethod() {
       {paymentMethod.map((method, index) => {
         return (
           <div className="method flex" key={index}>
-            <div className="img">
-              <img src={method.img} alt="" />
-            </div>
+            {method.isTrue ? (
+              <div className="img">
+                <img src={method.img} />
+              </div>
+            ) : (
+              <div className="img">{method.img}</div>
+            )}
             <div className="method_detail">
               {method.num && <p className="p-text">{method.num}</p>}
               {method.expire && <p className="p-text">{method.expire}</p>}

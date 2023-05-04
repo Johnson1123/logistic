@@ -17,11 +17,11 @@ const initialState = {
   loginCustomerError: "",
   loginDriverStatus: "",
   loginDriverError: "",
-  role: "",
   verifyError: "",
   verifyStatus: "",
   forgetError: "",
   forgetStatus: "",
+  role: "",
   userLoaded: false,
 };
 const config = {
@@ -189,12 +189,14 @@ const authSlice = createSlice({
         token: "",
         user_id: "",
         email: "",
-        registerStatus: "",
-        registerError: "",
-        loginStatus: "",
-        loginError: "",
-        verifyError: "",
-        verifyStatus: "",
+        registerCustomerStatus: "",
+        registerCustomerError: "",
+        registerDriverStatus: "",
+        registerDriverError: "",
+        loginCustomerStatus: "",
+        loginCustomerError: "",
+        loginDriverStatus: "",
+        loginDriverError: "",
         forgetError: "",
         forgetStatus: "",
         userLoaded: false,
@@ -203,14 +205,38 @@ const authSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(registerCustomer.pending, (state, action) => {
-      return { ...state, registerStatus: "pending" };
+      return {
+        ...state,
+        registerCustomerStatus: "pending",
+        registerCustomerError: "",
+        registerDriverStatus: "",
+        registerDriverError: "",
+        loginCustomerStatus: "",
+        loginCustomerError: "",
+        loginDriverStatus: "",
+        loginDriverError: "",
+        verifyError: "",
+        verifyStatus: "",
+        forgetError: "",
+        forgetStatus: "",
+      };
     });
     builder.addCase(registerCustomer.fulfilled, (state, action) => {
       return {
         ...state,
-        registerDriverStatus: "",
         role: "customer",
         registerCustomerStatus: "success",
+        registerCustomerError: "",
+        registerDriverStatus: "",
+        registerDriverError: "",
+        loginCustomerStatus: "",
+        loginCustomerError: "",
+        loginDriverStatus: "",
+        loginDriverError: "",
+        verifyError: "",
+        verifyStatus: "",
+        forgetError: "",
+        forgetStatus: "",
       };
     });
     builder.addCase(registerCustomer.rejected, (state, action) => {
@@ -219,10 +245,34 @@ const authSlice = createSlice({
         registerCustomerStatus: "rejected",
         registerDriverStatus: "",
         registerCustomerError: action.payload,
+        registerDriverStatus: "",
+        registerDriverError: "",
+        loginCustomerStatus: "",
+        loginCustomerError: "",
+        loginDriverStatus: "",
+        loginDriverError: "",
+        verifyError: "",
+        verifyStatus: "",
+        forgetError: "",
+        forgetStatus: "",
       };
     });
     builder.addCase(registerDriver.pending, (state, action) => {
-      return { ...state, registerDriverStatus: "pending" };
+      return {
+        ...state,
+        registerDriverStatus: "pending",
+        registerCustomerStatus: "",
+        registerCustomerError: "",
+        registerDriverError: "",
+        loginCustomerStatus: "",
+        loginCustomerError: "",
+        loginDriverStatus: "",
+        loginDriverError: "",
+        verifyError: "",
+        verifyStatus: "",
+        forgetError: "",
+        forgetStatus: "",
+      };
     });
     builder.addCase(registerDriver.fulfilled, (state, action) => {
       return {
@@ -230,24 +280,68 @@ const authSlice = createSlice({
         registerCustomerStatus: "",
         registerDriverStatus: "success",
         role: "driver",
+        registerCustomerError: "",
+        registerDriverError: "",
+        loginCustomerStatus: "",
+        loginCustomerError: "",
+        loginDriverStatus: "",
+        loginDriverError: "",
+        verifyError: "",
+        verifyStatus: "",
+        forgetError: "",
+        forgetStatus: "",
       };
     });
     builder.addCase(registerDriver.rejected, (state, action) => {
       return {
         ...state,
         registerDriverStatus: "rejected",
-        registerCustomerStatus: "",
         registerDriverError: action.payload,
+        registerCustomerStatus: "",
+        registerCustomerError: "",
+        loginCustomerStatus: "",
+        loginCustomerError: "",
+        loginDriverStatus: "",
+        loginDriverError: "",
+        verifyError: "",
+        verifyStatus: "",
+        forgetError: "",
+        forgetStatus: "",
       };
     });
     builder.addCase(verifyUser.pending, (state, action) => {
-      return { ...state, verifyStatus: "pending" };
+      return {
+        ...state,
+        verifyStatus: "pending",
+        registerCustomerStatus: "",
+        registerCustomerError: "",
+        registerDriverStatus: "",
+        registerDriverError: "",
+        loginCustomerStatus: "",
+        loginCustomerError: "",
+        loginDriverStatus: "",
+        loginDriverError: "",
+        verifyError: "",
+        forgetError: "",
+        forgetStatus: "",
+      };
     });
     builder.addCase(verifyUser.fulfilled, (state, action) => {
       if (action.payload) {
         return {
           ...state,
           verifyStatus: "success",
+          registerCustomerStatus: "",
+          registerCustomerError: "",
+          registerDriverStatus: "",
+          registerDriverError: "",
+          loginCustomerStatus: "",
+          loginCustomerError: "",
+          loginDriverStatus: "",
+          loginDriverError: "",
+          verifyError: "",
+          forgetError: "",
+          forgetStatus: "",
         };
       } else {
         return state;
@@ -258,13 +352,33 @@ const authSlice = createSlice({
         ...state,
         verifyStatus: "rejected",
         verifyError: action?.payload,
+        registerCustomerStatus: "",
+        registerCustomerError: "",
+        registerDriverStatus: "",
+        registerDriverError: "",
+        loginCustomerStatus: "",
+        loginCustomerError: "",
+        loginDriverStatus: "",
+        loginDriverError: "",
+        forgetError: "",
+        forgetStatus: "",
       };
     });
     builder.addCase(loginCustomer.pending, (state, action) => {
       return {
         ...state,
         loginCustomerStatus: "pending",
+        registerCustomerStatus: "",
+        registerCustomerError: "",
+        registerDriverStatus: "",
+        registerDriverError: "",
+        loginCustomerError: "",
         loginDriverStatus: "",
+        loginDriverError: "",
+        forgetError: "",
+        forgetStatus: "",
+        verifyError: "",
+        verifyStatus: "",
       };
     });
     builder.addCase(loginCustomer.fulfilled, (state, action) => {
@@ -275,7 +389,15 @@ const authSlice = createSlice({
           email: action?.payload?.data?.user?.email,
           user_id: action?.payload?.data?.user?.user_id,
           loginCustomerStatus: "success",
+          registerCustomerStatus: "",
+          registerCustomerError: "",
+          registerDriverStatus: "",
+          registerDriverError: "",
+          loginCustomerError: "",
           loginDriverStatus: "",
+          loginDriverError: "",
+          forgetError: "",
+          forgetStatus: "",
         };
       } else return state;
     });
@@ -285,13 +407,30 @@ const authSlice = createSlice({
         loginCustomerStatus: "rejected",
         loginCustomerError: action?.payload,
         loginDriverError: "",
+        registerCustomerStatus: "",
+        registerCustomerError: "",
+        registerDriverStatus: "",
+        registerDriverError: "",
+        loginDriverStatus: "",
+        forgetError: "",
+        forgetStatus: "",
       };
     });
     builder.addCase(loginDriver.pending, (state, action) => {
       return {
         ...state,
         loginDriverStatus: "pending",
+        registerCustomerStatus: "",
+        registerCustomerError: "",
+        registerDriverStatus: "",
+        registerDriverError: "",
         loginCustomerStatus: "",
+        loginCustomerError: "",
+        loginDriverError: "",
+        forgetError: "",
+        forgetStatus: "",
+        verifyError: "",
+        verifyStatus: "",
       };
     });
     builder.addCase(loginDriver.fulfilled, (state, action) => {
@@ -302,7 +441,17 @@ const authSlice = createSlice({
           email: action?.payload?.data?.user?.email,
           user_id: action?.payload?.data?.user?.user_id,
           loginDriverStatus: "success",
+          registerCustomerStatus: "",
+          registerCustomerError: "",
+          registerDriverStatus: "",
+          registerDriverError: "",
           loginCustomerStatus: "",
+          loginCustomerError: "",
+          loginDriverError: "",
+          forgetError: "",
+          forgetStatus: "",
+          verifyError: "",
+          verifyStatus: "",
         };
       } else return state;
     });
@@ -310,8 +459,17 @@ const authSlice = createSlice({
       return {
         ...state,
         loginDriverStatus: "rejected",
-        loginCustomerError: "",
         loginDriverError: action?.payload,
+        registerCustomerStatus: "",
+        registerCustomerError: "",
+        registerDriverStatus: "",
+        registerDriverError: "",
+        loginCustomerStatus: "",
+        loginCustomerError: "",
+        forgetError: "",
+        forgetStatus: "",
+        verifyError: "",
+        verifyStatus: "",
       };
     });
     // builder.addCase(forgetPwd.pending, (state, action) => {

@@ -29,7 +29,7 @@ function AccountData() {
       <div className="title flex">
         <div
           className="arrow__back align"
-          onClick={() => navigate("/passengerdb/help/")}
+          onClick={() => navigate("/customer/help/")}
         >
           <FaAngleLeft />
         </div>

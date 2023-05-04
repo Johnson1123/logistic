@@ -9,8 +9,16 @@ import DBMobileControllers from "../../component/MobileControllers/DBMobileContr
 import UserInfo from "../../component/UserInfo/UserInfo";
 
 function DriverDB() {
+  const navigate = useNavigate();
   const menu = useSelector((state) => state.toggleReducer.dashboarMenu);
   const user = useSelector((state) => state.toggleReducer.user);
+  const auth = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    if (!auth.user_id) {
+      navigate("/");
+    }
+  }, [auth.user_id, navigate]);
   return (
     <div className="DriverDB">
       <div className="DriverDB__wrapper">

@@ -1,22 +1,25 @@
 import React, { useState } from "react";
-import "./PaymentPricing.scss";
+
+import "./AppFeatures.scss";
 
 import { FaAngleLeft } from "react-icons/fa";
-import { PaymentPrice } from "../../../../../content/AboutXcab";
+import { useNavigate } from "react-router-dom";
+import { Appfeatures } from "../../../../../content/AboutXcab";
+
 import Overlay from "../../../../Overlay/Overlay";
 import HelpButton from "../HelpButton";
 import Modal from "../Modal/Modal";
-import { useNavigate } from "react-router-dom";
 
-function PaymentPricing() {
+function AppFeatures() {
   const navigate = useNavigate();
-  const [idx, setidx] = useState(3);
+  const [idx, setidx] = useState(0);
   const [toggle, setToggle] = useState(false);
-  const content = PaymentPrice.filter((item) => {
+  const content = Appfeatures.filter((item) => {
     return idx == item._id;
   });
 
   const handleContent = (n) => {
+    console.log(idx);
     setToggle(true);
     setidx(n);
   };
@@ -25,23 +28,23 @@ function PaymentPricing() {
   };
 
   return (
-    <div className="PaymentPricing">
+    <div className="AppFeatures">
       <div className="title flex">
         <div
           className="arrow__back"
-          onClick={() => navigate("/customer/help/")}
+          onClick={() => navigate("/passengerdb/help/")}
         >
           <FaAngleLeft />
         </div>
-        <p>Payment and pricing</p>
+        App and Features
       </div>
       <div className="btn__container">
-        <div className="AccountData">
-          {PaymentPrice.map((data) => {
+        <div className="AboutXcab">
+          {Appfeatures.map((AppFeature) => {
             return (
               <HelpButton
-                label={data.title}
-                handler={() => handleContent(data._id)}
+                label={AppFeature.title}
+                handler={() => handleContent(AppFeature._id)}
                 className="mt-1"
               />
             );
@@ -54,4 +57,4 @@ function PaymentPricing() {
   );
 }
 
-export default PaymentPricing;
+export default AppFeatures;

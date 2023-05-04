@@ -6,10 +6,18 @@ import SignupBtn from "../../../Btn/SignupBtn/SignupBtn";
 import "./ProfileSetting.scss";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { putUser } from "../../../../features/customer";
+import { BeatLoader } from "react-spinners";
 
 function ProfileSetting() {
   const navigate = useNavigate();
+  const Dispatch = useDispatch();
+
+  const putCustomer = useSelector((state) => state.putCustomer);
   const [selectedFile, setSelectedFile] = useState();
+
+  const [file, setFile] = useState();
   const [values, setValues] = useState({
     first_name: "",
     last_name: "",
@@ -17,12 +25,15 @@ function ProfileSetting() {
     gender: "",
     image_url: "",
   });
+  values.image_url = file;
+  console.log(putCustomer.putUserStatus);
 
   const accessToken = JSON.parse(localStorage.getItem("accessToken"));
-
+  console.log(accessToken.access);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
+    console.log(values);
   };
 
   const [preview, setPreview] = useState();
@@ -35,29 +46,27 @@ function ProfileSetting() {
     setPreview(objectUrl);
     return () => URL.revokeObjectURL(objectUrl);
   }, [selectedFile]);
+
   const onSelectFile = (e) => {
     if (!e.target.files || e.target.files.length === 0) {
       setSelectedFile(undefined);
       return;
     }
     setSelectedFile(e.target.files[0]);
+    setFile(e.target.value);
   };
 
   const handleSumit = async (e) => {
     e.preventDefault();
-    const config = {
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${accessToken}`,
-      },
-    };
+    // const config = {
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //     Authorization: `Bearer ${accessToken.access}`,
+    //   },
+    // };
     const body = JSON.stringify(values);
     try {
-      const res = await axios.put(
-        "https://techvonix.onrender.com/api/v1/profile/",
-        body,
-        config
-      );
+      const res = await Dispatch(putUser(values));
       return res.data;
     } catch (error) {
       if (error.response && error.response.data.message) {
@@ -69,7 +78,6 @@ function ProfileSetting() {
       }
     }
   };
-
   return (
     <div className="ProfileSetting">
       <p className="title">Profile Settings</p>
@@ -98,12 +106,14 @@ function ProfileSetting() {
               label="First Name"
               placeholder="first name"
               name="first_name"
+              onChange={handleChange}
             />
             <TabInput
               type="text"
               label="Last Name"
               placeholder="last name"
               name="last_name"
+              onChange={handleChange}
             />
           </div>
           <div className="input__group">
@@ -112,15 +122,32 @@ function ProfileSetting() {
               label="Address"
               placeholder="home address"
               name="home_address"
+              onChange={handleChange}
             />
             <TabInput
               type="text"
               label="Gender"
               placeholder="gender"
               name="gender"
+              onChange={handleChange}
             />
           </div>
-          <SignupBtn label="Save" />
+          {putCustomer.putUserStatus === "rejected" ? (
+            <p className="error" style={{ textAlign: "center" }}>
+              {putCustomer.putUserError}
+            </p>
+          ) : (
+            ""
+          )}
+          <SignupBtn
+            label={
+              putCustomer.putUserStatus === "pending" ? (
+                <BeatLoader color="#36d7b7" />
+              ) : (
+                "Update"
+              )
+            }
+          />
         </form>
       </div>
     </div>

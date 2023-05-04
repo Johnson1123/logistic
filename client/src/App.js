@@ -7,6 +7,7 @@ import {
 import Navbar from "./component/Navbar/Navbar";
 import Footer from "./component/Footer/Footer";
 import { loadUser, logoutUser } from "./features/Auths";
+import GetDriverHelp from "./component/DriverDB/GetHelp/GetHelp";
 import {
   Home,
   OTP,
@@ -340,7 +341,23 @@ const router = createBrowserRouter([
       },
       {
         path: "help",
-        element: <Setting />,
+        element: <GetDriverHelp />,
+      },
+      {
+        path: "help/become/driver",
+        element: <AboutXcab />,
+      },
+      {
+        path: "help/account",
+        element: <AccountData />,
+      },
+      {
+        path: "help/payment",
+        element: <PaymentPricing />,
+      },
+      {
+        path: "help/app",
+        element: <AppFeatures />,
       },
       {
         path: "Logout",
@@ -441,7 +458,6 @@ function App() {
         body: JSON.stringify({ refresh: refreshToken }),
       }
     );
-
     let data = await response.json();
 
     if (response.status === 200) {
@@ -473,35 +489,26 @@ function App() {
 
   useEffect(() => {
     (async () => {
-      try {
-        if (auth.user_id) {
-          let response = await fetch(
+      if (auth.user_id) {
+        try {
+          let reponse = await fetch(
             "https://techvonix.onrender.com/api/v1/profile/",
             {
               method: "get",
               headers: {
                 "Content-Type": "application/json",
+                accept: "application/json",
                 Authorization: `Bearer ${access}`,
               },
             }
           );
-          console.log(response);
-          if (response.status === 200) {
-            localStorage.setItem(
-              "profile",
-              JSON.stringify(response?.data?.data)
-            );
-          }
+          console.log(reponse);
+        } catch (err) {
+          dispatch(logoutUser());
         }
-      } catch (err) {
-        dispatch(logoutUser());
       }
     })();
   }, [auth.user_id, dispatch]);
-
-  useEffect(() => {
-    dispatch(loadUser(null));
-  }, [dispatch]);
 
   useEffect(() => {
     dispatch(loadUser(null));

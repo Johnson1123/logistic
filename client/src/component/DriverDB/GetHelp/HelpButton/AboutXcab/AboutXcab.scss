@@ -1,0 +1,19 @@
+@import "../../../../../style/variable.scss";
+.AboutXcab {
+  @include mobile {
+    min-height: 100vh;
+    padding-left: 1rem;
+    padding-top: 1rem;
+    .modal__box {
+      width: 95%;
+    }
+  }
+}
+.title {
+  align-items: center;
+  svg {
+    margin-top: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+}

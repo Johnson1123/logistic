@@ -1,15 +1,22 @@
 import React from "react";
 import "./DriverController.scss";
 import Tabcontroller from "../DriverDB/Tabcontroller/Tabcontroller";
+import { IoLogOutOutline } from "react-icons/io5";
 
 import { useNavigate } from "react-router-dom";
 import { DBcontroller } from "../../content/DBcontroller";
 import { images } from "../../asset";
+import { useDispatch } from "react-redux";
+import { logoutUser } from "../../features/Auths";
 
 function DriverController() {
   const navigate = useNavigate();
+  const Dispatch = useDispatch();
   const handleDB = (n) => {
     navigate(n);
+  };
+  const handleDispatch = (n) => {
+    Dispatch(logoutUser());
   };
   return (
     <div className="DriverController">
@@ -20,11 +27,18 @@ function DriverController() {
               label={item.label}
               icon={item.icon}
               key={index}
-              handler={() => handleDB(item.href)}
+              handler={
+                item.href ? () => handleDB(item.href) : () => handleDispatch
+              }
             />
           );
         })}
-
+        <button onClick={handleDispatch} className="logout-btn p-text">
+          <span>
+            <IoLogOutOutline />
+          </span>
+          <span>logout</span>
+        </button>
         <div className="getApp flex">
           <div className="getApp__content">
             <p className="small-title p-text">Get Mobile App</p>

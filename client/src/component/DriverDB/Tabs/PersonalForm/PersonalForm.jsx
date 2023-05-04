@@ -25,6 +25,8 @@ function PersonalForm() {
     }
     setSelectedFile(e.target.files[0]);
   };
+
+  const handleSubmit = () => {};
   return (
     <div className="PersonalForm flex">
       <div className="img__control">
@@ -56,19 +58,19 @@ function PersonalForm() {
         </div>
         <div className="input__group">
           <TabInput
-            type="email"
-            label="Email"
-            placeholder="jameswilliams@gmail.com"
-            name="email"
+            type="text"
+            label="Home Address"
+            placeholder="Central Paris"
+            name="home"
           />
           <TabInput
-            type="tel"
-            label="Phone number"
-            placeholder="+33758336521"
-            name="phone"
+            type="text"
+            label="Gender"
+            placeholder="Male / Female"
+            name="gender"
           />
         </div>
-        <div className="input__group group__detail">
+        {/* <div className="input__group group__detail">
           <p className="small-title">Driver documents</p>
           <p className="bold-text">
             Driver and taxi license details. Keep an eye on expiration dates.
@@ -87,8 +89,8 @@ function PersonalForm() {
             placeholder="18.01.2033"
             name="phone"
           />
-        </div>
-        <SignupBtn label="Save" />
+        </div> */}
+        <SignupBtn label="save" />
       </form>
     </div>
   );

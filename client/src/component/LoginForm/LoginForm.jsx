@@ -66,7 +66,7 @@ function LoginForm(props) {
         ) : null}
         <SignupBtn
           label={
-            resStatus === "pending" ? <BeatLoader color="#36d7b7" /> : "Sign Up"
+            resStatus === "pending" ? <BeatLoader color="#36d7b7" /> : "Sign in"
           }
         />
       </div>

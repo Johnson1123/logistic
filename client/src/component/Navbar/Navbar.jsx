@@ -101,7 +101,7 @@ function Navbar() {
               ""
             ) : (
               <div className="nav__items-con">
-                <Link to="/login">Log in</Link>
+                <Link to="/login/customer">Log in</Link>
               </div>
             )}
 
@@ -122,11 +122,7 @@ function Navbar() {
               <img src={images.Elia} alt="user image" />
               <span className="p-text">
                 <Link
-                  to={
-                    role === "driver"
-                      ? "/driver/dashboard"
-                      : "/customer/dashboard"
-                  }
+                  to={role === "driver" ? "/driver" : "/customer"}
                   className="user-link "
                 >
                   Dashboard

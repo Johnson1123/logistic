@@ -11,6 +11,7 @@ import {
 
 function FirstForm() {
   const Dispatch = useDispatch();
+  const [isChecked, setIsChecked] = useState(false);
 
   const driver = useSelector((state) => state.driverDetails);
   const pageNumber = driver.pageNumber;
@@ -21,6 +22,7 @@ function FirstForm() {
   const vehicleYear = driver.vehicleYear || "";
   const vehiclePlate = driver.vehiclePlate || "";
   const vehicleColor = driver.vehicleColor || "";
+  const vehicleName = driver.vehicleName || "";
 
   const [formData, setFormData] = useState({
     driverFName: driverFName,
@@ -30,6 +32,7 @@ function FirstForm() {
     vehicleYear: vehicleYear,
     vehiclePlate: vehiclePlate,
     vehicleColor: vehicleColor,
+    vehicleName: vehicleName,
   });
 
   const handleOnchange = (e) => {
@@ -51,16 +54,19 @@ function FirstForm() {
     if (!formData.driverReferral) {
       formError.driverReferral = "referral is code is required";
     }
-    if (!formData.vehicleModel) {
+    if (isChecked && !formData.vehicleModel) {
       formError.vehicleModel = "Vehicle model is required";
     }
-    if (!formData.vehicleYear) {
+    if (isChecked && !formData.vehicleName) {
+      formError.vehicleName = "Vehicle Name is required";
+    }
+    if (isChecked && !formData.vehicleYear) {
       formError.vehicleYear = "Vehicle year is required";
     }
-    if (!formData.vehiclePlate) {
+    if (isChecked && !formData.vehiclePlate) {
       formError.vehiclePlate = "Vehicle plate number is required";
     }
-    if (!formData.vehicleColor) {
+    if (isChecked && !formData.vehicleColor) {
       formError.vehicleColor = "Vehicle color is required";
     }
 
@@ -76,9 +82,9 @@ function FirstForm() {
   };
 
   useEffect(() => {
+    console.log(isChecked);
     if (Object.keys(errors).length === 0 && isSumitted) {
       Dispatch(handlePageNumber(2));
-
       Dispatch(
         handlePersonalInfo({
           driverFName: formData.driverFName,
@@ -88,6 +94,8 @@ function FirstForm() {
           vehicleYear: formData.vehicleYear,
           vehiclePlate: formData.vehiclePlate,
           vehicleColor: formData.vehicleColor,
+          vehicle_available: isChecked,
+          vehicleName: formData.vehicleName,
         })
       );
     }
@@ -98,54 +106,63 @@ function FirstForm() {
   const handleCheck = (e) => {
     if (e.target.checked) {
       settoggle(true);
+      setIsChecked(true);
     } else {
       settoggle(false);
+      setIsChecked(false);
     }
   };
   return (
     <form className="fisrtForm" onSubmit={handleSubmit}>
       <div className="input__group">
-        <TabInput
-          label="First name"
-          type="text"
-          placeholder="First name"
-          name="driverFName"
-          onChange={handleOnchange}
-        />
-        {errors.driverFName && <p className="error">{errors.driverFName}</p>}
-
-        <TabInput
-          label="Last name"
-          type="text"
-          placeholder="Last name"
-          name="driverLName"
-          onChange={handleOnchange}
-        />
-        {errors.driverLName && <p className="error">{errors.driverLName}</p>}
-      </div>
-      <div className="input__group">
-        <div className="singleInput">
+        <div className="input-error-con">
           <TabInput
-            label="Referral code"
+            label="First name"
             type="text"
-            placeholder=""
-            name="driverReferral"
+            placeholder={driverFName}
+            value={driverFName}
+            name="driverFName"
             onChange={handleOnchange}
           />
-          <p className="form-text refer-text">
-            If someone referred you, enter their code.
-          </p>
-          {errors.driverReferral && (
-            <p className="error">{errors.driverReferral}</p>
-          )}
+          {errors.driverFName && <p className="error">{errors.driverFName}</p>}
+        </div>
+
+        <div className="input-error-con">
+          <TabInput
+            label="Last name"
+            type="text"
+            placeholder={driverLName}
+            value={driverLName}
+            name="driverLName"
+            onChange={handleOnchange}
+          />
+          {errors.driverLName && <p className="error">{errors.driverLName}</p>}
+        </div>
+      </div>
+      <div className="input__group">
+        <div className="input-error-con">
+          <div className="singleInput">
+            <TabInput
+              label="Referral code"
+              type="text"
+              placeholder={driverReferral}
+              name="driverReferral"
+              onChange={handleOnchange}
+            />
+            <p className="form-text refer-text">
+              If someone referred you, enter their code.
+            </p>
+            {errors.driverReferral && (
+              <p className="error">{errors.driverReferral}</p>
+            )}
+          </div>
         </div>
         <div className="Mfleet">
           <p className="form-bold">Have multiple vehicles?</p>
           <p className="p-text">
             <Link to="signLocalP" className="link-text">
-              {" "}
-              Sign up as a fleet owner{" "}
-            </Link>{" "}
+              {"Sign up as a fleet owner"}
+            </Link>
             to become Local Partner
           </p>
           <div className="flex">
@@ -157,48 +174,76 @@ function FirstForm() {
       {toggle && (
         <>
           <div className="input__group">
-            <TabInput
-              label="Vehicle manufacturer and model"
-              type="text"
-              placeholder=""
-              name="vehicleModel"
-              onChange={handleOnchange}
-            />
-            {errors.vehicleModel && (
-              <p className="error">{errors.vehicleModel}</p>
-            )}
-            <TabInput
-              label="Vehicle Year"
-              type="text"
-              placeholder=""
-              name="vehicleYear"
-              onChange={handleOnchange}
-            />
-            {errors.vehicleYear && (
-              <p className="error">{errors.vehicleYear}</p>
-            )}
+            <div className="input-error-con">
+              <TabInput
+                label="Vehicle Name"
+                type="text"
+                placeholder={vehicleName}
+                value={vehicleName}
+                name="vehicleName"
+                onChange={handleOnchange}
+              />
+              {errors.vehicleName && (
+                <p className="error">{errors.vehicleName}</p>
+              )}
+            </div>
+            <div className="input-error-con">
+              <TabInput
+                label="Vehicle Year"
+                type="text"
+                placeholder={vehicleYear}
+                value={vehicleYear}
+                name="vehicleYear"
+                onChange={handleOnchange}
+              />
+              {errors.vehicleYear && (
+                <p className="error">{errors.vehicleYear}</p>
+              )}
+            </div>
+          </div>
+
+          <div className="input__group">
+            <div className="input-error-con">
+              <TabInput
+                label="License Plate"
+                type="text"
+                placeholder={vehiclePlate}
+                value={vehiclePlate}
+                name="vehiclePlate"
+                onChange={handleOnchange}
+              />
+              {errors.vehiclePlate && (
+                <p className="error">{errors.vehiclePlate}</p>
+              )}
+            </div>
+            <div className="input-error-con">
+              <TabInput
+                label="Vehicle Color"
+                type="text"
+                placeholder={vehicleColor}
+                value={vehicleColor}
+                name="vehicleColor"
+                onChange={handleOnchange}
+              />
+              {errors.vehicleColor && (
+                <p className="error">{errors.vehicleColor}</p>
+              )}
+            </div>
           </div>
           <div className="input__group">
-            <TabInput
-              label="License Plate"
-              type="text"
-              placeholder=""
-              name="vehiclePlate"
-              onChange={handleOnchange}
-            />
-            {errors.vehiclePlate && (
-              <p className="error">{errors.vehiclePlate}</p>
-            )}
-            <TabInput
-              label="Vehicle Color"
-              type="text"
-              placeholder=""
-              name="vehicleColor"
-              onChange={handleOnchange}
-            />
-            {errors.vehicleColor && (
-              <p className="error">{errors.vehicleColor}</p>
-            )}
+            <div className="input-error-con">
+              <TabInput
+                label="Vehicle manufacturer and model"
+                type="text"
+                placeholder={vehicleModel}
+                value={vehicleModel}
+                name="vehicleModel"
+                onChange={handleOnchange}
+              />
+              {errors.vehicleModel && (
+                <p className="error">{errors.vehicleModel}</p>
+              )}
+            </div>
           </div>
         </>
       )}

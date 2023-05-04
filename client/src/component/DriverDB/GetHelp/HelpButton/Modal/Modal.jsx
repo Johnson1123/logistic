@@ -1,19 +1,11 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import "./Modal.scss";
 import { Rate } from "antd";
-function Modal(props) {
-  const modalDiv = useRef();
 
-  useEffect(() => {
-    modalDiv.current.scrollIntoView({
-      behavior: "smooth",
-      block: "center",
-      inline: "start",
-    });
-  }, []);
+function Modal(props) {
   return (
     <div className="container">
-      <div className="modal__box box-shadow" ref={modalDiv}>
+      <div className="modal__box box-shadow">
         {props.content.title && <p className="title">{props.content.title}</p>}
         {props.content.label && (
           <p className="subtitle">{props.content.label}</p>

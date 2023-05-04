@@ -12,6 +12,7 @@ import {
 
 function FourthForm() {
   const Dispatch = useDispatch();
+  const [isChecked, setIsChecked] = useState(false);
 
   const driverPayment = useSelector(
     (state) => state.driverDetails.driverPayment
@@ -89,7 +90,7 @@ function FourthForm() {
   };
   const driverData = {
     vehicle: {
-      name: "acura",
+      name: personalInfo.vehicleName,
       plate_number: personalInfo.vehiclePlate,
       color: personalInfo.vehicleColor,
       external_picture: driverDocument.exteriorImage,
@@ -100,7 +101,7 @@ function FourthForm() {
     first_name: personalInfo.driverFName,
     last_name: personalInfo.driverLName,
     refferal_code: personalInfo.driverReferral,
-    vehicle_available: true,
+    vehicle_available: personalInfo.vehicle_available,
     driver_license: license,
     driver_license_image: driverDocument.licenseImage,
     drivers_picture: driverDocument.profileImage,
@@ -108,7 +109,7 @@ function FourthForm() {
     company_name: formData.companyName,
     address: formData.paymentAdress,
     registration_code: formData.regCode,
-    vat_liability: true,
+    vat_liability: isChecked,
     vat_number: formData.vatNumber,
     bank_account_holder_name: formData.accountName,
     bank_account_number: formData.xlcabPayment,
@@ -117,7 +118,6 @@ function FourthForm() {
 
   useEffect(() => {
     if (Object.keys(error).length === 0 && isSumitted) {
-      Dispatch(uploadDriverDetail(driverData));
       Dispatch(
         handleDriverPayment({
           billType: formData.billType,
@@ -128,8 +128,11 @@ function FourthForm() {
           accountName: formData.accountName,
           xlcabPayment: formData.xlcabPayment,
           bankName: formData.bankName,
+          vat_liability: isChecked,
         })
       );
+      Dispatch(uploadDriverDetail(driverData));
+      navigator("/wattogo");
     }
   }, [formData, Dispatch, isSumitted, error]);
 
@@ -138,36 +141,43 @@ function FourthForm() {
   const handleCheck = (e) => {
     if (e.target.checked) {
       settoggle(true);
+      setIsChecked(true);
     } else {
       settoggle(false);
+      setIsChecked(false);
     }
   };
   return (
     <form className="fouthForm" onSubmit={handleSubmit}>
       <div className="input__group">
-        <div className="form__select">
-          <p className="form-text bill-text">Billing type</p>
-          <div className="select">
-            <select name="billType" onChange={handleOnchange}>
-              <option name="billType" value="company">
-                Company
-              </option>
-              <option name="billType" value="personal">
-                Personal
-              </option>
-            </select>
+        <div className="input-error-con">
+          <div className="form__select">
+            <p className="form-text bill-text">Billing type</p>
+            <div className="select">
+              <select name="billType" onChange={handleOnchange}>
+                <option name="billType" value="company">
+                  Company
+                </option>
+                <option name="billType" value="personal">
+                  Personal
+                </option>
+              </select>
+            </div>
           </div>
+          {error.billType && <p className="error">{error.billType}</p>}
         </div>
-        {error.billType && <p className="error">{error.billType}</p>}
-        <TabInput
-          label="Company Name"
-          type="text"
-          placeholder="Technovix Ride"
-          name={`companyName`}
-          onChange={handleOnchange}
-        />
+        <div className="input-error-con">
+          <TabInput
+            label="Company Name"
+            type="text"
+            placeholder="Technovix Ride"
+            name={`companyName`}
+            onChange={handleOnchange}
+          />
+          {error.companyName && <p className="error">{error.companyName}</p>}
+        </div>
       </div>
-      {error.companyName && <p className="error">{error.companyName}</p>}
+
       <div className="input__group">
         <div className="singleInput">
           <TabInput
@@ -200,43 +210,53 @@ function FourthForm() {
       {toggle && (
         <>
           <div className="input__group">
-            <TabInput
-              label="VAT number"
-              type="number"
-              placeholder="89754"
-              name={`vatNumber`}
-              onChange={handleOnchange}
-            />
-            {error.vatNumber && <p className="error">{error.vatNumber}</p>}
-            <TabInput
-              label="Bank account holder name"
-              type="text"
-              placeholder="Technovix Innovations"
-              name={`accountName`}
-              onChange={handleOnchange}
-            />
-            {error.accountName && <p className="error">{error.accountName}</p>}
+            <div className="input-error-con">
+              <TabInput
+                label="VAT number"
+                type="number"
+                placeholder="89754"
+                name={`vatNumber`}
+                onChange={handleOnchange}
+              />
+              {error.vatNumber && <p className="error">{error.vatNumber}</p>}
+            </div>
+            <div className="input-error-con">
+              <TabInput
+                label="Bank account holder name"
+                type="text"
+                placeholder="Technovix Innovations"
+                name={`accountName`}
+                onChange={handleOnchange}
+              />
+              {error.accountName && (
+                <p className="error">{error.accountName}</p>
+              )}
+            </div>
           </div>
 
           <div className="input__group">
-            <TabInput
-              label="Technovix Innovations"
-              type="number"
-              placeholder="3874646099383335"
-              name={`xlcabPayment`}
-              onChange={handleOnchange}
-            />
-            {error.xlcabPayment && (
-              <p className="error">{error.xlcabPayment}</p>
-            )}
-            <TabInput
-              label="Bank name or BIC/SWIFT"
-              type="text"
-              placeholder="TRANS BANK"
-              name={`bankName`}
-              onChange={handleOnchange}
-            />
-            {error.bankName && <p className="error">{error.bankName}</p>}
+            <div className="input-error-con">
+              <TabInput
+                label="Technovix Innovations"
+                type="number"
+                placeholder="3874646099383335"
+                name={`xlcabPayment`}
+                onChange={handleOnchange}
+              />
+              {error.xlcabPayment && (
+                <p className="error">{error.xlcabPayment}</p>
+              )}
+            </div>
+            <div className="input-error-con">
+              <TabInput
+                label="Bank name or BIC/SWIFT"
+                type="text"
+                placeholder="TRANS BANK"
+                name={`bankName`}
+                onChange={handleOnchange}
+              />
+              {error.bankName && <p className="error">{error.bankName}</p>}
+            </div>
           </div>
         </>
       )}

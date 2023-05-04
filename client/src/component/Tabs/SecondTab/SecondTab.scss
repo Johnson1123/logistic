@@ -16,6 +16,11 @@
       font-weight: 300;
     }
   }
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .form-text {
     width: 80%;
     text-align: center;
@@ -24,9 +29,10 @@
     }
   }
   .input__container {
-    width: 60%;
+    width: 100% !important ;
     margin-top: 2rem;
     @include tablet {
+      width: 60%;
       .form-text {
         font-weight: 700;
         font-size: 18px;

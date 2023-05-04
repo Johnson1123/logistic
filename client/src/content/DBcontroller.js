@@ -9,8 +9,9 @@ import { MdPayment } from "react-icons/md";
 import { TbFileInvoice } from "react-icons/tb";
 import { TfiMenuAlt } from "react-icons/tfi";
 import { BsFillFilePostFill } from "react-icons/bs";
-// import {FcSettings} from 'react-icons/fc'
-
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import logoutUser from "../features/Auths";
 export const DBcontroller = [
   {
     id: 1,
@@ -30,7 +31,6 @@ export const DBcontroller = [
     icon: <FaThList />,
     href: "ride",
   },
-
   {
     id: 4,
     label: "My Document",
@@ -90,11 +90,6 @@ export const DBcontroller = [
     label: "Get Help",
     icon: <BiHelpCircle />,
     href: "help",
-  },
-  {
-    id: 12,
-    label: "Logout",
-    icon: <IoLogOutOutline />,
   },
 ];
 

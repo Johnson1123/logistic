@@ -4,11 +4,18 @@ import Tabcontroller from "../Tabcontroller/Tabcontroller";
 import { passengercontroller } from "../../../content/DBcontroller";
 import { images } from "../../../asset";
 import { useNavigate } from "react-router-dom";
+import { IoLogOutOutline } from "react-icons/io5";
+import { logoutUser } from "../../../features/Auths";
+import { useDispatch } from "react-redux";
 
 function PassengerController() {
   const navigate = useNavigate();
+  const Dispatch = useDispatch();
   const handleDB = (n) => {
     navigate(n);
+  };
+  const handleDispatch = (n) => {
+    Dispatch(logoutUser());
   };
   return (
     <div className="Passenger__controller">
@@ -23,7 +30,12 @@ function PassengerController() {
             />
           );
         })}
-
+        <button onClick={handleDispatch} className="logout-btn p-text">
+          <span>
+            <IoLogOutOutline />
+          </span>
+          <span>logout</span>
+        </button>
         <div className="getApp flex">
           <div className="getApp__content">
             <p className="small-title p-text">Get Mobile App</p>

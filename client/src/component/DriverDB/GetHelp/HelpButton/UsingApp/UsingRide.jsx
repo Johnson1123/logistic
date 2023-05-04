@@ -1,18 +1,18 @@
 import React, { useState } from "react";
-import "./PaymentPricing.scss";
+import "./UsingRide.scss";
 
 import { FaAngleLeft } from "react-icons/fa";
-import { PaymentPrice } from "../../../../../content/AboutXcab";
+import { UsingRides } from "../../../../../content/AboutXcab";
 import Overlay from "../../../../Overlay/Overlay";
 import HelpButton from "../HelpButton";
 import Modal from "../Modal/Modal";
 import { useNavigate } from "react-router-dom";
 
-function PaymentPricing() {
+function UsingRide() {
   const navigate = useNavigate();
   const [idx, setidx] = useState(3);
   const [toggle, setToggle] = useState(false);
-  const content = PaymentPrice.filter((item) => {
+  const content = UsingRides.filter((item) => {
     return idx == item._id;
   });
 
@@ -29,15 +29,15 @@ function PaymentPricing() {
       <div className="title flex">
         <div
           className="arrow__back"
-          onClick={() => navigate("/customer/help/")}
+          onClick={() => navigate("/passengerdb/help/")}
         >
           <FaAngleLeft />
         </div>
-        <p>Payment and pricing</p>
+        Payment and pricing
       </div>
       <div className="btn__container">
         <div className="AccountData">
-          {PaymentPrice.map((data) => {
+          {UsingRides.map((data) => {
             return (
               <HelpButton
                 label={data.title}
@@ -54,4 +54,4 @@ function PaymentPricing() {
   );
 }
 
-export default PaymentPricing;
+export default UsingRide;
