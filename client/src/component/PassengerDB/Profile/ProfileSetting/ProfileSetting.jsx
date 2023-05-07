@@ -7,7 +7,7 @@ import "./ProfileSetting.scss";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { putUser } from "../../../../features/customer";
+import { putUser } from "../../../../features/customer/customer";
 import { BeatLoader } from "react-spinners";
 
 function ProfileSetting() {
@@ -26,10 +26,8 @@ function ProfileSetting() {
     image_url: "",
   });
   values.image_url = file;
-  console.log(putCustomer.putUserStatus);
 
-  const accessToken = JSON.parse(localStorage.getItem("accessToken"));
-  console.log(accessToken.access);
+  const accessToken = localStorage.getItem("authToken");
   const handleChange = (e) => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
@@ -132,16 +130,16 @@ function ProfileSetting() {
               onChange={handleChange}
             />
           </div>
-          {putCustomer.putUserStatus === "rejected" ? (
+          {putCustomer?.putUserStatus === "rejected" ? (
             <p className="error" style={{ textAlign: "center" }}>
-              {putCustomer.putUserError}
+              {putCustomer?.putUserError}
             </p>
           ) : (
             ""
           )}
           <SignupBtn
             label={
-              putCustomer.putUserStatus === "pending" ? (
+              putCustomer?.putUserStatus === "pending" ? (
                 <BeatLoader color="#36d7b7" />
               ) : (
                 "Update"

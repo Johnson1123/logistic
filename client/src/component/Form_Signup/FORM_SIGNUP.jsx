@@ -9,6 +9,7 @@ import "./Form_Sign.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 import { BeatLoader } from "react-spinners";
+import { message } from "antd";
 
 function FORM_SIGN(props) {
   const navigate = useNavigate();
@@ -22,21 +23,25 @@ function FORM_SIGN(props) {
   const resError =
     props.role === "driver"
       ? auth.registerDriverError
-      : auth.registerCustomerStatus;
+      : auth.registerCustomerError;
+
   const handler = props.handler;
+
   const [values, setValue] = useState({
     username: "",
     phone: "",
     email: "",
     password: "",
   });
+
   const [error, setError] = useState("");
+
   const validate = (formData) => {
     const formError = {};
     if (!formData.username) {
       formError.username = "Username is required";
     }
-    if (!formData.phone) {
+    if (!formData.phone && typeof formData.phone === "string") {
       formError.phone = "phone number is required";
     }
     const validEmail = new RegExp(
@@ -112,7 +117,7 @@ function FORM_SIGN(props) {
       <div className="flex input_group">
         <div className="input__group-inner">
           <Input
-            type="number"
+            type="text"
             name="tell"
             className={error.phone ? "error-border" : ""}
             image={<BsTelephone />}
@@ -143,7 +148,9 @@ function FORM_SIGN(props) {
       </div>
 
       <div className="flex signup-btn-err">
-        {resStatus === "rejected" ? <p className="error">{resError}</p> : null}
+        {resStatus === "rejected" ? (
+          <p className="error">{resError?.message}</p>
+        ) : null}
         <button className="btn sign_btn">
           {resStatus === "pending" ? <BeatLoader color="#36d7b7" /> : "Sign Up"}
         </button>

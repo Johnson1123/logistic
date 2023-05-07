@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 // file import
 import SignupBtn from "../../Btn/SignupBtn/SignupBtn";
@@ -15,12 +15,54 @@ import { Places } from "../../../content/Places";
 import PaymentMethod from "../PaymentMethod/PaymentMethod";
 import Note from "./Note/Note";
 import DatePicker from "../DatePicker/DatePicker";
+import Input from "../../Input/Input";
+import { useDispatch } from "react-redux";
 
 function Booking() {
+  const Dispatch = useDispatch();
   const [isRoute, setIsRoute] = useState(false);
+  const [error, setError] = useState("");
+  const [submit, setSubmit] = useState(false);
+  const [cardData, setCardData] = useState({
+    name: "",
+    number: "",
+    month: "",
+    year: "",
+    cvv: "",
+  });
   const handleToggle = () => {
     setIsRoute(true);
   };
+
+  const checkError = (cardData) => {
+    const formError = {};
+    if (!cardData.name) {
+      formError.name = "card name required";
+    }
+    if (!cardData.number && typeof cardData.number != "number") {
+      formError.number = "card number required";
+    }
+    if (!cardData.month && typeof cardData.month != "number") {
+      formError.month = "month required";
+    }
+    if (!cardData.year && !typeof cardData.year != "number") {
+      formError.year = "year required";
+    }
+    if (!cardData.cvv && !typeof cardData.cvv != "number") {
+      formError.cvv = "cve required";
+    }
+    return formError;
+  };
+
+  const handleCard = (e) => {
+    e.preventDefault();
+    setError(checkError(cardData));
+    if (Object.keys(error).length === 0 && submit) {
+      // Dispatch(customerAddCard(cardData));
+    }
+    setSubmit(true);
+  };
+  console.log(submit);
   return (
     <div className="Booking__container flex center">
       <div className="Booking__wrapper">
@@ -113,7 +155,7 @@ function Booking() {
               <p className="small-title">Payment Methods</p>
               <PaymentMethod />
             </div>
-            <div className="pickUp__time">
+            {/* <div className="pickUp__time">
               <h3 className="title">Pick-Up Time</h3>
               <div className="control__btn flex">
                 <div className="control-btn">
@@ -146,7 +188,90 @@ function Booking() {
                 </div>
               </div>
               {false && <Note />}
-              {true && <DatePicker />}
+              {true && <DatePicker />} */}
+            {/* </div> */}
+            <div className="add__card">
+              <h3 className="bold-text">Add new card</h3>
+
+              <form onSubmit={handleCard}>
+                <div className="input_error">
+                  <Input
+                    type="text"
+                    name="issuer"
+                    placeholder="name on the card"
+                    onChange={(e) => {
+                      setCardData((prev) => {
+                        return { ...prev, name: e.target.value };
+                      });
+                    }}
+                  />
+                  {error.name ? <p className="error">{error.name}</p> : null}
+                </div>
+
+                <div className="input_error">
+                  <Input
+                    type="text"
+                    name="number"
+                    placeholder="card number"
+                    onChange={(e) => {
+                      setCardData((prev) => {
+                        return { ...prev, number: e.target.value };
+                      });
+                    }}
+                  />
+                  {error.number ? (
+                    <p className="error">{error.number}</p>
+                  ) : null}
+                </div>
+
+                <div className="cv flex">
+                  <div className="input_error">
+                    <div className="wrap">
+                      <input
+                        type="text"
+                        name="month"
+                        placeholder="month"
+                        onChange={(e) => {
+                          setCardData((prev) => {
+                            return { ...prev, month: e.target.value };
+                          });
+                        }}
+                        max={2}
+                        maxLength={2}
+                      />
+                      <input
+                        type="text"
+                        name="year"
+                        placeholder="year"
+                        onChange={(e) => {
+                          setCardData((prev) => {
+                            return { ...prev, year: e.target.value };
+                          });
+                        }}
+                      />
+                    </div>
+                    {error.year || error.month ? (
+                      <p className="error">{error.year}</p>
+                    ) : null}
+                  </div>
+                  <div>
+                    <div className="input_error">
+                      <Input
+                        type="text"
+                        name="cve"
+                        placeholder="cve"
+                        onChange={(e) => {
+                          setCardData((prev) => {
+                            return { ...prev, cvv: e.target.value };
+                          });
+                        }}
+                      />
+                      {error.cve ? <p className="error">{error.cve}</p> : null}
+                    </div>
+                  </div>
+                </div>
+                <SignupBtn label={submit ? "sumitted" : "add"} />
+              </form>
             </div>
           </div>
         </div>

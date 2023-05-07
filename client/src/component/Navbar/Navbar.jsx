@@ -12,8 +12,6 @@ import { images } from "../../asset";
 
 import { AiOutlineMenu } from "react-icons/ai";
 import { AiOutlineClose } from "react-icons/ai";
-
-import { motion } from "framer-motion";
 import NavLink from "./NavLink";
 import NavLinkLg from "./NavLinkLg";
 import DownApp from "./nav/DownApp/DownApp";
@@ -26,6 +24,7 @@ function Navbar() {
   const authToggle = useSelector((state) => state.toggleReducer.menuValue);
   const searchToggle = useSelector((state) => state.toggleReducer.closeValue);
   const auth = useSelector((state) => state.auth);
+  const stateProfile = useSelector((state) => state.profile);
   const role = auth.role;
 
   const [toggle, setToggle] = useState(authToggle);
@@ -39,7 +38,7 @@ function Navbar() {
     Dispatch(logoutUser());
   };
 
-  console.log(toggle);
+  console.log(toString(stateProfile.img));
   return (
     <div className="app__navbar flex">
       <div className="app__navbar-wrapper-sm flex flex-center">
@@ -119,7 +118,10 @@ function Navbar() {
         {auth.user_id && (
           <div className="navbar__user flex-center">
             <div className="user__container flex center">
-              <img src={images.Elia} alt="user image" />
+              <img
+                src={stateProfile.img ? stateProfile.img : images.Elia}
+                alt="user"
+              />
               <span className="p-text">
                 <Link
                   to={role === "driver" ? "/driver" : "/customer"}

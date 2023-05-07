@@ -43,11 +43,8 @@ export const registerCustomer = createAsyncThunk(
 
       localStorage.setItem("userEmail", user.email);
     } catch (error) {
-      if (error.response && error.response.data.message) {
-        return rejectWithValue(error.response.data.message);
-      } else {
-        return rejectWithValue(error.message);
-      }
+      console.error(error.response.data);
+      return rejectWithValue(error.response.data);
     }
   }
 );
@@ -66,11 +63,8 @@ export const registerDriver = createAsyncThunk(
       localStorage.setItem("userEmail", user.email);
       return res.data;
     } catch (error) {
-      if (error.response && error.response.data.message) {
-        return rejectWithValue(error.response.data.message);
-      } else {
-        return rejectWithValue(error.message);
-      }
+      console.error(error.response.data);
+      return rejectWithValue(error.response.data);
     }
   }
 );
@@ -85,14 +79,13 @@ export const loginCustomer = createAsyncThunk(
         body,
         config
       );
-      if (response.data) {
+      if (response.status === 200) {
         localStorage.setItem(
           "token",
           JSON.stringify({ ...response.data, role: "customer" })
         );
         localStorage.removeItem("userEmail");
       }
-
       return response.data;
     } catch (error) {
       console.error(error.response.data);
@@ -243,7 +236,6 @@ const authSlice = createSlice({
       return {
         ...state,
         registerCustomerStatus: "rejected",
-        registerDriverStatus: "",
         registerCustomerError: action.payload,
         registerDriverStatus: "",
         registerDriverError: "",

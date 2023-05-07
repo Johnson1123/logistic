@@ -135,7 +135,8 @@
         flex-direction: column;
         gap: 20px;
         @include tablet {
-          width: 50%;
+          width: 100%;
+          flex-direction: row;
         }
         .top__container {
           width: 100%;
@@ -244,13 +245,16 @@
       .right__container {
         width: 100%;
         @include tablet {
-          width: 48%;
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
         }
         .title {
           font-size: $font-18;
         }
         .text {
           font-size: $font-14;
+          font-weight: 500;
         }
         .small-title {
           margin-top: 1rem;
@@ -320,6 +324,48 @@
                 color: $secondaryColor;
               }
             }
+          }
+        }
+      }
+      .add__card {
+        background-color: #dadadafd;
+        padding: 0.5rem 5rem 1rem;
+        border-radius: 5px;
+        width: 55%;
+        h3 {
+          width: 100%;
+          text-align: center;
+          margin-bottom: 1rem;
+        }
+        .cv {
+          gap: 20px;
+        }
+        button {
+          margin-top: 2rem;
+          width: 30%;
+          margin: 2rem auto 0;
+        }
+        .cv {
+          margin-top: 5px;
+        }
+        .wrap {
+          display: flex;
+          background-color: #fff;
+          height: 45px;
+          margin-top: 15px;
+          border-radius: 5px;
+          display: flex;
+          align-items: center;
+          width: 80%;
+          input {
+            margin: 0;
+            height: 40px;
+            border: none;
+            width: 100%;
+            border: none;
+            outline: none;
+            padding-left: 10px;
+            text-align: center;
           }
         }
       }

@@ -83,12 +83,13 @@ import AppFeatures from "./component/PassengerDB/GetHelp/HelpButton/AppFeatures/
 import UsingRide from "./component/PassengerDB/GetHelp/HelpButton/UsingApp/UsingRide";
 import AccountData from "./component/PassengerDB/GetHelp/HelpButton/AccoutData/AccoutData";
 import PaymentPricing from "./component/PassengerDB/GetHelp/HelpButton/PaymentPricing/PaymentPricing";
-import Wattogo from "./component/InternaltionalP/Wattogo/Wattogo";
 import { TbRipple } from "react-icons/tb";
 import InterP from "./component/PassengerDB/InterP/InterP";
 import FleetDB from "./pages/FleetDB/FleetDB";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
+import { DateCalendar } from "@mui/x-date-pickers";
+import { loadProfile } from "./features/customer/customer";
 
 const Layout = () => {
   return (
@@ -434,17 +435,19 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
+  const [profile, setProfile] = useState("");
+  const dispatch = useDispatch();
   const auth = useSelector((state) => state.auth);
+  const stateprofile = useSelector((state) => state.profile);
   const tokenData = JSON.parse(localStorage.getItem("token"));
   const refreshToken = tokenData?.data?.refresh;
-  const dispatch = useDispatch();
 
   localStorage.setItem("authToken", tokenData?.data?.access);
   const [isLoading, setIsLoading] = useState(true);
   const [access, setAccess] = useState(
     localStorage.getItem("authToken")
       ? localStorage.getItem("authToken")
-      : localStorage.getItem("token")?.data?.access
+      : auth.data?.access
   );
   let updateToken = async () => {
     let response = await fetch(
@@ -462,9 +465,9 @@ function App() {
 
     if (response.status === 200) {
       setAccess(response.data);
-      localStorage.setItem("accessToken", JSON.stringify(data));
+      localStorage.setItem("authToken", JSON.stringify(data));
     } else {
-      dispatch(logoutUser());
+      // dispatch(logoutUser());
     }
 
     if (isLoading) {
@@ -485,35 +488,41 @@ function App() {
       }
     }, fourMinutes);
     return () => clearInterval(interval);
-  }, [access, dispatch, isLoading]);
+  }, [access, isLoading]);
 
   useEffect(() => {
     (async () => {
-      if (auth.user_id) {
+      if (access) {
         try {
-          let reponse = await fetch(
-            "https://techvonix.onrender.com/api/v1/profile/",
-            {
-              method: "get",
-              headers: {
-                "Content-Type": "application/json",
-                accept: "application/json",
-                Authorization: `Bearer ${access}`,
-              },
-            }
-          );
-          console.log(reponse);
+          await fetch("https://techvonix.onrender.com/api/v1/profile/", {
+            method: "get",
+            headers: {
+              "Content-Type": "application/json",
+              accept: "application/json",
+              Authorization: `Bearer ${access}`,
+            },
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              localStorage.setItem("profile", JSON.stringify(data));
+              setProfile(data);
+            });
         } catch (err) {
+          console.log(err);
           dispatch(logoutUser());
         }
       }
     })();
-  }, [auth.user_id, dispatch]);
+  }, [auth.user_id, access]);
 
   useEffect(() => {
     dispatch(loadUser(null));
   }, [dispatch]);
+  useEffect(() => {
+    dispatch(loadProfile(null));
+  }, [dispatch]);
 
+  console.log(stateprofile.fname);
   return <RouterProvider router={router} />;
 }
 export default App;

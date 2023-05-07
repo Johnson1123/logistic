@@ -1,8 +1,10 @@
 import React from "react";
 import { images } from "../../../asset";
 import "./Profile.scss";
+import { useSelector } from "react-redux";
 
 function Profile() {
+  const stateProfile = useSelector((state) => state.profile);
   return (
     <div className="Profile">
       <h4 className="title">My Profile</h4>
@@ -11,27 +13,26 @@ function Profile() {
         are outdated.
       </p>
       <div className="profile__content">
-        <img src={images.Elia} alt="Elia" />
-        <p className="small-title name">Christiana James</p>
+        <img
+          src={stateProfile.img ? stateProfile.img : images.avatar}
+          alt="Elia"
+        />
+        <p className="small-title name">{`${stateProfile.fname} ${stateProfile.lname}`}</p>
         <div className="profile__box flex">
           <p className="p-text">Email address</p>
-          <p className="small-title">christianajames12@gmail.com</p>
+          <p className="small-title">{stateProfile.email}</p>
         </div>
         <div className="profile__box flex">
           <p className="p-text">Phone number</p>
-          <p className="small-title">+33758336521</p>
+          <p className="small-title">{stateProfile.phone}</p>
         </div>
         <div className="profile__box flex">
           <p className="p-text">Home address</p>
-          <p className="small-title">Los Angeles, United States</p>
+          <p className="small-title">{stateProfile.address}</p>
         </div>
         <div className="profile__box flex">
-          <p className="p-text">Date of birth</p>
-          <p className="small-title">12/03/1987</p>
-        </div>
-        <div className="profile__box flex">
-          <p className="p-text">Driver license number</p>
-          <p className="small-title">960978300034</p>
+          <p className="p-text">Gender</p>
+          <p className="small-title">{stateProfile.gender}</p>
         </div>
       </div>
     </div>
