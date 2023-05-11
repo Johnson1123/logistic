@@ -31,7 +31,7 @@
     position: relative;
     top: 0;
     @include tablet {
-      width: 30%;
+      width: max(30%, 160px);
     }
     .img__con {
       width: 160px;

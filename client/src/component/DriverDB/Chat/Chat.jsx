@@ -1,6 +1,7 @@
 import React from "react";
 import { charts } from "../../../content/chart";
 import "./Chat.scss";
+import { recents } from "../../../content/recent";
 
 function Chat() {
   return (
@@ -14,8 +15,16 @@ function Chat() {
               <div className="dot"></div>
             </div>
             <div className="box p-text col-2">
-              <p className="small-title">{chart.name}</p>
-              <p>{chart.lMessage}</p>
+              <p
+                className={
+                  chart.name.length > 15
+                    ? "small-title name trucate"
+                    : "small-title name"
+                }
+              >
+                {chart.name}
+              </p>
+              <p className="message">{chart.lMessage}</p>
             </div>
             <div className="box p-text col-3">{chart.time}</div>
           </div>

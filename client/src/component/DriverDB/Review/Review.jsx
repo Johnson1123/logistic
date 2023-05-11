@@ -11,12 +11,19 @@ function Review() {
         return (
           <div className="review__box flex" key={index}>
             <div className="box p-text col-1">
-              <img src={review.image} alt={review.name} />{" "}
-              <div className="dot"></div>
+              <img src={review.image} alt={review.name} />
             </div>
             <div className="col-2">
               <div className="box p-text col-rating flex">
-                <p className="p-text small-title">{review.name}</p>
+                <p
+                  className={
+                    review.name.length > 10
+                      ? "p-text small-title name trucate"
+                      : "p-text small-title"
+                  }
+                >
+                  {review.name}
+                </p>
                 <div className="p-text">
                   <Rate
                     allowHalf
@@ -24,7 +31,7 @@ function Review() {
                     value={review.rating}
                     style={{
                       color: "green",
-                      fontSize: "12px",
+                      fontSize: "calc(4px + 6 * ((100vw - 320px) / 680))",
                       marginInlineEnd: 0,
                       padding: 0,
                     }}

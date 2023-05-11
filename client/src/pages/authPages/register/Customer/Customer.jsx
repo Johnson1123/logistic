@@ -29,8 +29,11 @@ function Customer() {
               Please fill in Your Accurate Information
             </p>
             <FORM_SIGN handler={registerCustomer} role="customer" />
-            <p className="form-text login_here">
-              Already have an account?<Link to="/login">Login here!</Link>
+            <p className="form-text login_here flex">
+              <span>Already have an account?</span>
+              <p onClick={() => navigate("/login/customer")} className="link">
+                Login here!
+              </p>
             </p>
             <div className=" connect_sign flex center">
               <div></div>

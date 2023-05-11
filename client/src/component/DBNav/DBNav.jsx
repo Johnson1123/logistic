@@ -24,15 +24,11 @@ function DBNav() {
           <img src={images.logo} alt="Technovixdriver" />
         </Link>
       </div>
+
       <div
-        className="DBNav__box user-icon"
+        className="DBNav__box user__img-details flex"
         onClick={() => dispatch(userActive())}
       >
-        <ImUser />
-        <div className="dot__user"></div>
-      </div>
-
-      <div className="DBNav__box user__img-details flex">
         <div className="user__img flex center">
           <img src={images.Elia} alt="Technovix driver" />
         </div>

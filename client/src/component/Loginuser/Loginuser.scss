@@ -8,30 +8,52 @@
   z-index: 20;
   margin-left: 2rem;
   @include tablet {
+    left: 50%;
+    transform: translateX(-50%);
     .form-sm {
+      font-size: calc(12px + 6 * ((100vw - 320px) / 680));
       font-size: 16px;
     }
     .form-sub-title {
       margin-top: 0.5rem;
     }
-    width: 40%;
-    margin-left: 10rem;
   }
   .control__container {
     margin-top: 5px;
     display: flex;
     align-items: center;
     gap: 4px;
+    margin-left: 5px;
     @include tablet {
       gap: 10px;
+      margin-top: 0.3rem;
     }
     a {
-      font-size: 14px;
       padding-left: 5px;
+      @include tablet {
+        font-size: calc(6px + 6 * ((100vw - 320px) / 680));
+      }
     }
-    .role {
-      cursor: pointer;
-      color: blue;
+  }
+  .not_have_account {
+    font-size: calc(12px + 6 * ((100vw - 320px) / 680));
+    font-weight: 400;
+    padding-left: 5px;
+    margin-top: 0.5rem;
+    @include tablet {
+      margin-top: 0.5rem;
+      font-size: calc(6px + 6 * ((100vw - 320px) / 680));
+    }
+    .link {
+      margin-left: 5px;
+    }
+  }
+  .link {
+    cursor: pointer;
+    color: $secondaryColor;
+    font-size: calc(12px + 6 * ((100vw - 320px) / 680));
+    @include tablet {
+      font-size: calc(6px + 6 * ((100vw - 320px) / 680));
     }
   }
 }

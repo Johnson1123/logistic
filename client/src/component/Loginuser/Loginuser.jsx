@@ -28,18 +28,36 @@ function Loginuser(props) {
       <LoginForm role={props.role} />
       <p className="control__container">
         {props.role === "customer" ? (
-          <Link className="form-sm p-text fw-500 role" to="/login/driver">
+          <span
+            className="form-sm p-text fw-500 role link"
+            onClick={() => navigate("/login/driver")}
+          >
             Login as driver
-          </Link>
+          </span>
         ) : (
-          <Link className="form-sm p-text fw-500 role" to="/login/customer">
+          <span
+            className="form-sm p-text fw-500 role link"
+            onClick={() => navigate("/login/customer")}
+          >
             Login as customer
-          </Link>
+          </span>
         )}
         <span className="p-text fw-500">Or</span>
-        <Link className="form-sm p-text fw-500 forget" to="/forgetpwd">
+        <span
+          className="form-sm p-text fw-500 forget link"
+          onClick={() => navigate("/forgetpwd")}
+        >
           Forget Password?
-        </Link>
+        </span>
+      </p>
+      <p className="not_have_account p-text">
+        <span>Don't have Account?</span>
+        <span
+          onClick={() => navigate(`/${props.role}/register`)}
+          className="link"
+        >
+          Sign Up
+        </span>
       </p>
     </div>
   );

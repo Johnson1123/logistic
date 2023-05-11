@@ -11,7 +11,7 @@ function Newpwd() {
       <Background />
       <Newpwduser />
       {true && <Overlay />}
-      {true && <SuccessNewpwd />}
+      {true && <SuccessNewpwd url={"wattogo"} />}
     </div>
   );
 }

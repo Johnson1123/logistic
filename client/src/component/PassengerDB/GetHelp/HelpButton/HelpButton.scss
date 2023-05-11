@@ -6,9 +6,11 @@
   display: flex;
   margin: 0.8rem 0;
   width: 30%;
+  min-width: 250px;
   justify-content: space-between;
   cursor: pointer;
   font-weight: 500;
+  font-size: calc(6px + 6 * ((100vw - 320px) / 680));
   @include mobile {
     width: 80%;
   }

@@ -13,35 +13,51 @@
   }
   .col__title {
     justify-content: space-between;
-    font-weight: 700;
     padding: 0.3rem 0;
     .p-text {
-      font-weight: 500;
+      font-weight: 400;
       font-size: $font-14;
+      font-size: calc(8px + 6 * ((100vw - 320px) / 680));
+      text-align: center;
       @include tablet {
-        font-size: $font-14;
+        font-size: calc(8px + 6 * ((100vw - 320px) / 680));
       }
     }
     .col-4 {
-      text-align: left;
+      text-align: center;
     }
   }
 
   .col-1 {
     width: 25%;
     text-align: left;
+    @include tablet {
+      width: calc(100px + 6 * ((100vw - 320px) / 680));
+      max-width: calc(100px + 6 * ((100vw - 320px) / 680));
+      min-width: calc(80px + 6 * ((100vw - 320px) / 680));
+    }
   }
   .col-2 {
     width: 25%;
     text-align: left;
+    @include tablet {
+      width: calc(170px + 6 * ((100vw - 320px) / 680));
+      max-width: calc(175px + 6 * ((100vw - 320px) / 680));
+      min-width: calc(140px + 6 * ((100vw - 320px) / 680));
+    }
   }
   .col-3 {
     width: 25%;
-    text-align: left;
+    text-align: center;
+    @include tablet {
+      width: calc(170px + 6 * ((100vw - 320px) / 680));
+      max-width: calc(175px + 6 * ((100vw - 320px) / 680));
+      min-width: calc(120px + 6 * ((100vw - 320px) / 680));
+    }
   }
   .col-4 {
     width: 18%;
-    text-align: left;
+    text-align: center;
   }
   .recent__box {
     justify-content: space-between;
@@ -53,9 +69,11 @@
     .p-text {
       font-size: 14px;
       font-weight: 500;
+      font-size: calc(7px + 6 * ((100vw - 320px) / 680));
       @include tablet {
+        font-weight: 300;
         padding: 0.4rem 0;
-        font-size: $font-16;
+        font-size: calc(5px + 6 * ((100vw - 320px) / 680));
       }
     }
   }

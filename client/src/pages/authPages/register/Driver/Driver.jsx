@@ -30,8 +30,10 @@ function Driver() {
             </p>
             <FORM_SIGN handler={registerDriver} role="driver" />
             <p className="form-text login_here">
-              Already have an account?
-              <Link to="/login/customer">Login here!</Link>
+              <span> Already have an account?</span>
+              <span onClick={() => navigate("/login/driver")} className="link">
+                Login here!
+              </span>
             </p>
             <div className=" connect_sign flex center">
               <div></div>

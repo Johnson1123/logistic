@@ -164,10 +164,16 @@
   padding: 10px;
   color: $whiteColor;
   font-size: 18px;
+  cursor: pointer;
   &:hover {
     background-color: $whiteColor;
     color: $secondaryColor;
     border: 1px solid $secondaryColor;
     padding: 9px;
   }
+}
+.trucate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

@@ -36,7 +36,11 @@ function Upcoming() {
                     <img src={trip.image} alt="" />
                   </div>
                   <div className="user__name-rating">
-                    <p className="p-text">{trip.name}</p>
+                    <p className="p-text name">
+                      {trip.name.length > 15
+                        ? `${trip.name.slice(0, 15)}..`
+                        : trip.name}
+                    </p>
                     <div className="rating">{trip.rating}</div>
                   </div>
                 </div>
@@ -51,12 +55,26 @@ function Upcoming() {
                   </div>
                   <div className="col__content-3">
                     <div className="pickUp flex">
-                      <span>{trip.takeOffPlace}</span>
-                      <span className="sm-text">{trip.takeOffTime}</span>
+                      <span
+                        className={
+                          trip.takeOffPlace.length > 20
+                            ? "trucate address"
+                            : "address"
+                        }
+                      >
+                        {trip.takeOffPlace}
+                      </span>
                     </div>
                     <div className="destination flex">
-                      <span>{trip.destination}</span>
-                      <span className="sm-text">{trip.arrivalTime}</span>
+                      <span
+                        className={
+                          trip.takeOffPlace.length > 20
+                            ? "trucate address"
+                            : "address"
+                        }
+                      >
+                        {trip.destination}
+                      </span>
                     </div>
                   </div>
                 </div>
