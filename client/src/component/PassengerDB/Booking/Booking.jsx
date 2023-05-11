@@ -17,6 +17,8 @@ import Note from "./Note/Note";
 import DatePicker from "../DatePicker/DatePicker";
 import Input from "../../Input/Input";
 import { useDispatch } from "react-redux";
+import addCard from "../../../features/customer/addCard";
+import PaypalPayment from "../../PaypalPayment/PaypalPayment";
 
 function Booking() {
   const Dispatch = useDispatch();
@@ -30,6 +32,7 @@ function Booking() {
     year: "",
     cvv: "",
   });
+
   const handleToggle = () => {
     setIsRoute(true);
   };
@@ -39,16 +42,16 @@ function Booking() {
     if (!cardData.name) {
       formError.name = "card name required";
     }
-    if (!cardData.number && typeof cardData.number != "number") {
+    if (!cardData.number && typeof cardData.number !== "number") {
       formError.number = "card number required";
     }
-    if (!cardData.month && typeof cardData.month != "number") {
+    if (!cardData.month && typeof cardData.month !== "number") {
       formError.month = "month required";
     }
-    if (!cardData.year && !typeof cardData.year != "number") {
+    if (!cardData.year && typeof cardData.year !== "number") {
       formError.year = "year required";
     }
-    if (!cardData.cvv && !typeof cardData.cvv != "number") {
+    if (!cardData.cvv && typeof cardData.cvv !== "number") {
       formError.cvv = "cve required";
     }
     return formError;
@@ -58,11 +61,11 @@ function Booking() {
     e.preventDefault();
     setError(checkError(cardData));
     if (Object.keys(error).length === 0 && submit) {
-      // Dispatch(customerAddCard(cardData));
+      Dispatch(addCard(cardData));
     }
     setSubmit(true);
   };
-  console.log(submit);
+
   return (
     <div className="Booking__container flex center">
       <div className="Booking__wrapper">
@@ -146,7 +149,7 @@ function Booking() {
             </div>
           </div>
           <div className="right__container">
-            <div className="payments__container">
+            {/* <div className="payments__container">
               <h3 className="title">Payment</h3>
               <p className="p-text text">
                 Choose desired payment type. We offer cars suitable for most
@@ -154,125 +157,11 @@ function Booking() {
               </p>
               <p className="small-title">Payment Methods</p>
               <PaymentMethod />
-            </div>
-            {/* <div className="pickUp__time">
-              <h3 className="title">Pick-Up Time</h3>
-              <div className="control__btn flex">
-                <div className="control-btn">
-                  <div className="details">
-                    <p className="small-title">IMMEDIATE PICK-UP</p>
-                    <p className="p-text">Get a ride in a minutes</p>
-                  </div>
-                  {true ? (
-                    <div className="circle"></div>
-                  ) : (
-                    <div className="circle-checked">
-                      <IoIosCheckmark />
-                    </div>
-                  )}
-                </div>
-                <div className={false ? `control-btn` : `control-btn active`}>
-                  <div className="details">
-                    <p className="small-title">SCHEDULE RIDE</p>
-                    <p className="p-text">
-                      Schedule your ride from 60 minutes in advance
-                    </p>
-                  </div>
-                  {false ? (
-                    <div className="circle"></div>
-                  ) : (
-                    <div className="circle-checked">
-                      <IoIosCheckmark />
-                    </div>
-                  )}
-                </div>
-              </div>
-              {false && <Note />}
-              {true && <DatePicker />} */}
-            {/* </div> */}
-            <div className="add__card">
-              <h3 className="bold-text">Add new card</h3>
-
-              <form onSubmit={handleCard}>
-                <div className="input_error">
-                  <Input
-                    type="text"
-                    name="issuer"
-                    placeholder="name on the card"
-                    onChange={(e) => {
-                      setCardData((prev) => {
-                        return { ...prev, name: e.target.value };
-                      });
-                    }}
-                  />
-                  {error.name ? <p className="error">{error.name}</p> : null}
-                </div>
-
-                <div className="input_error">
-                  <Input
-                    type="text"
-                    name="number"
-                    placeholder="card number"
-                    onChange={(e) => {
-                      setCardData((prev) => {
-                        return { ...prev, number: e.target.value };
-                      });
-                    }}
-                  />
-                  {error.number ? (
-                    <p className="error">{error.number}</p>
-                  ) : null}
-                </div>
-
-                <div className="cv flex">
-                  <div className="input_error">
-                    <div className="wrap">
-                      <input
-                        type="text"
-                        name="month"
-                        placeholder="month"
-                        onChange={(e) => {
-                          setCardData((prev) => {
-                            return { ...prev, month: e.target.value };
-                          });
-                        }}
-                        max={2}
-                        maxLength={2}
-                      />
-                      <input
-                        type="text"
-                        name="year"
-                        placeholder="year"
-                        onChange={(e) => {
-                          setCardData((prev) => {
-                            return { ...prev, year: e.target.value };
-                          });
-                        }}
-                      />
-                    </div>
-                    {error.year || error.month ? (
-                      <p className="error">{error.year}</p>
-                    ) : null}
-                  </div>
-                  <div>
-                    <div className="input_error">
-                      <Input
-                        type="text"
-                        name="cve"
-                        placeholder="cve"
-                        onChange={(e) => {
-                          setCardData((prev) => {
-                            return { ...prev, cvv: e.target.value };
-                          });
-                        }}
-                      />
-                      {error.cve ? <p className="error">{error.cve}</p> : null}
-                    </div>
-                  </div>
-                </div>
-                <SignupBtn label={submit ? "sumitted" : "add"} />
-              </form>
-            </div>
+            </div> */}
+            {/* <div className="add__card">
+              <h3 className="bold-text">Make Payment</h3>
+              <PaypalPayment />
+            </div> */}
           </div>
         </div>
         <div className="footer__container"></div>

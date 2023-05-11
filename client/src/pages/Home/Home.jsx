@@ -14,20 +14,11 @@ import { useNavigate } from "react-router-dom";
 import OurBrand from "../../component/OurBrand/OurBrand";
 import Safety from "../../component/Safety/Safety";
 import { useSelector } from "react-redux";
-import { useEffect } from "react";
-import { useState } from "react";
 
 export const Home = () => {
   const navigate = useNavigate();
   const auth = useSelector((state) => state.auth);
-  const [profile, setProfile] = useState("");
-
-  const locationHandler = () => {
-    const navigate = useNavigate;
-    return navigate("/");
-  };
-  console.log(profile);
-
+  const authenticate = useSelector((state) => state.auth.isAuthenticate);
   return (
     <div className="app__container home__container">
       <div className="app__wrapper flex">
@@ -50,12 +41,12 @@ export const Home = () => {
           {true && (
             <div
               className={
-                auth.user_id
+                authenticate
                   ? `btn__container flex btn-center`
                   : `btn__container flex`
               }
             >
-              {!auth.user_id && (
+              {!authenticate && (
                 <div className="btn-box">
                   <SignupBtn
                     label="Partnership"
@@ -64,7 +55,7 @@ export const Home = () => {
                 </div>
               )}
 
-              {!auth.user_id && (
+              {!authenticate && (
                 <div className="btn-box">
                   <SignupBtn
                     label="Sign up"
@@ -79,11 +70,11 @@ export const Home = () => {
         <OperationArea />
         <OurService />
         <Testimonials />
-        {auth.user_id && <Map />}
+        {authenticate && <Map />}
         <ChargesBadge />
-        {auth.user_id && <DownloadSection />}
-        {auth.user_id ? "" : <OurBrand />}
-        {auth.user_id ? "" : <Safety />}
+        {authenticate && <DownloadSection />}
+        {authenticate ? "" : <OurBrand />}
+        {authenticate ? "" : <Safety />}
       </div>
     </div>
   );

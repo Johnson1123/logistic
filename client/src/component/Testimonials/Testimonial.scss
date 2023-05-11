@@ -8,9 +8,11 @@
   -moz-box-shadow: 2px 4px 5px 1px #f3f3f3;
   border-radius: 10px;
   padding: 2rem 1rem;
+  max-width: 500px;
   @include tablet {
     width: 70%;
-    margin-top: 4rem;
+    margin-top: 7rem;
+    max-width: 1000px;
   }
 
   h3 {
@@ -31,15 +33,19 @@
     .test__box {
       width: 80%;
       padding: 1.5rem 0.5rem;
+
       @include tablet {
         width: 40%;
         padding: 0.5rem;
+        max-width: auto;
       }
       .test__img-con {
         position: relative;
         top: 0;
         left: 0;
         width: 65%;
+        max-width: 150px;
+        min-width: 130px;
         height: 145px;
         border-radius: 50%;
         overflow: hidden;

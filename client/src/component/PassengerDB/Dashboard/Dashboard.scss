@@ -9,7 +9,7 @@
     align-items: center;
   }
   @include tablet {
-    margin: 2rem 0 0;
+    margin: 1rem 0 0;
   }
   .left__content {
     width: 100%;
@@ -38,11 +38,12 @@
           width: 45%;
         }
         .badge__title {
-          font-size: $font-16;
+          // font-size: $font-16;
+          font-size: calc(12px + 6 * ((100vw - 768px) / 680));
           font-weight: 700;
         }
         .badge__para {
-          font-size: $font-30;
+          font-size: calc(26px + 6 * ((100vw - 768px) / 680));
           font-weight: 700;
           margin-top: 1rem;
         }
@@ -51,7 +52,7 @@
         background-color: green;
         color: $whiteColor;
         .badge__content {
-          width: 80%;
+          // width: 80%;
         }
       }
       .second__badge {

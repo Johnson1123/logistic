@@ -8,6 +8,7 @@ import Navbar from "./component/Navbar/Navbar";
 import Footer from "./component/Footer/Footer";
 import { loadUser, logoutUser } from "./features/Auths";
 import GetDriverHelp from "./component/DriverDB/GetHelp/GetHelp";
+import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 import {
   Home,
   OTP,
@@ -89,7 +90,8 @@ import FleetDB from "./pages/FleetDB/FleetDB";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { DateCalendar } from "@mui/x-date-pickers";
-import { loadProfile } from "./features/customer/customer";
+import { loadProfile } from "./features/customer/putCustomer";
+import axiosInstance from "./api";
 
 const Layout = () => {
   return (
@@ -435,94 +437,78 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  const [profile, setProfile] = useState("");
   const dispatch = useDispatch();
-  const auth = useSelector((state) => state.auth);
-  const stateprofile = useSelector((state) => state.profile);
-  const tokenData = JSON.parse(localStorage.getItem("token"));
-  const refreshToken = tokenData?.data?.refresh;
+  // let updateToken = async () => {
+  //   let response = await fetch(
+  //     "https://techvonix.onrender.com/api/v1/auth/token/refresh",
+  //     {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //         Authorization: `Bearer ${access}`,
+  //       },
+  //       body: JSON.stringify({ refresh: refreshToken }),
+  //     }
+  //   );
+  //   let data = await response.json();
+  //   if (response.status === 200) {
+  //     setAccess(data?.access);
+  //     localStorage.setItem("authToken", JSON.stringify(data));
+  //   } else {
+  //     dispatch(logoutUser());
+  //   }
 
-  localStorage.setItem("authToken", tokenData?.data?.access);
-  const [isLoading, setIsLoading] = useState(true);
-  const [access, setAccess] = useState(
-    localStorage.getItem("authToken")
-      ? localStorage.getItem("authToken")
-      : auth.data?.access
-  );
-  let updateToken = async () => {
-    let response = await fetch(
-      "https://techvonix.onrender.com/api/v1/auth/token/refresh",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${access}`,
-        },
-        body: JSON.stringify({ refresh: refreshToken }),
-      }
-    );
-    let data = await response.json();
+  //   if (isLoading) {
+  //     setIsLoading(false);
+  //   }
+  // };
 
-    if (response.status === 200) {
-      setAccess(response.data);
-      localStorage.setItem("authToken", JSON.stringify(data));
-    } else {
-      // dispatch(logoutUser());
-    }
+  // useEffect(() => {
+  //   if (isLoading) {
+  //     updateToken();
+  //   }
+  //   let hrs2 = 1000 * 60 * 60 * 2;
 
-    if (isLoading) {
-      setIsLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    if (isLoading) {
-      updateToken();
-    }
-
-    let fourMinutes = 1000 * 60 * 60 * 2;
-
-    let interval = setInterval(() => {
-      if (refreshToken) {
-        updateToken();
-      }
-    }, fourMinutes);
-    return () => clearInterval(interval);
-  }, [access, isLoading]);
-
+  //   let interval = setInterval(() => {
+  //     if (refreshToken) {
+  //       updateToken();
+  //     }
+  //   }, hrs2);
+  //   return () => clearInterval(interval);
+  // }, [access, isLoading, dispatch]);
   useEffect(() => {
     (async () => {
-      if (access) {
-        try {
-          await fetch("https://techvonix.onrender.com/api/v1/profile/", {
-            method: "get",
-            headers: {
-              "Content-Type": "application/json",
-              accept: "application/json",
-              Authorization: `Bearer ${access}`,
-            },
-          })
-            .then((res) => res.json())
-            .then((data) => {
-              localStorage.setItem("profile", JSON.stringify(data));
-              setProfile(data);
-            });
-        } catch (err) {
-          console.log(err);
-          dispatch(logoutUser());
-        }
+      try {
+        const res = await axiosInstance.get(
+          "https://techvonix.onrender.com/api/v1/profile/"
+        );
+        localStorage.setItem("profile", JSON.stringify(res));
+      } catch (err) {
+        console.log(err);
+        dispatch(logoutUser());
       }
     })();
-  }, [auth.user_id, access]);
+  }, [dispatch]);
 
   useEffect(() => {
     dispatch(loadUser(null));
   }, [dispatch]);
+
   useEffect(() => {
     dispatch(loadProfile(null));
   }, [dispatch]);
 
-  console.log(stateprofile.fname);
-  return <RouterProvider router={router} />;
+  const initialOptions = {
+    "client-id":
+      "Adl8qsO1uEX1hhDG7wgNV221E-58_g1Iq55S3IwV_ZclaP7y3O9YWE0KxkjNCOfM8YtqfPbfmQRxCcFM",
+    currency: "USD",
+    intent: "capture",
+  };
+
+  return (
+    <PayPalScriptProvider options={initialOptions}>
+      <RouterProvider router={router} />;
+    </PayPalScriptProvider>
+  );
 }
 export default App;

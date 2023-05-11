@@ -4,17 +4,20 @@
   padding: 0.5rem;
   .wrapper {
     width: 100%;
-    margin-top: 3rem;
+    margin-top: 2rem;
     overflow: hidden;
+    max-width: 360px;
     @include tablet {
-      width: 70%;
-      margin-top: 2rem;
+      width: 75%;
+      margin-top: 7rem;
+      max-width: 1000px;
+      padding: 1rem 0 2rem;
     }
   }
   h3 {
     text-align: center;
     @include tablet {
-      margin-top: 4rem;
+      margin-top: 1rem;
       font-size: $font-30;
     }
     span {
@@ -23,32 +26,35 @@
     }
   }
   .brand__box-con {
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 1rem;
+    @include mobile {
+      width: 90%;
+      justify-content: flex-start;
+    }
     .brand__box {
-      height: 45vh;
       width: 100%;
       padding: 1rem;
       min-width: 100%;
       display: flex;
       justify-content: center;
       padding: 0.5rem;
+      position: relative;
       @include tablet {
-        width: 50%;
-        min-width: 50%;
+        width: 40%;
+        min-width: 35%;
         padding: 1rem 2rem;
-        height: 57vh;
         justify-content: space-between;
       }
       .content__box {
         position: relative;
         display: flex;
-        height: 95%;
+        height: 380px;
         flex-direction: column;
         justify-content: flex-end;
         padding: 1rem 1rem;
         border: 1px solid #f3f3f3;
-        box-shadow: 2px 2px 10px 5px #f3f3f3;
+        box-shadow: 1px 5px 2px 2px #fcfcfc;
         border-radius: 10px;
         width: 80%;
         @include tablet {
@@ -63,17 +69,21 @@
         img {
           width: 100%;
           position: absolute;
-          top: 0;
+          top: 20px;
           right: 40px;
           z-index: 20;
           @include tablet {
             width: 100%;
           }
         }
+        .text__content {
+          position: absolute;
+          top: 70%;
+        }
         .title {
           margin-top: 1rem;
           @include tablet {
-            margin-top: 10rem;
+            margin-top: 1rem;
           }
         }
         .text {

@@ -14,10 +14,12 @@
   left: 0;
   row-gap: 20px;
   flex-wrap: wrap;
+  max-width: 500px;
   @include tablet {
     flex-direction: row;
     width: 70%;
     justify-content: space-around;
+    max-width: 1000px;
   }
   .task__box {
     width: 80%;
@@ -25,8 +27,12 @@
     justify-content: flex-start;
     align-items: center;
     padding: 0.5rem;
+    max-width: 258px;
+    min-width: 230px;
     @include tablet {
       width: 25%;
+      max-width: 258px;
+      min-width: 230px;
     }
     .task__img-box {
       width: 70%;

@@ -4,7 +4,7 @@ import "./OurBrand.scss";
 
 function OurBrand() {
   return (
-    <div className="OurBrand flex center">
+    <div className="OurBrand flex center ">
       <div className="wrapper">
         <h3 className="p-text title">
           <span>Our</span>Brand

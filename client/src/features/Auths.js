@@ -22,6 +22,8 @@ const initialState = {
   forgetError: "",
   forgetStatus: "",
   role: "",
+  accessToken: "",
+  isAuthenticate: false,
   userLoaded: false,
 };
 const config = {
@@ -87,6 +89,7 @@ export const loginCustomer = createAsyncThunk(
         localStorage.removeItem("userEmail");
       }
       return response.data;
+      console.log(response.data);
     } catch (error) {
       console.error(error.response.data);
       return rejectWithValue(error.response.data);
@@ -161,7 +164,7 @@ const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
-    loadUser(state) {
+    loadUser: (state) => {
       const token = state.token;
       if (token) {
         return {
@@ -169,14 +172,15 @@ const authSlice = createSlice({
           token,
           email: token?.data?.user?.email,
           user_id: token?.data?.user?.user_id,
+          accessToken: token?.data?.access,
           role: token?.role,
-
-          userLoaded: true,
+          isAuthenticate: true,
         };
-      } else return { ...state, userLoaded: false };
+      } else return { ...state, isAuthenticate: true };
     },
     logoutUser(state) {
       localStorage.removeItem("token");
+      localStorage.removeItem("profile");
       return {
         ...state,
         token: "",
@@ -192,7 +196,9 @@ const authSlice = createSlice({
         loginDriverError: "",
         forgetError: "",
         forgetStatus: "",
+        accessToken: "",
         userLoaded: false,
+        isAuthenticate: false,
       };
     },
   },
@@ -371,6 +377,7 @@ const authSlice = createSlice({
         forgetStatus: "",
         verifyError: "",
         verifyStatus: "",
+        isAuthenticate: false,
       };
     });
     builder.addCase(loginCustomer.fulfilled, (state, action) => {
@@ -380,6 +387,7 @@ const authSlice = createSlice({
           token: action.payload,
           email: action?.payload?.data?.user?.email,
           user_id: action?.payload?.data?.user?.user_id,
+          accessToken: action?.payload?.token?.data?.access,
           loginCustomerStatus: "success",
           registerCustomerStatus: "",
           registerCustomerError: "",
@@ -390,6 +398,7 @@ const authSlice = createSlice({
           loginDriverError: "",
           forgetError: "",
           forgetStatus: "",
+          isAuthenticate: true,
         };
       } else return state;
     });
@@ -397,6 +406,8 @@ const authSlice = createSlice({
       return {
         ...state,
         loginCustomerStatus: "rejected",
+        isAuthenticate: false,
+        accessToken: "",
         loginCustomerError: action?.payload,
         loginDriverError: "",
         registerCustomerStatus: "",
@@ -432,7 +443,9 @@ const authSlice = createSlice({
           token: action.payload,
           email: action?.payload?.data?.user?.email,
           user_id: action?.payload?.data?.user?.user_id,
+          accessToken: action?.payload?.token?.data?.access,
           loginDriverStatus: "success",
+          isAuthenticate: true,
           registerCustomerStatus: "",
           registerCustomerError: "",
           registerDriverStatus: "",
@@ -452,6 +465,8 @@ const authSlice = createSlice({
         ...state,
         loginDriverStatus: "rejected",
         loginDriverError: action?.payload,
+        accessToken: "",
+        isAuthenticate: false,
         registerCustomerStatus: "",
         registerCustomerError: "",
         registerDriverStatus: "",

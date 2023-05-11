@@ -12,13 +12,15 @@ import { useEffect } from "react";
 function PassengerDB() {
   const navigate = useNavigate();
   const menu = useSelector((state) => state.toggleReducer.dashboarMenu);
+  const authenticate = useSelector((state) => state.auth.isAuthenticate);
   const user = useSelector((state) => state.toggleReducer.user);
   const auth = useSelector((state) => state.auth);
-  console.log(auth.user_id);
+
   useEffect(() => {
-    if (auth.user_id) return;
-    navigate("/");
-  }, [auth.user_id, navigate]);
+    if (!authenticate) {
+      navigate("/");
+    }
+  }, [authenticate, navigate]);
   return (
     <div className="PassengerDB">
       <div className="PassengerDB__wrapper">

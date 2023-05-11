@@ -18,13 +18,13 @@ const config = {
 };
 
 export const addCard = createAsyncThunk(
-  "auth/putUser",
-  async (user, { rejectWithValue }) => {
+  "customer/addCard",
+  async (data, { rejectWithValue }) => {
     try {
-      const body = JSON.stringify(user);
+      const body = JSON.stringify(data);
 
-      const res = await axios.put(
-        `https://techvonix.onrender.com/api/v1/wallet/cards/`,
+      const res = await axios.post(
+        `https://techvonix.onrender.com/api/v1/wallet/cards`,
         body,
         config
       );
@@ -38,29 +38,29 @@ export const addCard = createAsyncThunk(
   }
 );
 
-const customerAddCard = createSlice({
-  name: "addCard",
+const addCardSlice = createSlice({
+  name: "addCardSlice",
   initialState,
   reducers: {},
-  extraReducers: (builder) => {
-    builder.addCase(addCard.pending, (state, action) => {
-      return { ...state, cardStatus: "pending", cardError: "" };
-    });
-    builder.addCase(addCard.fulfilled, (state, action) => {
-      return {
-        ...state,
-        cardError: "",
-        cardStatus: "success",
-      };
-    });
-    builder.addCase(addCard.rejected, (state, action) => {
-      return {
-        ...state,
-        cardStatus: "rejected",
-        cardError: action.payload,
-      };
-    });
-  },
+  // extraReducers: (builder) => {
+  //   builder.addCase(addCard.pending, (state) => {
+  //     return { ...state, cardStatus: "pending", cardError: "" };
+  //   });
+  //   builder.addCase(addCard.fulfilled, (state) => {
+  //     return {
+  //       ...state,
+  //       cardError: "",
+  //       cardStatus: "success",
+  //     };
+  //   });
+  //   builder.addCase(addCard.rejected, (state, action) => {
+  //     return {
+  //       ...state,
+  //       cardStatus: "rejected",
+  //       cardError: action.payload,
+  //     };
+  //   });
+  // },
 });
 
-export default customerAddCard.reducer;
+export default addCardSlice.reducer;

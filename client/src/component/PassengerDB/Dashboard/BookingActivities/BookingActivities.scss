@@ -12,8 +12,8 @@
     justify-content: space-between;
     .p-text {
       @include tablet {
-        font-weight: 700;
-        font-size: $font-16;
+        font-weight: 500;
+        font-size: calc(12px + 6 * ((100vw - 768px) / 680));
       }
     }
 
@@ -22,31 +22,36 @@
     }
   }
   .col-1 {
-    width: 35%;
+    width: 25%;
   }
   .col-2 {
-    width: 35%;
-    text-align: center;
+    width: 20%;
+    text-align: left;
     align-self: center;
   }
   .col-3 {
-    width: 10%;
-    text-align: center;
+    width: 20%;
+    text-align: left;
   }
   .col-4 {
+    width: 20%;
+    text-align: left;
+  }
+  .col-5 {
     width: 15%;
     text-align: center;
   }
   .booking__box {
     justify-content: space-between;
     align-items: center;
-    padding: 0.3rem 0.3rem;
-    margin-top: 0.5rem;
+    padding: 0.4rem 0.3rem;
+    margin-top: 0.7rem;
     .p-text {
       font-size: 12px;
       font-weight: 500;
       @include tablet {
-        font-size: $font-16;
+        font-size: calc(10px + 6 * ((100vw - 768px) / 680));
+        font-weight: 300;
       }
     }
     .col-1 {
@@ -55,8 +60,12 @@
     }
     .img__con {
       width: 40px;
+      min-width: 30px;
+      max-width: 40px;
       margin-right: 15px;
       height: 40px;
+      max-height: 40px;
+      min-height: 30px;
       border-radius: 50%;
       @include tablet {
         height: 60px;

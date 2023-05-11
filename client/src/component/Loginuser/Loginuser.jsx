@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 function Loginuser(props) {
   const user = useSelector((state) => state.auth.user_id);
+  const auth = useSelector((state) => state.auth);
   const Dispatch = useDispatch();
   const navigate = useNavigate();
   const handler = props.handler;

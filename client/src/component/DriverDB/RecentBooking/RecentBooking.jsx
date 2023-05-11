@@ -3,6 +3,7 @@ import { recents } from "../../../content/recent";
 import "./RecentBooking.scss";
 
 function RecentBooking() {
+  const data = "";
   return (
     <div className="RecentBooking">
       <div className="col__title flex">

@@ -12,6 +12,7 @@ const initialState = {
   signUp: true,
   otp: false,
   susscessOtp: false,
+  trip: "upcoming",
 };
 const toggleSlice = createSlice({
   name: "toggleMenu",
@@ -59,6 +60,9 @@ const toggleSlice = createSlice({
     closeSignUpSuccess: (state) => {
       state.susscessOtp = false;
     },
+    setCustomerTrip: (state, action) => {
+      state.trip = action?.payload;
+    },
   },
 });
 
@@ -78,4 +82,5 @@ export const {
   closeSignUpSuccess,
   otpToggle,
   closeOtpToggle,
+  setCustomerTrip,
 } = toggleSlice.actions;

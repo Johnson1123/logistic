@@ -2,9 +2,18 @@ import { Select } from "antd";
 import React from "react";
 import { bussiness } from "../../../../content/bussiness";
 import "./BalanceReport.scss";
+import { trips } from "../../../../content/trips";
 
 function BalanceReport() {
   const PagiNum = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const tripData = JSON.stringify(trips);
+  console.log(tripData);
+  const arrangeData = (tripData) => trips.map((trip) => trip);
+  console.log(arrangeData(tripData));
+  const data = new Blob([arrangeData(trips)], { type: "text/csv" });
+
+  const csvURL = URL.createObjectURL(data);
+
   return (
     <div className="BalanceReport">
       <div className="balanceReport__wrapper">
@@ -37,6 +46,9 @@ function BalanceReport() {
                 <div className="report__box flex" key={index}>
                   <p className="p-text col-1 fw-500">{report.period}</p>
                   <p className="p-text col-2 pdf fw-700">{report.format}</p>
+                  <a href={csvURL} download>
+                    Download
+                  </a>
                 </div>
               );
             })}

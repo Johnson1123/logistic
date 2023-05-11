@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { images } from "../../../asset";
 import "./Profile.scss";
 import { useSelector } from "react-redux";
 
 function Profile() {
-  const stateProfile = useSelector((state) => state.profile);
+  const profile = useSelector((state) => state.getCustomerProfile.getProfile);
+  console.log(profile);
   return (
     <div className="Profile">
       <h4 className="title">My Profile</h4>
@@ -14,25 +15,38 @@ function Profile() {
       </p>
       <div className="profile__content">
         <img
-          src={stateProfile.img ? stateProfile.img : images.avatar}
+          src={
+            profile?.data?.image_url ? profile?.data?.image_url : images.avatar
+          }
           alt="Elia"
         />
-        <p className="small-title name">{`${stateProfile.fname} ${stateProfile.lname}`}</p>
+
+        {profile?.data?.first_name && (
+          <p className="small-title name">{`${profile?.data?.data?.first_name} ${profile?.data?.data?.last_name}`}</p>
+        )}
         <div className="profile__box flex">
           <p className="p-text">Email address</p>
-          <p className="small-title">{stateProfile.email}</p>
+          {profile?.data?.data?.email && (
+            <p className="small-title">{profile?.data?.data?.email}</p>
+          )}
         </div>
         <div className="profile__box flex">
           <p className="p-text">Phone number</p>
-          <p className="small-title">{stateProfile.phone}</p>
+          {profile?.data?.data?.phone && (
+            <p className="small-title">{profile?.data?.data?.phone}</p>
+          )}
         </div>
         <div className="profile__box flex">
           <p className="p-text">Home address</p>
-          <p className="small-title">{stateProfile.address}</p>
+          {profile?.data?.data?.home_address && (
+            <p className="small-title">{profile?.data?.data?.home_address}</p>
+          )}
         </div>
         <div className="profile__box flex">
           <p className="p-text">Gender</p>
-          <p className="small-title">{stateProfile.gender}</p>
+          {profile?.data?.data?.gender && (
+            <p className="small-title">{profile?.data?.data?.gender}</p>
+          )}
         </div>
       </div>
     </div>

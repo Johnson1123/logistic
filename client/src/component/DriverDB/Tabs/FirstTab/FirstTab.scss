@@ -39,6 +39,7 @@
     }
     .graph__con {
       width: 60%;
+      min-height: 60vh;
       @include mobile {
         width: 100%;
         overflow: scroll;
@@ -62,6 +63,13 @@
       min-height: 200px;
       background-color: #f3f3f3;
       border-radius: 10px;
+      .empty-ride {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
       @include mobile {
         margin-top: 1rem;
         width: 100%;

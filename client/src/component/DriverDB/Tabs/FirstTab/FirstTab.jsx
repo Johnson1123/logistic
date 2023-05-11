@@ -8,6 +8,7 @@ import Review from "../../Review/Review";
 import "./FirstTab.scss";
 import Chart from "react-google-charts";
 import ChartLine from "../../../ChartLine/ChartLine";
+import { trips } from "../../../../content/trips";
 
 const LineData = [
   ["x", "", "cats"],
@@ -24,29 +25,34 @@ const LineChartOptions = {
     1: { curveType: "function" },
   },
 };
-
+const data = "";
 function FirstTab() {
+  const totalRide = trips.length;
+  const canceledRide = trips.filter((item) => item.ride_status === "canceled");
+  const acceptedRide = trips.filter((item) => item.ride_status === "completed");
+  const numCanceledRide = canceledRide.length;
+  const numAcceptedRide = acceptedRide.length;
   return (
     <div className="FirstTab flex">
       <div className="left__content">
         <div className="badge__con flex">
           <Badges
             duration="This Week Income"
-            amount="$1,700.78"
+            amount="0"
             balance="BALANCE"
             color="#f3f3f3"
           />
           <Badges
-            numAccepted="862/"
-            total="907"
+            numAccepted={`${numAcceptedRide}/`}
+            total={totalRide}
             text="Number of Booking Accepted"
-            color="red"
+            color="#3AB54A"
           />
           <Badges
-            numAccepted="45/"
-            total="907"
+            numAccepted={`${numCanceledRide}/`}
+            total={`${totalRide}`}
             text="Number of Bookings Denied"
-            color="#3AB54A"
+            color="red"
           />
         </div>
         <div className="graph__group flex">
@@ -56,15 +62,27 @@ function FirstTab() {
             </div>
           </div>
           <div className="recent__ride box-shadow">
-            <p className="p-text title">Recent Rides</p>
-            <RecentBooking />
+            {!data ? (
+              <p className="p-text title flex empty-ride">No Recent ride</p>
+            ) : (
+              <p className="p-text title">Recent Rides</p>
+            )}
+            {data && <RecentBooking />}
           </div>
         </div>
-        <p className="recent-booking-text title">Recent Booking</p>
-        <div className="scroll__container">
-          <Booking />
-        </div>
+
+        {!data ? (
+          <p className="recent-booking-text title">no booking yet</p>
+        ) : (
+          <>
+            <p className="recent-booking-text title">Recent Booking</p>
+            <div className="scroll__container">
+              <Booking />
+            </div>
+          </>
+        )}
       </div>
+
       <div className="chart__group flex">
         <Chat />
         <Review />

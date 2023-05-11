@@ -24,7 +24,8 @@ function Navbar() {
   const authToggle = useSelector((state) => state.toggleReducer.menuValue);
   const searchToggle = useSelector((state) => state.toggleReducer.closeValue);
   const auth = useSelector((state) => state.auth);
-  const stateProfile = useSelector((state) => state.profile);
+  const getCustomerProfile = useSelector((state) => state.getCustomerProfile);
+  const authenticate = useSelector((state) => state.auth.isAuthenticate);
   const role = auth.role;
 
   const [toggle, setToggle] = useState(authToggle);
@@ -37,8 +38,6 @@ function Navbar() {
     Dispatch(toggleMenu());
     Dispatch(logoutUser());
   };
-
-  console.log(toString(stateProfile.img));
   return (
     <div className="app__navbar flex">
       <div className="app__navbar-wrapper-sm flex flex-center">
@@ -56,12 +55,12 @@ function Navbar() {
             <div className="nav__items-con">
               <Link to="/">Home</Link>
             </div>
-            {auth.user_id && (
+            {authenticate && (
               <div className="nav__items-con">
                 <Link to="/about">About</Link>
               </div>
             )}
-            {auth.user_id ? (
+            {authenticate ? (
               ""
             ) : (
               <div className="nav__items-con">
@@ -119,7 +118,9 @@ function Navbar() {
           <div className="navbar__user flex-center">
             <div className="user__container flex center">
               <img
-                src={stateProfile.img ? stateProfile.img : images.Elia}
+                src={
+                  getCustomerProfile.img ? getCustomerProfile.img : images.Elia
+                }
                 alt="user"
               />
               <span className="p-text">
@@ -152,11 +153,7 @@ function Navbar() {
                     <img src={images.Elia} alt="user image" />
                     <span className="p-text">
                       <Link
-                        to={
-                          role === "driver"
-                            ? "/driver/dashboard"
-                            : "/customer/dashboard"
-                        }
+                        to={role === "driver" ? "/driver" : "/customer"}
                         className="user-link "
                       >
                         Dashboard

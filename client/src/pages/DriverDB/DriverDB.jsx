@@ -11,14 +11,17 @@ import UserInfo from "../../component/UserInfo/UserInfo";
 function DriverDB() {
   const navigate = useNavigate();
   const menu = useSelector((state) => state.toggleReducer.dashboarMenu);
+  const authenticate = useSelector((state) => state.auth.isAuthenticate);
   const user = useSelector((state) => state.toggleReducer.user);
   const auth = useSelector((state) => state.auth);
 
   useEffect(() => {
-    if (!auth.user_id) {
+    console.log(authenticate);
+    if (!authenticate) {
       navigate("/");
     }
-  }, [auth.user_id, navigate]);
+  }, [authenticate, navigate]);
+  console.log(auth);
   return (
     <div className="DriverDB">
       <div className="DriverDB__wrapper">

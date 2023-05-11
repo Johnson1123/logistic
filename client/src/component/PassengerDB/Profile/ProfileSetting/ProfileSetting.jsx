@@ -4,34 +4,31 @@ import { images } from "../../../../asset";
 import TabInput from "../../../Tabs/TabInput/TabInput";
 import SignupBtn from "../../../Btn/SignupBtn/SignupBtn";
 import "./ProfileSetting.scss";
-import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { putUser } from "../../../../features/customer/customer";
+import { putUser } from "../../../../features/customer/putCustomer";
 import { BeatLoader } from "react-spinners";
+import { useNavigate } from "react-router-dom";
 
 function ProfileSetting() {
-  const navigate = useNavigate();
   const Dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const putCustomer = useSelector((state) => state.putCustomer);
+  const putCustomer = useSelector((state) => state.setCustomerProfile);
   const [selectedFile, setSelectedFile] = useState();
 
-  const [file, setFile] = useState();
+  const [img, setImg] = useState("");
+
   const [values, setValues] = useState({
     first_name: "",
     last_name: "",
     home_address: "",
     gender: "",
-    image_url: "",
   });
-  values.image_url = file;
 
   const accessToken = localStorage.getItem("authToken");
   const handleChange = (e) => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
-    console.log(values);
   };
 
   const [preview, setPreview] = useState();
@@ -51,21 +48,18 @@ function ProfileSetting() {
       return;
     }
     setSelectedFile(e.target.files[0]);
-    setFile(e.target.value);
+    const reader = new FileReader();
+    reader.readAsDataURL(e.target.files[0]);
+    reader.onloadend = () => {
+      setImg(reader.result);
+    };
   };
-
+  values.image_url = img;
   const handleSumit = async (e) => {
     e.preventDefault();
-    // const config = {
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //     Authorization: `Bearer ${accessToken.access}`,
-    //   },
-    // };
-    const body = JSON.stringify(values);
     try {
       const res = await Dispatch(putUser(values));
-      return res.data;
+      navigate("/customer/profile");
     } catch (error) {
       if (error.response && error.response.data.message) {
         console.log(error.response.data);
@@ -76,6 +70,7 @@ function ProfileSetting() {
       }
     }
   };
+
   return (
     <div className="ProfileSetting">
       <p className="title">Profile Settings</p>

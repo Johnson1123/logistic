@@ -4,8 +4,17 @@ import Chat from "../../DriverDB/Chat/Chat";
 import Review from "../../DriverDB/Review/Review";
 import RecentActivities from "./RecentActivities/RecentActivities";
 import BookingActivities from "./BookingActivities/BookingActivities";
+import { trips } from "../../../content/trips";
 
 function Dashboard() {
+  const totalRide = trips.length;
+  const canceledRide = trips.filter((item) => item.ride_status === "canceled");
+  const completedRide = trips.filter(
+    (item) => item.ride_status === "completed"
+  );
+  const numCanceledRide = canceledRide.length;
+  const numCompletedRide = completedRide.length;
+
   return (
     <div className="Dashboard flex">
       <div className="left__content">
@@ -14,7 +23,7 @@ function Dashboard() {
             <div className="badge__content">
               <p className="badge__title">Number of Booking Completed</p>
               <p className="badge__para">
-                32/<small>57</small>
+                {totalRide}/<small>{numCompletedRide}</small>
               </p>
             </div>
             <div className="badge__span"></div>
@@ -22,7 +31,7 @@ function Dashboard() {
           <div className="second__badge box-shadow badge">
             <p className="badge__title">Number of Bookings Canceled</p>
             <p className="p-text badge__para">
-              25/<small>25</small>
+              {totalRide}/<small>{numCanceledRide}</small>
             </p>
           </div>
         </div>

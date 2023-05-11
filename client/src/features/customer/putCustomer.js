@@ -4,7 +4,7 @@ import axios from "axios";
 const initialState = {
   putUserStatus: "",
   putUserError: "",
-  profile: localStorage.getItem("profile")
+  setProfile: localStorage.getItem("profile")
     ? JSON.parse(localStorage.getItem("profile"))
     : null,
   fname: "",
@@ -22,23 +22,21 @@ const access =
 const config = {
   headers: {
     "Content-Type": "application/json",
-    Authorization: `Bearer ${access}`,
+    Authorization: `Bearer  ${access}`,
   },
 };
 
 export const putUser = createAsyncThunk(
   "auth/putUser",
-  async (user, { rejectWithValue }) => {
+  async (profile, { rejectWithValue }) => {
+    console.log(profile);
     try {
-      const body = JSON.stringify(user);
-
+      const body = JSON.stringify(profile);
       const res = await axios.put(
         `https://techvonix.onrender.com/api/v1/profile/`,
         body,
         config
       );
-
-      localStorage.setItem("profile", JSON.stringify(res?.data));
       return res.data;
     } catch (error) {
       if (error.response && error.response.data.message) {
@@ -55,7 +53,7 @@ const customerProfile = createSlice({
   initialState,
   reducers: {
     loadProfile(state) {
-      const profile = state.profile;
+      const profile = state.setProfile;
       if (profile) {
         return {
           ...state,
