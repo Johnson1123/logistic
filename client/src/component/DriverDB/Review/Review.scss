@@ -11,9 +11,10 @@
     padding: 0.5rem 0.3rem;
     .col-1 {
       width: 20%;
+      margin-right: 10px;
       @include mobile {
         width: 18%;
-        margin-right: 10px;
+        margin-right: 0;
       }
       img {
         width: 40px;
@@ -47,12 +48,18 @@
         justify-content: space-between;
 
         .p-text {
-          font-size: calc(4px + 6 * ((100vw - 320px) / 680));
           @include tablet {
+            font-size: calc(4px + 6 * ((100vw - 320px) / 680));
             padding-right: 5px;
             width: calc(60px + 6 * ((100vw - 320px) / 680));
             max-width: calc(60px + 6 * ((100vw - 320px) / 680));
             min-width: calc(60px + 6 * ((100vw - 320px) / 680));
+          }
+          ul {
+            font-size: calc(15px + 6 * ((100vw - 320px) / 680)) !important;
+            @include tablet {
+              font-size: calc(3px + 6 * ((100vw - 320px) / 680)) !important;
+            }
           }
         }
         li {
@@ -61,7 +68,9 @@
       }
     }
     .col-3 {
-      font-size: calc(4px + 6 * ((100vw - 320px) / 680));
+      @include tablet {
+        font-size: calc(4px + 6 * ((100vw - 320px) / 680));
+      }
     }
   }
   .title {

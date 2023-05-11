@@ -16,8 +16,7 @@
     padding: 0.3rem 0;
     .p-text {
       font-weight: 400;
-      font-size: $font-14;
-      font-size: calc(8px + 6 * ((100vw - 320px) / 680));
+      font-size: calc(13px + 6 * ((100vw - 320px) / 680));
       text-align: center;
       @include tablet {
         font-size: calc(8px + 6 * ((100vw - 320px) / 680));
@@ -69,11 +68,15 @@
     .p-text {
       font-size: 14px;
       font-weight: 500;
-      font-size: calc(7px + 6 * ((100vw - 320px) / 680));
+      font-size: calc(12px + 6 * ((100vw - 320px) / 680));
+      text-align: left;
       @include tablet {
         font-weight: 300;
         padding: 0.4rem 0;
         font-size: calc(5px + 6 * ((100vw - 320px) / 680));
+      }
+      &:last-child {
+        text-align: center;
       }
     }
   }

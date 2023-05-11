@@ -38,9 +38,11 @@
           width: 45%;
         }
         .badge__title {
-          // font-size: $font-16;
-          font-size: calc(12px + 6 * ((100vw - 768px) / 680));
-          font-weight: 700;
+          font-size: $font-16;
+          @include tablet {
+            font-size: calc(12px + 6 * ((100vw - 768px) / 680));
+            font-weight: 700;
+          }
         }
         .badge__para {
           font-size: calc(26px + 6 * ((100vw - 768px) / 680));

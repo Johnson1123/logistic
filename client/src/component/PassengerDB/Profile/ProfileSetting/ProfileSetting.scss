@@ -1,6 +1,8 @@
 @import "../../../../style/variable.scss";
 .ProfileSetting {
   @include mobile {
+    max-width: 400px;
+    min-width: 390px;
     .title {
       padding: 0 1rem;
     }
@@ -55,16 +57,18 @@
     }
     .custom-upload {
       position: absolute;
+      width: 25px;
+      height: 25px;
       top: 60%;
-      right: 0;
+      right: 10px;
       z-index: 1;
       color: $whiteColor;
-      border-radius: 10px;
+      border-radius: 50%;
       padding: 0.4rem 0.2rem;
       background-color: $secondaryColor;
       @include tablet {
         padding: 0.4rem 0.5rem;
-        right: -20px;
+        right: -10px;
         top: auto;
         bottom: 50px;
       }

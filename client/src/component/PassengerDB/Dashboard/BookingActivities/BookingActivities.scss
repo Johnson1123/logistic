@@ -11,8 +11,8 @@
   .col__title {
     justify-content: space-between;
     .p-text {
+      font-weight: 400;
       @include tablet {
-        font-weight: 500;
         font-size: calc(12px + 6 * ((100vw - 768px) / 680));
       }
     }
@@ -72,11 +72,10 @@
     padding: 0.4rem 0.3rem;
     margin-top: 0.7rem;
     .p-text {
-      font-size: 12px;
-      font-weight: 500;
+      font-weight: 300;
+      font-size: calc(12px + 6 * ((100vw - 320px) / 680));
       @include tablet {
         font-size: calc(6px + 6 * ((100vw - 320px) / 680));
-        font-weight: 300;
       }
     }
     .col-1 {

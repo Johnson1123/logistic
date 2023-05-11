@@ -73,7 +73,10 @@
     }
     .col-3 {
       font-size: 12px;
-      font-size: calc(7px + 6 * ((100vw - 678px) / 680));
+      font-weight: 400;
+      @include tablet {
+        font-size: calc(7px + 6 * ((100vw - 678px) / 680));
+      }
     }
   }
   .title {

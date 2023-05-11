@@ -1,8 +1,11 @@
 @import "../../../style/variable.scss";
 .GetHelp {
   width: 100%;
+
   @include mobile {
     padding: 1rem 0 0 2rem;
+    max-width: 400px;
+    min-width: 390px;
   }
   .small-title {
     margin-top: 2rem;
