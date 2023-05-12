@@ -7,10 +7,13 @@
     width: 70%;
   }
   .input__container {
-    width: 60%;
+    width: max(60%, 400px);
+    min-width: 430px;
     margin: 0;
     @include mobile {
       width: 100%;
+      min-height: auto;
+      min-width: 300px;
     }
     .download {
       padding: 0.5rem;
@@ -36,6 +39,9 @@
         font-size: $font-14;
         width: 70%;
         margin: 3px 0;
+        @include tablet {
+          min-width: 200px;
+        }
       }
       .p-text {
         font-size: $font-14;

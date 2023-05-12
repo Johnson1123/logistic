@@ -45,10 +45,11 @@ function BalanceReport() {
               return (
                 <div className="report__box flex" key={index}>
                   <p className="p-text col-1 fw-500">{report.period}</p>
-                  <p className="p-text col-2 pdf fw-700">{report.format}</p>
-                  <a href={csvURL} download>
-                    Download
-                  </a>
+                  <p className="p-text col-2 pdf fw-700">
+                    <a href={csvURL} download>
+                      Download
+                    </a>
+                  </p>
                 </div>
               );
             })}

@@ -1,38 +1,61 @@
 @import "../../../style/variable.scss";
 .Myridebox {
   width: 100%;
+  min-width: 200px;
   .ride {
     background-color: #f3f3f3;
     justify-content: space-between;
     margin: 1rem 0;
-    padding: 1rem 0.5rem;
+    padding: 1rem 1rem;
     border-radius: 10px;
-    font-size: 12px;
+    @include tablet {
+      width: min(600px, 100%);
+      min-width: 600px;
+    }
     .left__box {
       width: 60%;
       margin-left: -5px;
+      min-width: 200px;
       @include tablet {
         width: 50%;
+        min-width: none;
         .svg svg {
           font-size: 16px;
           width: 10%;
           margin-left: -11px;
         }
       }
-      .svg svg {
+
+      .location_icon {
         font-size: 16px;
-        width: 10%;
+        width: 20px;
+        margin-right: 5px;
       }
       .p-text {
         font-size: 12px;
-
         @include tablet {
           font-size: 16px;
+        }
+        .addres {
+          min-width: 200px;
+          width: 220px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          @include tablet {
+            min-width: 300px;
+            width: 320px;
+          }
         }
       }
       .left__con {
         margin-top: 1rem;
         justify-content: space-between;
+        .payment-method {
+          @include tablet {
+            min-width: 200px;
+          }
+        }
       }
     }
     .right__box {

@@ -1,15 +1,22 @@
 @import "../../../../style/variable.scss";
-
 .Mydocument {
   padding: 0 1rem;
+
   @include tablet {
     padding: 1rem 0.5rem;
+  }
+  @include mobile {
+    max-width: 600px;
   }
   .title {
   }
   .fw-300 {
     width: 70%;
     margin-top: 0.05em;
+    font-size: calc(12px + 6 * ((100vw - 320px) / 680));
+    @include tablet {
+      font-size: calc(11px + 6 * ((100vw - 320px) / 680));
+    }
   }
   .documents {
     width: 95%;
@@ -28,8 +35,10 @@
       background-color: #f3f3f3;
       border-radius: 10px;
       padding: 1rem;
+      min-width: 600px;
       @include mobile {
         padding: 1rem 0.5rem;
+        min-width: 300px;
       }
       .title {
         line-height: 1.5;
@@ -55,7 +64,20 @@
           line-height: 1.5;
           font-size: 12px;
           @include tablet {
-            font-size: $font-14;
+            font-size: calc(10px + 6 * ((100vw - 768px) / 680));
+            .doc-name {
+              font-weight: 400;
+            }
+          }
+        }
+        @include tablet {
+          font-size: calc(10px + 6 * ((100vw - 768px) / 680));
+          .doc-name {
+            font-weight: 400;
+            width: 250px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
           }
         }
         .doc__icon {
@@ -98,6 +120,10 @@
           padding: 0.5rem;
           color: $whiteColor;
           border-radius: 10px;
+          font-size: calc(10px + 6 * ((100vw - 320px) / 680));
+          @include tablet {
+            font-size: calc(10px + 6 * ((100vw - 768px) / 680));
+          }
           svg {
             margin-right: 5px;
             font-size: 16px;

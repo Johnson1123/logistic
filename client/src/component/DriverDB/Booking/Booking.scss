@@ -24,13 +24,18 @@
       font-size: $font-14;
       font-weight: 500;
     }
+    .name {
+      @include tablet {
+        font-size: calc(4px + 6 * ((100vw - 320px) / 680));
+      }
+    }
   }
   .col-2 {
     width: 38%;
     text-align: center;
     align-self: center;
     @include tablet {
-      font-size: $font-14;
+      font-size: calc(4px + 6 * ((100vw - 320px) / 680));
       font-weight: 500;
     }
   }
@@ -39,7 +44,7 @@
     text-align: center;
     align-self: center;
     @include tablet {
-      font-size: $font-14;
+      font-size: calc(4px + 6 * ((100vw - 320px) / 680));
       font-weight: 500;
     }
   }
@@ -48,7 +53,7 @@
     text-align: center;
     align-self: center;
     @include tablet {
-      font-size: $font-14;
+      font-size: calc(4px + 6 * ((100vw - 320px) / 680));
       font-weight: 500;
     }
   }

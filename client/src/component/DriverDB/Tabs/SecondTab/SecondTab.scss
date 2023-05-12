@@ -3,19 +3,24 @@
   width: 100%;
   @include mobile {
     padding: 0 1rem;
+    max-width: 500px;
   }
   @include tablet {
     width: 60%;
-    padding: 1rem 0.5rem;
+    margin: 1rem;
   }
   .title {
     font-weight: 900;
     line-height: 2;
+    font-size: calc(14px + 6 * ((100vw - 768px) / 680));
+    @include tablet {
+      font-size: calc(17px + 6 * ((100vw - 768px) / 680));
+    }
   }
   .small-title {
-    font-size: 14px;
+    font-size: calc(14px + 6 * ((100vw - 768px) / 680));
     @include tablet {
-      font-size: 16px;
+      font-size: calc(10px + 6 * ((100vw - 768px) / 680));
     }
   }
   .profile__content {
@@ -35,9 +40,13 @@
     }
     .small-title {
       line-height: 2;
+      font-size: calc(15px + 6 * ((100vw - 768px) / 680));
+      @include tablet {
+        font-size: calc(12px + 6 * ((100vw - 768px) / 680));
+      }
     }
     .name {
-      font-weight: 900;
+      font-weight: 700;
     }
     .profile__box {
       width: 100%;
@@ -50,7 +59,7 @@
       }
       .p-text {
         width: 40%;
-        font-size: 14px;
+        font-size: calc(17px + 6 * ((100vw - 768px) / 680));
       }
       @include tablet {
         width: 100%;
@@ -58,17 +67,18 @@
         align-items: center;
         .p-text {
           width: 40%;
-          font-size: 14px;
+          font-size: calc(12px + 6 * ((100vw - 768px) / 680));
         }
         .name {
           font-weight: 700;
           line-height: 3;
           font-size: 30px;
+          font-size: calc(15px + 6 * ((100vw - 768px) / 680));
         }
         .small-title {
           width: 60%;
-          font-size: 16px;
           font-weight: 400;
+          font-size: calc(10px + 6 * ((100vw - 768px) / 680));
         }
       }
     }

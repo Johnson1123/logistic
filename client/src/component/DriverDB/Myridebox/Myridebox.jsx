@@ -10,14 +10,16 @@ function Myridebox() {
         return (
           <div className="ride flex" key={index}>
             <div className="left__box">
-              <div className="p-text flex svg">
-                <IoLocationSharp />
-                <p className="p-text fw-500">{ride.address}</p>
+              <div className="p-text flex">
+                <div className="location_icon">
+                  <IoLocationSharp />
+                </div>
+                <p className="p-text fw-500 address">{ride.address}</p>
               </div>
               <div className="left__con flex">
                 <div className="p-text">
                   <p className="p-text fw-500">Payment:</p>
-                  <p className="p-text">{ride.payment}</p>
+                  <p className="p-text payment-method">{ride.payment}</p>
                 </div>
                 <div className="p-text t-center">
                   <p className="p-text fw-500">Distance:</p>

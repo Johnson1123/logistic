@@ -12,8 +12,9 @@
     font-weight: 700;
     line-height: 1.2;
     color: $whiteColor;
+    font-size: calc(17px + 6 * ((100vw - 768px) / 680));
     @include tablet {
-      padding-right: 3rem;
+      font-size: calc(10px + 6 * ((100vw - 768px) / 680));
     }
   }
   .balance {

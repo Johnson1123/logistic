@@ -15,12 +15,12 @@ function DriverDB() {
   const user = useSelector((state) => state.toggleReducer.user);
   const auth = useSelector((state) => state.auth);
 
-  useEffect(() => {
-    console.log(authenticate);
-    if (!authenticate) {
-      navigate("/");
-    }
-  }, [authenticate, navigate]);
+  // useEffect(() => {
+  //   console.log(authenticate);
+  //   if (!authenticate) {
+  //     navigate("/");
+  //   }
+  // }, [authenticate, navigate]);
   console.log(auth);
   return (
     <div className="DriverDB">

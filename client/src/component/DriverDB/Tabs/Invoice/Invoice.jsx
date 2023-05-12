@@ -1,31 +1,43 @@
 import React from "react";
 import "./Invoice.scss";
+import Invoice from "../../../Invoice/Invoice";
 
-function Invoice() {
-  const isInvoice = false;
+function driverInvoice() {
+  const data = [
+    {
+      _id: 1,
+      number: "265537762y87",
+      date: "23-05-2023",
+      due: "24-06-24",
+      sum: "400.00",
+    },
+    {
+      _id: 2,
+      number: "265537762y87",
+      date: "23-05-2023",
+      due: "24-06-24",
+      sum: "400.00",
+    },
+    {
+      _id: 3,
+      number: "265537762y87",
+      date: "23-05-2023",
+      due: "24-06-24",
+      sum: "400.00",
+    },
+    {
+      _id: 4,
+      number: "265537762y87",
+      date: "23-05-2023",
+      due: "24-06-24",
+      sum: "400.00",
+    },
+  ];
   return (
-    <div className="Invoice">
-      <div className="invoice__wrapper">
-        <p className="title">XLCAB Invoices</p>
-        <div className="invoice__con">
-          <div className="file__header flex box-shadow">
-            <p className="bold-text col-1">Invoice no</p>
-            <p className="bold-text col-2">Date</p>
-            <p className="bold-text col-3">Due date</p>
-            <p className="bold-text col-4">Total sum</p>
-            <p className="bold-text col-5">PDF</p>
-          </div>
-          <div className="file__box-con">
-            {isInvoice ? (
-              <div className="p-text">Inovice</div>
-            ) : (
-              <div className="p-text">No invoices have been issued yet.</div>
-            )}
-          </div>
-        </div>
-      </div>
+    <div className="driver__invoice">
+      <Invoice data={data} />
     </div>
   );
 }
 
-export default Invoice;
+export default driverInvoice;

@@ -17,7 +17,7 @@ function Booking() {
           <div className="booking__box flex" key={index}>
             <div className="box p-text col-1 flex">
               <img src={recent.image} alt="" />
-              <span>{recent.name}</span>
+              <span className="name">{recent.name}</span>
             </div>
             <div className="box p-text col-2">{recent.email}</div>
             <div className="box p-text col-3">{recent.time}</div>

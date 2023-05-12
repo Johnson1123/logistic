@@ -25,11 +25,12 @@ const LineChartOptions = {
     1: { curveType: "function" },
   },
 };
-const data = "";
+// const data = "";
 function FirstTab() {
   const totalRide = trips.length;
   const canceledRide = trips.filter((item) => item.ride_status === "canceled");
   const acceptedRide = trips.filter((item) => item.ride_status === "completed");
+  const data = trips.filter((item) => item.ride_status === "completed");
   const numCanceledRide = canceledRide.length;
   const numAcceptedRide = acceptedRide.length;
   return (

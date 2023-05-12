@@ -1,0 +1,100 @@
+@import "../../style/variable.scss";
+.Invoice {
+  width: 95%;
+  margin-left: 1rem;
+  @include mobile {
+    padding: 1rem;
+  }
+  .invoice__wrapper {
+    width: 100%;
+    @include tablet {
+      width: 80%;
+    }
+    .col-1 {
+      width: 25%;
+      text-align: left;
+    }
+    .col-2 {
+      width: 18%;
+      text-align: center;
+    }
+    .col-3 {
+      width: 18%;
+      text-align: center;
+    }
+    .col-4 {
+      width: 18%;
+      text-align: center;
+    }
+    .col-5 {
+      width: 18%;
+    }
+    .invoice__con {
+      margin-top: 1.2rem;
+      padding: 0.5rem 0;
+      overflow: scroll;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      @include tablet {
+        width: 100%;
+        min-width: 600px;
+      }
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      .file__header {
+        height: 50px;
+        padding: 0.5rem;
+        background-color: $asheColor;
+        align-items: center;
+        border-radius: 10px;
+        justify-content: space-between;
+        @include tablet {
+          padding: 1rem 0;
+          width: 100%;
+        }
+        .bold-text {
+          text-align: center;
+          text-overflow: hidden;
+          font-size: calc(8px + 6 * ((100vw - 320px) / 680));
+          &:first-of-type {
+            text-align: left;
+            padding-left: 5px;
+          }
+          @include tablet {
+            font-size: 16px;
+            font-size: calc(8px + 6 * ((100vw - 320px) / 680));
+          }
+        }
+      }
+      .file__box-con {
+        margin-top: 0.5rem;
+      }
+    }
+    .data__box {
+      justify-content: space-between;
+      padding: 0.5rem 0;
+      border-bottom: 2px solid rgb(211, 211, 211);
+      &:last-of-type {
+        border-bottom: none;
+      }
+      @include tablet {
+        padding: 1.25rem 0;
+      }
+      .pdf {
+        color: $secondaryColor;
+      }
+      .p-text {
+        font-size: 12px;
+        font-size: calc(8px + 6 * ((100vw - 320px) / 680));
+        &:last-of-type {
+          text-align: center;
+        }
+        @include tablet {
+          font-size: 14px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}

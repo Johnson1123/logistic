@@ -30,9 +30,7 @@ function PersonalForm() {
   return (
     <div className="PersonalForm flex">
       <div className="img__control">
-        <div className="img__con">
-          {selectedFile ? <img src={preview} /> : <img src={images.James} />}
-        </div>
+        {selectedFile ? <img src={preview} /> : <img src={images.James} />}
         <input type="file" id="img-upload" onChange={onSelectFile} />
         <label
           htmlFor="img-upload"

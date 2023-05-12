@@ -1,14 +1,22 @@
 @import "../../../../style/variable.scss";
 .TaxReport {
   width: 95%;
-  padding: 0rem 1rem;
+  margin-left: 1rem;
+  max-width: 500px;
   @include tablet {
-    padding: 1rem 0.5rem;
+    padding: 1rem 0;
+    max-width: none;
   }
   .taxReport__wrapper {
     width: 100%;
     @include tablet {
       width: 70%;
+    }
+    .small-title {
+      font-size: calc(10px + 6 * ((100vw - 320px) / 680));
+      @include tablet {
+        font-size: calc(10px + 6 * ((100vw - 768px) / 680));
+      }
     }
     .tax__con {
       margin-top: 1.5rem;

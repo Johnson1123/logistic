@@ -36,14 +36,14 @@
       width: 25%;
       text-align: center;
       @include tablet {
-        font-size: $font-14;
+        font-size: calc(4px + 6 * ((100vw - 320px) / 680));
       }
     }
     .col-2 {
       width: 10%;
       text-align: center;
       @include tablet {
-        font-size: $font-14;
+        font-size: calc(4px + 6 * ((100vw - 320px) / 680));
       }
     }
     .col-3 {
@@ -53,7 +53,7 @@
       white-space: nowrap;
       text-align: left;
       @include tablet {
-        font-size: $font-14;
+        font-size: calc(4px + 6 * ((100vw - 320px) / 680));
       }
     }
   }

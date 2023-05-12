@@ -21,7 +21,7 @@ function Mydocument() {
                   <p className="p-text fw-500">Verified Document</p>
                   <div className="doc__icon flex">
                     <TbFileInvoice />
-                    <p className="p-text">{doc.name}</p>
+                    <p className="p-text doc-name">{doc.name}</p>
                   </div>
                   <p className="p-text">Uploaded: {doc.Uploaded}</p>
                   <p className="p-text">Expired: {doc.Expires}</p>

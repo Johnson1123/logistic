@@ -2,8 +2,10 @@
 .Setting {
   width: 95%;
   padding: 0 1rem;
+  max-width: 500px;
   @include tablet {
     padding: 1rem 0.5rem;
+    max-width: none;
   }
   .setting__wrapper {
     width: 100%;

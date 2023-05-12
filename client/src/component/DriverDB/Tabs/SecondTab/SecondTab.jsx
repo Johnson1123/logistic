@@ -30,7 +30,7 @@ export default function SecondTab() {
           <p className="small-title">12/03/1987</p>
         </div>
         <div className="profile__box flex">
-          <p className="p-text">Driver license number</p>
+          <p className="p-text">Driver license</p>
           <p className="small-title">960978300034</p>
         </div>
       </div>
