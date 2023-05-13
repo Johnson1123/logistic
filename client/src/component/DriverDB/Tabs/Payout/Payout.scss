@@ -13,9 +13,10 @@
       width: 70%;
     }
     .small-title {
-      font-size: calc(10px + 6 * ((100vw - 320px) / 680));
+      margin-top: 5px;
+      font-size: calc(12px + 6 * ((100vw - 320px) / 680));
       @include tablet {
-        font-size: calc(10px + 6 * ((100vw - 768px) / 680));
+        font-size: calc(12px + 6 * ((100vw - 768px) / 680));
       }
     }
     .payout__con {
@@ -33,7 +34,7 @@
         margin-top: 0.5rem;
         .box__container {
           .data__box {
-            padding: 1rem;
+            padding: 0.75rem;
             .col-1 {
               width: 50%;
             }

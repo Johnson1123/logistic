@@ -10,12 +10,13 @@
   .taxReport__wrapper {
     width: 100%;
     @include tablet {
-      width: 70%;
+      width: 50%;
     }
     .small-title {
-      font-size: calc(10px + 6 * ((100vw - 320px) / 680));
+      margin-top: 5px;
+      font-size: calc(13px + 6 * ((100vw - 320px) / 680));
       @include tablet {
-        font-size: calc(10px + 6 * ((100vw - 768px) / 680));
+        font-size: calc(12px + 6 * ((100vw - 768px) / 680));
       }
     }
     .tax__con {
@@ -25,7 +26,8 @@
         width: 50%;
       }
       .col-2 {
-        text-align: center;
+        text-align: right;
+        margin-right: 1rem;
       }
       .tax__header {
         width: 100%;
@@ -56,7 +58,7 @@
             font-size: 12px;
 
             &:last-of-type {
-              text-align: center;
+              text-align: right;
             }
             @include tablet {
               font-size: 14px;

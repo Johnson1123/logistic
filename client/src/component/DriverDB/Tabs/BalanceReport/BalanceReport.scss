@@ -1,6 +1,6 @@
 @import "../../../../style/variable.scss";
 .BalanceReport {
-  width: 95%;
+  width: 100%;
   padding: 0 1rem;
   max-width: 600px;
   @include tablet {
@@ -11,12 +11,13 @@
   .balanceReport__wrapper {
     width: 100%;
     @include tablet {
-      width: 70%;
+      width: 50%;
     }
     .small-title {
-      font-size: calc(10px + 6 * ((100vw - 320px) / 680));
+      margin-top: 5px;
+      font-size: calc(13px + 6 * ((100vw - 320px) / 680));
       @include tablet {
-        font-size: calc(10px + 6 * ((100vw - 768px) / 680));
+        font-size: calc(12px + 6 * ((100vw - 768px) / 680));
       }
     }
     .pagination {
@@ -38,12 +39,15 @@
     }
     .balance__con {
       margin-top: 1.5rem;
-      .col-1,
-      .col-2 {
-        width: 50%;
+      .col-1 {
+        width: 65%;
       }
       .col-2 {
-        text-align: center;
+        width: 35%;
+      }
+      .col-2 {
+        text-align: right;
+        margin-right: 1rem;
       }
       .balance__header {
         width: 100%;
@@ -53,6 +57,12 @@
         align-items: center;
         border-radius: 10px;
         justify-content: space-between;
+        .bold-text {
+          font-size: calc(12px + 6 * ((100vw - 320px) / 680));
+          @include tablet {
+            font-size: calc(8px + 6 * ((100vw - 768px) / 680));
+          }
+        }
       }
       .reports__box-con {
         margin-top: 0.5rem;
@@ -71,10 +81,14 @@
             color: $secondaryColor;
           }
           .p-text {
-            font-size: 12px;
+            font-size: calc(13px + 6 * ((100vw - 320px) / 680));
+            @include tablet {
+              font-size: calc(8px + 6 * ((100vw - 768px) / 680));
+            }
 
             &:last-of-type {
-              text-align: center;
+              text-align: right;
+              margin: 0;
             }
             @include tablet {
               font-size: 14px;

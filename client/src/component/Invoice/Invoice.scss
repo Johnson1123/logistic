@@ -1,10 +1,7 @@
 @import "../../style/variable.scss";
 .Invoice {
   width: 95%;
-  margin-left: 1rem;
-  @include mobile {
-    padding: 1rem;
-  }
+  margin: auto 1rem;
   .invoice__wrapper {
     width: 100%;
     @include tablet {
@@ -30,7 +27,7 @@
       width: 18%;
     }
     .invoice__con {
-      margin-top: 1.2rem;
+      margin-top: 0.5rem;
       padding: 0.5rem 0;
       overflow: scroll;
       -ms-overflow-style: none;
@@ -56,7 +53,7 @@
         .bold-text {
           text-align: center;
           text-overflow: hidden;
-          font-size: calc(8px + 6 * ((100vw - 320px) / 680));
+          font-size: calc(10px + 6 * ((100vw - 320px) / 680));
           &:first-of-type {
             text-align: left;
             padding-left: 5px;
@@ -79,14 +76,14 @@
         border-bottom: none;
       }
       @include tablet {
-        padding: 1.25rem 0;
+        padding: 1rem 0;
       }
       .pdf {
         color: $secondaryColor;
       }
       .p-text {
         font-size: 12px;
-        font-size: calc(8px + 6 * ((100vw - 320px) / 680));
+        font-size: calc(10px + 6 * ((100vw - 320px) / 680));
         &:last-of-type {
           text-align: center;
         }

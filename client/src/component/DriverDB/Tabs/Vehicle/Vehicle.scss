@@ -12,6 +12,13 @@
     @include tablet {
       width: 95%;
     }
+    .text {
+      margin-top: 5px;
+      font-size: calc(14px + 6 * ((100vw - 320px) / 680));
+      @include tablet {
+        font-size: calc(14px + 6 * ((100vw - 768px) / 680));
+      }
+    }
     .control__box-con {
       margin-top: 1.5rem;
       width: 100%;
@@ -47,6 +54,12 @@
     @include tablet {
       width: 75%;
     }
+    .title {
+      font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+      @include tablet {
+        font-size: calc(16px + 6 * ((100vw - 768px) / 680));
+      }
+    }
   }
   .details__con {
     width: 100%;
@@ -69,6 +82,7 @@
         padding: 0.5rem 0;
         padding: 0.5rem 0.8rem;
         border-bottom: 2px solid #f3f3f3;
+
         &:last-of-type {
           border-bottom: none;
         }
@@ -77,6 +91,11 @@
         }
         .bold-text {
           width: 60%;
+          font-weight: 400;
+          font-size: calc(10px + 6 * ((100vw - 320px) / 680));
+          @include tablet {
+            font-size: calc(10px + 6 * ((100vw - 768px) / 680));
+          }
         }
         .p-text {
           width: 200px;
@@ -102,11 +121,17 @@
         color: $whiteColor;
         border-radius: 10px;
         margin-bottom: 0.5rem;
+        font-size: calc(12px + 6 * ((100vw - 320px) / 680));
+        @include tablet {
+          font-size: calc(12px + 6 * ((100vw - 768px) / 680));
+        }
       }
       .title {
         line-height: 1.5;
+        font-weight: 400;
+        font-size: calc(14px + 6 * ((100vw - 320px) / 680));
         @include tablet {
-          font-size: calc(15px + 6 * ((100vw - 320px) / 680));
+          font-size: calc(12px + 6 * ((100vw - 768px) / 680));
         }
       }
       .require {
@@ -130,19 +155,23 @@
         }
         .p-text {
           line-height: 1.5;
-          font-size: 12px;
+          font-size: calc(10px + 6 * ((100vw - 320px) / 680));
           @include tablet {
-            font-size: $font-14;
+            font-size: calc(10px + 6 * ((100vw - 768px) / 680));
           }
         }
         .doc-name {
+          font-weight: 400;
+          font-size: calc(10px + 6 * ((100vw - 320px) / 680));
+          width: 120px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
           @include tablet {
             font-weight: 400;
             min-width: 250px;
             width: 250px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
+            font-size: calc(10px + 6 * ((100vw - 768px) / 680));
           }
         }
         .doc__icon {

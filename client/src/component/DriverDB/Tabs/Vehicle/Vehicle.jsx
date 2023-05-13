@@ -81,8 +81,8 @@ function Vehicle() {
         </p>
         <div className="control__box-con">
           <div className="flex box__header">
-            <div className="small-title fw-700">Model</div>
-            <div className="small-title fw-700">License Plate</div>
+            <div className="small-title fw-500">Model</div>
+            <div className="small-title fw-500">License Plate</div>
           </div>
           {vehicles.map((vehicle, index) => {
             return (
