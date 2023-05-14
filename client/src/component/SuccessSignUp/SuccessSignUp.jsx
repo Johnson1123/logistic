@@ -7,7 +7,9 @@ import "./SuccessSignUp.scss";
 function SuccessSignUp(props) {
   const navigate = useNavigate();
   const handleNavigate = () => {
-    return navigate(`/login/${props?.role}`);
+    return navigate(
+      props?.role === "driver" ? "/experience" : `/login/${props?.role}`
+    );
   };
   console.log(props.role);
   return (

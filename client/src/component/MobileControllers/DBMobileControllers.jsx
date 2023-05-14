@@ -51,7 +51,7 @@ function DBMobileControllers() {
           <div className="getApp__content">
             <p className="small-title p-text">Get Mobile App</p>
             <div className="img__con flex">
-              <img src={images.playStore} alt="play store" />
+              <img src={images.playStoreLogo} alt="play store" />
               <img src={images.appLogo} alt="apple store" />
             </div>
           </div>

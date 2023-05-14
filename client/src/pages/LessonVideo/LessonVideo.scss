@@ -24,11 +24,15 @@
         svg {
           margin: 0 0.5rem 0 0;
           padding: 0;
+          cursor: pointer;
         }
       }
 
       .lesson-title {
+        width: 70%;
+        text-align: center;
         color: $whiteColor;
+        font-size: calc(12px + 6 * ((100vw - 768px) / 680));
       }
     }
     .profile__con {

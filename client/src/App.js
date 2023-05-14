@@ -212,12 +212,8 @@ const router = createBrowserRouter([
     element: <Whattolearn />,
   },
   {
-    path: "/lesson",
+    path: "/lessondb",
     element: <LessonVideo />,
-  },
-  {
-    path: "/db",
-    element: <DriverDB />,
   },
   {
     path: "/mylearning",

@@ -5,8 +5,10 @@ import { videos } from "../../content/Videocontent";
 import Lessonbox from "../../component/Lessonbox/Lessonbox";
 import "./LessonVideo.scss";
 import { images } from "../../asset";
+import { useNavigate } from "react-router-dom";
 
 function LessonVideo() {
+  const navigate = useNavigate();
   const numActivites = Number(videos[0].activities);
   let List = () => {
     return [...Array(numActivites)].map((e, i) => {
@@ -17,12 +19,13 @@ function LessonVideo() {
       );
     });
   };
+  const handleNavigate = () => navigate("/driver");
   return (
     <div className="LessonVideo flex">
       <Bgnav />
       <div className="LessonVideo__wrapper flex">
         <div className="LessonVideo__title-con flex">
-          <span>
+          <span onClick={handleNavigate}>
             <FaAngleLeft />
           </span>
           <p className="lesson-title p-text">

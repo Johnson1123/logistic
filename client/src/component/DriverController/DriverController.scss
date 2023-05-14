@@ -22,23 +22,30 @@
       padding: 1rem 0.5rem;
       margin-top: 1rem;
       .iphones {
-        width: 40%;
+        width: 100px;
+        min-width: 80px;
+        object-fit: cover;
+        @include tablet {
+          flex: 1;
+          min-width: 60px;
+        }
       }
       .getApp__content {
         width: 60%;
         .small-title {
-          font-size: 11px;
+          font-size: calc(9px + 6 * ((100vw - 320px) / 680));
           @include tablet {
-            font-size: $font-18;
-            font-weight: 900;
-            margin-left: 1.3rem;
+            font-size: calc(9px + 6 * ((100vw - 768px) / 680));
+            font-weight: 700;
+            text-align: center;
           }
         }
         .img__con {
-          margin: 1.7rem 1rem 0;
-          justify-content: space-around;
+          margin: 1rem 0;
+          justify-content: space-between;
+          padding: 0 1rem;
           img {
-            width: 30%;
+            width: min(35px, 40%) !important;
           }
         }
       }
@@ -52,7 +59,7 @@
       align-items: center;
       gap: 5px;
       color: #fff;
-      font-size: 18px;
+      font-size: calc(14px + 6 * ((100vw - 768px) / 680));
       font-weight: 300;
       line-height: 1;
       transition: 0.5s all;

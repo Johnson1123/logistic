@@ -14,7 +14,7 @@
       width: max(20%, 40px);
       margin-right: 10px;
       @include mobile {
-        width: 18%;
+        width: max-content;
       }
       img {
         width: 40px;
@@ -32,15 +32,15 @@
       }
       .dot {
         position: absolute;
-        right: 7px;
+        right: 0px;
         top: 0px;
         height: 7px;
         width: 7px;
         border-radius: 50%;
         background-color: #3ab54a;
         @include mobile {
-          top: 5px;
-          right: 8px;
+          top: 0;
+          right: 0;
         }
       }
     }
