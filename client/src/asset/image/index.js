@@ -28,11 +28,15 @@ import visa from "./Visa.png";
 import master from "./Master.png";
 import cash from "./cash.png";
 import angleRight from "./angleRight.png";
+import sorry from "./sorry.png";
 import avatar from "./avatar.jpg";
+import glad from "./glad.jpg";
 
 export default {
   avatar,
+  glad,
   bgSvg,
+  sorry,
   cash,
   angleRight,
   paypal,

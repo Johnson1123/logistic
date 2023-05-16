@@ -16,7 +16,7 @@ function Loginuser(props) {
     if (user && props.role === "driver") {
       navigate("/tab");
     } else if (user && props.role === "customer") {
-      navigate("/");
+      navigate("/customer");
     }
   }, [user, Dispatch, navigate]);
   return (

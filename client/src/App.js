@@ -92,6 +92,7 @@ import { useEffect, useState } from "react";
 import { DateCalendar } from "@mui/x-date-pickers";
 import { loadProfile } from "./features/customer/putCustomer";
 import axiosInstance from "./api";
+import SetForgetPwd from "./pages/authPages/SetPwd/SetPwd";
 
 const Layout = () => {
   return (
@@ -178,6 +179,10 @@ const router = createBrowserRouter([
   {
     path: "/forgetpwd",
     element: <ForgetPwd />,
+  },
+  {
+    path: "/setpassword",
+    element: <SetForgetPwd />,
   },
   {
     path: "/newpwd",
@@ -484,7 +489,7 @@ function App() {
         dispatch(logoutUser());
       }
     })();
-  }, [dispatch]);
+  }, []);
 
   useEffect(() => {
     dispatch(loadUser(null));

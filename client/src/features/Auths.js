@@ -121,23 +121,23 @@ export const loginDriver = createAsyncThunk(
     }
   }
 );
-// export const forgetPwd = createAsyncThunk(
-//   "auth/forgetPwd",
-//   async (email, { rejectWithValue }) => {
-//     const body = JSON.stringify(email);
-//     try {
-//       const { data } = await axios.post(
-//         "https://techvonix.onrender.com/api/v1/auth/forgot-password",
-//         body,
-//         config
-//       );
-//       return data;
-//     } catch (error) {
-//       console.error(error.response.data);
-//       return rejectWithValue(error.response.data);
-//     }
-//   }
-// );
+export const forgetPwd = createAsyncThunk(
+  "auth/forgetPwd",
+  async (email, { rejectWithValue }) => {
+    const body = JSON.stringify(email);
+    try {
+      const { data } = await axios.post(
+        "https://techvonix.onrender.com/api/v1/auth/forgot-password",
+        body,
+        config
+      );
+      return data;
+    } catch (error) {
+      console.error(error.response.data);
+      return rejectWithValue(error.response.data);
+    }
+  }
+);
 export const verifyUser = createAsyncThunk(
   "auth/verifyOtp",
   async (otp, { rejectWithValue }) => {
@@ -479,24 +479,24 @@ const authSlice = createSlice({
         verifyStatus: "",
       };
     });
-    // builder.addCase(forgetPwd.pending, (state, action) => {
-    //   return { ...state, forgetStatus: "pending" };
-    // });
-    // builder.addCase(forgetPwd.fulfilled, (state, action) => {
-    //   if (action.payload) {
-    //     return {
-    //       ...state,
-    //       forgetError: "success",
-    //     };
-    //   }
-    // });
-    // builder.addCase(forgetPwd.rejected, (state, action) => {
-    //   return {
-    //     ...state,
-    //     forgetStatus: "rejected",
-    //     forgetError: action?.payload,
-    //   };
-    // });
+    builder.addCase(forgetPwd.pending, (state, action) => {
+      return { ...state, forgetStatus: "pending" };
+    });
+    builder.addCase(forgetPwd.fulfilled, (state, action) => {
+      if (action.payload) {
+        return {
+          ...state,
+          forgetError: "success",
+        };
+      }
+    });
+    builder.addCase(forgetPwd.rejected, (state, action) => {
+      return {
+        ...state,
+        forgetStatus: "rejected",
+        forgetError: action?.payload,
+      };
+    });
   },
 });
 

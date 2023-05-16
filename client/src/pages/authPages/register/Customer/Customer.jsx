@@ -12,11 +12,11 @@ function Customer() {
   const Dispatch = useDispatch();
   const navigate = useNavigate();
   const auth = useSelector((state) => state.auth);
-  // useEffect(() => {
-  //   if (auth.user_id) {
-  //     navigate("/");
-  //   }
-  // }, [auth.user_id, navigate]);
+  useEffect(() => {
+    if (auth.user_id) {
+      navigate("/");
+    }
+  }, [auth.user_id, navigate]);
   return (
     <>
       <div className="register__con">
@@ -28,6 +28,7 @@ function Customer() {
             <p className="form-text">
               Please fill in Your Accurate Information
             </p>
+
             <FORM_SIGN handler={registerCustomer} role="customer" />
             <p className="form-text login_here flex">
               <span>Already have an account?</span>

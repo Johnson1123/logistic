@@ -16,11 +16,11 @@ function PassengerDB() {
   const user = useSelector((state) => state.toggleReducer.user);
   const auth = useSelector((state) => state.auth);
 
-  // useEffect(() => {
-  //   if (!authenticate) {
-  //     navigate("/");
-  //   }
-  // }, [authenticate, navigate]);
+  useEffect(() => {
+    if (!authenticate) {
+      navigate("/");
+    }
+  }, [authenticate, navigate]);
   return (
     <div className="PassengerDB">
       <div className="PassengerDB__wrapper">
