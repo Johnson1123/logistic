@@ -1,7 +1,7 @@
 @import "../../style/variable.scss";
 .PNav__menu-container {
   width: 100%;
-  height: 770px;
+  height: auto;
   background-color: rgba(0, 0, 0, 0.452);
   position: absolute;
   top: 0;
@@ -11,7 +11,7 @@
     display: none;
   }
   .MobileControllers {
-    height: 100%;
+    min-height: 100%;
     background-color: $secondaryColor;
     padding: 1rem 0rem 0;
     width: 80%;
@@ -46,17 +46,18 @@
       }
       .user__details {
         .username-text {
-          font-size: $font-16;
+          font-size: $font-14;
           font-weight: 500;
           color: $whiteColor;
         }
         .small-text {
-          font-size: $font-14;
+          font-size: $font-12;
           font-weight: 500;
           color: $whiteColor;
         }
       }
     }
+
     .getApp {
       background-color: $whiteColor;
       width: 100%;
@@ -64,20 +65,51 @@
       padding: 1rem 0.5rem;
       margin-top: 1rem;
       .iphones {
-        width: 40%;
+        width: 35%;
       }
       .getApp__content {
         width: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
         .small-title {
-          font-size: 11px;
+          text-align: center;
+          font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+          @include tablet {
+            font-size: calc(12px + 6 * ((100vw - 320px) / 680));
+          }
         }
         .img__con {
           margin-top: 0.5rem;
-          justify-content: space-between;
+          justify-content: space-evenly;
           img {
-            width: 30%;
+            width: 20%;
           }
         }
+      }
+    }
+    .logout-btn {
+      border: none;
+      cursor: pointer;
+      background-color: transparent;
+      display: flex;
+      padding: 8px 1rem;
+      align-items: center;
+      gap: 5px;
+      color: #fff;
+      font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+      font-weight: 300;
+      line-height: 1;
+      transition: 0.5s all;
+      @include tablet {
+        font-size: calc(14px + 6 * ((100vw - 768px) / 680));
+      }
+
+      &:hover {
+        background-color: #fff;
+        border-radius: 5px;
+        color: $secondaryColor;
+        margin-left: 2rem;
       }
     }
   }

@@ -11,8 +11,10 @@ import { useDispatch } from "react-redux";
 function PassengerController() {
   const navigate = useNavigate();
   const Dispatch = useDispatch();
+  const [active, setActive] = useState("/customer");
   const handleDB = (n) => {
     navigate(n);
+    setActive(n);
   };
   const handleDispatch = (n) => {
     Dispatch(logoutUser());
@@ -27,6 +29,8 @@ function PassengerController() {
               icon={item.icon}
               key={index}
               handler={() => handleDB(item.href)}
+              active={active}
+              href={item.href}
             />
           );
         })}

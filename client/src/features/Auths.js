@@ -42,7 +42,6 @@ export const registerCustomer = createAsyncThunk(
         body,
         config
       );
-
       localStorage.setItem("userEmail", user.email);
     } catch (error) {
       console.error(error.response.data);
@@ -85,6 +84,14 @@ export const loginCustomer = createAsyncThunk(
         localStorage.setItem(
           "token",
           JSON.stringify({ ...response.data, role: "customer" })
+        );
+        localStorage.setItem(
+          "accessToken",
+          JSON.stringify(response.data.data.access)
+        );
+        localStorage.setItem(
+          "refreshToken",
+          JSON.stringify(response.data.data.refresh)
         );
         localStorage.removeItem("userEmail");
       }

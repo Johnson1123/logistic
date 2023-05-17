@@ -32,8 +32,12 @@
       }
       .getApp__content {
         width: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
         .small-title {
-          font-size: calc(9px + 6 * ((100vw - 320px) / 680));
+          font-size: calc(14px + 6 * ((100vw - 320px) / 680));
+          text-align: center;
           @include tablet {
             font-size: calc(9px + 6 * ((100vw - 768px) / 680));
             font-weight: 700;

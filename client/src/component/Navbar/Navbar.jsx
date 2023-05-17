@@ -31,9 +31,11 @@ function Navbar() {
   const [toggle, setToggle] = useState(authToggle);
   const Dispatch = useDispatch();
 
+  const closeAppMenu = () => Dispatch(toggleMenu());
   useEffect(() => {
     setToggle(toggle);
   }, [Dispatch, auth]);
+
   const handleLogout = () => {
     Dispatch(toggleMenu());
     Dispatch(logoutUser());
@@ -136,15 +138,9 @@ function Navbar() {
         )}
       </div>
       {authToggle && (
-        <div className={`app__menu `}>
-          <div
-            // whileInView={{x: [-300, 0] }} transition={{duration: 0.55, ease: 'easeIn'}}
-            className="app__menu-wrapper wrapper"
-          >
-            <AiOutlineClose
-              className="menu__close"
-              onClick={() => Dispatch(toggleMenu())}
-            />
+        <div className={`app__menu `} onClick={() => Dispatch(closeToggle())}>
+          <div className="app__menu-wrapper wrapper">
+            <AiOutlineClose className="menu__close" onClick={closeAppMenu} />
 
             <ul className="menu__items">
               {auth.user_id && (
@@ -163,7 +159,7 @@ function Navbar() {
                 </div>
               )}
               <div className="meun__items-con">
-                <Link to="/" onClick={() => Dispatch(toggleMenu())}>
+                <Link to="/" onClick={closeAppMenu}>
                   Home
                 </Link>
               </div>
@@ -175,37 +171,34 @@ function Navbar() {
                 </div>
               )} */}
               <div className="meun__items-con">
-                <Link to="/about" onClick={() => Dispatch(toggleMenu())}>
+                <Link to="/about" onClick={closeAppMenu}>
                   About
                 </Link>
               </div>
               <div className="meun__items-con">
-                <Link to="/service" onClick={() => Dispatch(toggleMenu())}>
+                <Link to="/service" onClick={closeAppMenu}>
                   Our Service
                 </Link>
               </div>{" "}
               <div className="meun__items-con">
-                <Link to="/testimonial" onClick={() => Dispatch(toggleMenu())}>
+                <Link to="/testimonial" onClick={closeAppMenu}>
                   Testimonial
                 </Link>
               </div>
               {auth.user_id && (
                 <div className="meun__items-con">
-                  <Link to="" onClick={() => Dispatch(toggleMenu())}>
+                  <Link
+                    to={role === "driver" ? "/driver/help" : "/customer/help"}
+                    onClick={closeAppMenu}
+                  >
                     F&Q
                   </Link>
                 </div>
               )}
-              <div
-                className="meun__items-con"
-                onClick={() => Dispatch(toggleMenu())}
-              >
+              <div className="meun__items-con" onClick={closeAppMenu}>
                 <Link to="https://www.apple.com/app-store/">iOS App</Link>
               </div>
-              <div
-                className="meun__items-con"
-                onClick={() => Dispatch(toggleMenu())}
-              >
+              <div className="meun__items-con" onClick={closeAppMenu}>
                 <Link to="https://play.google.com/store/games?hl=en&gl=US&pli=1">
                   Android App
                 </Link>
@@ -213,16 +206,13 @@ function Navbar() {
               {auth.user_id ? (
                 ""
               ) : (
-                <div
-                  className="meun__items-con"
-                  onClick={() => Dispatch(toggleMenu())}
-                >
+                <div className="meun__items-con" onClick={closeAppMenu}>
                   <Link to={`/login/customer`}>Login</Link>
                 </div>
               )}
               {auth.user_id && (
                 <div className="meun__items-con" onClick={handleLogout}>
-                  <button className="btn">Logout</button>
+                  <button className="logout">Logout</button>
                 </div>
               )}
             </ul>

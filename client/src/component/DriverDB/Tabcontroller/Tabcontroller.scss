@@ -4,22 +4,25 @@
   padding: 0.5rem 0.7rem;
   border-radius: 10px;
   border: none;
-  margin: 15px 0;
+  margin: 20px 0;
   font-weight: 500;
   transition: all 0.5s;
   font-size: calc(14px + 6 * ((100vw - 320px) / 680)) !important;
   min-width: max-content;
   list-style: none;
   color: $whiteColor !important;
+  cursor: pointer;
   @include tablet {
     padding: 0.7rem 2rem;
     font-size: calc(7px + 6 * ((100vw - 320px) / 680)) !important;
   }
-  &:hover {
+  // &:hover,
+  &.active {
     background-color: $whiteColor;
     margin-left: 10px;
     color: $primaryColor !important;
   }
+
   svg {
     margin-right: 0.8rem;
     @include tablet {

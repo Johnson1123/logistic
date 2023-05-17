@@ -211,18 +211,18 @@ export const passengercontroller = [
     icon: <TbMessage />,
     href: "messages",
   },
-  {
-    id: 5,
-    label: "Become a Partner",
-    icon: <TbFileInvoice />,
-    href: "local/Partner",
-  },
-  {
-    id: 6,
-    label: "International Partnership ",
-    icon: <RxDashboard />,
-    href: "international/Partner",
-  },
+  // {
+  //   id: 5,
+  //   label: "Become a Partner",
+  //   icon: <TbFileInvoice />,
+  //   href: "local/Partner",
+  // },
+  // {
+  //   id: 6,
+  //   label: "International Partnership ",
+  //   icon: <RxDashboard />,
+  //   href: "international/Partner",
+  // },
 
   {
     id: 8,
