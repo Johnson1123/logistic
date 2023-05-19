@@ -8,8 +8,9 @@
   z-index: 20;
   margin-left: 2rem;
   @include tablet {
-    left: 50%;
-    transform: translateX(-50%);
+    width: 50%;
+    left: 30%;
+    transform: translateX(-30%);
     .form-sm {
       font-size: calc(12px + 6 * ((100vw - 320px) / 680));
       font-size: 16px;

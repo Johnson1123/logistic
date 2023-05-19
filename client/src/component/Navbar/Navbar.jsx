@@ -18,6 +18,7 @@ import DownApp from "./nav/DownApp/DownApp";
 import Company from "./nav/Company/Company";
 import { logoutUser } from "../../features/Auths";
 import { useEffect } from "react";
+import { loadProfile } from "../../features/customer/putCustomer";
 
 function Navbar() {
   // const cart = useSelector((state) => state.cartItem.cartItems);
@@ -26,6 +27,7 @@ function Navbar() {
   const auth = useSelector((state) => state.auth);
   const getCustomerProfile = useSelector((state) => state.getCustomerProfile);
   const authenticate = useSelector((state) => state.auth.isAuthenticate);
+  const user = useSelector((state) => state?.profile?.profile);
   const role = auth.role;
 
   const [toggle, setToggle] = useState(authToggle);
@@ -35,6 +37,10 @@ function Navbar() {
   useEffect(() => {
     setToggle(toggle);
   }, [Dispatch, auth]);
+
+  useEffect(() => {
+    Dispatch(loadProfile());
+  }, []);
 
   const handleLogout = () => {
     Dispatch(toggleMenu());
@@ -121,9 +127,13 @@ function Navbar() {
             <div className="user__container flex center">
               <img
                 src={
-                  getCustomerProfile.img ? getCustomerProfile.img : images.Elia
+                  user
+                    ? user?.image_url
+                      ? user?.image_url
+                      : images.avatar
+                    : images.avatar
                 }
-                alt="user"
+                alt={user?.first_name}
               />
               <span className="p-text">
                 <Link

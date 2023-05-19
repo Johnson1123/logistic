@@ -14,10 +14,13 @@ function PassengerDB() {
   const menu = useSelector((state) => state.toggleReducer.dashboarMenu);
   const authenticate = useSelector((state) => state.auth.isAuthenticate);
   const user = useSelector((state) => state.toggleReducer.user);
-  const auth = useSelector((state) => state.auth);
-
+  const auth = useSelector((state) => state?.auth?.token?.data?.user);
+  function getLocalAccessToken() {
+    const accessToken = window.localStorage.getItem("accessToken");
+    return accessToken;
+  }
   useEffect(() => {
-    if (!authenticate) {
+    if (!auth?.user_id) {
       navigate("/");
     }
   }, [authenticate, navigate]);

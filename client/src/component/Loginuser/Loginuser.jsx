@@ -52,10 +52,7 @@ function Loginuser(props) {
       </p>
       <p className="not_have_account p-text">
         <span>Don't have Account?</span>
-        <span
-          onClick={() => navigate(`/${props.role}/register`)}
-          className="link"
-        >
+        <span onClick={() => navigate(`/signUp`)} className="link">
           Sign Up
         </span>
       </p>

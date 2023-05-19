@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import "./Home.scss";
 import Search from "../../component/Search/Search";
@@ -13,17 +13,27 @@ import DownloadSection from "../../component/DownloadSection/DownloadSection";
 import { useNavigate } from "react-router-dom";
 import OurBrand from "../../component/OurBrand/OurBrand";
 import Safety from "../../component/Safety/Safety";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { getCustomer } from "../../features/api";
+import { setProfile } from "../../features/customer/getUser";
 
 export const Home = () => {
   const navigate = useNavigate();
-  const auth = useSelector((state) => state.auth);
-  const authenticate = useSelector((state) => state.auth.isAuthenticate);
+  const user = useSelector((state) => state.profile.profile);
+  const dispatch = useDispatch();
+
+  function getLocalProfile() {
+    const profile = window.localStorage.getItem("profile");
+    return profile;
+  }
+  useEffect(() => {
+    dispatch(getCustomer);
+  }, [navigate, dispatch]);
   return (
     <div className="app__container home__container">
       <div className="app__wrapper flex">
         <div className="home__intro flex">
-          {auth.user_id && <Search />}
+          {user && <Search />}
 
           <div className="home__intro-title">
             <h1 className="p-text fw-500">Fast & Easy Way To Rent A Car</h1>
@@ -38,15 +48,13 @@ export const Home = () => {
               fact of life.
             </p>
           </div>
-          {true && (
+          {!user && (
             <div
               className={
-                authenticate
-                  ? `btn__container flex btn-center`
-                  : `btn__container flex`
+                user ? `btn__container flex btn-center` : `btn__container flex`
               }
             >
-              {!authenticate && (
+              {!user && (
                 <div className="btn-box">
                   <SignupBtn
                     label="Partnership"
@@ -55,11 +63,11 @@ export const Home = () => {
                 </div>
               )}
 
-              {!authenticate && (
+              {!user && (
                 <div className="btn-box">
                   <SignupBtn
                     label="Sign up"
-                    handler={() => navigate("/tosignUp")}
+                    handler={() => navigate("/signUp")}
                   />
                 </div>
               )}
@@ -70,11 +78,11 @@ export const Home = () => {
         <OperationArea />
         <OurService />
         <Testimonials />
-        {authenticate && <Map />}
+        {user && <Map />}
         <ChargesBadge />
-        {authenticate && <DownloadSection />}
-        {authenticate ? "" : <OurBrand />}
-        {authenticate ? "" : <Safety />}
+        {user && <DownloadSection />}
+        {user ? "" : <OurBrand />}
+        {user ? "" : <Safety />}
       </div>
     </div>
   );

@@ -12,6 +12,7 @@ function PassengerController() {
   const navigate = useNavigate();
   const Dispatch = useDispatch();
   const [active, setActive] = useState("/customer");
+
   const handleDB = (n) => {
     navigate(n);
     setActive(n);

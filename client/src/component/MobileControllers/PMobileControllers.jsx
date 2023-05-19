@@ -53,8 +53,8 @@ function PMobileControllers() {
                 icon={item.icon}
                 key={index}
                 handler={() => handleDB(item.href)}
-                // active={active}
-                // href={item.href}
+                active={active}
+                href={item.href}
               />
             );
           })}

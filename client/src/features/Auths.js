@@ -103,6 +103,7 @@ export const loginCustomer = createAsyncThunk(
     }
   }
 );
+
 export const loginDriver = createAsyncThunk(
   "auth/loginDriver",
   async (loginData, { rejectWithValue }) => {
@@ -172,7 +173,7 @@ const authSlice = createSlice({
   initialState,
   reducers: {
     loadUser: (state) => {
-      const token = state.token;
+      const token = JSON.parse(localStorage.getItem("token"));
       if (token) {
         return {
           ...state,
