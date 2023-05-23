@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import Navbar from "./component/Navbar/Navbar";
 import Footer from "./component/Footer/Footer";
-import { loadUser, logoutUser } from "./features/Auths";
+import { logoutUser } from "./features/Auths";
 import GetDriverHelp from "./component/DriverDB/GetHelp/GetHelp";
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 import {
@@ -91,6 +91,8 @@ import { useEffect, useState } from "react";
 import { loadProfile } from "./features/customer/putCustomer";
 import SetForgetPwd from "./pages/authPages/SetPwd/SetPwd";
 import { getUser } from "./features/customer/getUser";
+import { loadUser } from "./features/user/action/user";
+import { store } from "./App/store";
 
 const Layout = () => {
   return (
@@ -438,9 +440,10 @@ const router = createBrowserRouter([
 function App() {
   const dispatch = useDispatch();
   const auth = useSelector((state) => state.auth);
-  useEffect(() => {
-    dispatch(loadUser(null));
-  }, [dispatch]);
+  const user = useSelector((state) => state.user);
+  // useEffect(() => {
+  //   dispatch(loadUser(null));
+  // }, [dispatch]);
 
   useEffect(() => {
     dispatch(loadProfile(null));
@@ -452,6 +455,10 @@ function App() {
     currency: "USD",
     intent: "capture",
   };
+  useEffect(() => {
+    store.dispatch(loadUser());
+    console.log(user);
+  }, []);
   return (
     <PayPalScriptProvider options={initialOptions}>
       <RouterProvider router={router} />;

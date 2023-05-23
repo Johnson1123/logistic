@@ -10,7 +10,7 @@ function Profile() {
   const user = useSelector((state) => state?.profile?.profile);
   useEffect(() => {
     dispatch(loadProfile());
-  }, []);
+  }, [dispatch]);
   return (
     <div className="Profile">
       <h4 className="title">My Profile</h4>

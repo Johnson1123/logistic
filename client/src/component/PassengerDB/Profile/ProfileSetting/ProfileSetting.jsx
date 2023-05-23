@@ -91,7 +91,7 @@ function ProfileSetting() {
             {selectedFile ? (
               <img src={preview} />
             ) : (
-              <img src={user.image_url} />
+              <img src={user?.image_url ? user?.image_url : images.avatar} />
             )}
           </div>
           <input

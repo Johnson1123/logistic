@@ -4,10 +4,11 @@
   height: 100vh;
   justify-content: center;
   align-items: center;
+  margin-top: 1rem;
   @include mobile {
+    max-width: 500px;
   }
   .Messages__wrapper {
-    width: 95%;
     height: 100%;
     display: flex;
     gap: 1rem;
@@ -22,7 +23,8 @@
       border-radius: 10px;
       background-color: #faf9f9;
       padding: 0 1rem;
-      @include mobile {
+      @include tablet {
+        min-width: 250px;
       }
       .title {
       }
@@ -72,9 +74,9 @@
             align-items: center;
             .info__image-box {
               width: 45px;
+              height: 45px;
               position: relative;
               margin-right: 0.5rem;
-
               img {
                 width: 45px;
                 height: 45px;
@@ -89,7 +91,7 @@
                 border-radius: 50%;
                 position: absolute;
                 top: 0;
-                right: 7px;
+                right: 4px;
                 @include mobile {
                   top: 3px;
                   right: 5px;
@@ -133,6 +135,7 @@
           }
           .info__image-box {
             width: 45px;
+            height: 45px;
             position: relative;
             margin-right: 0.5rem;
 
@@ -150,7 +153,7 @@
               border-radius: 50%;
               position: absolute;
               top: 0;
-              right: 7px;
+              right: 4px;
               @include mobile {
                 right: 5px;
                 top: 3px;
@@ -192,11 +195,12 @@
         border-bottom-right-radius: 10px;
         border-bottom-left-radius: 10px;
         .chat__info {
-          width: 50%;
+          width: 80%;
           display: flex;
           align-items: center;
           .info__image-box {
             width: 45px;
+            height: 45px;
             position: relative;
             margin-right: 0.5rem;
             img {
@@ -213,7 +217,7 @@
               border-radius: 50%;
               position: absolute;
               top: 0;
-              right: 7px;
+              right: 4px;
               @include mobile {
                 right: 5px;
                 top: 3px;
@@ -254,6 +258,8 @@
           width: 100%;
           border: none;
           outline: none;
+          padding-left: 10px;
+          height: 100%;
         }
         .btn-send {
           height: 100%;

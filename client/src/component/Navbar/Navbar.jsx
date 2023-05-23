@@ -156,7 +156,16 @@ function Navbar() {
               {auth.user_id && (
                 <div className="mobile__user flex-center">
                   <div className="user__container flex center">
-                    <img src={images.Elia} alt="user image" />
+                    <img
+                      src={
+                        user
+                          ? user?.image_url
+                            ? user?.image_url
+                            : images.avatar
+                          : images.avatar
+                      }
+                      alt={user?.first_name}
+                    />
                     <span className="p-text">
                       <Link
                         to={role === "driver" ? "/driver" : "/customer"}

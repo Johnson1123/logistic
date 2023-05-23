@@ -16,7 +16,7 @@ function PMobileControllers() {
   const navigate = useNavigate();
   const tab = useSelector((state) => state.toggleReducer.dashboarMenu);
   const [active, setActive] = useState("");
-
+  const user = useSelector((state) => state?.profile?.profile);
   const handleDB = (n) => {
     navigate(n);
     Dispatch(handleMenuClose());
@@ -30,18 +30,30 @@ function PMobileControllers() {
   const handleLogout = (n) => {
     Dispatch(logoutUser());
   };
+  const name = `${user?.first_name}  ${user?.last_name}`;
   return (
-    <div className="PNav__menu-container">
+    <div className="PNav__menu-container" onClick={handleClose}>
       <div className="MobileControllers">
         <div className="db__close">
           <AiOutlineClose onClick={handleClose} />
         </div>
         <div className="DBNav__box user__img-details flex">
           <div className="user__img flex center">
-            <img src={images.Elia} alt="Technovix driver" />
+            <img
+              src={
+                user
+                  ? user?.image_url
+                    ? user?.image_url
+                    : images.avatar
+                  : images.avatar
+              }
+              alt={user?.first_name}
+            />
           </div>
           <div className="user__details">
-            <h2 className="username-text p-text">Christiana James</h2>
+            <h2 className="username-text p-text">
+              {name.length > 15 ? name.slice(0, 15) + "..." : name}
+            </h2>
             <p className="p-text small-text">Driver</p>
           </div>
         </div>
