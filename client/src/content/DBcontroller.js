@@ -4,6 +4,7 @@ import { FaThList } from "react-icons/fa";
 import { TbMessage } from "react-icons/tb";
 import { IoLogOutOutline } from "react-icons/io5";
 import { BiHelpCircle } from "react-icons/bi";
+import { FiUser } from "react-icons/fi";
 import { FcSettings } from "react-icons/fc";
 import { MdPayment } from "react-icons/md";
 import { TbFileInvoice } from "react-icons/tb";
@@ -12,6 +13,7 @@ import { BsFillFilePostFill } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import logoutUser from "../features/Auths";
+import { AiOutlineSetting } from "react-icons/ai";
 export const DBcontroller = [
   {
     id: 1,
@@ -227,13 +229,13 @@ export const passengercontroller = [
   {
     id: 8,
     label: "Profile",
-    icon: <RxDashboard />,
+    icon: <FiUser />,
     href: "profile",
   },
   {
     id: 9,
     label: "Setting",
-    icon: <RxDashboard />,
+    icon: <AiOutlineSetting />,
     href: "setting",
   },
   {

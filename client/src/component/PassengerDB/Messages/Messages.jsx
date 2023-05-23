@@ -11,15 +11,11 @@ import { images } from "../../../asset";
 import Message from "./Message/Message";
 
 function Messages() {
-  const [ws, setWs] = useState(null);
   const [selectOption, setSelectOption] = useState(false);
   const [select, setSelect] = useState("all");
   const message = "Where are you now";
   const name = "Johnson Doe";
-  useEffect(() => {
-    const ws = new W3CWebSocket("ws://techvonix.onrender.com");
-    setWs(ws);
-  }, []);
+
   return (
     <div className="Messages__container">
       <div className="Messages__wrapper">

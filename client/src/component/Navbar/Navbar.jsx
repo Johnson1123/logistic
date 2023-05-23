@@ -222,9 +222,7 @@ function Navbar() {
                   Android App
                 </Link>
               </div>
-              {auth.user_id ? (
-                ""
-              ) : (
+              {!auth.user_id && (
                 <div className="meun__items-con" onClick={closeAppMenu}>
                   <Link to={`/login/customer`}>Login</Link>
                 </div>

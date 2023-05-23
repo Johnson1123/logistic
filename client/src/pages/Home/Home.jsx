@@ -20,12 +20,8 @@ import { setProfile } from "../../features/customer/getUser";
 export const Home = () => {
   const navigate = useNavigate();
   const user = useSelector((state) => state.profile.profile);
+  const auth = useSelector((state) => state.auth);
   const dispatch = useDispatch();
-
-  function getLocalProfile() {
-    const profile = window.localStorage.getItem("profile");
-    return profile;
-  }
   useEffect(() => {
     dispatch(getCustomer);
   }, [navigate, dispatch]);
@@ -33,7 +29,7 @@ export const Home = () => {
     <div className="app__container home__container">
       <div className="app__wrapper flex">
         <div className="home__intro flex">
-          {user && <Search />}
+          {auth.user_id && <Search />}
 
           <div className="home__intro-title">
             <h1 className="p-text fw-500">Fast & Easy Way To Rent A Car</h1>
