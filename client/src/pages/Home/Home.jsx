@@ -22,9 +22,6 @@ export const Home = () => {
   const user = useSelector((state) => state.profile.profile);
   const auth = useSelector((state) => state.auth);
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getCustomer);
-  }, [navigate, dispatch]);
   return (
     <div className="app__container home__container">
       <div className="app__wrapper flex">
@@ -44,13 +41,13 @@ export const Home = () => {
               fact of life.
             </p>
           </div>
-          {!user && (
+          {!auth?.user_id && (
             <div
               className={
                 user ? `btn__container flex btn-center` : `btn__container flex`
               }
             >
-              {!user && (
+              {!auth?.user_id && (
                 <div className="btn-box">
                   <SignupBtn
                     label="Partnership"
@@ -59,7 +56,7 @@ export const Home = () => {
                 </div>
               )}
 
-              {!user && (
+              {!auth?.user_id && (
                 <div className="btn-box">
                   <SignupBtn
                     label="Sign up"

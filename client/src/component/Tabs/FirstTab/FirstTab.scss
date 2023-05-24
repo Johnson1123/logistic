@@ -1,18 +1,21 @@
 @import "../../../style/variable.scss";
-.firstTab {
-  width: 95%;
+.firstTab.driver {
   height: auto;
   flex-direction: column;
   margin-top: 2rem;
   align-items: center;
   .form-bold {
-    width: 60%;
-    line-height: 1.6;
-    text-align: center;
+    width: 100%;
+    line-height: 1.3;
+    text-align: left;
+    font-size: 20px;
     @include tablet {
       width: 30%;
-      line-height: 1.6;
+      line-height: 1;
     }
+  }
+  .form-text {
+    margin-top: 0.5rem;
   }
   .small-title {
     width: 70%;

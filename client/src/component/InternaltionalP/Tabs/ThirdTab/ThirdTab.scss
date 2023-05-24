@@ -1,5 +1,5 @@
 @import "../../../../style/variable.scss";
-.thirdTab {
+.thirdTab.inter {
   width: 140%;
   height: 100%;
   flex-direction: column;
@@ -11,7 +11,6 @@
     padding: 1rem;
   }
   .form-bold {
-    text-align: center;
     font-size: 24px;
     line-height: 2;
   }

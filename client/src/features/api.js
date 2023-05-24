@@ -29,19 +29,20 @@ export const getCustomer = async () => {
     return accessToken;
   }
   const access = JSON.parse(getLocalAccessToken());
+
   const config = {
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer  ${access}`,
     },
   };
+
   try {
     const res = await axios.get(
       "https://techvonix.onrender.com/api/v1/profile",
       config
     );
     localStorage.setItem("profile", JSON.stringify(res.data.data));
-    console.log(res?.data?.data);
   } catch (error) {
     console.log(error);
   }

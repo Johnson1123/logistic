@@ -5,7 +5,7 @@ import "./FirstTab.scss";
 
 function FirstTab() {
   return (
-    <div className="firstTab flex">
+    <div className="firstTab inter flex">
       <p className="form-bold p-text">
         Personal information and vehicle details
       </p>

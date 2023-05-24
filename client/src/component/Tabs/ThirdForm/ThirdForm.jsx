@@ -75,9 +75,9 @@ function ThirdForm() {
     }
   }, [formData, Dispatch, error, isSumitted]);
   return (
-    <div className="Thirdform">
+    <div className="Thirdform inter">
       <form onSubmit={handleSubmit}>
-        <div className="input__file-group">
+        <div className="input__file-group w-full">
           <p className="form-text">Driver’s license</p>
           <input
             type="file"
@@ -85,11 +85,14 @@ function ThirdForm() {
             name={`licenseImage`}
             onChange={handleChange}
           />
-          <label htmlFor="file1" className="p-text upload">
-            + Upload file
-          </label>
+          <div className="w-full flex justify-between items-center mt-5">
+            <label htmlFor="file1" className="p-text upload">
+              + Upload file
+            </label>
+            <div className=" req-text w-1/2 text-right">Required *</div>
+          </div>
+
           {error.licenseImage && <p className="error">{error.licenseImage}</p>}
-          <div className="p-text req-text">Required *</div>
         </div>
         <div className="input__file-group">
           <p className="form-text">Interior picture of your Car</p>
@@ -102,15 +105,17 @@ function ThirdForm() {
             name={`interiorImage`}
             onChange={handleChange}
           />
-          <label htmlFor="file2" className="p-text upload">
-            + Upload file
-          </label>
+          <div className="w-full flex justify-between items-center">
+            <label htmlFor="file2" className="p-text upload">
+              + Upload file
+            </label>
+            <div className=" req-text w-1/2 text-right">Required *</div>
+          </div>
           {error.interiorImage && (
             <p className="error">{error.interiorImage}</p>
           )}
-          <div className="p-text req-text">Required *</div>
         </div>
-        <div className="input__file-group">
+        <div className="input__file-group mt-5">
           <p className="form-text">Driver’s profile picture</p>
           <p className="p-text">
             Please provide a clear portrait picture (not a full body picture) of
@@ -122,11 +127,13 @@ function ThirdForm() {
             name={`profileImage`}
             onChange={handleChange}
           />
-          <label htmlFor="file3" className="p-text upload">
-            + Upload file
-          </label>
+          <div className="w-full flex justify-between items-center mt-5">
+            <label htmlFor="file3" className="p-text upload">
+              + Upload file
+            </label>
+            <div className=" req-text w-1/2 text-right">Required *</div>
+          </div>
           {error.profileImage && <p className="error">{error.profileImage}</p>}
-          <div className="p-text req-text">Required *</div>
         </div>
         <div className="input__file-group">
           <p className="form-text">Valid Insurance Policy Documents</p>
@@ -149,13 +156,15 @@ function ThirdForm() {
             name="insuranceImage"
             onChange={handleChange}
           />
-          <label htmlFor="file4" className="p-text upload">
-            + Upload file
-          </label>
+          <div className="w-full flex justify-between items-center my-1">
+            <label htmlFor="file4" className="p-text upload">
+              + Upload file
+            </label>
+            <div className=" req-text w-1/2 text-right">Required *</div>
+          </div>
           {error.insuranceImage && (
             <p className="error">{error.insuranceImage}</p>
           )}
-          <div className="p-text req-text">Required *</div>
         </div>
         <div className="input__file-group">
           <p className="form-text">Exterior picture of your Car</p>
@@ -168,13 +177,15 @@ function ThirdForm() {
             name="exteriorImage"
             onChange={handleChange}
           />
-          <label htmlFor="file5" className="p-text upload">
-            + Upload file
-          </label>
+          <div className="w-full flex justify-between items-center mt-5">
+            <label htmlFor="file5" className="p-text upload">
+              + Upload file
+            </label>
+            <div className=" req-text w-1/2 text-right">Required *</div>
+          </div>
           {error.exteriorImage && (
             <p className="error">{error.exteriorImage}</p>
           )}
-          <div className="p-text req-text">Required *</div>
         </div>
         <div className="btn__wrapper">
           <SignupBtn label="PROCEED" type="submit" />

@@ -5,7 +5,7 @@ import "./FourthTab.scss";
 
 function FouthTab() {
   return (
-    <div className="forthTab flex">
+    <div className="forthTab inter flex">
       <p className="form-title">Payment details</p>
       <p className="p-text forthTab-text">
         We need your payment details to pay you

@@ -93,6 +93,8 @@ import SetForgetPwd from "./pages/authPages/SetPwd/SetPwd";
 import { getUser } from "./features/customer/getUser";
 import { loadUser } from "./features/user/action/user";
 import { store } from "./App/store";
+import { baseUrl } from "./server";
+import axios from "axios";
 
 const Layout = () => {
   return (
@@ -441,13 +443,10 @@ function App() {
   const dispatch = useDispatch();
   const auth = useSelector((state) => state.auth);
   const user = useSelector((state) => state.user);
-  // useEffect(() => {
-  //   dispatch(loadUser(null));
-  // }, [dispatch]);
 
-  useEffect(() => {
-    dispatch(loadProfile(null));
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(loadProfile(null));
+  // }, [dispatch]);
 
   const initialOptions = {
     "client-id":
@@ -457,8 +456,8 @@ function App() {
   };
   useEffect(() => {
     store.dispatch(loadUser());
-    console.log(user);
   }, []);
+
   return (
     <PayPalScriptProvider options={initialOptions}>
       <RouterProvider router={router} />;

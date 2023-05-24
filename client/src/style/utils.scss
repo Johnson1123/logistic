@@ -85,6 +85,12 @@
 .form-text {
   font-size: $font-14;
   color: $primaryColor;
+  font-weight: 300;
+  line-height: 1.6;
+}
+.form-label {
+  font-size: $font-14;
+  color: $primaryColor;
   font-weight: 500;
   line-height: 1.6;
 }

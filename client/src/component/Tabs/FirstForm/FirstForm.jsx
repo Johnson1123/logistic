@@ -11,7 +11,7 @@ import {
 
 function FirstForm() {
   const Dispatch = useDispatch();
-  const [isChecked, setIsChecked] = useState(false);
+  const [isChecked, setIsChecked] = useState(true);
 
   const driver = useSelector((state) => state.driverDetails);
   const pageNumber = driver.pageNumber;
@@ -158,13 +158,6 @@ function FirstForm() {
           </div>
         </div>
         <div className="Mfleet">
-          <p className="form-bold">Have multiple vehicles?</p>
-          <p className="p-text">
-            <Link to="signLocalP" className="link-text">
-              {"Sign up as a fleet owner"}
-            </Link>
-            to become Local Partner
-          </p>
           <div className="flex">
             <input type="checkbox" name="Mfleet" onChange={handleCheck} />
             <p className="check-text">I have a vehicle that i will drive.</p>

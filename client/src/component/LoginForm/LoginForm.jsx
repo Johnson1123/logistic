@@ -23,8 +23,6 @@ function LoginForm(props) {
     password: "",
   });
   const handler = props.role === "driver" ? loginDriver : loginCustomer;
-  console.log(auth);
-  console.log(props.role);
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
@@ -33,7 +31,6 @@ function LoginForm(props) {
       console.log(err);
     }
   };
-  console.log(resStatus);
   return (
     <form className="form_login" onSubmit={handleLogin}>
       <div className="flex input_group">
