@@ -37,11 +37,10 @@ export const putUser = createAsyncThunk(
         body,
         config
       );
-      console.log(res.data);
       return res.data;
     } catch (error) {
-      if (error.response && error.response.data.message) {
-        return rejectWithValue(error.response.data.message);
+      if (error.response && error.response.messages) {
+        return rejectWithValue(error.response.data.messages.message);
       } else {
         return rejectWithValue(error.message);
       }

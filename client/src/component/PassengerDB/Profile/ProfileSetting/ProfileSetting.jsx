@@ -20,6 +20,7 @@ function ProfileSetting() {
   const putCustomer = useSelector((state) => state.setCustomerProfile);
   const [selectedFile, setSelectedFile] = useState();
   const user = useSelector((state) => state?.profile?.profile);
+  console.log(putCustomer);
 
   useEffect(() => {
     Dispatch(loadProfile());
@@ -63,14 +64,14 @@ function ProfileSetting() {
       setImg(reader.result);
     };
   };
+
   values.image_url = img ? img : user?.image_url;
+
   const handleSumit = async (e) => {
     e.preventDefault();
     try {
-      const res = Dispatch(putUser(values));
-      if (res.status === 200) {
-        navigate("/customer/profile");
-      }
+      const res = await Dispatch(putUser(values));
+      navigate("/customer/profile");
     } catch (error) {
       if (error.response && error.response.data.message) {
         console.log(error.response.data);

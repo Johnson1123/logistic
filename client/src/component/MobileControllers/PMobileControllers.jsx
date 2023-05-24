@@ -30,7 +30,8 @@ function PMobileControllers() {
   const handleLogout = (n) => {
     Dispatch(logoutUser());
   };
-  const name = `${user?.first_name}  ${user?.last_name}`;
+  const name = `${user?.first_name}`;
+  console.log(name);
   return (
     <div className="PNav__menu-container" onClick={handleClose}>
       <div className="MobileControllers">
@@ -54,7 +55,7 @@ function PMobileControllers() {
             <h2 className="username-text p-text">
               {name.length > 15 ? name.slice(0, 15) + "..." : name}
             </h2>
-            <p className="p-text small-text">Driver</p>
+            <p className="p-text small-text">customer</p>
           </div>
         </div>
         <div>

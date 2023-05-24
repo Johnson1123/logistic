@@ -52,12 +52,18 @@
         width: 40%;
         font-size: 14px;
       }
+      .small-title {
+        width: 200px;
+        min-width: 150px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
       @include tablet {
-        width: 100%;
-        justify-content: space-between;
+        width: 90%;
         align-items: center;
         .p-text {
-          width: 40%;
+          width: 150px;
           font-size: 14px;
         }
         .name {
@@ -66,9 +72,12 @@
           font-size: 30px;
         }
         .small-title {
-          width: 60%;
+          width: 400px;
           font-size: 16px;
           font-weight: 400;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
         }
       }
     }

@@ -8,6 +8,7 @@ import { loadProfile } from "../../../features/customer/putCustomer";
 function Profile() {
   const dispatch = useDispatch();
   const user = useSelector((state) => state?.profile?.profile);
+  console.log(user);
   useEffect(() => {
     dispatch(loadProfile());
   }, [dispatch]);
@@ -35,7 +36,13 @@ function Profile() {
         )}
         <div className="profile__box flex">
           <p className="p-text">Email address</p>
-          {user?.email && <p className="small-title">{user?.email}</p>}
+          {user?.email && (
+            <p className="small-title">
+              {user?.email.length > 20
+                ? user?.email.slice(0, 10) + "..." + user.email.slice(-14)
+                : user?.email}
+            </p>
+          )}
         </div>
         <div className="profile__box flex">
           <p className="p-text">Phone number</p>
