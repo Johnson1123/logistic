@@ -17,16 +17,16 @@ function ProfileSetting() {
   const Dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const putCustomer = useSelector((state) => state.setCustomerProfile);
   const [selectedFile, setSelectedFile] = useState();
+  const [preview, setPreview] = useState();
+  const [img, setImg] = useState("");
+
   const user = useSelector((state) => state?.profile?.profile);
-  console.log(putCustomer);
+  const putCustomer = useSelector((state) => state.setCustomerProfile);
 
   useEffect(() => {
     Dispatch(loadProfile());
   }, []);
-
-  const [img, setImg] = useState("");
 
   const [values, setValues] = useState({
     first_name: "",
@@ -35,18 +35,17 @@ function ProfileSetting() {
     gender: "",
   });
 
-  const accessToken = localStorage.getItem("authToken");
   const handleChange = (e) => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
   };
 
-  const [preview, setPreview] = useState();
   useEffect(() => {
     if (!selectedFile) {
       setPreview(undefined);
       return;
     }
+
     const objectUrl = URL.createObjectURL(selectedFile);
     setPreview(objectUrl);
     return () => URL.revokeObjectURL(objectUrl);

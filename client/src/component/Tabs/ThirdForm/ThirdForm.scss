@@ -54,7 +54,6 @@
       background-color: #f3f3f3;
       font-weight: 700;
       width: auto;
-      padding: 0.3rem 0.5rem;
       border-radius: 10px;
       margin-top: 0.5rem;
     }
@@ -76,5 +75,8 @@
         margin-top: 2rem;
       }
     }
+  }
+  label {
+    padding: 10px 20px;
   }
 }
