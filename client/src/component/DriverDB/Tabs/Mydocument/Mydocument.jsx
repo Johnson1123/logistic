@@ -80,7 +80,7 @@ function Mydocument() {
                   <div className=" mt-2">
                     <label
                       htmlFor="file-upload"
-                      className="text-md font-bold py-3 px-4 rounded-xl bg-green-600 text-white justify-center items-center flex max-w-[40%] md:max-w-[20%]"
+                      className="text-md font-bold py-3 px-4 rounded-xl bg-green-600 text-white justify-center items-center flex max-w-[50%] md:max-w-[20%]"
                     >
                       <BiUpload size={20} className="text-white mr-2" /> Upload
                       file
@@ -131,7 +131,7 @@ function Mydocument() {
             <div className=" mt-2">
               <label
                 htmlFor="file-upload"
-                className="text-md font-bold py-3 px-4 rounded-xl bg-green-600 text-white justify-center items-center flex max-w-[40%] md:max-w-[20%]"
+                className="text-md font-bold py-3 px-4 rounded-xl bg-green-600 text-white justify-center items-center flex max-w-[50%] md:max-w-[20%]"
               >
                 <BiUpload size={20} className="text-white mr-2" /> Upload file
               </label>
