@@ -96,7 +96,6 @@ export const loginCustomer = createAsyncThunk(
         localStorage.removeItem("userEmail");
       }
       return response.data;
-      console.log(response.data);
     } catch (error) {
       console.error(error.response.data);
       return rejectWithValue(error.response.data);

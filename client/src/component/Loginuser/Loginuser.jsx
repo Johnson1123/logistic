@@ -17,6 +17,7 @@ function Loginuser(props) {
       navigate("/tab");
     } else if (user && props.role === "customer") {
       navigate("/customer");
+      window.location.reload(true);
     }
   }, [user, Dispatch, navigate]);
   return (
@@ -25,7 +26,9 @@ function Loginuser(props) {
       <p className="form-sm form-sub-title">
         Please fill in Your Accurate Information
       </p>
+
       <LoginForm role={props.role} />
+
       <p className="control__container">
         {props.role === "customer" ? (
           <span
