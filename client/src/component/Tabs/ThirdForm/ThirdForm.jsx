@@ -259,27 +259,29 @@ function ThirdForm() {
         </form>
       </div>
       {modal && (
-        <div className="absolute w-full h-screen bg-[#f1f5f9] top-0 right-0 z-50 flex flex-col items-center">
-          <div className="sm:w-full rounded-lg h-1/2">
-            <img
-              src={preview}
-              alt="data uploaded"
-              className="max-w-full w-full h-full object-cover"
-            />
+        <div className="fixed w-full h-screen bg-green-100 top-0 left-0  z-50 flex justify-center  items-center px-6 py-2">
+          <div className="h-[95%]">
+            <div className="sm:w-full md:w-[800px]  rounded-lg p-6 py-10 md:py-5 bg-[rgba(0,0,0,0.4)]">
+              <img
+                src={preview}
+                alt="data uploaded"
+                className="object-contain mx-auto w-[500px] h-[300px]"
+              />
+            </div>
+            <h3 className="text-gray-700 text-xl font-extrabold text-center font-roboto mt-5">
+              Check readability
+            </h3>
+            <p className="text-sm font-light text-black-500 px-5 text-center mt-3">
+              Make sure document details are clear to read, without blur and
+              glare.
+            </p>
+            <button
+              className="flex items-center px-4 w-80 mx-auto justify-center bg-green-600 text-white text-sm rounded-xl mt-10 cursor-pointer py-3 hover:text-green-600 hover:border-2 hover:border-green-600 hover:bg-transparent"
+              onClick={handleModal}
+            >
+              My Photo is Readable
+            </button>
           </div>
-          <h3 className="text-gray-700 text-xl font-extrabold font-roboto mt-5">
-            Check readability
-          </h3>
-          <p className="text-sm font-light text-black-500 px-5 text-center">
-            Make sure document details are clear to read, without blur and
-            glare.
-          </p>
-          <button
-            className="flex items-center px-4 w-80 mx-auto justify-center bg-green-600 text-white text-sm rounded-xl mt-1 cursor-pointer py-3 hover:text-green-600 hover:border-2 hover:border-green-600 hover:bg-transparent"
-            onClick={handleModal}
-          >
-            My Photo is Readable
-          </button>
         </div>
       )}
     </>
