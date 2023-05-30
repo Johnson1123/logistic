@@ -5,18 +5,28 @@ import TabInput from "../../../Tabs/TabInput/TabInput";
 import SignupBtn from "../../../Btn/SignupBtn/SignupBtn";
 import "./ProfileSetting.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { putUser } from "../../../../features/customer/putCustomer";
+import {
+  loadProfile,
+  putUser,
+} from "../../../../features/customer/putCustomer";
 import { BeatLoader } from "react-spinners";
 import { useNavigate } from "react-router-dom";
+import { setProfile } from "../../../../features/customer/getUser";
 
 function ProfileSetting() {
   const Dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const putCustomer = useSelector((state) => state.setCustomerProfile);
   const [selectedFile, setSelectedFile] = useState();
-
+  const [preview, setPreview] = useState();
   const [img, setImg] = useState("");
+
+  const user = useSelector((state) => state?.profile?.profile);
+  const putCustomer = useSelector((state) => state.setCustomerProfile);
+
+  useEffect(() => {
+    Dispatch(loadProfile());
+  }, []);
 
   const [values, setValues] = useState({
     first_name: "",
@@ -25,18 +35,17 @@ function ProfileSetting() {
     gender: "",
   });
 
-  const accessToken = localStorage.getItem("authToken");
   const handleChange = (e) => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
   };
 
-  const [preview, setPreview] = useState();
   useEffect(() => {
     if (!selectedFile) {
       setPreview(undefined);
       return;
     }
+
     const objectUrl = URL.createObjectURL(selectedFile);
     setPreview(objectUrl);
     return () => URL.revokeObjectURL(objectUrl);
@@ -54,7 +63,9 @@ function ProfileSetting() {
       setImg(reader.result);
     };
   };
-  values.image_url = img;
+
+  values.image_url = img ? img : user?.image_url;
+
   const handleSumit = async (e) => {
     e.preventDefault();
     try {
@@ -77,7 +88,11 @@ function ProfileSetting() {
       <div className="ProfileSetting__con flex">
         <div className="img__control">
           <div className="img__con">
-            {selectedFile ? <img src={preview} /> : <img src={images.James} />}
+            {selectedFile ? (
+              <img src={preview} />
+            ) : (
+              <img src={user?.image_url ? user?.image_url : images.avatar} />
+            )}
           </div>
           <input
             type="file"
@@ -97,15 +112,17 @@ function ProfileSetting() {
             <TabInput
               type="text"
               label="First Name"
-              placeholder="first name"
+              placeholder={user?.first_name}
+              value={user?.first_name}
               name="first_name"
               onChange={handleChange}
             />
             <TabInput
               type="text"
               label="Last Name"
-              placeholder="last name"
+              placeholder={user?.last_name}
               name="last_name"
+              value={user?.last_name}
               onChange={handleChange}
             />
           </div>
@@ -113,15 +130,17 @@ function ProfileSetting() {
             <TabInput
               type="text"
               label="Address"
-              placeholder="home address"
+              placeholder={user?.home_address}
               name="home_address"
+              value={user?.home_address}
               onChange={handleChange}
             />
             <TabInput
               type="text"
               label="Gender"
-              placeholder="gender"
+              placeholder={user?.gender}
               name="gender"
+              value={user?.gender}
               onChange={handleChange}
             />
           </div>

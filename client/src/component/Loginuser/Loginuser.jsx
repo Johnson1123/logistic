@@ -16,7 +16,8 @@ function Loginuser(props) {
     if (user && props.role === "driver") {
       navigate("/tab");
     } else if (user && props.role === "customer") {
-      navigate("/");
+      navigate("/customer");
+      window.location.reload(true);
     }
   }, [user, Dispatch, navigate]);
   return (
@@ -25,7 +26,9 @@ function Loginuser(props) {
       <p className="form-sm form-sub-title">
         Please fill in Your Accurate Information
       </p>
+
       <LoginForm role={props.role} />
+
       <p className="control__container">
         {props.role === "customer" ? (
           <span
@@ -52,10 +55,7 @@ function Loginuser(props) {
       </p>
       <p className="not_have_account p-text">
         <span>Don't have Account?</span>
-        <span
-          onClick={() => navigate(`/${props.role}/register`)}
-          className="link"
-        >
+        <span onClick={() => navigate(`/signUp`)} className="link">
           Sign Up
         </span>
       </p>

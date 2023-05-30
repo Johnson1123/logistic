@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./DriverController.scss";
 import Tabcontroller from "../DriverDB/Tabcontroller/Tabcontroller";
 import { IoLogOutOutline } from "react-icons/io5";
@@ -12,8 +12,11 @@ import { logoutUser } from "../../features/Auths";
 function DriverController() {
   const navigate = useNavigate();
   const Dispatch = useDispatch();
+  const [active, setActive] = useState("/customer");
+
   const handleDB = (n) => {
     navigate(n);
+    setActive(n);
   };
   const handleDispatch = (n) => {
     Dispatch(logoutUser());
@@ -30,6 +33,8 @@ function DriverController() {
               handler={
                 item.href ? () => handleDB(item.href) : () => handleDispatch
               }
+              active={active}
+              href={item.href}
             />
           );
         })}

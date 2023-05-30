@@ -1,6 +1,7 @@
 import React from "react";
 import NewpwdForm from "../NewpwdForm/NewpwdForm";
 import "./Newpwduser.scss";
+import ForgetPwdForm from "../ForgetPwdForm/ForgetPwdForm";
 
 function Newpwduser() {
   return (
@@ -11,7 +12,8 @@ function Newpwduser() {
           We strongly recommend more than 6 characters consisting of both upper
           and lower case
         </p>
-        <NewpwdForm />
+        {/* <NewpwdForm /> */}
+        <ForgetPwdForm />
       </div>
     </div>
   );

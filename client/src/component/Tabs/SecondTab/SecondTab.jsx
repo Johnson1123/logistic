@@ -45,7 +45,7 @@ function SecondTab() {
   }, [formData, Dispatch, error, isSumitted]);
 
   return (
-    <div className="secondTab flex">
+    <div className="secondTab driver flex">
       <p className="form-bold fw-700">Private and licensing details</p>
       <p className="small-title p-text">
         Your national ID and license details will be kept private

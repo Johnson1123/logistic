@@ -57,7 +57,7 @@ function Upcoming() {
                     <div className="pickUp flex">
                       <span
                         className={
-                          trip.takeOffPlace.length > 20
+                          trip.takeOffPlace.length > 50
                             ? "trucate address"
                             : "address"
                         }
@@ -68,7 +68,7 @@ function Upcoming() {
                     <div className="destination flex">
                       <span
                         className={
-                          trip.takeOffPlace.length > 20
+                          trip.takeOffPlace.length > 50
                             ? "trucate address"
                             : "address"
                         }

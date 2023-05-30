@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { images } from "../../asset";
 import "./DBNav.scss";
-import { ImUser } from "react-icons/im";
 import { Link } from "react-router-dom";
 import { AiOutlineMenu } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
@@ -9,11 +8,16 @@ import {
   handleMenuOpen,
   userActive,
 } from "../../features/toggleSlice/toggleSlice";
+import { loadProfile } from "../../features/customer/putCustomer";
 
 function DBNav() {
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.toggleReducer.user);
   const Dispatch = useDispatch();
+  const user = useSelector((state) => state?.profile?.profile);
+
+  useEffect(() => {
+    Dispatch(loadProfile());
+  }, []);
   const menuHandler = () => {
     Dispatch(handleMenuOpen());
   };
@@ -30,11 +34,20 @@ function DBNav() {
         onClick={() => dispatch(userActive())}
       >
         <div className="user__img flex center">
-          <img src={images.Elia} alt="Technovix driver" />
+          <img
+            src={
+              user
+                ? user?.image_url
+                  ? user?.image_url
+                  : images.avatar
+                : images.avatar
+            }
+            alt={user?.first_name}
+          />
         </div>
         <div className="user__details">
-          <h2 className="username-text p-text">Christiana James</h2>
-          <p className="p-text small-text">Driver</p>
+          <h2 className="username-text p-text">{user?.first_name}</h2>
+          <p className="p-text small-text">customer</p>
         </div>
       </div>
       <div className="DBNav__box db__menu" onClick={() => menuHandler()}>

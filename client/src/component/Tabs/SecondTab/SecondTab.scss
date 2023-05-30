@@ -1,10 +1,16 @@
 @import "../../../style/variable.scss";
-.secondTab {
-  width: 95%;
+.secondTab.driver {
   height: 100%;
   flex-direction: column;
   align-items: center;
   margin-top: 2rem;
+  .form-bold {
+    font-size: 20px;
+    width: 100%;
+  }
+  .small-title {
+    font-weight: 300;
+  }
   @include tablet {
     width: 50%;
     .form-bold {
@@ -20,10 +26,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
   }
   .form-text {
-    width: 80%;
-    text-align: center;
+    width: 100%;
+    text-align: left;
+    margin-top: 0.5rem;
     @include tablet {
       width: 100%;
     }

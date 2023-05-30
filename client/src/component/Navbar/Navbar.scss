@@ -11,7 +11,10 @@
   top: 0;
   @include tablet {
     height: 70px;
-    padding: 1rem clamp(16px, 5rem, 5rem);
+    padding: 1rem 5rem;
+  }
+  @media screen and (max-width: 960px) and (min-width: 768px) {
+    padding: 1rem;
   }
   .app__navbar-wrapper-sm {
     justify-content: space-between;
@@ -21,7 +24,8 @@
       justify-content: space-between;
       width: 100%;
       @media screen and (min-width: 767px) {
-        width: auto;
+        width: 100%;
+        min-width: 80px;
       }
       svg {
         margin-right: 10px;
@@ -50,6 +54,7 @@
         max-width: 100%;
       }
       .nav__items-con {
+        cursor: pointer;
         position: relative;
         text-align: center;
         top: 0;
@@ -82,6 +87,9 @@
           font-weight: 500;
           color: $primaryColor;
           margin: 0 15px;
+          @media screen and (max-width: 960px) {
+            margin: 0 5px;
+          }
         }
         .link {
           list-style: none;
@@ -131,10 +139,12 @@
       margin: 0 10px;
       object-fit: cover;
       border-radius: 50%;
-      @media screen and (min-width: 767px) {
-        width: 50px;
-        height: 50px;
+      @include tablet {
+        width: 40px;
+        height: 40px;
         margin: 0 15px;
+        min-width: 40px;
+        min-height: 40px;
       }
     }
     .user-link {
@@ -162,13 +172,19 @@
       width: 70%;
       @include mobile {
         margin-left: 15px;
-        margin-top: 20px;
+        margin-top: 25px;
       }
 
-      a {
+      a,
+      .logout {
         text-decoration: none;
-        padding: 18px 5px;
+        padding: 0 5px;
         color: $secondaryColor;
+        font-size: 14px;
+      }
+      .logout {
+        border: none;
+        background-color: transparent;
       }
       .menu__item {
         justify-content: space-between;

@@ -16,6 +16,7 @@ function FORM_SIGN(props) {
   const Dispatch = useDispatch();
   const location = useLocation();
   const auth = useSelector((state) => state.auth);
+  const [isubmitted, setIssubmitted] = useState(false);
   const resStatus =
     props.role === "driver"
       ? auth.registerDriverStatus
@@ -57,10 +58,8 @@ function FORM_SIGN(props) {
       formError.password =
         "must contain Min.6 character, 1 lowercase, 1 UpperCase, and  1 number";
     }
-
     return formError;
   };
-  const [isubmitted, setIssubmitted] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -79,7 +78,7 @@ function FORM_SIGN(props) {
       navigate("/otp", { state: { user: props.role } });
     }
   }, [auth, navigate, isubmitted, error, Dispatch]);
-  console.log(auth);
+
   return (
     <form className="form_sign" onSubmit={handleSubmit}>
       <div className="flex input_group">
@@ -151,7 +150,7 @@ function FORM_SIGN(props) {
         {resStatus === "rejected" ? (
           <p className="error">{resError?.message}</p>
         ) : null}
-        <button className="btn sign_btn">
+        <button className="btn sign_btn" type="submit">
           {resStatus === "pending" ? <BeatLoader color="#36d7b7" /> : "Sign Up"}
         </button>
       </div>

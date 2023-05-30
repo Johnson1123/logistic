@@ -42,7 +42,6 @@ export const registerCustomer = createAsyncThunk(
         body,
         config
       );
-
       localStorage.setItem("userEmail", user.email);
     } catch (error) {
       console.error(error.response.data);
@@ -86,16 +85,24 @@ export const loginCustomer = createAsyncThunk(
           "token",
           JSON.stringify({ ...response.data, role: "customer" })
         );
+        localStorage.setItem(
+          "accessToken",
+          JSON.stringify(response.data.data.access)
+        );
+        localStorage.setItem(
+          "refreshToken",
+          JSON.stringify(response.data.data.refresh)
+        );
         localStorage.removeItem("userEmail");
       }
       return response.data;
-      console.log(response.data);
     } catch (error) {
       console.error(error.response.data);
       return rejectWithValue(error.response.data);
     }
   }
 );
+
 export const loginDriver = createAsyncThunk(
   "auth/loginDriver",
   async (loginData, { rejectWithValue }) => {
@@ -121,23 +128,23 @@ export const loginDriver = createAsyncThunk(
     }
   }
 );
-// export const forgetPwd = createAsyncThunk(
-//   "auth/forgetPwd",
-//   async (email, { rejectWithValue }) => {
-//     const body = JSON.stringify(email);
-//     try {
-//       const { data } = await axios.post(
-//         "https://techvonix.onrender.com/api/v1/auth/forgot-password",
-//         body,
-//         config
-//       );
-//       return data;
-//     } catch (error) {
-//       console.error(error.response.data);
-//       return rejectWithValue(error.response.data);
-//     }
-//   }
-// );
+export const forgetPwd = createAsyncThunk(
+  "auth/forgetPwd",
+  async (email, { rejectWithValue }) => {
+    const body = JSON.stringify(email);
+    try {
+      const { data } = await axios.post(
+        "https://techvonix.onrender.com/api/v1/auth/forgot-password",
+        body,
+        config
+      );
+      return data;
+    } catch (error) {
+      console.error(error.response.data);
+      return rejectWithValue(error.response.data);
+    }
+  }
+);
 export const verifyUser = createAsyncThunk(
   "auth/verifyOtp",
   async (otp, { rejectWithValue }) => {
@@ -165,7 +172,7 @@ const authSlice = createSlice({
   initialState,
   reducers: {
     loadUser: (state) => {
-      const token = state.token;
+      const token = JSON.parse(localStorage.getItem("token"));
       if (token) {
         return {
           ...state,
@@ -479,24 +486,24 @@ const authSlice = createSlice({
         verifyStatus: "",
       };
     });
-    // builder.addCase(forgetPwd.pending, (state, action) => {
-    //   return { ...state, forgetStatus: "pending" };
-    // });
-    // builder.addCase(forgetPwd.fulfilled, (state, action) => {
-    //   if (action.payload) {
-    //     return {
-    //       ...state,
-    //       forgetError: "success",
-    //     };
-    //   }
-    // });
-    // builder.addCase(forgetPwd.rejected, (state, action) => {
-    //   return {
-    //     ...state,
-    //     forgetStatus: "rejected",
-    //     forgetError: action?.payload,
-    //   };
-    // });
+    builder.addCase(forgetPwd.pending, (state, action) => {
+      return { ...state, forgetStatus: "pending" };
+    });
+    builder.addCase(forgetPwd.fulfilled, (state, action) => {
+      if (action.payload) {
+        return {
+          ...state,
+          forgetError: "success",
+        };
+      }
+    });
+    builder.addCase(forgetPwd.rejected, (state, action) => {
+      return {
+        ...state,
+        forgetStatus: "rejected",
+        forgetError: action?.payload,
+      };
+    });
   },
 });
 

@@ -15,10 +15,11 @@ const initialState = {
   address: "",
 };
 
-const access =
-  localStorage.getItem("authToken") ||
-  localStorage.getItem("token")?.data?.access;
-
+function getLocalAccessToken() {
+  const accessToken = localStorage.getItem("accessToken");
+  return accessToken;
+}
+const access = JSON.parse(getLocalAccessToken());
 const config = {
   headers: {
     "Content-Type": "application/json",
@@ -29,7 +30,6 @@ const config = {
 export const putUser = createAsyncThunk(
   "auth/putUser",
   async (profile, { rejectWithValue }) => {
-    console.log(profile);
     try {
       const body = JSON.stringify(profile);
       const res = await axios.put(
@@ -39,8 +39,8 @@ export const putUser = createAsyncThunk(
       );
       return res.data;
     } catch (error) {
-      if (error.response && error.response.data.message) {
-        return rejectWithValue(error.response.data.message);
+      if (error.response && error.response.messages) {
+        return rejectWithValue(error.response.data.messages.message);
       } else {
         return rejectWithValue(error.message);
       }

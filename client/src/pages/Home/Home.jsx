@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import "./Home.scss";
 import Search from "../../component/Search/Search";
@@ -13,12 +13,15 @@ import DownloadSection from "../../component/DownloadSection/DownloadSection";
 import { useNavigate } from "react-router-dom";
 import OurBrand from "../../component/OurBrand/OurBrand";
 import Safety from "../../component/Safety/Safety";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { getCustomer } from "../../features/api";
+import { setProfile } from "../../features/customer/getUser";
 
 export const Home = () => {
   const navigate = useNavigate();
+  const user = useSelector((state) => state.profile.profile);
   const auth = useSelector((state) => state.auth);
-  const authenticate = useSelector((state) => state.auth.isAuthenticate);
+  const dispatch = useDispatch();
   return (
     <div className="app__container home__container">
       <div className="app__wrapper flex">
@@ -38,15 +41,13 @@ export const Home = () => {
               fact of life.
             </p>
           </div>
-          {true && (
+          {!auth?.user_id && (
             <div
               className={
-                authenticate
-                  ? `btn__container flex btn-center`
-                  : `btn__container flex`
+                user ? `btn__container flex btn-center` : `btn__container flex`
               }
             >
-              {!authenticate && (
+              {!auth?.user_id && (
                 <div className="btn-box">
                   <SignupBtn
                     label="Partnership"
@@ -55,11 +56,11 @@ export const Home = () => {
                 </div>
               )}
 
-              {!authenticate && (
+              {!auth?.user_id && (
                 <div className="btn-box">
                   <SignupBtn
                     label="Sign up"
-                    handler={() => navigate("/tosignUp")}
+                    handler={() => navigate("/signUp")}
                   />
                 </div>
               )}
@@ -70,11 +71,11 @@ export const Home = () => {
         <OperationArea />
         <OurService />
         <Testimonials />
-        {authenticate && <Map />}
+        {user && <Map />}
         <ChargesBadge />
-        {authenticate && <DownloadSection />}
-        {authenticate ? "" : <OurBrand />}
-        {authenticate ? "" : <Safety />}
+        {user && <DownloadSection />}
+        {user ? "" : <OurBrand />}
+        {user ? "" : <Safety />}
       </div>
     </div>
   );

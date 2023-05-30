@@ -17,7 +17,6 @@ function AboutXcab() {
   });
 
   const handleContent = (n) => {
-    console.log(idx);
     setToggle(true);
     setidx(n);
   };

@@ -10,6 +10,7 @@ const initialState = {
   uploadStatus: "",
   uploadError: "",
   token: "",
+  driver: {},
 };
 
 export const uploadDriverDetail = createAsyncThunk(
@@ -30,15 +31,11 @@ export const uploadDriverDetail = createAsyncThunk(
         config
       );
       localStorage.setItem("driver", JSON.stringify(response?.data));
+      console.log(response.data);
       return response.data;
     } catch (error) {
-      if (error.response && error.response.data.message) {
-        console.log(error.response.data.message);
-        return rejectWithValue(error.response.data.message);
-      } else {
-        console.log(error.message);
-        return rejectWithValue(error.message);
-      }
+      console.error(error.response.data);
+      return rejectWithValue(error.response.data);
     }
   }
 );
@@ -61,6 +58,23 @@ const driverProfile = createSlice({
     handlePageNumber: (state, action) => {
       state.pageNumber = action.payload;
     },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(uploadDriverDetail.pending, (state) => {
+      return { ...state, uploadStatus: "pending", uploadError: "" };
+    });
+    builder.addCase(uploadDriverDetail.fulfilled, (state, action) => {
+      if (action.payload) {
+        return (state.driver = action.payload);
+      } else return state;
+    });
+    builder.addCase(uploadDriverDetail.rejected, (state, action) => {
+      return {
+        ...state,
+        uploadStatus: "rejected",
+        uploadError: action.payload,
+      };
+    });
   },
 });
 

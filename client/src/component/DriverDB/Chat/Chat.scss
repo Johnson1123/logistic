@@ -11,7 +11,7 @@
     padding: 0.5rem 0.3rem;
     .col-1 {
       position: relative;
-      width: max(20%, 40px);
+      width: 40px;
       margin-right: 10px;
       @include mobile {
         width: max-content;
@@ -32,7 +32,7 @@
       }
       .dot {
         position: absolute;
-        right: 0px;
+        right: 5px;
         top: 0px;
         height: 7px;
         width: 7px;

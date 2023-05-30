@@ -1,11 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { images } from "../../../asset";
 import "./Profile.scss";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { getCustomer } from "../../../features/api";
+import { loadProfile } from "../../../features/customer/putCustomer";
 
 function Profile() {
-  const profile = useSelector((state) => state.getCustomerProfile.getProfile);
-  console.log(profile);
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state?.profile?.profile);
+  console.log(user);
+  useEffect(() => {
+    dispatch(loadProfile());
+  }, [dispatch]);
   return (
     <div className="Profile">
       <h4 className="title">My Profile</h4>
@@ -16,37 +22,41 @@ function Profile() {
       <div className="profile__content">
         <img
           src={
-            profile?.data?.image_url ? profile?.data?.image_url : images.avatar
+            user
+              ? user?.image_url
+                ? user?.image_url
+                : images.avatar
+              : images.avatar
           }
           alt="Elia"
         />
 
-        {profile?.data?.first_name && (
-          <p className="small-title name">{`${profile?.data?.data?.first_name} ${profile?.data?.data?.last_name}`}</p>
+        {user?.first_name && (
+          <p className="small-title name">{`${user?.first_name} ${user?.last_name}`}</p>
         )}
         <div className="profile__box flex">
           <p className="p-text">Email address</p>
-          {profile?.data?.data?.email && (
-            <p className="small-title">{profile?.data?.data?.email}</p>
+          {user?.email && (
+            <p className="small-title">
+              {user?.email.length > 20
+                ? user?.email.slice(0, 10) + "..." + user.email.slice(-14)
+                : user?.email}
+            </p>
           )}
         </div>
         <div className="profile__box flex">
           <p className="p-text">Phone number</p>
-          {profile?.data?.data?.phone && (
-            <p className="small-title">{profile?.data?.data?.phone}</p>
-          )}
+          {user?.phone && <p className="small-title">{user?.phone}</p>}
         </div>
         <div className="profile__box flex">
           <p className="p-text">Home address</p>
-          {profile?.data?.data?.home_address && (
-            <p className="small-title">{profile?.data?.data?.home_address}</p>
+          {user?.home_address && (
+            <p className="small-title">{user?.home_address}</p>
           )}
         </div>
         <div className="profile__box flex">
           <p className="p-text">Gender</p>
-          {profile?.data?.data?.gender && (
-            <p className="small-title">{profile?.data?.data?.gender}</p>
-          )}
+          {user?.gender && <p className="small-title">{user?.gender}</p>}
         </div>
       </div>
     </div>

@@ -11,7 +11,7 @@
     display: none;
   }
   .MobileControllers {
-    height: 100%;
+    min-height: 100%;
     background-color: $secondaryColor;
     padding: 1rem 0rem 0;
     width: 80%;
@@ -88,6 +88,30 @@
             }
           }
         }
+      }
+    }
+    .logout-btn {
+      border: none;
+      cursor: pointer;
+      background-color: transparent;
+      display: flex;
+      padding: 8px 1rem;
+      align-items: center;
+      gap: 5px;
+      color: #fff;
+      font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+      font-weight: 500;
+      line-height: 1;
+      transition: 0.5s all;
+      @include tablet {
+        font-size: calc(14px + 6 * ((100vw - 768px) / 680));
+      }
+
+      &:hover {
+        background-color: #fff;
+        border-radius: 5px;
+        color: $secondaryColor;
+        margin-left: 2rem;
       }
     }
   }

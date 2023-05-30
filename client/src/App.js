@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import Navbar from "./component/Navbar/Navbar";
 import Footer from "./component/Footer/Footer";
-import { loadUser, logoutUser } from "./features/Auths";
+import { logoutUser } from "./features/Auths";
 import GetDriverHelp from "./component/DriverDB/GetHelp/GetHelp";
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 import {
@@ -84,14 +84,17 @@ import AppFeatures from "./component/PassengerDB/GetHelp/HelpButton/AppFeatures/
 import UsingRide from "./component/PassengerDB/GetHelp/HelpButton/UsingApp/UsingRide";
 import AccountData from "./component/PassengerDB/GetHelp/HelpButton/AccoutData/AccoutData";
 import PaymentPricing from "./component/PassengerDB/GetHelp/HelpButton/PaymentPricing/PaymentPricing";
-import { TbRipple } from "react-icons/tb";
 import InterP from "./component/PassengerDB/InterP/InterP";
 import FleetDB from "./pages/FleetDB/FleetDB";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { DateCalendar } from "@mui/x-date-pickers";
 import { loadProfile } from "./features/customer/putCustomer";
-import axiosInstance from "./api";
+import SetForgetPwd from "./pages/authPages/SetPwd/SetPwd";
+import { getUser } from "./features/customer/getUser";
+import { loadUser } from "./features/user/action/user";
+import { store } from "./App/store";
+import { baseUrl } from "./server";
+import axios from "axios";
 
 const Layout = () => {
   return (
@@ -117,7 +120,7 @@ const router = createBrowserRouter([
         element: <InterP />,
       },
       {
-        path: "/tosignUp",
+        path: "/signUp",
         element: <Signupbanner />,
       },
 
@@ -178,6 +181,10 @@ const router = createBrowserRouter([
   {
     path: "/forgetpwd",
     element: <ForgetPwd />,
+  },
+  {
+    path: "/setpassword",
+    element: <SetForgetPwd />,
   },
   {
     path: "/newpwd",
@@ -434,65 +441,12 @@ const router = createBrowserRouter([
 
 function App() {
   const dispatch = useDispatch();
-  // let updateToken = async () => {
-  //   let response = await fetch(
-  //     "https://techvonix.onrender.com/api/v1/auth/token/refresh",
-  //     {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //         Authorization: `Bearer ${access}`,
-  //       },
-  //       body: JSON.stringify({ refresh: refreshToken }),
-  //     }
-  //   );
-  //   let data = await response.json();
-  //   if (response.status === 200) {
-  //     setAccess(data?.access);
-  //     localStorage.setItem("authToken", JSON.stringify(data));
-  //   } else {
-  //     dispatch(logoutUser());
-  //   }
-
-  //   if (isLoading) {
-  //     setIsLoading(false);
-  //   }
-  // };
+  const auth = useSelector((state) => state.auth);
+  const user = useSelector((state) => state.user);
 
   // useEffect(() => {
-  //   if (isLoading) {
-  //     updateToken();
-  //   }
-  //   let hrs2 = 1000 * 60 * 60 * 2;
-
-  //   let interval = setInterval(() => {
-  //     if (refreshToken) {
-  //       updateToken();
-  //     }
-  //   }, hrs2);
-  //   return () => clearInterval(interval);
-  // }, [access, isLoading, dispatch]);
-  useEffect(() => {
-    (async () => {
-      try {
-        const res = await axiosInstance.get(
-          "https://techvonix.onrender.com/api/v1/profile/"
-        );
-        localStorage.setItem("profile", JSON.stringify(res));
-      } catch (err) {
-        console.log(err);
-        dispatch(logoutUser());
-      }
-    })();
-  }, [dispatch]);
-
-  useEffect(() => {
-    dispatch(loadUser(null));
-  }, [dispatch]);
-
-  useEffect(() => {
-    dispatch(loadProfile(null));
-  }, [dispatch]);
+  //   dispatch(loadProfile(null));
+  // }, [dispatch]);
 
   const initialOptions = {
     "client-id":
@@ -500,6 +454,9 @@ function App() {
     currency: "USD",
     intent: "capture",
   };
+  useEffect(() => {
+    store.dispatch(loadUser());
+  }, []);
 
   return (
     <PayPalScriptProvider options={initialOptions}>

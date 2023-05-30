@@ -29,7 +29,9 @@
     "react-spinners": "^0.13.8",
     "recharts": "^2.5.0",
     "sass": "^1.62.0",
-    "web-vitals": "^2.1.4"
+    "tailwindcss": "^3.3.2",
+    "web-vitals": "^2.1.4",
+    "websocket": "^1.0.34"
   },
   "scripts": {
     "start": "react-scripts start",

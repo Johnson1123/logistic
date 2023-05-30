@@ -9,9 +9,11 @@ import {
   handlePageNumber,
   uploadDriverDetail,
 } from "../../../features/driver/driver";
+import { BeatLoader } from "react-spinners";
 
 function FourthForm() {
   const Dispatch = useDispatch();
+  const navigate = useNavigate();
   const [isChecked, setIsChecked] = useState(false);
 
   const driverPayment = useSelector(
@@ -20,10 +22,12 @@ function FourthForm() {
   const driverDocument = useSelector(
     (state) => state.driverDetails.driverDocument
   );
-  const personalInfo = useSelector((state) => state.driverDetails.personalInfo);
+  const driver = useSelector((state) => state.driverDetails);
   const license = useSelector((state) => state.driverDetails.license);
 
-  const billType = driverPayment.billType;
+  const personalInfo = driver.personalInfo;
+
+  const billType = driverPayment.billType || "";
   const companyName = driverPayment.companyName || "";
   const paymentAdress = driverPayment.paymentAdress || "";
   const regCode = driverPayment.regCode || "";
@@ -42,7 +46,6 @@ function FourthForm() {
     xlcabPayment: xlcabPayment,
     bankName: bankName,
   });
-
   const handleOnchange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -83,11 +86,6 @@ function FourthForm() {
 
   const [isSumitted, setIsSumitted] = useState(false);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setError(validate(formData));
-    setIsSumitted(true);
-  };
   const driverData = {
     vehicle: {
       name: personalInfo.vehicleName,
@@ -119,22 +117,25 @@ function FourthForm() {
   useEffect(() => {
     if (Object.keys(error).length === 0 && isSumitted) {
       Dispatch(
-        handleDriverPayment({
-          billType: formData.billType,
-          companyName: formData.companyName,
-          paymentAdress: formData.paymentAdress,
-          regCode: formData.regCode,
-          vatNumber: formData.vatNumber,
-          accountName: formData.accountName,
-          xlcabPayment: formData.xlcabPayment,
-          bankName: formData.bankName,
-          vat_liability: isChecked,
-        })
+        handleDriverPayment(
+          formData
+          //   {
+          //   billType: formData.billType,
+          //   companyName: formData.companyName,
+          //   paymentAdress: formData.paymentAdress,
+          //   regCode: formData.regCode,
+          //   vatNumber: formData.vatNumber,
+          //   accountName: formData.accountName,
+          //   xlcabPayment: formData.xlcabPayment,
+          //   bankName: formData.bankName,
+          //   vat_liability: isChecked,
+          // }
+        )
       );
-      Dispatch(uploadDriverDetail(driverData));
-      navigator("/wattogo");
+      console.log("run!");
     }
   }, [formData, Dispatch, isSumitted, error]);
+  console.log(formData);
 
   const [toggle, settoggle] = useState(false);
 
@@ -146,6 +147,16 @@ function FourthForm() {
       settoggle(false);
       setIsChecked(false);
     }
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError(validate(formData));
+    setIsSumitted(true);
+    if (Object.keys(error).length === 0 && isSumitted) {
+      await Dispatch(handleDriverPayment(formData));
+    }
+    await Dispatch(uploadDriverDetail(driverData));
+    navigate("/wattogo");
   };
   return (
     <form className="fouthForm" onSubmit={handleSubmit}>
@@ -260,7 +271,23 @@ function FourthForm() {
           </div>
         </>
       )}
-      <SignupBtn label="PROCEED" type="submit" />
+      {/* <SignupBtn label="PROCEED" type="submit" /> */}
+      {driver?.uploadStatus === "rejected" ? (
+        <p className="error" style={{ textAlign: "center" }}>
+          {driver?.uploadError}
+        </p>
+      ) : (
+        ""
+      )}
+      <SignupBtn
+        label={
+          driver?.uploadStatus === "pending" ? (
+            <BeatLoader color="#36d7b7" />
+          ) : (
+            "Submit"
+          )
+        }
+      />
     </form>
   );
 }

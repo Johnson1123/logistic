@@ -28,11 +28,14 @@ const driverData = {
   bank_account_number: "",
   bank_name_or_bic_swift: "",
 };
-
+function getLocalAccessToken() {
+  const accessToken = localStorage.getItem("accessToken");
+  return accessToken;
+}
 export const uploadDriverDetail = createAsyncThunk(
   "uploadDriverDetail/auth",
   async (user, { rejectWithValue }) => {
-    const tokenData = JSON.parse(localStorage.getItem("token"));
+    const tokenData = JSON.parse(getLocalAccessToken());
     try {
       const body = JSON.stringify(user);
       const config = {
