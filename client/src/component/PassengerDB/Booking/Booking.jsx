@@ -37,6 +37,19 @@ function Booking() {
     setIsRoute(true);
   };
 
+  useEffect(()=>{
+    // navigator.geolocation.getCurrentPosition(
+    //   position => {
+    //     const { latitude, longitude } = position.coords;
+
+    //        console.log({latitude, longitude})
+    //   },
+    //   () => {
+        
+    //   }
+    // );
+  }, [])
+
   const checkError = (cardData) => {
     const formError = {};
     if (!cardData.name) {

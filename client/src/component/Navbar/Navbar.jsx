@@ -6,7 +6,7 @@ import {
   closeSearch,
   closeToggle,
 } from "../../features/toggleSlice/toggleSlice";
-import "./navbar.scss";
+import "./Navbar.scss";
 import "./menu.scss";
 import { images } from "../../asset";
 

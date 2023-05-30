@@ -73,7 +73,7 @@ function CombineInput() {
     timer > 0 && setTimeout(timeOutCallback, 1000);
   }, [timer, timeOutCallback]);
 
-  console.log(timer);
+ 
 
   // const resetTimer = function () {
   //   if (!timer) {
