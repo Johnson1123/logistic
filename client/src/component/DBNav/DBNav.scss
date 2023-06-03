@@ -16,7 +16,11 @@
     justify-content: flex-start;
   }
   .DBNav__logo img {
-    width: 60%;
+    width: max-content;
+    height: 35px;
+    @include tablet {
+      height: 50px;
+    }
   }
   .user-icon {
     margin-left: auto;

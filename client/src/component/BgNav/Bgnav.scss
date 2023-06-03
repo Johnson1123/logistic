@@ -8,4 +8,13 @@
   @include tablet {
     padding: 2rem 5rem;
   }
+  a {
+    img {
+      width: max-content;
+      height: 45px;
+      @include tablet {
+        height: 50px;
+      }
+    }
+  }
 }
