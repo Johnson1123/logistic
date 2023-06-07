@@ -8,8 +8,6 @@ import PassengerController from "../../component/DriverDB/PassengerController/Pa
 import PMobileControllers from "../../component/MobileControllers/PMobileControllers";
 import UserInfo from "../../component/UserInfo/UserInfo";
 import { useEffect } from "react";
-import { setUserInfo } from "../../features/slice/auth/auth";
-import { useCustomerProfileMutation } from "../../features/slice/profile/profileApiSlice";
 
 function PassengerDB() {
   const navigate = useNavigate();
@@ -32,9 +30,9 @@ function PassengerDB() {
         {menu && <PMobileControllers />}
         <div className="PassengerDB__content flex">
           <PassengerController />
-        
-          <Outlet />
-         
+          <div className="tab__container">
+            <Outlet />
+          </div>
         </div>
         {userModalInfo && <UserInfo />}
       </div>

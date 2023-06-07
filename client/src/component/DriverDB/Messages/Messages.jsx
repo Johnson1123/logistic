@@ -17,25 +17,21 @@ function Messages() {
   const [userChats, setUserChats] = useState();
   const [userInput, setUserInput] = useState();
   const [messages, setMessages] = useState([]);
-  const [loadingMsgs, setLoadingMsgs] = useState(false)
+  const [loadingMsgs, setLoadingMsgs] = useState(false);
   const selectecUser = useSelector(userSelected);
   const currentUser = JSON.parse(localStorage.getItem("token")).data.user;
   const msgId = useSelector(chatId);
 
-
   const scrollRef = useRef();
-
-
-
 
   //get user chats
   useEffect(() => {
     const getUserChats = async () => {
-      const access = JSON.parse(localStorage.getItem("token"));
+      const access = JSON.parse(localStorage.getItem("access"));
 
       const config = {
         headers: {
-          Authorization: `Bearer ${access.data.access}`,
+          Authorization: `Bearer ${access}`,
         },
       };
 
@@ -59,11 +55,11 @@ function Messages() {
 
   useEffect(() => {
     const getMsg = async () => {
-      setLoadingMsgs(true)
-      const access = JSON.parse(localStorage.getItem("token"));
+      setLoadingMsgs(true);
+      const access = JSON.parse(localStorage.getItem("access"));
       const config = {
         headers: {
-          Authorization: `Bearer ${access.data.access}`,
+          Authorization: `Bearer ${access}`,
         },
       };
 
@@ -74,10 +70,10 @@ function Messages() {
         );
         setUserInput("");
         setMessages(data.data);
-        setLoadingMsgs(false)
+        setLoadingMsgs(false);
       } catch (error) {
         console.log(error.response.data);
-        setLoadingMsgs(false)
+        setLoadingMsgs(false);
       }
     };
 
@@ -97,19 +93,17 @@ function Messages() {
 
   // send message func
   const sendMessage = async () => {
-
     const body = {
       chat_id: msgId,
       message: userInput,
     };
 
-    const access = JSON.parse(localStorage.getItem("token"));
+    const access = JSON.parse(localStorage.getItem("access"));
     const config = {
       headers: {
-        Authorization: `Bearer ${access.data.access}`,
+        Authorization: `Bearer ${access}`,
       },
     };
-
 
     try {
       setUserInput("");
@@ -138,7 +132,7 @@ function Messages() {
         </Box>
 
         <Box sx={{ width: "100%" }}>
-        {msgId !== "" ? (
+          {msgId !== "" ? (
             <ChatScreen
               sendMessage={sendMessage}
               scrollRef={scrollRef}
@@ -148,7 +142,12 @@ function Messages() {
               setUserInput={setUserInput}
             />
           ) : (
-            <Stack height="100vh" justifyContent="center" alignItems="center"  sx={{ padding: "6rem 0 1rem 1rem" }}>
+            <Stack
+              height="100vh"
+              justifyContent="center"
+              alignItems="center"
+              sx={{ padding: "6rem 0 1rem 1rem" }}
+            >
               <Typography variant="h2" sx={{ color: "rgb(224, 220, 220)" }}>
                 Start a Conversation
               </Typography>

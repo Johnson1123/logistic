@@ -16,7 +16,7 @@ function PMobileControllers() {
   const navigate = useNavigate();
   const tab = useSelector((state) => state.toggleReducer.dashboarMenu);
   const [active, setActive] = useState("");
-  const user = useSelector((state) => state?.profile?.profile);
+  const user = useSelector((state) => state?.auth?.userInfo);
   const handleDB = (n) => {
     navigate(n);
     Dispatch(handleMenuClose());

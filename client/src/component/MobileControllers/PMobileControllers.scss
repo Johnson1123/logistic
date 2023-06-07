@@ -1,7 +1,6 @@
 @import "../../style/variable.scss";
 .PNav__menu-container {
   width: 100%;
-  height: auto;
   background-color: rgba(0, 0, 0, 0.452);
   position: absolute;
   top: 0;
@@ -111,6 +110,9 @@
         color: $secondaryColor;
         margin-left: 2rem;
       }
+    }
+    .Tabcontroller-btn {
+      margin-bottom: 25px !important;
     }
   }
 }

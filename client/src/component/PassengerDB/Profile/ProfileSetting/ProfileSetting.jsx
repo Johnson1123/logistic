@@ -4,24 +4,14 @@ import { images } from "../../../../asset";
 import TabInput from "../../../Tabs/TabInput/TabInput";
 import SignupBtn from "../../../Btn/SignupBtn/SignupBtn";
 import "./ProfileSetting.scss";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  loadProfile,
-  putUser,
-} from "../../../../features/customer/putCustomer";
 import { BeatLoader } from "react-spinners";
-import { useNavigate } from "react-router-dom";
-import { setProfile } from "../../../../features/customer/getUser";
 import { usePutProfileMutation } from "../../../../features/slice/profile/profileApiSlice";
+import { useSelector } from "react-redux";
 
 function ProfileSetting() {
-  const Dispatch = useDispatch();
-  const navigate = useNavigate();
-
   const [selectedFile, setSelectedFile] = useState();
   const [preview, setPreview] = useState();
   const user = useSelector((state) => state?.auth?.userInfo);
-  const putCustomer = useSelector((state) => state.setCustomerProfile);
 
   const [first_name, setFirst_name] = useState(user?.first_name);
   const [last_name, setLast_name] = useState(user?.last_name);

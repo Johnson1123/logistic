@@ -75,7 +75,8 @@ function AddCardForm({ open, setOpen }) {
                     type="text"
                     id="name"
                     name="name"
-                    className="focus:outline-none border-[1px] border-[#f3f3f3] rounded-md px-2 w-[100%] h-[35px]"
+                    placeholder="name"
+                    className="focus:outline-none border-[1px] border-[#e2e2e2] rounded-md px-2 w-[100%] h-[35px]"
                     onChange={(e) => setName(e.target.value)}
                   />
                 </div>
@@ -90,7 +91,8 @@ function AddCardForm({ open, setOpen }) {
                     type="text"
                     id="cardNum"
                     name="cardNum"
-                    className="focus:outline-none border-[1px] border-[#f3f3f3] rounded-md px-2 w-[100%] h-[35px]"
+                    className="focus:outline-none border-[1px] border-[#e2e2e2] rounded-md px-2 w-[100%] h-[35px]"
+                    placeholder="card number"
                     onChange={(e) => setNumber(e.target.value)}
                   />
                 </div>
@@ -106,7 +108,8 @@ function AddCardForm({ open, setOpen }) {
                       type="text"
                       id="Edate"
                       name="Edate"
-                      className="focus:outline-none border-[1px] border-[#f3f3f3] rounded-md px-2 w-[100%] h-[35px]"
+                      className="focus:outline-none border-[1px] border-[#e2e2e2] rounded-md px-2 w-[100%] h-[35px]"
+                      placeholder="yyyy-mm-dd"
                       onChange={(e) => setExpire(e.target.value)}
                     />
                   </div>
@@ -121,19 +124,22 @@ function AddCardForm({ open, setOpen }) {
                       type="password"
                       id="cvv"
                       name="cvv"
-                      className="focus:outline-none border-[1px] border-[#f3f3f3] rounded-md px-2 w-[100%] h-[35px]"
+                      placeholder="cvv"
+                      className="focus:outline-none border-[1px] border-[#e2e2e2] rounded-md px-2 w-[100%] h-[35px]"
                       maxLength={3}
                       onChange={(e) => setCvv(e.target.value)}
                     />
                   </div>
                 </div>
                 <div className="">
-                  {error?.data?.message?.email ? (
-                    <p className="error">{error?.data?.message?.email[0]}</p>
-                  ) : error?.data?.message?.password ? (
-                    <p className="error">{error?.data?.message?.password[0]}</p>
+                  {error?.data?.message?.expiry_date ? (
+                    <p className="error">
+                      {error?.data?.message?.expiry_date[0]}
+                    </p>
                   ) : (
-                    <p className="error">{error?.data?.message}</p>
+                    error?.data?.message?.name && (
+                      <p className="error">{error?.data?.message?.name[0]}</p>
+                    )
                   )}
                   <button
                     className={`${styles.button} py-3 px-5 mx-auto mt-5`}

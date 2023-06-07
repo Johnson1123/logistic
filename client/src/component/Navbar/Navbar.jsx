@@ -5,7 +5,7 @@ import {
   toggleMenu,
   closeToggle,
 } from "../../features/toggleSlice/toggleSlice";
-import "./Navbar.scss";
+import "./navbar.scss";
 import "./menu.scss";
 import { images } from "../../asset";
 

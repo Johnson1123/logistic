@@ -1,6 +1,7 @@
 @import "../../../style/variable.scss";
 .Trip {
   width: 100%;
+  padding-top: 1rem;
   @include mobile {
     padding: 0 1rem;
     margin-top: 1rem;

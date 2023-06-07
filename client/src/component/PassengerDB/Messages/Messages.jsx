@@ -17,9 +17,9 @@ function Messages() {
   const [userChats, setUserChats] = useState(null);
   const [userInput, setUserInput] = useState();
   const [messages, setMessages] = useState([]);
-  const [loadingMsgs, setLoadingMsgs] = useState(false)
+  const [loadingMsgs, setLoadingMsgs] = useState(false);
   const selectecUser = useSelector(userSelected);
-  const currentUser = JSON.parse(localStorage.getItem("token")).data.user;
+  const currentUser = JSON.parse(localStorage.getItem("access"));
   const msgId = useSelector(chatId);
 
   const scrollRef = useRef();
@@ -27,7 +27,7 @@ function Messages() {
   //get user chats
   useEffect(() => {
     const getUserChats = async () => {
-      const access = JSON.parse(localStorage.getItem("accessToken"));
+      const access = JSON.parse(localStorage.getItem("access"));
       const config = {
         headers: {
           Authorization: `Bearer ${access}`,
@@ -49,12 +49,10 @@ function Messages() {
     getUserChats();
   }, [messages]);
 
-
   // get user messages
   useEffect(() => {
-
     const getMsg = async () => {
-      setLoadingMsgs(true)
+      setLoadingMsgs(true);
       const access = JSON.parse(localStorage.getItem("accessToken"));
       const config = {
         headers: {
@@ -69,10 +67,10 @@ function Messages() {
         );
         setUserInput("");
         setMessages(data.data);
-        setLoadingMsgs(false)
+        setLoadingMsgs(false);
       } catch (error) {
         console.log(error.response.data);
-        setLoadingMsgs(false)
+        setLoadingMsgs(false);
       }
     };
 
@@ -139,7 +137,12 @@ function Messages() {
               setUserInput={setUserInput}
             />
           ) : (
-            <Stack height="100vh" justifyContent="center" alignItems="center"  sx={{ padding: "6rem 0 1rem 1rem" }}>
+            <Stack
+              height="100vh"
+              justifyContent="center"
+              alignItems="center"
+              sx={{ padding: "6rem 0 1rem 1rem" }}
+            >
               <Typography variant="h2" sx={{ color: "rgb(224, 220, 220)" }}>
                 Start a Conversation
               </Typography>

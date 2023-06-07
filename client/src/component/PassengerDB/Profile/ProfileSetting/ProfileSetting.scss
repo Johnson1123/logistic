@@ -1,5 +1,6 @@
 @import "../../../../style/variable.scss";
 .ProfileSetting {
+  padding-top: 1rem;
   @include mobile {
     max-width: 500px;
     min-width: 390px;
