@@ -3,65 +3,54 @@ import { useNavigate } from "react-router-dom";
 import SignupBtn from "../Btn/SignupBtn/SignupBtn";
 import "./CombineInput.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { verifyUser } from "../../features/Auths";
 import OtpInput from "react-otp-input";
 import { signUpSuccess } from "../../features/toggleSlice/toggleSlice";
 import { BeatLoader } from "react-spinners";
-import axios from "axios";
+import {
+  useResendOtpMutation,
+  useVerifyOtpMutation,
+} from "../../features/slice/auth/userAuth";
 
 function CombineInput() {
   const navigate = useNavigate();
   const Dispatch = useDispatch();
-  const [isloading, setIsLoading] = useState(false);
+  const verifyOtp = useVerifyOtpMutation();
+  const resendOtp = useResendOtpMutation();
+  const [resend, setResend] = useState(false);
+  const [verifyStatus, setVerifyStatus] = useState(false);
 
   const auth = useSelector((state) => state.auth);
 
+  const [verify, { isLoading, error }] = resend ? resendOtp : verifyOtp;
+
   const [otp, setOtp] = useState("");
 
-  useEffect(() => {
-    if (auth.verifyStatus === "success") Dispatch(signUpSuccess());
-  }, [navigate, Dispatch, auth.verifyStatus]);
-
   const handleResendOtp = async () => {
-    const body = JSON.stringify({
+    setResend(true);
+    const data = JSON.stringify({
       email: localStorage.getItem("userEmail"),
     });
-
-    const config = {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    };
-    setIsLoading(true);
-    try {
-      const res = await axios.post(
-        "https://techvonix.onrender.com/api/v1/auth/resend-email-otp",
-        body,
-        config
-      );
-      setIsLoading(false);
-    } catch (error) {
-      if (error.response && error.response.data.message) {
-        return error?.response?.data?.message;
-      } else {
-        return error?.message;
-      }
-    }
+    await verify(data);
   };
+
   const handleOtp = async (e) => {
     e.preventDefault();
+    setResend(false);
+
     const localData = localStorage.getItem("userEmail");
     const otpData = {
       code: otp,
       email: localData,
     };
-    await Dispatch(verifyUser(otpData));
+    await verify(otpData).unwrap();
+    setVerifyStatus(true);
   };
+
   useEffect(() => {
-    if (auth.verifyStatus === "success") {
+    if (verifyStatus) {
       Dispatch(signUpSuccess());
     }
-  }, [auth.verifyStatus, Dispatch, navigate]);
+  }, [navigate, Dispatch, verifyStatus]);
 
   const [timer, setTimer] = useState(60);
   const timeOutCallback = useCallback(
@@ -72,14 +61,6 @@ function CombineInput() {
   useEffect(() => {
     timer > 0 && setTimeout(timeOutCallback, 1000);
   }, [timer, timeOutCallback]);
-
-  console.log(timer);
-
-  // const resetTimer = function () {
-  //   if (!timer) {
-  //     setTimer(60);
-  //   }
-  // };
   return (
     <>
       <form className="combine__con flex center" onSubmit={handleOtp}>
@@ -91,11 +72,11 @@ function CombineInput() {
           renderInput={(props) => <input {...props} />}
         />
         <div className="flex verify-otp-error">
-          {auth.verifyStatus === "rejected" ? (
+          {error ? (
             <p className="error">
-              {auth.verifyError?.message?.code
-                ? auth.verifyError?.message?.code[0]
-                : Object.values(auth.verifyError)[0]}
+              {error?.data?.message?.code
+                ? error?.data?.message?.code[0]
+                : Object.values(error?.data?.message)[0]}
             </p>
           ) : null}
 
@@ -103,11 +84,7 @@ function CombineInput() {
 
           <SignupBtn
             label={
-              auth.verifyStatus === "pending" ? (
-                <BeatLoader color="#36d7b7" />
-              ) : (
-                "Proceed"
-              )
+              isLoading && !resend ? <BeatLoader color="#36d7b7" /> : "Proceed"
             }
           />
         </div>
@@ -116,7 +93,7 @@ function CombineInput() {
         ""
       ) : (
         <button className="resend-otp" onClick={handleResendOtp}>
-          {isloading ? "Sending" : "Resend OTP"}
+          {isLoading && resend ? "Sending" : "Resend OTP"}
         </button>
       )}
     </>

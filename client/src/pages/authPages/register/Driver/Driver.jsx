@@ -1,22 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Background from "../../../../component/Background/Background";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import SocialMedia from "../../../../component/SocialMedia/SocialMedia";
 import FORM_SIGN from "../../../../component/Form_Signup/FORM_SIGNUP";
 import "./Driver.scss";
-import { registerDriver } from "../../../../features/Auths";
+import { useDriverRegMutation } from "../../../../features/slice/auth/userAuth";
 
 function Driver() {
   const signUptoggle = useSelector((state) => state.toggleReducer.signUp);
   const Dispatch = useDispatch();
   const navigate = useNavigate();
-  const auth = useSelector((state) => state.auth);
-  useEffect(() => {
-    if (auth.user_id) {
-      navigate("/");
-    }
-  }, [auth.user_id, Dispatch, navigate]);
+  const registerDriver = useDriverRegMutation();
   return (
     <>
       <div className="register__con">
@@ -28,7 +23,7 @@ function Driver() {
             <p className="form-text">
               Please fill in Your Accurate Information
             </p>
-            <FORM_SIGN handler={registerDriver} role="driver" />
+            <FORM_SIGN handleRegister={registerDriver} role="driver" />
             <p className="form-text login_here">
               <span> Already have an account?</span>
               <span onClick={() => navigate("/login/driver")} className="link">

@@ -12,6 +12,7 @@ import {
 import { BeatLoader } from "react-spinners";
 import { useNavigate } from "react-router-dom";
 import { setProfile } from "../../../../features/customer/getUser";
+import { usePutProfileMutation } from "../../../../features/slice/profile/profileApiSlice";
 
 function ProfileSetting() {
   const Dispatch = useDispatch();
@@ -19,26 +20,15 @@ function ProfileSetting() {
 
   const [selectedFile, setSelectedFile] = useState();
   const [preview, setPreview] = useState();
-  const [img, setImg] = useState("");
-
-  const user = useSelector((state) => state?.profile?.profile);
+  const user = useSelector((state) => state?.auth?.userInfo);
   const putCustomer = useSelector((state) => state.setCustomerProfile);
 
-  useEffect(() => {
-    Dispatch(loadProfile());
-  }, []);
-
-  const [values, setValues] = useState({
-    first_name: "",
-    last_name: "",
-    home_address: "",
-    gender: "",
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setValues({ ...values, [name]: value });
-  };
+  const [first_name, setFirst_name] = useState(user?.first_name);
+  const [last_name, setLast_name] = useState(user?.last_name);
+  const [home_address, setHome_address] = useState(user?.home_address);
+  const [gender, setGender] = useState(user?.gender);
+  const [image_url, setImage_url] = useState(user?.image_url);
+  const [phone, setPhone] = useState(user?.phone);
 
   useEffect(() => {
     if (!selectedFile) {
@@ -60,26 +50,21 @@ function ProfileSetting() {
     const reader = new FileReader();
     reader.readAsDataURL(e.target.files[0]);
     reader.onloadend = () => {
-      setImg(reader.result);
+      setImage_url(reader.result);
     };
   };
 
-  values.image_url = img ? img : user?.image_url;
-
+  const [putUser, { isLoading, error }] = usePutProfileMutation();
   const handleSumit = async (e) => {
     e.preventDefault();
-    try {
-      const res = await Dispatch(putUser(values));
-      navigate("/customer/profile");
-    } catch (error) {
-      if (error.response && error.response.data.message) {
-        console.log(error.response.data);
-        return error.response.data;
-      } else {
-        console.log(error.response.data.message);
-        return error.response.data.message;
-      }
-    }
+    const body = {
+      first_name,
+      last_name,
+      home_address,
+      gender,
+      image_url,
+    };
+    const res = await putUser(body);
   };
 
   return (
@@ -112,53 +97,47 @@ function ProfileSetting() {
             <TabInput
               type="text"
               label="First Name"
-              placeholder={user?.first_name}
-              value={user?.first_name}
+              placeholder={first_name}
+              value={first_name}
               name="first_name"
-              onChange={handleChange}
+              onChange={(e) => setFirst_name(e.target.value)}
             />
             <TabInput
               type="text"
               label="Last Name"
-              placeholder={user?.last_name}
+              placeholder={last_name}
               name="last_name"
-              value={user?.last_name}
-              onChange={handleChange}
+              value={last_name}
+              onChange={(e) => setLast_name(e.target.value)}
             />
           </div>
           <div className="input__group">
             <TabInput
               type="text"
               label="Address"
-              placeholder={user?.home_address}
+              placeholder={home_address}
               name="home_address"
-              value={user?.home_address}
-              onChange={handleChange}
+              value={home_address}
+              onChange={(e) => setHome_address(e.target.value)}
             />
             <TabInput
               type="text"
               label="Gender"
-              placeholder={user?.gender}
+              placeholder={gender}
               name="gender"
-              value={user?.gender}
-              onChange={handleChange}
+              value={gender}
+              onChange={(e) => setGender(e.target.value)}
             />
           </div>
-          {putCustomer?.putUserStatus === "rejected" ? (
+          {error ? (
             <p className="error" style={{ textAlign: "center" }}>
-              {putCustomer?.putUserError}
+              {error?.data}
             </p>
           ) : (
             ""
           )}
           <SignupBtn
-            label={
-              putCustomer?.putUserStatus === "pending" ? (
-                <BeatLoader color="#36d7b7" />
-              ) : (
-                "Update"
-              )
-            }
+            label={isLoading ? <BeatLoader color="#36d7b7" /> : "Update"}
           />
         </form>
       </div>

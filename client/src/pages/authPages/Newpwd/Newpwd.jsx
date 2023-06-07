@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Background from "../../../component/Background/Background";
 import Newpwduser from "../../../component/Newpwduser/Newpwduser";
 import Overlay from "../../../component/Overlay/Overlay";
@@ -7,13 +7,13 @@ import "./Newpwd.scss";
 import { useSelector } from "react-redux";
 
 function Newpwd() {
-  const toggle = useSelector((state) => state.toggle.newPwdToggle);
+  const [open, setOpen] = useState(false);
   return (
     <div className="newpwd__con">
       <Background />
-      <Newpwduser />
-      {true && <Overlay />}
-      {true && <SuccessNewpwd url={"wattogo"} />}
+      <Newpwduser setOpen={setOpen} />
+      {open && <Overlay />}
+      {open && <SuccessNewpwd url={"/login/customer"} />}
     </div>
   );
 }

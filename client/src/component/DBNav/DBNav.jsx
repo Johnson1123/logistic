@@ -13,7 +13,7 @@ import { loadProfile } from "../../features/customer/putCustomer";
 function DBNav() {
   const dispatch = useDispatch();
   const Dispatch = useDispatch();
-  const user = useSelector((state) => state?.profile?.profile);
+  const user = useSelector((state) => state?.auth?.userInfo);
 
   useEffect(() => {
     Dispatch(loadProfile());
@@ -45,9 +45,9 @@ function DBNav() {
             alt={user?.first_name}
           />
         </div>
-        <div className="user__details">
+        <div className="user__details flex flex-col justify-center">
           <h2 className="username-text p-text">{user?.first_name}</h2>
-          <p className="p-text small-text">customer</p>
+          <p className="text-sm">customer</p>
         </div>
       </div>
       <div className="DBNav__box db__menu" onClick={() => menuHandler()}>

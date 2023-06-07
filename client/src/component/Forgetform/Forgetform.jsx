@@ -6,6 +6,8 @@ import Input from "../Input/Input";
 import "./Forgetform.scss";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
+import { useForgetPWDMutation } from "../../features/slice/auth/userAuth";
+import { BeatLoader } from "react-spinners";
 
 function Forgetform() {
   const [email, setEmail] = useState("");
@@ -13,39 +15,19 @@ function Forgetform() {
   const navigate = useNavigate();
   const status = useSelector((state) => state.auth.forgetStatus);
 
-  console.log(status);
+  const [forgetPWD, { isLoading, error }] = useForgetPWDMutation();
 
-  const body = JSON.stringify({
-    email,
-  });
-  const config = {
-    headers: {
-      "Content-Type": "application/json",
-    },
-  };
   const handelForgetPwd = async (e) => {
+    const data = {
+      email: email,
+    };
     e.preventDefault();
-
-    try {
-      const response = await axios.post(
-        "https://techvonix.onrender.com/api/v1/auth/forgot-password",
-        body,
-        config
-      );
-      console.log(status);
-      if (response.status === 200) {
-        navigate("/pwd_otp");
-      }
-    } catch (error) {
-      if (error.response && error.response.data.message) {
-        return error?.response?.data?.message;
-      } else {
-        return error?.message;
-      }
-    }
+    await forgetPWD(data);
+    localStorage.setItem("userEmail", email);
+    navigate("/new-password");
   };
   return (
-    <form className="form__forget">
+    <form className="form__forget" onSubmit={handelForgetPwd}>
       <div className="flex input_group">
         <Input
           type="tel"
@@ -59,9 +41,14 @@ function Forgetform() {
       </div>
       <div className="sign__in flex">
         <p className="form-text">
-          To verify your number, an OTP willl be send to your registered email
+          To verify your email, an OTP will be send to your registered email
         </p>
-        <SignupBtn label="PROCEED" handler={handelForgetPwd} />
+        <div className="signup-btn-err">
+          {error && <p className="error">{error?.data?.message}</p>}
+          <button className="btn sign_btn" type="submit">
+            {isLoading ? <BeatLoader color="#36d7b7" /> : "Sign Up"}
+          </button>
+        </div>
       </div>
     </form>
   );

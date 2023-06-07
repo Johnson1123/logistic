@@ -9,22 +9,8 @@ const initialState = {
   email: localStorage?.getItem("userEmail")
     ? localStorage?.getItem("userEmail")
     : "",
-  registerCustomerStatus: "",
-  registerCustomerError: "",
-  registerDriverStatus: "",
-  registerDriverError: "",
-  loginCustomerStatus: "",
-  loginCustomerError: "",
-  loginDriverStatus: "",
-  loginDriverError: "",
-  verifyError: "",
-  verifyStatus: "",
-  forgetError: "",
-  forgetStatus: "",
-  role: "",
+
   accessToken: "",
-  isAuthenticate: false,
-  userLoaded: false,
 };
 const config = {
   headers: {
@@ -70,38 +56,38 @@ export const registerDriver = createAsyncThunk(
   }
 );
 
-export const loginCustomer = createAsyncThunk(
-  "auth/customer",
-  async (loginData, { rejectWithValue }) => {
-    const body = JSON.stringify(loginData);
-    try {
-      const response = await axios.post(
-        `https://techvonix.onrender.com/api/v1/auth/login?user_type=customer`,
-        body,
-        config
-      );
-      if (response.status === 200) {
-        localStorage.setItem(
-          "token",
-          JSON.stringify({ ...response.data, role: "customer" })
-        );
-        localStorage.setItem(
-          "accessToken",
-          JSON.stringify(response.data.data.access)
-        );
-        localStorage.setItem(
-          "refreshToken",
-          JSON.stringify(response.data.data.refresh)
-        );
-        localStorage.removeItem("userEmail");
-      }
-      return response.data;
-    } catch (error) {
-      console.error(error.response.data);
-      return rejectWithValue(error.response.data);
-    }
-  }
-);
+// export const loginCustomer = createAsyncThunk(
+//   "auth/customer",
+//   async (loginData, { rejectWithValue }) => {
+//     const body = JSON.stringify(loginData);
+//     try {
+//       const response = await axios.post(
+//         `https://techvonix.onrender.com/api/v1/auth/login?user_type=customer`,
+//         body,
+//         config
+//       );
+//       if (response.status === 200) {
+//         localStorage.setItem(
+//           "token",
+//           JSON.stringify({ ...response.data, role: "customer" })
+//         );
+//         localStorage.setItem(
+//           "accessToken",
+//           JSON.stringify(response.data.data.access)
+//         );
+//         localStorage.setItem(
+//           "refreshToken",
+//           JSON.stringify(response.data.data.refresh)
+//         );
+//         localStorage.removeItem("userEmail");
+//       }
+//       return response.data;
+//     } catch (error) {
+//       console.error(error.response.data);
+//       return rejectWithValue(error.response.data);
+//     }
+//   }
+// );
 
 export const loginDriver = createAsyncThunk(
   "auth/loginDriver",
@@ -369,63 +355,63 @@ const authSlice = createSlice({
         forgetStatus: "",
       };
     });
-    builder.addCase(loginCustomer.pending, (state, action) => {
-      return {
-        ...state,
-        loginCustomerStatus: "pending",
-        registerCustomerStatus: "",
-        registerCustomerError: "",
-        registerDriverStatus: "",
-        registerDriverError: "",
-        loginCustomerError: "",
-        loginDriverStatus: "",
-        loginDriverError: "",
-        forgetError: "",
-        forgetStatus: "",
-        verifyError: "",
-        verifyStatus: "",
-        isAuthenticate: false,
-      };
-    });
-    builder.addCase(loginCustomer.fulfilled, (state, action) => {
-      if (action.payload) {
-        return {
-          ...state,
-          token: action.payload,
-          email: action?.payload?.data?.user?.email,
-          user_id: action?.payload?.data?.user?.user_id,
-          accessToken: action?.payload?.token?.data?.access,
-          loginCustomerStatus: "success",
-          registerCustomerStatus: "",
-          registerCustomerError: "",
-          registerDriverStatus: "",
-          registerDriverError: "",
-          loginCustomerError: "",
-          loginDriverStatus: "",
-          loginDriverError: "",
-          forgetError: "",
-          forgetStatus: "",
-          isAuthenticate: true,
-        };
-      } else return state;
-    });
-    builder.addCase(loginCustomer.rejected, (state, action) => {
-      return {
-        ...state,
-        loginCustomerStatus: "rejected",
-        isAuthenticate: false,
-        accessToken: "",
-        loginCustomerError: action?.payload,
-        loginDriverError: "",
-        registerCustomerStatus: "",
-        registerCustomerError: "",
-        registerDriverStatus: "",
-        registerDriverError: "",
-        loginDriverStatus: "",
-        forgetError: "",
-        forgetStatus: "",
-      };
-    });
+    // builder.addCase(loginCustomer.pending, (state, action) => {
+    //   return {
+    //     ...state,
+    //     loginCustomerStatus: "pending",
+    //     registerCustomerStatus: "",
+    //     registerCustomerError: "",
+    //     registerDriverStatus: "",
+    //     registerDriverError: "",
+    //     loginCustomerError: "",
+    //     loginDriverStatus: "",
+    //     loginDriverError: "",
+    //     forgetError: "",
+    //     forgetStatus: "",
+    //     verifyError: "",
+    //     verifyStatus: "",
+    //     isAuthenticate: false,
+    //   };
+    // });
+    // builder.addCase(loginCustomer.fulfilled, (state, action) => {
+    //   if (action.payload) {
+    //     return {
+    //       ...state,
+    //       token: action.payload,
+    //       email: action?.payload?.data?.user?.email,
+    //       user_id: action?.payload?.data?.user?.user_id,
+    //       accessToken: action?.payload?.token?.data?.access,
+    //       loginCustomerStatus: "success",
+    //       registerCustomerStatus: "",
+    //       registerCustomerError: "",
+    //       registerDriverStatus: "",
+    //       registerDriverError: "",
+    //       loginCustomerError: "",
+    //       loginDriverStatus: "",
+    //       loginDriverError: "",
+    //       forgetError: "",
+    //       forgetStatus: "",
+    //       isAuthenticate: true,
+    //     };
+    //   } else return state;
+    // });
+    // builder.addCase(loginCustomer.rejected, (state, action) => {
+    //   return {
+    //     ...state,
+    //     loginCustomerStatus: "rejected",
+    //     isAuthenticate: false,
+    //     accessToken: "",
+    //     loginCustomerError: action?.payload,
+    //     loginDriverError: "",
+    //     registerCustomerStatus: "",
+    //     registerCustomerError: "",
+    //     registerDriverStatus: "",
+    //     registerDriverError: "",
+    //     loginDriverStatus: "",
+    //     forgetError: "",
+    //     forgetStatus: "",
+    //   };
+    // });
     builder.addCase(loginDriver.pending, (state, action) => {
       return {
         ...state,

@@ -3,7 +3,7 @@ import NewpwdForm from "../NewpwdForm/NewpwdForm";
 import "./Newpwduser.scss";
 import ForgetPwdForm from "../ForgetPwdForm/ForgetPwdForm";
 
-function Newpwduser() {
+function Newpwduser({ setOpen }) {
   return (
     <div className="NewpwdForm flex center">
       <div className="NewpwdForm__con">
@@ -13,7 +13,7 @@ function Newpwduser() {
           and lower case
         </p>
         {/* <NewpwdForm /> */}
-        <ForgetPwdForm />
+        <ForgetPwdForm setOpen={setOpen} />
       </div>
     </div>
   );

@@ -1,16 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Background from "../../../../component/Background/Background";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import SocialMedia from "../../../../component/SocialMedia/SocialMedia";
 import FORM_SIGN from "../../../../component/Form_Signup/FORM_SIGNUP";
 import "./Customer.scss";
-import { registerCustomer } from "../../../../features/Auths";
+import { useCustomerRegMutation } from "../../../../features/slice/auth/userAuth";
 
 function Customer() {
   const signUptoggle = useSelector((state) => state.toggleReducer.signUp);
   const Dispatch = useDispatch();
   const navigate = useNavigate();
+  const registerCustomer = useCustomerRegMutation();
   const auth = useSelector((state) => state.auth);
   useEffect(() => {
     if (auth.user_id) {
@@ -29,7 +30,7 @@ function Customer() {
               Please fill in Your Accurate Information
             </p>
 
-            <FORM_SIGN handler={registerCustomer} role="customer" />
+            <FORM_SIGN handleRegister={registerCustomer} role="customer" />
             <p className="form-text login_here flex">
               <span>Already have an account?</span>
               <p onClick={() => navigate("/login/customer")} className="link">

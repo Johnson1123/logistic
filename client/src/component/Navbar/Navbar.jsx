@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import {
   toggleMenu,
-  closeSearch,
   closeToggle,
 } from "../../features/toggleSlice/toggleSlice";
 import "./navbar.scss";
@@ -12,22 +11,17 @@ import { images } from "../../asset";
 
 import { AiOutlineMenu } from "react-icons/ai";
 import { AiOutlineClose } from "react-icons/ai";
-import NavLink from "./NavLink";
 import NavLinkLg from "./NavLinkLg";
 import DownApp from "./nav/DownApp/DownApp";
 import Company from "./nav/Company/Company";
-import { logoutUser } from "../../features/Auths";
 import { useEffect } from "react";
 import { loadProfile } from "../../features/customer/putCustomer";
+import { logout } from "../../features/slice/auth/auth";
 
 function Navbar() {
-  // const cart = useSelector((state) => state.cartItem.cartItems);
   const authToggle = useSelector((state) => state.toggleReducer.menuValue);
-  const searchToggle = useSelector((state) => state.toggleReducer.closeValue);
   const auth = useSelector((state) => state.auth);
-  const getCustomerProfile = useSelector((state) => state.getCustomerProfile);
-  const authenticate = useSelector((state) => state.auth.isAuthenticate);
-  const user = useSelector((state) => state?.profile?.profile);
+  const user = useSelector((state) => state?.auth?.userInfo);
   const role = auth.role;
 
   const [toggle, setToggle] = useState(authToggle);
@@ -44,8 +38,9 @@ function Navbar() {
 
   const handleLogout = () => {
     Dispatch(toggleMenu());
-    Dispatch(logoutUser());
+    Dispatch(logout());
   };
+  const user_id = useSelector((state) => state?.auth?.user?.user_id);
   return (
     <div className="app__navbar flex">
       <div className="app__navbar-wrapper-sm flex flex-center">
@@ -63,12 +58,12 @@ function Navbar() {
             <div className="nav__items-con">
               <Link to="/">Home</Link>
             </div>
-            {authenticate && (
+            {user_id && (
               <div className="nav__items-con">
                 <Link to="/about">About</Link>
               </div>
             )}
-            {authenticate ? (
+            {user_id ? (
               ""
             ) : (
               <div className="nav__items-con">
@@ -76,17 +71,17 @@ function Navbar() {
               </div>
             )}
 
-            {auth.user_id && (
+            {user_id && (
               <div className="nav__items-con">
                 <Link to="/service">Our service</Link>
               </div>
             )}
-            {auth.user_id && (
+            {user_id && (
               <div className="nav__items-con">
                 <Link to="/testimonial">Testimonial</Link>
               </div>
             )}
-            {auth.user_id && (
+            {user_id && (
               <div className="nav__items-con">
                 <Link
                   to={role === "driver" ? "/driver/help" : "/customer/help"}
@@ -95,7 +90,7 @@ function Navbar() {
                 </Link>
               </div>
             )}
-            {auth.user_id ? (
+            {user_id ? (
               ""
             ) : (
               <div className="nav__items-con">
@@ -103,7 +98,7 @@ function Navbar() {
                 <Company />
               </div>
             )}
-            {auth.user_id ? (
+            {user_id ? (
               ""
             ) : (
               <div className="nav__items-con">
@@ -111,7 +106,7 @@ function Navbar() {
               </div>
             )}
 
-            {auth.user_id ? (
+            {user_id ? (
               ""
             ) : (
               <div className="nav__items-con">
@@ -122,7 +117,7 @@ function Navbar() {
           </ul>
         </div>
 
-        {auth.user_id && (
+        {user_id && (
           <div className="navbar__user flex-center">
             <div className="user__container flex center">
               <img
@@ -153,7 +148,7 @@ function Navbar() {
             <AiOutlineClose className="menu__close" onClick={closeAppMenu} />
 
             <ul className="menu__items">
-              {auth.user_id && (
+              {user_id && (
                 <div className="mobile__user flex-center">
                   <div className="user__container flex center">
                     <img
@@ -182,13 +177,6 @@ function Navbar() {
                   Home
                 </Link>
               </div>
-              {/* {true && (
-                <div className="meun__items-con">
-                  <Link to="/" onClick={() => Dispatch(toggleMenu())}>
-                    Partnership
-                  </Link>
-                </div>
-              )} */}
               <div className="meun__items-con">
                 <Link to="/about" onClick={closeAppMenu}>
                   About
@@ -204,7 +192,7 @@ function Navbar() {
                   Testimonial
                 </Link>
               </div>
-              {auth.user_id && (
+              {user_id && (
                 <div className="meun__items-con">
                   <Link
                     to={role === "driver" ? "/driver/help" : "/customer/help"}
@@ -222,12 +210,12 @@ function Navbar() {
                   Android App
                 </Link>
               </div>
-              {!auth.user_id && (
+              {!user_id && (
                 <div className="meun__items-con" onClick={closeAppMenu}>
                   <Link to={`/login/customer`}>Login</Link>
                 </div>
               )}
-              {auth.user_id && (
+              {user_id && (
                 <div className="meun__items-con" onClick={handleLogout}>
                   <button className="logout">Logout</button>
                 </div>
