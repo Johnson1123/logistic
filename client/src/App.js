@@ -60,6 +60,7 @@ import {
   TaxReport,
   Payout,
   Setting,
+  Messages
 } from "./component/DriverDB";
 
 import {
@@ -315,7 +316,7 @@ const router = createBrowserRouter([
       },
       {
         path: "message",
-        element: <Message />,
+        element: <Messages />,
       },
       {
         path: "vehicle",
@@ -460,7 +461,7 @@ function App() {
 
   return (
     <PayPalScriptProvider options={initialOptions}>
-      <RouterProvider router={router} />;
+      <RouterProvider router={router} />
     </PayPalScriptProvider>
   );
 }

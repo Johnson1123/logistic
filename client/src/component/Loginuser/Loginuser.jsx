@@ -19,7 +19,7 @@ function Loginuser(props) {
       navigate("/customer");
       window.location.reload(true);
     }
-  }, [user, Dispatch, navigate]);
+  }, [user, Dispatch, navigate, props.role]);
   return (
     <div className="form__user">
       <p className="form-title">Welcome Back!</p>

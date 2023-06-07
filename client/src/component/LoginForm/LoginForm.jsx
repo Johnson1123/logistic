@@ -27,6 +27,7 @@ function LoginForm(props) {
     e.preventDefault();
     try {
       const data = await dispatch(handler(loginData));
+        
     } catch (err) {
       console.log(err);
     }

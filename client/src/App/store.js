@@ -7,6 +7,7 @@ import getCustomerProfile from "../features/customer/getUser";
 import addCardSlice from "../features/customer/addCard";
 import { apiSlice } from "../features/api";
 import profileAuth from "../features/customer/getUser";
+import chatSlice  from "../features/Chat/Chat";
 
 export const store = configureStore({
   reducer: {
@@ -17,6 +18,7 @@ export const store = configureStore({
     setCustomerProfile: customerProfile,
     getCustomerProfile: getCustomerProfile,
     addCard: addCardSlice,
+    chat: chatSlice,
     [apiSlice.reducerPath]: apiSlice.reducer,
   },
   middleware: (getDefaultMiddleware) =>

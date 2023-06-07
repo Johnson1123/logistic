@@ -28,9 +28,9 @@ function PassengerDB() {
         {menu && <PMobileControllers />}
         <div className="PassengerDB__content flex">
           <PassengerController />
-          <div className="tab__container">
-            <Outlet />
-          </div>
+        
+          <Outlet />
+         
         </div>
         {user && <UserInfo />}
       </div>
