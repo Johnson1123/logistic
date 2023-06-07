@@ -24,6 +24,7 @@ function PassengerController() {
   return (
     <div className="Passenger__controller">
       <div className="Tabcontrollers__con">
+       <div>
         {passengercontroller.map((item, index) => {
           return (
             <Tabcontroller
@@ -36,6 +37,10 @@ function PassengerController() {
             />
           );
         })}
+       
+        </div>
+
+        <div> 
         <button onClick={handleDispatch} className="logout-btn p-text">
           <span>
             <IoLogOutOutline />
@@ -51,6 +56,7 @@ function PassengerController() {
             </div>
           </div>
           <img src={images.iphones} alt="" className="iphones" />
+        </div>
         </div>
       </div>
     </div>

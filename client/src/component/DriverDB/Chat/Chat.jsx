@@ -1,9 +1,61 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { charts } from "../../../content/chart";
 import "./Chat.scss";
 import { recents } from "../../../content/recent";
+import axios from "axios";
+
 
 function Chat() {
+
+  
+
+//   const [userChats, setUserChats] = useState();
+//   const socket = useRef(null)
+//   const {user} = JSON.parse(localStorage.getItem("token")).data;
+
+
+//   useEffect(()=> {
+//     socket.current = io("http://localhost:5000")
+//  }, [])
+
+
+//  useEffect(()=> {
+//   socket.current?.emit("addUser", user.user_id)
+//   socket.current?.on("getUsers", users => {
+//    console.log(users)
+//   })
+// }, [user.user_id])
+
+
+
+//   //get user chats
+//   useEffect(() => {
+//     const getUserChats = async () => {
+//       const access = JSON.parse(localStorage.getItem("token"));
+      
+//       const config = {
+//         headers: {
+//           Authorization: `Bearer ${access.data.access}`,
+//         },
+//       };
+
+//       try {
+//         const { data } = await axios.get(
+//           `https://techvonix.onrender.com/api/v1/chat/chats`,
+//           config
+//         );
+
+//         console.log(data)
+//         setUserChats(data.data);
+//       } catch (error) {
+//         console.log(error.response.data);
+//       }
+//     };
+
+//     getUserChats();
+//   }, []);
+
+
   return (
     <div className="chart__con box-shadow">
       <p className="title p-text">Chart</p>
@@ -22,7 +74,7 @@ function Chat() {
                     : "small-title name"
                 }
               >
-                {chart.name}
+                {chart.name} 
               </p>
               <p className="message">{chart.lMessage}</p>
             </div>

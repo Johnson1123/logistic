@@ -61,6 +61,14 @@ function CombineInput() {
   useEffect(() => {
     timer > 0 && setTimeout(timeOutCallback, 1000);
   }, [timer, timeOutCallback]);
+
+ 
+
+  // const resetTimer = function () {
+  //   if (!timer) {
+  //     setTimer(60);
+  //   }
+  // };
   return (
     <>
       <form className="combine__con flex center" onSubmit={handleOtp}>

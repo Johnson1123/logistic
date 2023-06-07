@@ -3,17 +3,22 @@
   width: 38%;
   display: none;
   @include tablet {
-    margin-top: 3.7rem;
+    // margin-top: 3.7rem;
     width: 27%;
+    height: 100vh;
     display: block;
   }
   .Tabcontrollers__con {
     width: 100%;
     background-color: green;
     padding: 1rem 0rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
     @include tablet {
       width: 100%;
-      padding: 2rem 0rem 0;
+      padding: 6rem 0rem 0;
     }
     .getApp {
       background-color: $whiteColor;

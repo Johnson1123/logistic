@@ -7,14 +7,14 @@ import { w3cwebsocket as W3CWebSocket } from "websocket";
 import "./Messages.scss";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { changeUser, chatId, userSelected } from "../../../features/Chat/Chat";
 import { Box, Stack, Typography } from "@mui/material";
+import { changeUser, chatId, userSelected } from "../../../features/Chat/Chat";
 import Chats from "../../Conversation/Chats";
 import ChatScreen from "../../Conversation/ChatScreen";
 
 function Messages() {
   const dispatch = useDispatch();
-  const [userChats, setUserChats] = useState(null);
+  const [userChats, setUserChats] = useState();
   const [userInput, setUserInput] = useState();
   const [messages, setMessages] = useState([]);
   const [loadingMsgs, setLoadingMsgs] = useState(false)
@@ -22,15 +22,20 @@ function Messages() {
   const currentUser = JSON.parse(localStorage.getItem("token")).data.user;
   const msgId = useSelector(chatId);
 
+
   const scrollRef = useRef();
+
+
+
 
   //get user chats
   useEffect(() => {
     const getUserChats = async () => {
-      const access = JSON.parse(localStorage.getItem("accessToken"));
+      const access = JSON.parse(localStorage.getItem("token"));
+
       const config = {
         headers: {
-          Authorization: `Bearer ${access}`,
+          Authorization: `Bearer ${access.data.access}`,
         },
       };
 
@@ -40,6 +45,7 @@ function Messages() {
           config
         );
 
+        console.log(data);
         setUserChats(data.data);
       } catch (error) {
         console.log(error.response.data);
@@ -47,18 +53,17 @@ function Messages() {
     };
 
     getUserChats();
-  }, [messages]);
-
+  }, []);
 
   // get user messages
-  useEffect(() => {
 
+  useEffect(() => {
     const getMsg = async () => {
       setLoadingMsgs(true)
-      const access = JSON.parse(localStorage.getItem("accessToken"));
+      const access = JSON.parse(localStorage.getItem("token"));
       const config = {
         headers: {
-          Authorization: `Bearer ${access}`,
+          Authorization: `Bearer ${access.data.access}`,
         },
       };
 
@@ -92,17 +97,19 @@ function Messages() {
 
   // send message func
   const sendMessage = async () => {
+
     const body = {
       chat_id: msgId,
       message: userInput,
     };
 
-    const access = JSON.parse(localStorage.getItem("accessToken"));
+    const access = JSON.parse(localStorage.getItem("token"));
     const config = {
       headers: {
-        Authorization: `Bearer ${access}`,
+        Authorization: `Bearer ${access.data.access}`,
       },
     };
+
 
     try {
       setUserInput("");
@@ -111,6 +118,8 @@ function Messages() {
         body,
         config
       );
+
+      console.log(data.data);
       setMessages([...messages, data.data]);
     } catch (error) {
       console.log(error.response.data);
@@ -129,7 +138,7 @@ function Messages() {
         </Box>
 
         <Box sx={{ width: "100%" }}>
-          {msgId !== "" ? (
+        {msgId !== "" ? (
             <ChatScreen
               sendMessage={sendMessage}
               scrollRef={scrollRef}

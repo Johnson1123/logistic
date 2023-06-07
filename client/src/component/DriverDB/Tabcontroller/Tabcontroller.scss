@@ -1,10 +1,10 @@
 @import "../../../style/variable.scss";
 .Tabcontroller-btn {
   background-color: transparent;
-  padding: 0.5rem 0.7rem;
+  padding: 0.2rem 0.5rem;
   border-radius: 10px;
   border: none;
-  margin: 20px 0;
+  margin: 10px 0;
   font-weight: 500;
   transition: all 0.5s;
   font-size: calc(14px + 6 * ((100vw - 320px) / 680)) !important;

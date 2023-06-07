@@ -6,9 +6,9 @@ import customerProfile from "../features/customer/putCustomer";
 import getCustomerProfile from "../features/customer/getUser";
 import addCardSlice from "../features/customer/addCard";
 import profileAuth from "../features/customer/getUser";
+import chatSlice  from "../features/Chat/Chat";
 import { apiSlice } from "../features/slice/apiSlice";
 import auth from "../features/slice/auth/auth";
-
 export const store = configureStore({
   reducer: {
     toggleReducer,
@@ -17,6 +17,7 @@ export const store = configureStore({
     setCustomerProfile: customerProfile,
     getCustomerProfile: getCustomerProfile,
     addCard: addCardSlice,
+    chat: chatSlice,
     auth: auth,
     [apiSlice.reducerPath]: apiSlice.reducer,
   },
