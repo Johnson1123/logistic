@@ -3,9 +3,12 @@ import { BiUpload } from "react-icons/bi";
 import { TbFileInvoice } from "react-icons/tb";
 import { vehicles } from "../../../../content/Vehicle";
 import "./Vehicle.scss";
+import { styles } from "../../../../style/style";
+import VehiclesForm from "../../../driver/VehiclesForm.jsx";
 
 function Vehicle() {
   const [toggle, setToggle] = useState(0);
+  const [open, setOpen] = useState(false);
   const handleToggle = (n) => {
     console.log(vehicles[n].model);
     return setToggle(n);
@@ -13,7 +16,7 @@ function Vehicle() {
   const Details = () => {
     return (
       <div className="details__con">
-        <div className="flex details__properties">
+        {/* <div className="flex details__properties">
           <div className="p-text detail flex">
             <p className="bold-text">Model</p>
             <p className="p-text">{vehicles[toggle].model}</p>
@@ -34,8 +37,8 @@ function Vehicle() {
             <p className="bold-text">Seats</p>
             <p className="p-text">{vehicles[toggle].seats}</p>
           </div>
-        </div>
-        <div className="vehicle__documents">
+        </div> */}
+        {/* <div className="vehicle__documents">
           <p className="title">Vehicle Documents</p>
           {vehicles[toggle].documents.map((doc, index) => {
             return (
@@ -68,7 +71,7 @@ function Vehicle() {
               </div>
             );
           })}
-        </div>
+        </div> */}
       </div>
     );
   };
@@ -76,15 +79,38 @@ function Vehicle() {
     <div className="Vehicle">
       <div className="control__con">
         <p className="title">Vehicles</p>
-        <p className="small-title fw-300 text">
-          Here you see overview of your vehicles.
-        </p>
-        <div className="control__box-con">
+        <div className="w-[100%] bg-[#f3f3f3] py-3 px-4 800px:w-[80%] rounded-md shadow-sm flex justify-between mt-4">
+          <p className="small-title fw-300 text">vehicles Overviews</p>
+          <button
+            className={`${styles.button} py-1`}
+            onClick={() => setOpen(!open)}
+          >
+            Add New
+          </button>
+        </div>
+        <div className="mt-7">
+          {vehicles.map((vehicle, index) => {
+            return (
+              <div
+                key={index}
+                className="bg-slate-100 flex py-3 px-3 round-sm w-[80%] mb-3 justify-between"
+              >
+                <h4 className="text-sm font-[400]">{vehicle.model}</h4>
+                <h5 className="text-sm font-[400]">{vehicle.plate}</h5>
+                <h5 className="text-sm font-[400]">{vehicle.color}</h5>
+                <h5 className="text-sm font-[400]">{vehicle.year}</h5>
+                <h5 className="text-sm font-[400]">{vehicle.seats}</h5>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* <div className="control__box-con">
           <div className="flex box__header">
             <div className="small-title fw-500">Model</div>
             <div className="small-title fw-500">License Plate</div>
           </div>
-          {vehicles.map((vehicle, index) => {
+          {/* {vehicles.map((vehicle, index) => {
             return (
               <div
                 className="control__box flex"
@@ -97,9 +123,10 @@ function Vehicle() {
                 <div className="p-text control">{vehicle.plate}</div>
               </div>
             );
-          })}
-        </div>
+          })} 
+        </div> */}
       </div>
+      {open && <VehiclesForm setOpen={setOpen} open={open} />}
       {toggle >= 0 && <Details />}
     </div>
   );

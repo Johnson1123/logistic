@@ -7,7 +7,7 @@ function OperationArea() {
   return (
     <div className="OperationArea__container flex">
       <div className="area__content flex">
-        <h4 className="bold-text">Where does Technovix Operate?</h4>
+        <h4 className="bold-text">Where does Xlcab Operate?</h4>
         <p className="text para">
           Technovix Ride offers fast and affordable rides in the whole of Paris.
         </p>

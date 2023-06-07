@@ -7,31 +7,17 @@ import { favourites } from "../../../content/MyFourite";
 import "./Booking.scss";
 
 // icons import
-import { BsSearch } from "react-icons/bs";
 import { TfiAngleRight } from "react-icons/tfi";
 import { IoLocationSharp } from "react-icons/io5";
-import { IoIosCheckmark } from "react-icons/io";
 import { Places } from "../../../content/Places";
-import PaymentMethod from "../PaymentMethod/PaymentMethod";
-import Note from "./Note/Note";
-import DatePicker from "../DatePicker/DatePicker";
-import Input from "../../Input/Input";
 import { useDispatch } from "react-redux";
 import addCard from "../../../features/customer/addCard";
-import PaypalPayment from "../../PaypalPayment/PaypalPayment";
 
 function Booking() {
   const Dispatch = useDispatch();
   const [isRoute, setIsRoute] = useState(false);
   const [error, setError] = useState("");
   const [submit, setSubmit] = useState(false);
-  const [cardData, setCardData] = useState({
-    name: "",
-    number: "",
-    month: "",
-    year: "",
-    cvv: "",
-  });
 
   const handleToggle = () => {
     setIsRoute(true);
@@ -68,15 +54,6 @@ function Booking() {
       formError.cvv = "cve required";
     }
     return formError;
-  };
-
-  const handleCard = (e) => {
-    e.preventDefault();
-    setError(checkError(cardData));
-    if (Object.keys(error).length === 0 && submit) {
-      Dispatch(addCard(cardData));
-    }
-    setSubmit(true);
   };
 
   return (

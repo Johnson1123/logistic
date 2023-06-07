@@ -6,14 +6,19 @@ import { IoLogOutOutline } from "react-icons/io5";
 import { BiHelpCircle } from "react-icons/bi";
 import { FiUser } from "react-icons/fi";
 import { FcSettings } from "react-icons/fc";
-import { MdPayment } from "react-icons/md";
+import {
+  MdOutlineAccountBalanceWallet,
+  MdOutlinePayments,
+  MdPayment,
+} from "react-icons/md";
 import { TbFileInvoice } from "react-icons/tb";
 import { TfiMenuAlt } from "react-icons/tfi";
-import { BsFillFilePostFill } from "react-icons/bs";
+import { BsFileText, BsFillFilePostFill } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import logoutUser from "../features/Auths";
 import { AiOutlineSetting } from "react-icons/ai";
+import { CiDeliveryTruck } from "react-icons/ci";
 export const DBcontroller = [
   {
     id: 1,
@@ -24,73 +29,73 @@ export const DBcontroller = [
   {
     id: 2,
     label: "Profile",
-    icon: <FaUserAlt />,
+    icon: <FaUserAlt size={20} />,
     href: "profile",
   },
   {
     id: 3,
     label: "My Rides",
-    icon: <FaThList />,
+    icon: <FaThList size={20} />,
     href: "ride",
   },
   {
     id: 4,
     label: "My Document",
-    icon: <BsFillFilePostFill />,
+    icon: <BsFillFilePostFill size={20} />,
     href: "document",
   },
   {
     id: 4,
     label: "Messages",
-    icon: <TbMessage />,
+    icon: <TbMessage size={20} />,
     href: "message",
   },
   {
     id: 4,
     label: "Vehicles",
-    icon: <TbMessage />,
+    icon: <CiDeliveryTruck size={20} />,
     href: "vehicle",
   },
   {
     id: 5,
     label: "Rider Invoices",
-    icon: <TbFileInvoice />,
+    icon: <TbFileInvoice size={20} />,
     href: "invoice",
   },
   {
     id: 6,
     label: "Invoices",
-    icon: <RxDashboard />,
+    icon: <BsFileText size={20} />,
     href: "xlcabinvoice",
   },
   {
     id: 7,
     label: "Balance Reports",
-    icon: <RxDashboard />,
+    icon: <MdOutlineAccountBalanceWallet size={20} />,
     href: "balance",
   },
   {
     id: 8,
     label: "Tax Reports",
-    icon: <RxDashboard />,
+    icon: <MdOutlinePayments size={20} />,
     href: "tax",
   },
   {
     id: 9,
     label: "Payout",
-    icon: <MdPayment />,
+    icon: <MdPayment size={20} />,
     href: "payout",
   },
   {
     id: 10,
     label: "Setting",
-    icon: <FcSettings />,
+    icon: <AiOutlineSetting size={20} />,
     href: "setting",
   },
   {
     id: 11,
     label: "Get Help",
-    icon: <BiHelpCircle />,
+    icon: <BiHelpCircle size={20} />,
     href: "help",
   },
 ];
@@ -99,80 +104,80 @@ export const FleetDB = [
   {
     id: 1,
     label: "Dashboard",
-    icon: <RxDashboard />,
+    icon: <RxDashboard size={20} />,
     href: "dashboard",
   },
   {
     id: 2,
     label: "Profile",
-    icon: <FaUserAlt />,
+    icon: <FaUserAlt size={20} />,
     href: "profile",
   },
   {
     id: 3,
     label: "Order History",
-    icon: <FaThList />,
+    icon: <FaThList size={20} />,
     href: "order",
   },
 
   {
     id: 4,
     label: "Drivers",
-    icon: <BsFillFilePostFill />,
+    icon: <BsFillFilePostFill size={20} />,
     href: "drivers",
   },
   {
     id: 4,
     label: "messages",
-    icon: <TbMessage />,
+    icon: <TbMessage size={20} />,
     href: "message",
   },
   {
     id: 4,
     label: "Vehicles",
-    icon: <TbMessage />,
+    icon: <TbMessage size={20} />,
     href: "vehicles",
   },
   {
     id: 5,
     label: "Expiring Documents",
-    icon: <TbFileInvoice />,
+    icon: <TbFileInvoice size={20} />,
     href: "expired",
   },
   {
     id: 6,
     label: "Invoices",
-    icon: <RxDashboard />,
+    icon: <RxDashboard size={20} />,
     href: "invoice",
   },
   {
     id: 7,
     label: "Rider Invoices",
-    icon: <RxDashboard />,
+    icon: <RxDashboard size={20} />,
     href: "rider/invoice",
   },
   {
     id: 9,
     label: "Compensation",
-    icon: <RxDashboard />,
+    icon: <RxDashboard size={20} />,
     href: "compensation",
   },
   {
     id: 10,
     label: "Daily Reports",
-    icon: <RxDashboard />,
+    icon: <RxDashboard size={20} />,
     href: "daily/report",
   },
   {
     id: 11,
     label: "Weekly Reports",
-    icon: <RxDashboard />,
+    icon: <RxDashboard size={20} />,
     href: "Weekly/report",
   },
   {
     id: 12,
     label: "Payout",
-    icon: <MdPayment />,
+    icon: <MdPayment size={20} />,
     href: "payout",
   },
   {
@@ -231,6 +236,12 @@ export const passengercontroller = [
     label: "Profile",
     icon: <FiUser />,
     href: "profile",
+  },
+  {
+    id: 8,
+    label: "Payment",
+    icon: <MdOutlinePayments />,
+    href: "add-payment",
   },
   {
     id: 9,

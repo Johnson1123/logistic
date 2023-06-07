@@ -6,32 +6,35 @@ import Input from "../Input/Input";
 import "./LoginForm.scss";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { loginCustomer, loginDriver, loginUser } from "../../features/Auths";
 import { BeatLoader } from "react-spinners";
+import {
+  useCustomerLoginMutation,
+  useDriverLoginMutation,
+} from "../../features/slice/auth/userAuth";
+import { setCredentials, setUserInfo } from "../../features/slice/auth/auth";
+import { useCustomerProfileMutation } from "../../features/slice/profile/profileApiSlice";
 
 function LoginForm(props) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const customerLogin = useCustomerLoginMutation();
+  const driverLogin = useDriverLoginMutation();
 
   const auth = useSelector((state) => state.auth);
-  const resStatus =
-    props.role === "driver" ? auth.loginDriverStatus : auth.loginCustomerStatus;
-  const resError =
-    props.role === "driver" ? auth.loginDriverError : auth.loginCustomerError;
   const [loginData, setLoginData] = useState({
     email: "",
     password: "",
   });
-  const handler = props.role === "driver" ? loginDriver : loginCustomer;
-  const handleLogin = async (e) => {
+  const [login, { isLoading, error }] =
+    props.role === "customer" ? customerLogin : driverLogin;
+
+  async function handleLogin(e) {
     e.preventDefault();
-    try {
-      const data = await dispatch(handler(loginData));
-        
-    } catch (err) {
-      console.log(err);
-    }
-  };
+    const res = await login(loginData).unwrap();
+    dispatch(setCredentials(res.data));
+    navigate(`/${props.role}`);
+  }
+
   return (
     <form className="form_login" onSubmit={handleLogin}>
       <div className="flex input_group">
@@ -59,13 +62,16 @@ function LoginForm(props) {
         />
       </div>
       <div className="sign__in">
-        {resStatus === "rejected" ? (
-          <p className="error">{resError?.message}</p>
-        ) : null}
+        {error?.data?.message?.email ? (
+          <p className="error">{error?.data?.message?.email[0]}</p>
+        ) : error?.data?.message?.password ? (
+          <p className="error">{error?.data?.message?.password[0]}</p>
+        ) : (
+          <p className="error">{error?.data?.message}</p>
+        )}
+
         <SignupBtn
-          label={
-            resStatus === "pending" ? <BeatLoader color="#36d7b7" /> : "Sign in"
-          }
+          label={isLoading ? <BeatLoader color="#36d7b7" /> : "Sign in"}
         />
       </div>
     </form>

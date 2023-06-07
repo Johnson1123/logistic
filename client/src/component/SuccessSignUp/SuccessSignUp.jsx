@@ -6,12 +6,13 @@ import "./SuccessSignUp.scss";
 
 function SuccessSignUp(props) {
   const navigate = useNavigate();
+
   const handleNavigate = () => {
     return navigate(
       props?.role === "driver" ? "/experience" : `/login/${props?.role}`
     );
   };
-  console.log(props.role);
+
   return (
     <div className="flex success__signup flex center">
       <div className="success__signup-inner flex box-shadow">

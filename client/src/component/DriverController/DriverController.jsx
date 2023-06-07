@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import "./DriverController.scss";
 import Tabcontroller from "../DriverDB/Tabcontroller/Tabcontroller";
-import { IoLogOutOutline } from "react-icons/io5";
 
 import { useNavigate } from "react-router-dom";
 import { DBcontroller } from "../../content/DBcontroller";
 import { images } from "../../asset";
 import { useDispatch } from "react-redux";
 import { logoutUser } from "../../features/Auths";
+import { AiOutlineLogout } from "react-icons/ai";
 
 function DriverController() {
   const navigate = useNavigate();
@@ -40,9 +40,9 @@ function DriverController() {
         })}
         <button onClick={handleDispatch} className="logout-btn p-text">
           <span>
-            <IoLogOutOutline />
+            <AiOutlineLogout size={20} />
           </span>
-          <span>logout</span>
+          <span className="text-[16px]">logout</span>
         </button>
         <div className="getApp flex">
           <div className="getApp__content">

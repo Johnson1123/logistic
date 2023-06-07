@@ -5,8 +5,8 @@ import { passengercontroller } from "../../../content/DBcontroller";
 import { images } from "../../../asset";
 import { useNavigate } from "react-router-dom";
 import { IoLogOutOutline } from "react-icons/io5";
-import { logoutUser } from "../../../features/Auths";
 import { useDispatch } from "react-redux";
+import { logout } from "../../../features/slice/auth/auth";
 
 function PassengerController() {
   const navigate = useNavigate();
@@ -18,7 +18,8 @@ function PassengerController() {
     setActive(n);
   };
   const handleDispatch = (n) => {
-    Dispatch(logoutUser());
+    Dispatch(logout());
+    navigate("/");
   };
   return (
     <div className="Passenger__controller">

@@ -1,12 +1,6 @@
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Outlet,
-  useNavigate,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Navbar from "./component/Navbar/Navbar";
 import Footer from "./component/Footer/Footer";
-import { logoutUser } from "./features/Auths";
 import GetDriverHelp from "./component/DriverDB/GetHelp/GetHelp";
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 import {
@@ -47,6 +41,7 @@ import {
   ProfileSetting,
   GetHelp,
   Trip,
+  AddPayment,
 } from "./component/PassengerDB/index";
 
 import {
@@ -88,14 +83,11 @@ import PaymentPricing from "./component/PassengerDB/GetHelp/HelpButton/PaymentPr
 import InterP from "./component/PassengerDB/InterP/InterP";
 import FleetDB from "./pages/FleetDB/FleetDB";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
-import { loadProfile } from "./features/customer/putCustomer";
+import { useEffect } from "react";
 import SetForgetPwd from "./pages/authPages/SetPwd/SetPwd";
-import { getUser } from "./features/customer/getUser";
-import { loadUser } from "./features/user/action/user";
-import { store } from "./App/store";
-import { baseUrl } from "./server";
-import axios from "axios";
+
+import { useCustomerProfileMutation } from "./features/slice/profile/profileApiSlice";
+import { setUserInfo } from "./features/slice/auth/auth";
 
 const Layout = () => {
   return (
@@ -155,10 +147,6 @@ const router = createBrowserRouter([
       },
     ],
   },
-  // {
-  //   path: "/signupuser",
-  //   element: <UserSignup />,
-  // },
   {
     path: "/customer/register",
     element: <Customer />,
@@ -188,7 +176,7 @@ const router = createBrowserRouter([
     element: <SetForgetPwd />,
   },
   {
-    path: "/newpwd",
+    path: "/new-password",
     element: <Newpwd />,
   },
   {
@@ -242,6 +230,10 @@ const router = createBrowserRouter([
       {
         path: "profile",
         element: <PassengerProfile />,
+      },
+      {
+        path: "add-payment",
+        element: <AddPayment />,
       },
       {
         path: "trip",
@@ -443,11 +435,14 @@ const router = createBrowserRouter([
 function App() {
   const dispatch = useDispatch();
   const auth = useSelector((state) => state.auth);
-  const user = useSelector((state) => state.user);
-
-  // useEffect(() => {
-  //   dispatch(loadProfile(null));
-  // }, [dispatch]);
+  const [customerProfile] = useCustomerProfileMutation();
+  useEffect(() => {
+    async function getProfile() {
+      const res = await customerProfile().unwrap();
+      await dispatch(setUserInfo(res.data));
+    }
+    getProfile();
+  }, []);
 
   const initialOptions = {
     "client-id":
@@ -455,9 +450,6 @@ function App() {
     currency: "USD",
     intent: "capture",
   };
-  useEffect(() => {
-    store.dispatch(loadUser());
-  }, []);
 
   return (
     <PayPalScriptProvider options={initialOptions}>

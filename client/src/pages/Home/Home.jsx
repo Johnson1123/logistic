@@ -13,20 +13,18 @@ import DownloadSection from "../../component/DownloadSection/DownloadSection";
 import { useNavigate } from "react-router-dom";
 import OurBrand from "../../component/OurBrand/OurBrand";
 import Safety from "../../component/Safety/Safety";
-import { useDispatch, useSelector } from "react-redux";
-import { getCustomer } from "../../features/api";
-import { setProfile } from "../../features/customer/getUser";
+import { useSelector } from "react-redux";
 
 export const Home = () => {
   const navigate = useNavigate();
-  const user = useSelector((state) => state.profile.profile);
-  const auth = useSelector((state) => state.auth);
-  const dispatch = useDispatch();
+
+  const user_id = useSelector((state) => state?.auth?.user?.user_id);
+  console.log(user_id);
   return (
     <div className="app__container home__container">
       <div className="app__wrapper flex">
         <div className="home__intro flex">
-          {auth.user_id && <Search />}
+          {user_id && <Search />}
 
           <div className="home__intro-title">
             <h1 className="p-text fw-500">Fast & Easy Way To Rent A Car</h1>
@@ -41,13 +39,15 @@ export const Home = () => {
               fact of life.
             </p>
           </div>
-          {!auth?.user_id && (
+          {!user_id && (
             <div
               className={
-                user ? `btn__container flex btn-center` : `btn__container flex`
+                user_id
+                  ? `btn__container flex btn-center`
+                  : `btn__container flex`
               }
             >
-              {!auth?.user_id && (
+              {!user_id && (
                 <div className="btn-box">
                   <SignupBtn
                     label="Partnership"
@@ -56,7 +56,7 @@ export const Home = () => {
                 </div>
               )}
 
-              {!auth?.user_id && (
+              {!user_id && (
                 <div className="btn-box">
                   <SignupBtn
                     label="Sign up"
@@ -71,11 +71,11 @@ export const Home = () => {
         <OperationArea />
         <OurService />
         <Testimonials />
-        {user && <Map />}
+        {user_id && <Map />}
         <ChargesBadge />
-        {user && <DownloadSection />}
-        {user ? "" : <OurBrand />}
-        {user ? "" : <Safety />}
+        {user_id && <DownloadSection />}
+        {user_id ? "" : <OurBrand />}
+        {user_id ? "" : <Safety />}
       </div>
     </div>
   );

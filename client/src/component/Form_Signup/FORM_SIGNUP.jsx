@@ -17,16 +17,8 @@ function FORM_SIGN(props) {
   const location = useLocation();
   const auth = useSelector((state) => state.auth);
   const [isubmitted, setIssubmitted] = useState(false);
-  const resStatus =
-    props.role === "driver"
-      ? auth.registerDriverStatus
-      : auth.registerCustomerStatus;
-  const resError =
-    props.role === "driver"
-      ? auth.registerDriverError
-      : auth.registerCustomerError;
 
-  const handler = props.handler;
+  const [register, { isLoading, error }] = props.handleRegister;
 
   const [values, setValue] = useState({
     username: "",
@@ -35,7 +27,8 @@ function FORM_SIGN(props) {
     password: "",
   });
 
-  const [error, setError] = useState("");
+  const [inputError, setInputError] = useState("");
+  const [open, setOpen] = useState(false);
 
   const validate = (formData) => {
     const formError = {};
@@ -61,23 +54,26 @@ function FORM_SIGN(props) {
     return formError;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setError(validate(values));
-    if (Object.keys(error).length === 0 && isubmitted) {
-      Dispatch(handler(values));
+    setInputError(validate(values));
+    if (Object.keys(inputError).length === 0 && isubmitted) {
+      const res = await register(values).unwrap();
+      localStorage.setItem("userEmail", values.email);
+      setOpen(true);
     }
     setIssubmitted(true);
   };
 
   useEffect(() => {
-    if (
-      auth.registerCustomerStatus === "success" ||
-      auth.registerDriverStatus === "success"
-    ) {
-      navigate("/otp", { state: { user: props.role } });
+    if (open) {
+      navigate("/otp", {
+        state: {
+          role: props.role,
+        },
+      });
     }
-  }, [auth, navigate, isubmitted, error, Dispatch]);
+  }, [isubmitted, inputError, open]);
 
   return (
     <form className="form_sign" onSubmit={handleSubmit}>
@@ -86,7 +82,7 @@ function FORM_SIGN(props) {
           <Input
             type="text"
             name="username"
-            className={error.username ? "error-border" : ""}
+            className={inputError.username ? "error-border" : ""}
             image={<CiUser />}
             placeholder="Username"
             onChange={(e) => {
@@ -95,13 +91,16 @@ function FORM_SIGN(props) {
               });
             }}
           />
-          {error.username && <p className="error">{error.username}</p>}
+          {inputError.username && (
+            <p className="error">{inputError.username}</p>
+          )}
         </div>
+
         <div className="input__group-inner">
           <Input
             type="email"
             name="email"
-            className={error.email ? "error-border" : ""}
+            className={inputError.email ? "error-border" : ""}
             image={<HiOutlineMail />}
             placeholder="Email Address"
             onChange={(e) => {
@@ -110,15 +109,16 @@ function FORM_SIGN(props) {
               });
             }}
           />
-          {error.email && <p className="error">{error.email}</p>}
+          {inputError.email && <p className="error">{inputError.email}</p>}
         </div>
       </div>
+
       <div className="flex input_group">
         <div className="input__group-inner">
           <Input
             type="text"
             name="tell"
-            className={error.phone ? "error-border" : ""}
+            className={inputError.phone ? "error-border" : ""}
             image={<BsTelephone />}
             placeholder="Telephone"
             onChange={(e) => {
@@ -127,13 +127,14 @@ function FORM_SIGN(props) {
               });
             }}
           />
-          {error.phone && <p className="error">{error.phone}</p>}
+          {inputError.phone && <p className="error">{inputError.phone}</p>}
         </div>
+
         <div className="input__group-inner">
           <Input
             type="password"
             name="pwd"
-            className={error.password ? "error-border" : ""}
+            className={inputError.password ? "error-border" : ""}
             image={<AiFillLock />}
             placeholder="Password"
             onChange={(e) => {
@@ -142,16 +143,16 @@ function FORM_SIGN(props) {
               });
             }}
           />
-          {error.password && <p className="error">{error.password}</p>}
+          {inputError.password && (
+            <p className="error">{inputError.password}</p>
+          )}
         </div>
       </div>
 
       <div className="flex signup-btn-err">
-        {resStatus === "rejected" ? (
-          <p className="error">{resError?.message}</p>
-        ) : null}
+        {error && <p className="error">{error?.data?.message}</p>}
         <button className="btn sign_btn" type="submit">
-          {resStatus === "pending" ? <BeatLoader color="#36d7b7" /> : "Sign Up"}
+          {isLoading ? <BeatLoader color="#36d7b7" /> : "Sign Up"}
         </button>
       </div>
     </form>

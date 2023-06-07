@@ -4,14 +4,17 @@
   padding: 1rem;
   margin-top: 1.5rem;
   row-gap: 1rem;
+  flex-direction: column;
+  align-items: center;
   @include tablet {
     width: 65%;
     margin: 3rem auto 1rem;
+    flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
   }
   .foo_box {
-    width: 50%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -22,13 +25,16 @@
     }
     .footer-title {
       line-height: 2.5;
-      text-align: left;
+      text-align: center;
       font-weight: 700;
+      @include tablet {
+        text-align: left;
+      }
     }
     .footer__link {
       list-style: none;
       line-height: 1.8;
-      text-align: left;
+      text-align: center;
       padding-left: 0.5rem;
       cursor: pointer;
       &.store {
@@ -42,9 +48,18 @@
         font-weight: 500;
         font-size: $font-14;
       }
+      @include tablet {
+        text-align: left;
+      }
     }
   }
   .box__1 {
+    a {
+      img {
+        width: 100%;
+        height: 50px;
+      }
+    }
     .lang {
       margin-top: 0.5rem;
       align-items: center;

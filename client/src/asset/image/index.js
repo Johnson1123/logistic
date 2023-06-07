@@ -1,7 +1,7 @@
 import handheldPhone from "./handheldPhone.png";
 import operate from "./operate.png";
 import driver from "./drive.png";
-import logo from "./logo.png";
+import logo from "./xlcab_green_logo.png";
 import location from "./location.png";
 import suvColorAches from "./suv-ache.png";
 import suvColorCream from "./suv-cream.png";
@@ -33,8 +33,23 @@ import avatar from "./avatar.jpg";
 import glad from "./glad.jpg";
 import kcibs from "./kcibs.jpg";
 import seren from "./seren.jpg";
-
+import blue_logo from "./xlcab_blue_logo_logo.jpg";
+import xl_blue_logo from "./xlcab_blue_logo_logo.jpg";
+import green_logo from "./xlcab_green_logo.png";
+import xl_purple_logo from "./xlcab_purple_logo_logo.jpg";
+import purple_logo from "./xlcab_small_purple.jpg";
+import favicon_green from "./favicon_green.png";
+import favicon_purple from "./favicon_purple.jpg";
+import favicon_blue from "./favicon_blue.jpg";
 export default {
+  blue_logo,
+  xl_blue_logo,
+  green_logo,
+  xl_purple_logo,
+  purple_logo,
+  favicon_blue,
+  favicon_green,
+  favicon_purple,
   seren,
   kcibs,
   avatar,

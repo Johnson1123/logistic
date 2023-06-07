@@ -2,16 +2,11 @@ import React, { useEffect, useState } from "react";
 import { images } from "../../../asset";
 import "./Profile.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { getCustomer } from "../../../features/api";
-import { loadProfile } from "../../../features/customer/putCustomer";
 
 function Profile() {
   const dispatch = useDispatch();
-  const user = useSelector((state) => state?.profile?.profile);
-  console.log(user);
-  useEffect(() => {
-    dispatch(loadProfile());
-  }, [dispatch]);
+  const user = useSelector((state) => state?.auth?.userInfo);
+
   return (
     <div className="Profile">
       <h4 className="title">My Profile</h4>
