@@ -26,14 +26,14 @@ function PaymentPricing() {
 
   return (
     <div className="PaymentPricing">
-      <div className="title flex">
+      <div className="flex items-center font-bold text-md">
         <div
-          className="arrow__back"
+          className="cursor-pointer"
           onClick={() => navigate("/customer/help/")}
         >
           <FaAngleLeft />
         </div>
-        <p>Payment and pricing</p>
+        <p className="ml-2">Payment and pricing</p>
       </div>
       <div className="btn__container">
         <div className="AccountData">

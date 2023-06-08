@@ -79,8 +79,8 @@ function Vehicle() {
     <div className="Vehicle">
       <div className="control__con">
         <p className="title">Vehicles</p>
-        <div className="w-[100%] bg-[#f3f3f3] py-3 px-4 800px:w-[80%] rounded-md shadow-sm flex justify-between mt-4">
-          <p className="small-title fw-300 text">vehicles Overviews</p>
+        <div className="w-[100%] bg-[#f3f3f3] py-3 px-4 800px:w-[80%] rounded-md shadow-sm flex justify-between items-center mt-4">
+          <p className="text-sm font-[400]">vehicles Overviews</p>
           <button
             className={`${styles.button} py-1`}
             onClick={() => setOpen(!open)}
@@ -88,18 +88,32 @@ function Vehicle() {
             Add New
           </button>
         </div>
+
         <div className="mt-7">
+          <div className="flex justify-between my-4">
+            <h4 className="text-sm font-[700] w-[40%]">Name</h4>
+            <h5 className="text-sm font-[700] w-[15%] text-center">Year</h5>
+            <h5 className="text-sm font-[700] w-[40%] text-right">
+              Plate Number
+            </h5>
+          </div>
           {vehicles.map((vehicle, index) => {
             return (
               <div
                 key={index}
-                className="bg-slate-100 flex py-3 px-3 round-sm w-[80%] mb-3 justify-between"
+                className="bg-[#fcfcfc] flex py-5 round-sm w-[100%] 800px:w-[80%] mb-3 justify-between border-b-2 border-black"
               >
-                <h4 className="text-sm font-[400]">{vehicle.model}</h4>
-                <h5 className="text-sm font-[400]">{vehicle.plate}</h5>
-                <h5 className="text-sm font-[400]">{vehicle.color}</h5>
-                <h5 className="text-sm font-[400]">{vehicle.year}</h5>
-                <h5 className="text-sm font-[400]">{vehicle.seats}</h5>
+                <h4 className="text-sm font-[400] w-[40%] truncate">
+                  {vehicle.model}
+                </h4>
+                <h5 className="text-sm font-[400] w-[20%] text-center">
+                  {vehicle.year}
+                </h5>
+                <h5 className="text-sm font-[400] w-[40%] truncate text-right">
+                  {vehicle.plate}
+                </h5>
+
+                {/* <h5 className="text-sm font-[400]">{vehicle.seats}</h5> */}
               </div>
             );
           })}

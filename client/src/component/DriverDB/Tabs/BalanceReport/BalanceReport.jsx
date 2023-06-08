@@ -18,7 +18,7 @@ function BalanceReport() {
     <div className="BalanceReport">
       <div className="balanceReport__wrapper">
         <h4 className="title">Balance Reports</h4>
-        <p className="small-title text fw-300">
+        <p className="text-sm font-[400] mb-3">
           Here you see list of balance reports for recent weeks.
         </p>
         <div className="pagination flex">
@@ -43,7 +43,7 @@ function BalanceReport() {
           <div className="reports__box-con">
             {bussiness.map((report, index) => {
               return (
-                <div className="report__box flex" key={index}>
+                <div className="report__box flex py-3" key={index}>
                   <p className="p-text col-1 fw-500">{report.period}</p>
                   <p className="p-text col-2 pdf fw-700">
                     <a href={csvURL} download>

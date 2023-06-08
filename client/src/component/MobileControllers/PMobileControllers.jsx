@@ -9,14 +9,14 @@ import { handleMenuClose } from "../../features/toggleSlice/toggleSlice";
 import Tabcontroller from "../DriverDB/Tabcontroller/Tabcontroller";
 import { useNavigate } from "react-router-dom";
 import { IoLogOutOutline } from "react-icons/io5";
-import { logoutUser } from "../../features/Auths";
+import { logout } from "../../features/slice/auth/auth";
 
 function PMobileControllers() {
   const Dispatch = useDispatch();
   const navigate = useNavigate();
-  const tab = useSelector((state) => state.toggleReducer.dashboarMenu);
   const [active, setActive] = useState("");
   const user = useSelector((state) => state?.auth?.userInfo);
+  const user_type = useSelector((state) => state?.auth?.user?.user_type);
   const handleDB = (n) => {
     navigate(n);
     Dispatch(handleMenuClose());
@@ -27,11 +27,11 @@ function PMobileControllers() {
     Dispatch(handleMenuClose());
   };
 
-  const handleLogout = (n) => {
-    Dispatch(logoutUser());
+  const handleLogout = () => {
+    Dispatch(logout());
+    navigate("/");
   };
   const name = `${user?.first_name}`;
-  console.log(name);
   return (
     <div className="PNav__menu-container" onClick={handleClose}>
       <div className="MobileControllers">
@@ -52,10 +52,8 @@ function PMobileControllers() {
             />
           </div>
           <div className="user__details">
-            <h2 className="username-text p-text">
-              {name.length > 15 ? name.slice(0, 15) + "..." : name}
-            </h2>
-            <p className="p-text small-text">customer</p>
+            <h2 className="username-text p-text truncate">{name}</h2>
+            <p className="p-text small-text">{user_type}</p>
           </div>
         </div>
         <div>

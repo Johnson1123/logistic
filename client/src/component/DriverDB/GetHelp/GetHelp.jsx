@@ -10,7 +10,7 @@ function GetHelp() {
     return navigate(n);
   };
   return (
-    <div className="GetHelp">
+    <div className="GetHelp px-4">
       <p className="title">Get Help</p>
       <p className="small-title">How can we help?</p>
       <HelpButton label="Customer services" />

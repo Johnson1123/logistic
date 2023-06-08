@@ -1,7 +1,7 @@
 @import "../../../style/variable.scss";
 .Tabcontroller-btn {
   background-color: transparent;
-  padding: 0.2rem 0.5rem;
+  padding: 0.5rem 0.5rem;
   border-radius: 10px;
   border: none;
   margin: 10px 0;
@@ -11,6 +11,7 @@
   min-width: max-content;
   list-style: none;
   color: $whiteColor !important;
+  margin-top: 15px;
   cursor: pointer;
   @include tablet {
     padding: 0.7rem 2rem;

@@ -10,7 +10,7 @@ function GetHelp() {
     return navigate(n);
   };
   return (
-    <div className="GetHelp">
+    <div className="GetHelp py-4 px-4">
       <p className="title">Browse help topics</p>
       <HelpButton
         label="How do I book a ride with XLCAB?"

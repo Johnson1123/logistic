@@ -36,7 +36,7 @@ function Payout() {
     <div className="Payout">
       <div className="payout__wrapper">
         <h4 className="title">Tax Reports</h4>
-        <p className="small-title text fw-300">
+        <p className="text-sm font-[400]">
           Here you see list of tax reports for recent months.
         </p>
         <div className="payout__con">

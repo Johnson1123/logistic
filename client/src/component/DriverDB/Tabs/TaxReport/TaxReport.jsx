@@ -7,7 +7,7 @@ function TaxReport() {
     <div className="TaxReport dbtab">
       <div className="taxReport__wrapper">
         <h4 className="title">Tax Reports</h4>
-        <p className="small-title text fw-300">
+        <p className="font-[400] text-sm mt-2">
           Here you see list of tax reports for recent months.
         </p>
         <div className="pagination"></div>
@@ -20,7 +20,7 @@ function TaxReport() {
             {taxreport.map((report, index) => {
               return (
                 <div className="taxes__box flex" key={index}>
-                  <p className="p-text col-1 fw-500">{report.period}</p>
+                  <p className="text-sm font-[400]">{report.period}</p>
                   <p className="p-text col-2 pdf fw-700">{report.format}</p>
                 </div>
               );

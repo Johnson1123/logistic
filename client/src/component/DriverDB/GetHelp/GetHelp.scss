@@ -2,12 +2,5 @@
 .GetHelp {
   width: 100%;
   @include mobile {
-    padding: 1rem 0 0 2rem;
-  }
-  .small-title {
-    margin-top: 2rem;
-    @include mobile {
-      margin-top: 1rem;
-    }
   }
 }

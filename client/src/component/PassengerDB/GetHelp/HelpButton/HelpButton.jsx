@@ -6,10 +6,10 @@ import { FaAngleRight } from "react-icons/fa";
 function HelpButton(props) {
   return (
     <button
-      className={`help__button ${props.className}`}
+      className={`help__button ${props.className} py-2 flex items-center`}
       onClick={props.handler}
     >
-      <span>{props.label}</span>
+      <span className="w-[80%] text-left">{props.label}</span>
       <span>
         <FaAngleRight />
       </span>

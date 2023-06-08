@@ -51,10 +51,11 @@
     .profile__box {
       width: 100%;
       align-items: center;
+      margin-top: 0.5rem;
       &:first-of-type {
-        margin-top: 1rem;
+        margin-top: 1.5rem;
         @include tablet {
-          margin-top: 0.5rem;
+          margin-top: 1.5rem;
         }
       }
       .p-text {

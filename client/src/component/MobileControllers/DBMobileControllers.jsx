@@ -9,13 +9,16 @@ import { handleMenuClose } from "../../features/toggleSlice/toggleSlice";
 import Tabcontroller from "../DriverDB/Tabcontroller/Tabcontroller";
 import { useNavigate } from "react-router-dom";
 import { IoLogOutOutline } from "react-icons/io5";
-import { logoutUser } from "../../features/Auths";
+import { logout } from "../../features/slice/auth/auth";
 
 function DBMobileControllers() {
   const Dispatch = useDispatch();
   const navigate = useNavigate();
-  const tab = useSelector((state) => state.toggleReducer.dashboarMenu);
   const [active, setActive] = useState("/driver");
+
+  const user = useSelector((state) => state?.auth?.userInfo);
+  const user_type = useSelector((state) => state?.auth?.user?.user_type);
+
   const handleDB = (n) => {
     navigate(n);
     Dispatch(handleMenuClose());
@@ -25,8 +28,9 @@ function DBMobileControllers() {
   const handleClose = () => {
     Dispatch(handleMenuClose());
   };
-  const handleLogout = (n) => {
-    Dispatch(logoutUser());
+  const handleLogout = () => {
+    Dispatch(logout());
+    navigate("/");
   };
   return (
     <div className="dbNav__menu-container">
@@ -36,11 +40,22 @@ function DBMobileControllers() {
         </div>
         <div className="DBNav__box user__img-details flex">
           <div className="user__img flex center">
-            <img src={images.Elia} alt="Technovix driver" />
+            <img
+              src={
+                user
+                  ? user?.image_url
+                    ? user?.image_url
+                    : images.avatar
+                  : images.avatar
+              }
+              alt={user?.first_name}
+            />
           </div>
           <div className="user__details">
-            <h2 className="username-text p-text">Christiana James</h2>
-            <p className="p-text small-text">Driver</p>
+            <h2 className="username-text p-text">
+              {user?.first_name + " " + user?.last_name}
+            </h2>
+            <p className="p-text small-text">{user_type}</p>
           </div>
         </div>
         <div>

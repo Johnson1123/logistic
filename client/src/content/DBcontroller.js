@@ -17,31 +17,37 @@ import { BsFileText, BsFillFilePostFill } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import logoutUser from "../features/Auths";
-import { AiOutlineSetting } from "react-icons/ai";
+import {
+  AiOutlineDeliveredProcedure,
+  AiOutlineFileText,
+  AiOutlineProfile,
+  AiOutlineSetting,
+  AiOutlineUser,
+} from "react-icons/ai";
 import { CiDeliveryTruck } from "react-icons/ci";
 export const DBcontroller = [
   {
     id: 1,
     label: "Dashboard",
-    icon: <RxDashboard />,
+    icon: <RxDashboard size={20} />,
     href: "/driver",
   },
   {
     id: 2,
     label: "Profile",
-    icon: <FaUserAlt size={20} />,
+    icon: <AiOutlineUser size={20} />,
     href: "profile",
   },
   {
     id: 3,
     label: "My Rides",
-    icon: <FaThList size={20} />,
+    icon: <AiOutlineFileText size={20} />,
     href: "ride",
   },
   {
     id: 4,
     label: "My Document",
-    icon: <BsFillFilePostFill size={20} />,
+    icon: <AiOutlineDeliveredProcedure size={20} />,
     href: "document",
   },
   {

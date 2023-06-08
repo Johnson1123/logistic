@@ -15,11 +15,15 @@ function Trip() {
         {["upcoming", "completed", "canceled"].map((control) => {
           return (
             <button
-              className={
-                tripParams === control
-                  ? "control-btn p-text active"
-                  : "control-btn p-text"
-              }
+              className={`
+                ${
+                  tripParams === control
+                    ? "control-btn p-text active"
+                    : "control-btn p-text"
+                }
+                text-sm
+                font-light
+              `}
               key={control}
               onClick={() => Dispatch(setCustomerTrip(control))}
             >

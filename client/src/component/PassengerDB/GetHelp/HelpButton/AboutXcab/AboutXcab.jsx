@@ -26,14 +26,14 @@ function AboutXcab() {
 
   return (
     <div className="AboutXcab">
-      <div className="title flex">
+      <div className="flex items-center font-bold text-md">
         <div
-          className="arrow__back"
+          className="cursor-pointer"
           onClick={() => navigate("/customer/help/")}
         >
           <FaAngleLeft />
         </div>
-        <p> About XLCAB?</p>
+        <p className="ml-2">About XLCAB?</p>
       </div>
       <HelpButton
         label="How do I book a ride with XLCAB?"

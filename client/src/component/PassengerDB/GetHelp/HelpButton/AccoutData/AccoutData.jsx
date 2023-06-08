@@ -25,15 +25,15 @@ function AccountData() {
   };
 
   return (
-    <div className="AccountData">
-      <div className="title flex">
+    <div className="AccountData py-4">
+      <div className="flex items-center font-bold text-md">
         <div
-          className="arrow__back align"
+          className="cursor-pointer"
           onClick={() => navigate("/customer/help/")}
         >
           <FaAngleLeft />
         </div>
-        <p>XCLEB Security</p>
+        <p className="ml-2">XCLEB Security</p>
       </div>
       <div className="btn__container">
         <div className="AccountData">
