@@ -14,6 +14,8 @@ function DBNav() {
   const dispatch = useDispatch();
   const Dispatch = useDispatch();
   const user = useSelector((state) => state?.auth?.userInfo);
+  const auth = useSelector((state) => state.auth);
+  const role = auth?.user?.user_type;
 
   useEffect(() => {
     Dispatch(loadProfile());
@@ -47,7 +49,7 @@ function DBNav() {
         </div>
         <div className="user__details flex flex-col justify-center">
           <h2 className="username-text p-text">{user?.first_name}</h2>
-          <p className="text-sm">customer</p>
+          <p className="text-sm">{role}</p>
         </div>
       </div>
       <div className="DBNav__box db__menu" onClick={() => menuHandler()}>

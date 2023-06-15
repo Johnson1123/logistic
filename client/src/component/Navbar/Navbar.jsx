@@ -22,8 +22,7 @@ function Navbar() {
   const authToggle = useSelector((state) => state.toggleReducer.menuValue);
   const auth = useSelector((state) => state.auth);
   const user = useSelector((state) => state?.auth?.userInfo);
-  const role = auth.role;
-
+  const role = auth?.user?.user_type;
   const [toggle, setToggle] = useState(authToggle);
   const Dispatch = useDispatch();
 
@@ -37,8 +36,8 @@ function Navbar() {
   }, []);
 
   const handleLogout = () => {
-    Dispatch(toggleMenu());
     Dispatch(logout());
+    Dispatch(toggleMenu());
   };
   const user_id = useSelector((state) => state?.auth?.user?.user_id);
   return (

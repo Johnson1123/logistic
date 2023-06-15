@@ -12,9 +12,9 @@ function GetHelp() {
   return (
     <div className="GetHelp px-4">
       <p className="title">Get Help</p>
-      <p className="small-title">How can we help?</p>
+      <p className="text-md font-bold my-3">How can we help?</p>
       <HelpButton label="Customer services" />
-      <p className="small-title">Get help with something else?</p>
+      <p className="text-md font-bold my-3">Get help with something else?</p>
       <HelpButton
         label="How do I book a ride with XLCAB?"
         handler={() => handleNavigate("become/driver")}

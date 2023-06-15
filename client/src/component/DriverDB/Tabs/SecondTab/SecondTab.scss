@@ -49,7 +49,6 @@
       font-weight: 700;
     }
     .profile__box {
-      width: 100%;
       align-items: center;
       margin-top: 0.5rem;
       &:first-of-type {
@@ -63,7 +62,6 @@
         font-size: calc(17px + 6 * ((100vw - 768px) / 680));
       }
       @include tablet {
-        width: 100%;
         justify-content: space-between;
         align-items: center;
         .p-text {

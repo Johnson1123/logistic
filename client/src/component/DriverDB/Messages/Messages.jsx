@@ -19,7 +19,7 @@ function Messages() {
   const [messages, setMessages] = useState([]);
   const [loadingMsgs, setLoadingMsgs] = useState(false);
   const selectecUser = useSelector(userSelected);
-  const currentUser = JSON.parse(localStorage.getItem("token")).data.user;
+  const currentUser = JSON.parse(localStorage.getItem("access"));
   const msgId = useSelector(chatId);
 
   const scrollRef = useRef();

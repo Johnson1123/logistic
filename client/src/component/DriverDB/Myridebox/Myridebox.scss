@@ -9,7 +9,6 @@
     padding: 1rem 1rem;
     border-radius: 10px;
     @include tablet {
-      width: min(600px, 100%);
       min-width: 600px;
     }
     .left__box {

@@ -78,9 +78,9 @@ function Vehicle() {
   return (
     <div className="Vehicle">
       <div className="control__con">
-        <p className="title">Vehicles</p>
+        <p className="title 800px:text-[20px]">Vehicles</p>
         <div className="w-[100%] bg-[#f3f3f3] py-3 px-4 800px:w-[80%] rounded-md shadow-sm flex justify-between items-center mt-4">
-          <p className="text-sm font-[400]">vehicles Overviews</p>
+          <p className="text-sm font-[400] 800px:text-lg">vehicles Overviews</p>
           <button
             className={`${styles.button} py-1`}
             onClick={() => setOpen(!open)}
@@ -90,7 +90,7 @@ function Vehicle() {
         </div>
 
         <div className="mt-7">
-          <div className="flex justify-between my-4">
+          <div className="flex justify-between my-4 800px:w-[80%]">
             <h4 className="text-sm font-[700] w-[40%]">Name</h4>
             <h5 className="text-sm font-[700] w-[15%] text-center">Year</h5>
             <h5 className="text-sm font-[700] w-[40%] text-right">
@@ -101,7 +101,7 @@ function Vehicle() {
             return (
               <div
                 key={index}
-                className="bg-[#fcfcfc] flex py-5 round-sm w-[100%] 800px:w-[80%] mb-3 justify-between border-b-2 border-black"
+                className="bg-[#fcfcfc] flex py-5 round-sm w-[100%] 800px:w-[80%] mb-3 justify-between border-b-2 border-[#f3f3f3]"
               >
                 <h4 className="text-sm font-[400] w-[40%] truncate">
                   {vehicle.model}

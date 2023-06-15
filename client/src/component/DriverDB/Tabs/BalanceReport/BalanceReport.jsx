@@ -18,7 +18,7 @@ function BalanceReport() {
     <div className="BalanceReport">
       <div className="balanceReport__wrapper">
         <h4 className="title">Balance Reports</h4>
-        <p className="text-sm font-[400] mb-3">
+        <p className="text-sm font-[400] my-2 mb-3 800px:text-[18px]">
           Here you see list of balance reports for recent weeks.
         </p>
         <div className="pagination flex">
@@ -37,15 +37,15 @@ function BalanceReport() {
         </div>
         <div className="balance__con">
           <div className="balance__header flex box-shadow">
-            <p className="bold-text col-1">Period</p>
-            <p className="bold-text col-2">PDF</p>
+            <p className=" 800px:text-lg text-sm">Period</p>
+            <p className=" 800px:text-lg text-sm">PDF</p>
           </div>
           <div className="reports__box-con">
             {bussiness.map((report, index) => {
               return (
                 <div className="report__box flex py-3" key={index}>
-                  <p className="p-text col-1 fw-500">{report.period}</p>
-                  <p className="p-text col-2 pdf fw-700">
+                  <p className=" 800px:text-[16px]">{report.period}</p>
+                  <p className="800px:text-[16px] cursor-pointer text-[green] font-extrabold text-sm">
                     <a href={csvURL} download>
                       Download
                     </a>

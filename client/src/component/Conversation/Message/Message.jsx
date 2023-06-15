@@ -3,10 +3,8 @@ import "./Message.scss";
 import dayjs from "dayjs";
 import { Box, Stack } from "@mui/material";
 
-
 function Message({ messages, scrollRef }) {
-  const currentUser = JSON.parse(localStorage.getItem("token")).data.user;
-
+  const currentUser = JSON.parse(localStorage.getItem("access"));
 
   return (
     <Box p={3}>
@@ -34,5 +32,5 @@ function Message({ messages, scrollRef }) {
     </Box>
   );
 }
- 
+
 export default Message;

@@ -14,10 +14,11 @@ function Loginuser(props) {
   const handler = props.handler;
   useEffect(() => {
     if (user && props.role === "driver") {
+      window.location.reload(true);
       navigate("/tab");
     } else if (user && props.role === "customer") {
-      navigate("/customer");
       window.location.reload(true);
+      navigate("/customer");
     }
   }, [user, Dispatch, navigate, props.role]);
   return (
