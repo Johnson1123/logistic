@@ -4,14 +4,13 @@ import { Link } from "react-router-dom";
 import { AiOutlineMenu } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { images } from "../../../asset";
+import { handleMenuOpen } from "../../../features/toggleSlice/toggleSlice";
 
 function FleetNav() {
-  //   useEffect(() => {
-  //     Dispatch(loadProfile());
-  //   }, []);
-  //   const menuHandler = () => {
-  //     Dispatch(handleMenuOpen());
-  //   };
+  const dispatch = useDispatch();
+  const menuHandler = () => {
+    dispatch(handleMenuOpen());
+  };
   return (
     <div className="DBNav flex box-shadow">
       <div className="DBNav__box  DBNav__logo">
@@ -37,12 +36,12 @@ function FleetNav() {
           />
         </div>
         <div className="user__details flex flex-col justify-center">
-          <h2 className="username-text p-text text-sm">Johnson</h2>
+          <h2 className="username-text p-text text-sm !font-[500]">Johnson</h2>
           <p className="text-sm">Fleet Owner</p>
         </div>
       </div>
       <div className="DBNav__box db__menu">
-        <AiOutlineMenu />
+        <AiOutlineMenu onClick={() => menuHandler()} />
       </div>
     </div>
   );
