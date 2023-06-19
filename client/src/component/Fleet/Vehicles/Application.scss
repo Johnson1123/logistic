@@ -1,0 +1,58 @@
+@import "../../../style/variable.scss";
+.SApplication {
+  width: 100%;
+  margin-top: 1.5rem;
+  .top__container {
+    justify-content: space-between;
+    .desc {
+      width: 80%;
+    }
+    .small-title {
+      font-weight: 700;
+      font-size: $font-14;
+    }
+    .add__driver {
+      background-color: transparent;
+      border: none;
+      font-weight: 700;
+      color: $secondaryColor;
+      font-size: $font-16;
+    }
+  }
+  .scroll__container {
+    width: 100%;
+    @include tablet {
+      overflow: hidden;
+    }
+    .col-1 {
+      width: 60%;
+    }
+    .col-2 {
+      width: 40%;
+    }
+
+    .title__container {
+      margin-top: 0.5rem;
+      width: 100%;
+      padding: 0.7rem;
+      border-radius: 10px;
+    }
+    .data__container {
+      margin-top: 1rem;
+      width: 100%;
+      .box {
+        padding: 0.5rem;
+        border-bottom: 1px solid $lightAshe;
+        padding: 0.7rem;
+        margin: 0.3rem;
+        .col-1.p-text {
+          color: $secondaryColor;
+        }
+        .p-text {
+          font-size: $font-14;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}

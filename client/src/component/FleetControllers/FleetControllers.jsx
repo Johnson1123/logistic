@@ -1,15 +1,16 @@
 import React, { Component, useEffect, useState } from "react";
 import "./FleetControllers.scss";
-import { RxDashboard } from "react-icons/rx";
-import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { FleetDB } from "../../content/DBcontroller";
 import Tabcontroller from "../DriverDB/Tabcontroller/Tabcontroller";
+
 import { images } from "../../asset";
 
 function FleetDBController() {
+  const [active, setActive] = useState("/driver");
   const navigate = useNavigate();
   const handleDB = (n) => {
+    setActive(n);
     navigate(n);
   };
   return (
@@ -21,6 +22,8 @@ function FleetDBController() {
               label={item.label}
               icon={item.icon}
               key={index}
+              href={item.href}
+              active={active}
               handler={() => handleDB(item.href)}
             />
           );

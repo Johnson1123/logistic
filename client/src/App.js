@@ -3,6 +3,9 @@ import Navbar from "./component/Navbar/Navbar";
 import Footer from "./component/Footer/Footer";
 import GetDriverHelp from "./component/DriverDB/GetHelp/GetHelp";
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import {
   Home,
   OTP,
@@ -55,14 +58,13 @@ import {
   TaxReport,
   Payout,
   Setting,
-  Messages
+  Messages,
 } from "./component/DriverDB";
 
 import {
   FleetProfile,
   FleetDriver,
   OrderHistory,
-  DriversList,
   Vehicles,
   FleetInvoice,
   RiderInvoice,
@@ -71,6 +73,7 @@ import {
   WeeklyReport,
   FleetPayouts,
   FleetDashboard,
+  FleetSetting,
 } from "./component/Fleet";
 
 import AccessInfo from "./pages/AccessInfo/AccessInfo";
@@ -386,7 +389,7 @@ const router = createBrowserRouter([
       },
       {
         path: "message",
-        element: <DriversList />,
+        element: <FleetDriver />,
       },
       {
         path: "vehicles",
@@ -422,7 +425,7 @@ const router = createBrowserRouter([
       },
       {
         path: "setting",
-        element: <Setting />,
+        element: <FleetSetting />,
       },
     ],
   },
@@ -454,6 +457,20 @@ function App() {
   return (
     <PayPalScriptProvider options={initialOptions}>
       <RouterProvider router={router} />
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+      {/* Same as */}
+      <ToastContainer />
     </PayPalScriptProvider>
   );
 }

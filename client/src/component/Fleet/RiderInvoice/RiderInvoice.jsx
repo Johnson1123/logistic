@@ -28,7 +28,7 @@ function RiderInvoice() {
     <div className="FRiderInvoice ">
       <div className="FRiderInvoice__wrapper">
         <p className="title">Rider Invoices</p>
-        <p className="p-text">
+        <p className="text-md font-bold">
           Invoices that have been issued to riders from you.
         </p>
         <div className="input__con flex">
@@ -38,23 +38,37 @@ function RiderInvoice() {
         </div>
         <div className="files__con">
           <div className="file__header flex box-shadow">
-            <p className="bold-text col-1">Date</p>
-            <p className="bold-text col-2">Driver</p>
-            <p className="bold-text col-3">Pickup address</p>
-            <p className="bold-text col-4">Sum</p>
-            <p className="bold-text col-5">Payment method</p>
-            <p className="bold-text col-6">PDF</p>
+            <p className="bold-text w-[15%] truncate text-left">Date</p>
+            <p className="bold-text w-[20%] truncate text-center">Driver</p>
+            <p className="bold-text w-[30%] truncate text-center">
+              Pickup address
+            </p>
+            <p className="bold-text w-[10%] truncate text-center">Sum</p>
+            <p className="bold-text w-[15%] truncate text-center">
+              Payment method
+            </p>
+            <p className="bold-text w-[10%] truncate !text-right">PDF</p>
           </div>
           <div className="file__box-con">
             {riderinvoices.map((invoice, index) => {
               return (
                 <div className="file__box flex" key={index}>
-                  <p className="p-text col-1">{invoice.date}</p>
-                  <p className="p-text col-2">{invoice.method}</p>
-                  <p className="p-text col-3">{invoice.pickUp}</p>
-                  <p className="p-text col-4">${invoice.sum}</p>
-                  <p className="p-text col-5">Paypal</p>
-                  <p className="p-text col-6 pdf fw-900">{invoice.format}</p>
+                  <p className="p-text w-[15%] truncate text-center">
+                    {invoice.date}
+                  </p>
+                  <p className="p-text w-[20%] truncate text-center">
+                    {invoice.method}
+                  </p>
+                  <p className="p-text w-[30%] truncate text-center">
+                    {invoice.pickUp}
+                  </p>
+                  <p className="p-text  w-[10%] truncate text-center">
+                    ${invoice.sum}
+                  </p>
+                  <p className="p-text  w-[15%] truncate text-center">Paypal</p>
+                  <p className="p-text pdf fw-900 w-[10%] truncate text-right">
+                    {invoice.format}
+                  </p>
                 </div>
               );
             })}

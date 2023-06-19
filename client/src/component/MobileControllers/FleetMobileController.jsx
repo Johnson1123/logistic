@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./FleetDB.scss";
 
 import { AiOutlineClose } from "react-icons/ai";
@@ -13,7 +13,9 @@ function FMobileController() {
   const Dispatch = useDispatch();
   const navigate = useNavigate();
   const tab = useSelector((state) => state.toggleReducer.dashboarMenu);
+  const [active, setActive] = useState("/driver");
   const handleDB = (n) => {
+    setActive(n);
     navigate(n);
     Dispatch(handleMenuClose());
   };
@@ -42,6 +44,7 @@ function FMobileController() {
                 label={item.label}
                 icon={item.icon}
                 key={index}
+                active={active}
                 handler={() => handleDB(item.href)}
               />
             );

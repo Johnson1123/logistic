@@ -22,6 +22,25 @@ function OrderHistory() {
       value: 4,
     },
   ];
+
+  const driverOptions = [
+    {
+      label: "Johnson Onifade",
+      value: "Johnson Onifade",
+    },
+    {
+      label: "Smaith Llone",
+      value: "Smaith Llone",
+    },
+    {
+      label: "Johnson Onifade",
+      value: "Johnson Onifade",
+    },
+    {
+      label: "Smaith Llone",
+      value: "Smaith Llone",
+    },
+  ];
   return (
     <div className="Order">
       <div className="order__wrapper">
@@ -29,27 +48,55 @@ function OrderHistory() {
         <p className="p-text">
           Here you can download order history of your drivers.
         </p>
-        <div className="content__wrapper flex">
-          <div className="input__container flex">
-            <Space wrap align split className="con">
-              <div className="select__input">
-                <p className="p-text">From</p>
-                <SelectComponent options={options} className="size" />
+        <div className=" flex flex-col 800px:flex-row 800px:items-end mt-5">
+          <div className="input__container w-[100%] flex !800px:mt-5">
+            <form action="" className="flex px-10px w-[100%] justify-between">
+              <div className="flex flex-col gap-1 mr-3">
+                <label htmlFor="">From</label>
+                <select
+                  name=""
+                  id=""
+                  className="w-[100%] py-2 px-5 border-[1px] border-[#ebebeb] focus:outline-none"
+                >
+                  <option>Under G</option>
+                  <option>Adenike </option>
+                  <option>Kuye</option>
+                  <option>Stadium G</option>
+                </select>
               </div>
-              <div className="select__input">
-                <p className="p-text">To</p>
-
-                <SelectComponent options={options} />
+              <div className="flex flex-col gap-1 mr-3">
+                <label htmlFor="">To</label>
+                <select
+                  name=""
+                  id=""
+                  className="w-[100%] py-2 px-5 border-[1px] border-[#ebebeb] focus:outline-none"
+                >
+                  <option className="text-sm">Under G</option>
+                  <option>Adenike </option>
+                  <option>Kuye</option>
+                  <option>Stadium G</option>
+                </select>
               </div>
-              <div className="select__input">
-                <p className="p-text">Driver</p>
-                <SelectComponent options={options} />
+              <div className="flex flex-col gap-1 mr-3">
+                <label htmlFor="">Driver</label>
+                <select
+                  name=""
+                  id=""
+                  className="w-[100%] py-2 px-5 border-[1px] border-[#ebebeb] focus:outline-none"
+                >
+                  <option>Under G</option>
+                  <option>Adenike </option>
+                  <option>Kuye</option>
+                  <option>Stadium G</option>
+                </select>
               </div>
-            </Space>
+            </form>
           </div>
-          <a href="" download>
-            Download PDF
-          </a>
+          <div className="flex justify-center 800px:min-w-[150px] mt-7 800px:mt-0">
+            <a href="" download className="w-[50%] text-center 800px:w-[100%]">
+              Download PDF
+            </a>
+          </div>
         </div>
       </div>
     </div>

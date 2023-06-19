@@ -1,23 +1,14 @@
 @import "../../style/variable.scss";
 .Invoice {
   width: 95%;
-  margin: auto 1rem;
+  margin: 1rem;
   .invoice__wrapper {
-    width: 100%;
-    @include tablet {
-      width: 80%;
-    }
-
     .invoice__con {
       margin-top: 0.5rem;
       padding: 0.5rem 0;
       overflow: scroll;
       -ms-overflow-style: none;
       scrollbar-width: none;
-      @include tablet {
-        width: 100%;
-        min-width: 600px;
-      }
       &::-webkit-scrollbar {
         display: none;
       }
@@ -27,9 +18,14 @@
         align-items: center;
         border-radius: 10px;
         justify-content: space-between;
+        width: 200%;
         @include tablet {
           width: 100%;
         }
+        @include medium {
+          width: 150%;
+        }
+
         .bold-text {
           text-align: center;
           text-overflow: hidden;
@@ -46,6 +42,15 @@
       }
       .file__box-con {
         margin-top: 0.5rem;
+        .box__container {
+          width: 200%;
+          @include tablet {
+            width: 100%;
+          }
+          @include medium {
+            width: 150%;
+          }
+        }
       }
     }
     .data__box {

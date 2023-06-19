@@ -1,0 +1,99 @@
+@import "../../../style/variable.scss";
+.DBNav {
+  width: 100%;
+  height: auto;
+  padding: 1rem 2rem;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0 0 10px 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: #fff;
+  @include tablet {
+    padding: 1rem 4rem;
+    justify-content: flex-start;
+  }
+  .DBNav__logo img {
+    width: max-content;
+    height: 35px;
+    @include tablet {
+      height: 50px;
+    }
+  }
+  .user-icon {
+    margin-left: auto;
+    position: relative;
+    font-size: 24px;
+    margin-right: 1rem;
+    @include tablet {
+      font-size: 30px;
+    }
+    .dot__user {
+      position: absolute;
+      right: 5px;
+      top: 2px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: red;
+    }
+  }
+  .user__img-details {
+    display: none;
+    cursor: pointer;
+    margin-left: auto;
+    @include tablet {
+      width: 45%;
+      width: auto;
+      display: flex;
+    }
+    justify-content: flex-start;
+    .user__img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid #f3f3f3;
+      margin-right: 0.5rem;
+      padding: 1;
+      @include tablet {
+        width: 50px;
+        height: 50px;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+    .user__details {
+      .username-text {
+        text-overflow: ellipsis;
+        width: 100%;
+        font-size: 12px;
+        font-weight: 700;
+        @include tablet {
+          font-size: 18px;
+        }
+      }
+      .small-text {
+        @include tablet {
+          font-size: 14px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+  .db__menu {
+    font-size: 20px;
+    cursor: pointer;
+    svg {
+      color: #5c5c5c;
+    }
+    @include tablet {
+      display: none;
+    }
+  }
+}

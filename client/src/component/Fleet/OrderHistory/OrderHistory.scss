@@ -13,15 +13,8 @@
       width: 100%;
       font-size: $font-14;
     }
-    .content__wrapper {
-      align-items: center;
-      @include mobile {
-        flex-direction: column;
-      }
-    }
     .input__container {
       display: flex;
-      margin-top: 2rem;
       width: auto;
       justify-content: center;
       @include mobile {
@@ -34,9 +27,16 @@
         flex-direction: column;
         display: flex;
         justify-content: space-between;
+        .ant-space {
+          @include mobile {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+          }
+        }
         .ant-space-item {
           @include mobile {
-            width: 90px;
+            width: 100%;
           }
         }
         @include tablet {
@@ -53,14 +53,10 @@
     }
     a {
       padding: 0.45rem 1rem;
-      margin-top: 1.7rem;
       border: 2px groove #d1d1d1c4;
       border-radius: 5px;
       font-size: $font-14;
       cursor: pointer;
-      @include tablet {
-        margin-top: 3.7rem;
-      }
     }
   }
 }

@@ -15,14 +15,16 @@ function FirstForm() {
 
   const driver = useSelector((state) => state.driverDetails);
   const pageNumber = driver.pageNumber;
-  const driverFName = driver.Fname || "";
-  const driverLName = driver.Lname || "";
-  const driverReferral = driver.referral || "";
-  const vehicleModel = driver.vehicleModel || "";
-  const vehicleYear = driver.vehicleYear || "";
-  const vehiclePlate = driver.vehiclePlate || "";
-  const vehicleColor = driver.vehicleColor || "";
-  const vehicleName = driver.vehicleName || "";
+  const [driverFName, setDriverFName] = useState(driver && driverFName);
+  const [driverLName, setDriverLName] = useState(driver && driverLName);
+  const [driverReferral, setDriverReferral] = useState(
+    driver && driverReferral
+  );
+  const [vehicleModel, setVehicleModel] = useState(driver && vehicleModel);
+  const [vehicleYear, setVehicleYear] = useState(driver && vehicleYear);
+  const [vehiclePlate, setVehiclePlate] = useState(driver && vehiclePlate);
+  const [vehicleColor, setVehicleColor] = useState(driver && vehicleColor);
+  const [vehicleName, setVehicleName] = useState(driver && vehicleName);
 
   const [formData, setFormData] = useState({
     driverFName: driverFName,
@@ -35,10 +37,10 @@ function FirstForm() {
     vehicleName: vehicleName,
   });
 
-  const handleOnchange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
+  // const handleOnchange = (e) => {
+  //   const { name, value } = e.target;
+  //   setFormData({ ...formData, [name]: value });
+  // };
 
   const [errors, setErrors] = useState({});
 
@@ -87,15 +89,15 @@ function FirstForm() {
       Dispatch(handlePageNumber(2));
       Dispatch(
         handlePersonalInfo({
-          driverFName: formData.driverFName,
-          driverLName: formData.driverLName,
-          driverReferral: formData.driverReferral,
-          vehicleModel: formData.vehicleModel,
-          vehicleYear: formData.vehicleYear,
-          vehiclePlate: formData.vehiclePlate,
-          vehicleColor: formData.vehicleColor,
+          driverFName: driverFName,
+          driverLName: driverLName,
+          driverReferral: driverReferral,
+          vehicleModel: vehicleModel,
+          vehicleYear: vehicleYear,
+          vehiclePlate: vehiclePlate,
+          vehicleColor: vehicleColor,
           vehicle_available: isChecked,
-          vehicleName: formData.vehicleName,
+          vehicleName: vehicleName,
         })
       );
     }
@@ -122,7 +124,7 @@ function FirstForm() {
             placeholder={driverFName}
             value={driverFName}
             name="driverFName"
-            onChange={handleOnchange}
+            onChange={(e) => setDriverFName(e.target.value)}
           />
           {errors.driverFName && <p className="error">{errors.driverFName}</p>}
         </div>
@@ -134,7 +136,7 @@ function FirstForm() {
             placeholder={driverLName}
             value={driverLName}
             name="driverLName"
-            onChange={handleOnchange}
+            onChange={(e) => setDriverLName(e.target.value)}
           />
           {errors.driverLName && <p className="error">{errors.driverLName}</p>}
         </div>
@@ -147,7 +149,7 @@ function FirstForm() {
               type="text"
               placeholder={driverReferral}
               name="driverReferral"
-              onChange={handleOnchange}
+              onChange={(e) => setDriverReferral(e.target.value)}
             />
             <p className="form-text refer-text">
               If someone referred you, enter their code.
@@ -159,7 +161,14 @@ function FirstForm() {
         </div>
         <div className="Mfleet">
           <div className="flex">
-            <input type="checkbox" name="Mfleet" onChange={handleCheck} />
+            <input
+              type="checkbox"
+              name="Mfleet"
+              // onChange={(e) => {
+              //   return e.target.checked ?
+
+              // }}
+            />
             <p className="check-text">I have a vehicle that i will drive.</p>
           </div>
         </div>
@@ -174,7 +183,7 @@ function FirstForm() {
                 placeholder={vehicleName}
                 value={vehicleName}
                 name="vehicleName"
-                onChange={handleOnchange}
+                onChange={(e) => setVehicleName(e.target.value)}
               />
               {errors.vehicleName && (
                 <p className="error">{errors.vehicleName}</p>
@@ -187,7 +196,7 @@ function FirstForm() {
                 placeholder={vehicleYear}
                 value={vehicleYear}
                 name="vehicleYear"
-                onChange={handleOnchange}
+                onChange={(e) => setVehicleYear(e.target.value)}
               />
               {errors.vehicleYear && (
                 <p className="error">{errors.vehicleYear}</p>
@@ -203,7 +212,7 @@ function FirstForm() {
                 placeholder={vehiclePlate}
                 value={vehiclePlate}
                 name="vehiclePlate"
-                onChange={handleOnchange}
+                onChange={(e) => setVehiclePlate(e.target.value)}
               />
               {errors.vehiclePlate && (
                 <p className="error">{errors.vehiclePlate}</p>
@@ -216,7 +225,7 @@ function FirstForm() {
                 placeholder={vehicleColor}
                 value={vehicleColor}
                 name="vehicleColor"
-                onChange={handleOnchange}
+                onChange={(e) => setVehicleColor(e.target.value)}
               />
               {errors.vehicleColor && (
                 <p className="error">{errors.vehicleColor}</p>
@@ -231,7 +240,7 @@ function FirstForm() {
                 placeholder={vehicleModel}
                 value={vehicleModel}
                 name="vehicleModel"
-                onChange={handleOnchange}
+                onChange={(e) => setVehicleModel(e.target.value)}
               />
               {errors.vehicleModel && (
                 <p className="error">{errors.vehicleModel}</p>

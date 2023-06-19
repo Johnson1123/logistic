@@ -1,11 +1,14 @@
-@import "../../../../style/variable.scss";
-.SApplication {
+@import "../../../style/variable.scss";
+.Application {
   width: 100%;
-  margin-top: 1.5rem;
+  margin-top: 2.5rem;
   .top__container {
     justify-content: space-between;
     .desc {
-      width: 80%;
+      .p-text {
+        font-size: $font-14;
+        font-weight: 500;
+      }
     }
     .small-title {
       font-weight: 700;
@@ -20,26 +23,44 @@
     }
   }
   .scroll__container {
-    width: 100%;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
     @include tablet {
       overflow: hidden;
     }
-    .col-1 {
-      width: 60%;
-    }
-    .col-2 {
-      width: 40%;
+    @include medium {
+      overflow: scroll;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      &::-webkit-scrollbar {
+        display: none;
+      }
     }
 
     .title__container {
-      margin-top: 0.5rem;
-      width: 100%;
-      padding: 0.7rem;
-      border-radius: 10px;
+      width: 200%;
+      @include tablet {
+        width: 100%;
+      }
+      @include medium {
+        width: 150%;
+      }
     }
     .data__container {
       margin-top: 1rem;
-      width: 100%;
+      width: 200%;
+      @include tablet {
+        width: 100%;
+      }
+      @include medium {
+        width: 150%;
+      }
       .box {
         padding: 0.5rem;
         border-bottom: 1px solid $lightAshe;

@@ -1,4 +1,4 @@
-@import "../../../../style/variable.scss";
+@import "../../../style/variable.scss";
 .fleetDriver {
   width: 100%;
   margin-top: 1.5rem;
@@ -17,7 +17,6 @@
     }
   }
   .scroll__container {
-    width: 100%;
     overflow: scroll;
     padding: 0.5rem;
     -ms-overflow-style: none;
@@ -26,7 +25,16 @@
       display: none;
     }
     @include tablet {
+      width: 100%;
       overflow: hidden;
+    }
+    @include medium {
+      overflow: scroll;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      &::-webkit-scrollbar {
+        display: none;
+      }
     }
     .col-1 {
       width: 20%;
@@ -50,18 +58,24 @@
     }
     .title__container {
       margin-top: 0.5rem;
-      width: 250%;
+      width: 180%;
       padding: 0.7rem;
       border-radius: 10px;
       @include tablet {
         width: 100%;
       }
+      @include medium {
+        width: 180%;
+      }
     }
     .data__container {
       margin-top: 1rem;
-      width: 250%;
+      width: 180%;
       @include tablet {
         width: 100%;
+      }
+      @include medium {
+        width: 180%;
       }
       .box {
         padding: 0.5rem;

@@ -1,0 +1,36 @@
+@import "../../../style//variable.scss";
+.fleetSetting {
+  width: 95%;
+  max-width: 500px;
+  @include tablet {
+    max-width: none;
+  }
+  @include mobile {
+    margin: 1rem;
+  }
+  .fleetSetting__wrapper {
+    width: 100%;
+    @include tablet {
+      width: 70%;
+    }
+    .tabs__con {
+      margin-top: 1rem;
+      .tab-btn {
+        padding: 0.5rem calc(8px + 6 * ((100vw - 320px) / 680));
+        border-radius: 10px;
+        border: 1px solid #111;
+        margin: 0.5rem 0.2rem;
+        background-color: $whiteColor;
+        font-size: calc(10px + 6 * ((100vw - 320px) / 680));
+        @include tablet {
+          padding: 0.5rem 1.5rem;
+          font-size: 16px;
+        }
+      }
+      .active {
+        background-color: $secondaryColor;
+        color: $whiteColor;
+      }
+    }
+  }
+}

@@ -2,20 +2,20 @@ import React from "react";
 import "./FleetDB.scss";
 
 import { useSelector } from "react-redux";
+import DBNav from "../../component/DBNav/DBNav";
 import { Outlet } from "react-router-dom";
 import FleetMobileController from "../../component/MobileControllers/FleetMobileController";
 import UserInfo from "../../component/UserInfo/UserInfo";
 import FleetDBController from "../../component/FleetControllers/FleetControllers";
-import FleetNav from "../../component/Fleet/FleetNav/FleetNav";
 
-function FleetDB() {
+function FleetDashboard() {
   const menu = useSelector((state) => state.toggleReducer.dashboarMenu);
   const user = useSelector((state) => state.toggleReducer.user);
 
   return (
     <div className="FleetDB">
       <div className="FleetDB__wrapper">
-        <FleetNav />
+        <DBNav />
         {menu && <FleetMobileController />}
         <div className="FleetDB__content flex">
           <FleetDBController />
@@ -29,4 +29,4 @@ function FleetDB() {
   );
 }
 
-export default FleetDB;
+export default FleetDashboard;

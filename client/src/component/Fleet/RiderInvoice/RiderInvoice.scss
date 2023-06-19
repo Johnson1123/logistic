@@ -1,14 +1,7 @@
 @import "../../../style/variable.scss";
 .FRiderInvoice {
-  width: 95%;
   padding: 1rem 0.5rem 0;
-  @include tablet {
-    .FRiderInvoice__wrapper {
-      width: 90%;
-    }
-  }
   .input__con {
-    width: 70%;
     margin-top: 10px;
     border: none;
     @include tablet {
@@ -17,47 +10,27 @@
       }
     }
   }
-
-  .col-1 {
-    width: 15%;
-    text-align: left;
-  }
-  .col-2 {
-    width: 18%;
-    text-align: center;
-  }
-  .col-3 {
-    width: 33%;
-    text-align: center;
-  }
-  .col-4 {
-    width: 10%;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    text-align: center;
-  }
-  .col-5 {
-    width: 18%;
-    text-align: center;
-  }
-  .col-6 {
-    width: 7%;
-    text-align: center;
-  }
   .files__con {
-    width: 100%;
     overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
     .file__header {
       margin-top: 1rem;
-      width: 200%;
       height: 50px;
       background-color: $asheColor;
       align-items: center;
       border-radius: 10px;
       justify-content: space-between;
+      width: 200%;
       @include tablet {
-        padding: 1rem;
         width: 100%;
+        padding: 1rem;
+      }
+      @include medium {
+        width: 150%;
       }
       .bold-text {
         text-align: center;
@@ -76,6 +49,10 @@
       width: 200%;
       @include tablet {
         width: 100%;
+        padding: 1rem;
+      }
+      @include medium {
+        width: 150%;
       }
       .file__box {
         justify-content: space-between;
@@ -84,7 +61,7 @@
         border-bottom: 2px solid $asheColor;
         @include tablet {
           text-align: center;
-          padding: 1rem;
+          padding: 1rem 0.2rem;
         }
         .pdf {
           color: $secondaryColor;

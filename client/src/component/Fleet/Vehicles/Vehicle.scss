@@ -1,4 +1,4 @@
-@import "../../../../style/variable.scss";
+@import "../../../style/variable.scss";
 .Vehicle__wrapper {
   width: 100%;
   margin-top: 1.5rem;
@@ -27,35 +27,6 @@
     }
     @include tablet {
       overflow: hidden;
-    }
-    .col-1 {
-      width: 170px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      @include tablet {
-        width: 30%;
-      }
-    }
-    .col-2 {
-      width: 25%;
-      margin-left: 0.5rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .col-3 {
-      width: 25%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      @include tablet {
-        width: 30%;
-      }
     }
     .title__container {
       margin-top: 0.5rem;

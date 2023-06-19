@@ -71,11 +71,14 @@ function DBMobileControllers() {
               />
             );
           })}
-          <button onClick={handleLogout} className="logout-btn p-text">
+          <button
+            onClick={handleLogout}
+            className="logout-btn p-text cursor-pointer"
+          >
             <span>
               <IoLogOutOutline />
             </span>
-            <span>logout</span>
+            <span>logout driver</span>
           </button>
         </div>
         <div className="getApp flex">

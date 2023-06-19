@@ -1,11 +1,11 @@
 import { RxDashboard } from "react-icons/rx";
-import { FaUserAlt } from "react-icons/fa";
 import { FaThList } from "react-icons/fa";
-import { TbMessage } from "react-icons/tb";
-import { IoLogOutOutline } from "react-icons/io5";
+import { TbFileReport, TbMessage, TbReport } from "react-icons/tb";
+import { IoHelpBuoyOutline, IoLogOutOutline } from "react-icons/io5";
 import { BiHelpCircle } from "react-icons/bi";
 import { FiUser } from "react-icons/fi";
-import { FcSettings } from "react-icons/fc";
+import { IoMdLogOut } from "react-icons/io";
+import { FcExpired, FcSettings } from "react-icons/fc";
 import {
   MdOutlineAccountBalanceWallet,
   MdOutlinePayments,
@@ -13,18 +13,16 @@ import {
 } from "react-icons/md";
 import { TbFileInvoice } from "react-icons/tb";
 import { TfiMenuAlt } from "react-icons/tfi";
-import { BsFileText, BsFillFilePostFill } from "react-icons/bs";
-import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import logoutUser from "../features/Auths";
+import { BsFileText } from "react-icons/bs";
+
 import {
   AiOutlineDeliveredProcedure,
   AiOutlineFileText,
-  AiOutlineProfile,
   AiOutlineSetting,
   AiOutlineUser,
 } from "react-icons/ai";
 import { CiDeliveryTruck } from "react-icons/ci";
+import { GiSteeringWheel } from "react-icons/gi";
 export const DBcontroller = [
   {
     id: 1,
@@ -116,20 +114,20 @@ export const FleetDB = [
   {
     id: 2,
     label: "Profile",
-    icon: <FaUserAlt size={20} />,
+    icon: <AiOutlineUser size={20} />,
     href: "profile",
   },
   {
     id: 3,
     label: "Order History",
-    icon: <FaThList size={20} />,
+    icon: <AiOutlineFileText size={20} />,
     href: "order",
   },
 
   {
     id: 4,
     label: "Drivers",
-    icon: <BsFillFilePostFill size={20} />,
+    icon: <GiSteeringWheel size={20} />,
     href: "drivers",
   },
   {
@@ -141,43 +139,43 @@ export const FleetDB = [
   {
     id: 4,
     label: "Vehicles",
-    icon: <TbMessage size={20} />,
+    icon: <CiDeliveryTruck size={20} />,
     href: "vehicles",
   },
   {
     id: 5,
     label: "Expiring Documents",
-    icon: <TbFileInvoice size={20} />,
+    icon: <FcExpired size={20} />,
     href: "expired",
   },
   {
     id: 6,
     label: "Invoices",
-    icon: <RxDashboard size={20} />,
+    icon: <TbFileInvoice size={20} />,
     href: "invoice",
   },
   {
     id: 7,
     label: "Rider Invoices",
-    icon: <RxDashboard size={20} />,
+    icon: <TbFileInvoice size={20} />,
     href: "rider/invoice",
   },
   {
     id: 9,
     label: "Compensation",
-    icon: <RxDashboard size={20} />,
+    icon: <IoHelpBuoyOutline size={20} />,
     href: "compensation",
   },
   {
     id: 10,
     label: "Daily Reports",
-    icon: <RxDashboard size={20} />,
+    icon: <TbFileReport size={20} />,
     href: "daily/report",
   },
   {
     id: 11,
     label: "Weekly Reports",
-    icon: <RxDashboard size={20} />,
+    icon: <TbReport size={20} />,
     href: "Weekly/report",
   },
   {
@@ -195,7 +193,7 @@ export const FleetDB = [
   {
     id: 14,
     label: "Logout",
-    icon: <BiHelpCircle />,
+    icon: <IoMdLogOut />,
   },
 ];
 export const passengercontroller = [

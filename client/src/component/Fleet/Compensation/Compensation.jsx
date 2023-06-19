@@ -8,11 +8,11 @@ function RiderInvoice() {
     <div className="Compensation">
       <div className="RiderInvoice__wrapper">
         <p className="title">Compensation Invoices</p>
-        <p className="p-text">
+        <p className="text-md font-bold">
           Compensation invoices that have been issued to you.
         </p>
         <div className="files__con">
-          <div className="file__header flex box-shadow">
+          <div className="file__header flex  rounded-[20px]">
             <p className="bold-text col-1">Date</p>
             <p className="bold-text col-2">Description</p>
             <p className="bold-text col-3">Total Sum</p>

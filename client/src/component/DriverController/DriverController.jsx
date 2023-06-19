@@ -8,6 +8,7 @@ import { images } from "../../asset";
 import { useDispatch } from "react-redux";
 import { logoutUser } from "../../features/Auths";
 import { AiOutlineLogout } from "react-icons/ai";
+import { logout } from "../../features/slice/auth/auth";
 
 function DriverController() {
   const navigate = useNavigate();
@@ -18,8 +19,9 @@ function DriverController() {
     navigate(n);
     setActive(n);
   };
-  const handleDispatch = (n) => {
-    Dispatch(logoutUser());
+  const handleLogout = () => {
+    Dispatch(logout());
+    navigate("/");
   };
   return (
     <div className="DriverController">
@@ -31,14 +33,14 @@ function DriverController() {
               icon={item.icon}
               key={index}
               handler={
-                item.href ? () => handleDB(item.href) : () => handleDispatch
+                item.href ? () => handleDB(item.href) : () => handleLogout
               }
               active={active}
               href={item.href}
             />
           );
         })}
-        <button onClick={handleDispatch} className="logout-btn p-text">
+        <button onClick={handleLogout} className="logout-btn p-text">
           <span>
             <AiOutlineLogout size={20} />
           </span>
