@@ -45,14 +45,16 @@ function OrderHistory() {
     <div className="Order">
       <div className="order__wrapper">
         <p className="title">Order history</p>
-        <p className="p-text">
+        <p className="p-text !text-sm">
           Here you can download order history of your drivers.
         </p>
         <div className=" flex flex-col 800px:flex-row 800px:items-end mt-5">
           <div className="input__container w-[100%] flex !800px:mt-5">
             <form action="" className="flex px-10px w-[100%] justify-between">
-              <div className="flex flex-col gap-1 mr-3">
-                <label htmlFor="">From</label>
+              <div className="flex flex-col gap-1 mr-3 ">
+                <label htmlFor="" className="text-sm">
+                  From
+                </label>
                 <select
                   name=""
                   id=""
@@ -65,7 +67,9 @@ function OrderHistory() {
                 </select>
               </div>
               <div className="flex flex-col gap-1 mr-3">
-                <label htmlFor="">To</label>
+                <label htmlFor="" className="text-sm">
+                  To
+                </label>
                 <select
                   name=""
                   id=""
@@ -78,7 +82,9 @@ function OrderHistory() {
                 </select>
               </div>
               <div className="flex flex-col gap-1 mr-3">
-                <label htmlFor="">Driver</label>
+                <label htmlFor="" className="text-sm">
+                  Driver
+                </label>
                 <select
                   name=""
                   id=""

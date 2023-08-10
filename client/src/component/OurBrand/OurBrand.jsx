@@ -3,6 +3,7 @@ import { Ourbrand } from "../../content/OurBrand";
 import "./OurBrand.scss";
 
 function OurBrand() {
+  
   return (
     <div className="OurBrand flex center ">
       <div className="wrapper">
